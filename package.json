@@ -1,0 +1,77 @@
+{
+  "name": "portfolio",
+  "version": "0.1.0",
+  "homepage": "https://codyb.co",
+  "description": "Portfolio site for Cody Bennett",
+  "repository": "https://github.com/CodyJasonBennett/portfolio.git",
+  "author": "Cody Bennett <hi@codyb.co>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.13.16",
+    "@storybook/addon-a11y": "^6.2.9",
+    "@storybook/addon-actions": "^6.2.9",
+    "@storybook/addon-controls": "^6.2.9",
+    "@storybook/preset-create-react-app": "^3.1.7",
+    "@storybook/react": "^6.2.9",
+    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/react": "^11.2.6",
+    "@testing-library/user-event": "^13.1.5",
+    "babel-loader": "8.1.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "mdx-loader": "^3.0.2",
+    "prettier": "^2.2.1",
+    "react-scripts-postcss": "4.0.0-mod1",
+    "react-snap": "1.23.0",
+    "source-map-explorer": "^2.5.2",
+    "stylelint": "^13.12.0",
+    "stylelint-config-recommended": "^4.0.0"
+  },
+  "dependencies": {
+    "@mdx-js/react": "^1.6.22",
+    "classnames": "^2.3.1",
+    "node-sass": "^5.0.0",
+    "popmotion": "^8.7.6",
+    "postprocessing": "^6.21.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "react-router-dom": "5.2.0",
+    "react-transition-group": "^4.4.1",
+    "three": "^0.128.0"
+  },
+  "scripts": {
+    "start": "set PORT=80 && react-scripts start",
+    "build": "react-scripts build",
+    "build-storybook": "build-storybook -o build-storybook",
+    "postbuild": "react-snap",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9009 -s public",
+    "analyze": "source-map-explorer 'build/static/js/*.js'"
+  },
+  "reactSnap": {
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ],
+    "skipThirdPartyRequests": true,
+    "headless": true,
+    "crawl": true
+  },
+  "browserslist": {
+    "production": [
+      ">10%",
+      "not dead",
+      "not ie 11",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "https://codyb.co"
+}
