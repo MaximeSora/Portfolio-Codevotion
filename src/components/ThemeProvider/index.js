@@ -4,21 +4,21 @@ import classNames from 'classnames';
 import useTheme from './useTheme';
 import { theme, tokens } from './theme';
 import { media } from 'utils/style';
-import GothamBook from 'assets/fonts/gotham-book.woff2';
-import GothamMedium from 'assets/fonts/gotham-medium.woff2';
+import InterRegular from 'assets/fonts/Inter-Regular.ttf';
+import InterBold from 'assets/fonts/Inter-Bold.ttf';
 
 export const fontStyles = `
   @font-face {
-    font-family: "Gotham";
+    font-family: "Inter";
     font-weight: 400;
-    src: url(${GothamBook}) format("woff");
+    src: url(${InterRegular}) format("ttf");
     font-display: swap;
   }
 
   @font-face {
-    font-family: "Gotham";
-    font-weight: 500;
-    src: url(${GothamMedium}) format("woff2");
+    font-family: "Inter";
+    font-weight: 700;
+    src: url(${InterBold}) format("ttf");
     font-display: swap;
   }
 `;
@@ -51,8 +51,8 @@ const ThemeProvider = ({
       {isRootProvider && (
         <Fragment>
           <Helmet>
-            <link rel="preload" href={GothamMedium} as="font" crossorigin="" />
-            <link rel="preload" href={GothamBook} as="font" crossorigin="" />
+            <link rel="preload" href={InterBold} as="font" crossorigin="" />
+            <link rel="preload" href={InterRegular} as="font" crossorigin="" />
             <style>{fontStyles}</style>
             <style>{tokenStyles}</style>
           </Helmet>
@@ -106,7 +106,16 @@ function createMediaTokenProperties() {
       return `
         @media (max-width: ${media[key]}px) {
           :root {
-            ${createThemeProperties(tokens[key])}
+            --maxWidthS: 480px;
+            --maxWidthM: 640px;
+            --maxWidthL: 1000px;
+            --maxWidthXL: 1100px;
+            --spaceOuter: 48px;
+            --fontSizeH0: 6.25rem;
+            --fontSizeH1: 4.375rem;
+            --fontSizeH2: 3.25rem;
+            --fontSizeH3: 2.25rem;
+            --fontSizeH4: 1.625rem;
           }
         }
       `;
@@ -116,17 +125,73 @@ function createMediaTokenProperties() {
 
 export const tokenStyles = `
   :root {
-    ${createThemeProperties(tokens.base)}
+    --rgbBlack: 0 0 0;
+    --rgbWhite: 255 255 255;
+    --bezierFastoutSlowin: cubic-bezier(0.4, 0.0, 0.2, 1);
+    --durationXS: 200ms;
+    --durationS: 300ms;
+    --durationM: 400ms;
+    --durationL: 600ms;
+    --durationXL: 800ms;
+    --systemFontStack: system-ui, -apple-system, BlinkMacSystemFont, San Francisco, Roboto, Segoe UI, Ubuntu, Helvetica Neue, sans-serif;
+    --fontStack: Inter, system-ui, -apple-system, BlinkMacSystemFont, San Francisco, Roboto, Segoe UI, Ubuntu, Helvetica Neue, sans-serif;
+    --monoFontStack: SFMono Regular, Roboto Mono, Consolas, Liberation Mono, Menlo, Courier, monospace;
+    --japaneseFontStack: ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, Hiragino Sans, Osaka, メイリオ, Meiryo, Segoe UI, sans-serif;
+    --fontWeightRegular: 400;
+    --fontWeightMedium: 500;
+    --fontWeightBold: 700;
+    --fontSizeH0: 8.75rem;
+    --fontSizeH1: 6.25rem;
+    --fontSizeH2: 3.625rem;
+    --fontSizeH3: 2.375rem;
+    --fontSizeH4: 1.75rem;
+    --fontSizeBodyXL: 1.375rem;
+    --fontSizeBodyL: 1.25rem;
+    --fontSizeBodyM: 1.125rem;
+    --fontSizeBodyS: 1rem;
+    --fontSizeBodyXS: 0.875rem;
+    --lineHeightTitle: 1.1;
+    --lineHeightBody: 1.5;
+    --maxWidthS: 540px;
+    --maxWidthM: 720px;
+    --maxWidthL: 1096px;
+    --maxWidthXL: 1680px;
+    --spaceOuter: 64px;
+    --spaceXS: 4px;
+    --spaceS: 8px;
+    --spaceM: 16px;
+    --spaceL: 24px;
+    --spaceXL: 32px;
+    --space2XL: 48px;
+    --space3XL: 64px;
+    --space4XL: 96px;
+    --space5XL: 128px;
   }
 
   ${createMediaTokenProperties()}
 
   .dark {
-    ${createThemeProperties(theme.dark)}
+    --rgbBackground: 17 17 17;
+    --rgbBackgroundLight: 26 26 26;
+    --rgbPrimary: 245 194 0;
+    --rgbAccent: 245 194 0;
+    --rgbText: 255 255 255;
+    --rgbError: 255 0 60;
+    --colorTextTitle: rgb(var(--rgbText) / 1);
+    --colorTextBody: rgb(var(--rgbText) / 0.8);
+    --colorTextLight: rgb(var(--rgbText) / 0.6);
   }
 
   .light {
-    ${createThemeProperties(theme.light)}
+    --rgbBackground: 242 242 242;
+    --rgbBackgroundLight: 255 255 255;
+    --rgbPrimary: 93 55 255;
+    --rgbAccent: 93 55 255;
+    --rgbText: 0 0 0;
+    --rgbError: 210 14 60;
+    --colorTextTitle: rgb(var(--rgbText) / 1);
+    --colorTextBody: rgb(var(--rgbText) / 0.7);
+    --colorTextLight: rgb(var(--rgbText) / 0.6);
   }
 `;
 

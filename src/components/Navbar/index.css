@@ -2,15 +2,15 @@
   --navbarNavFontSize: calc((16 / 16) * 1rem);
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   padding: 0;
-  width: var(--space2XL);
+  height: var(--space2XL);
   position: fixed;
   top: var(--spaceOuter);
   left: var(--spaceOuter);
-  bottom: var(--spaceOuter);
+  right: var(--spaceOuter);
   z-index: 1024;
 
   @media (--mediaMobile) {
@@ -29,7 +29,7 @@
 .navbar__logo {
   display: flex;
   position: relative;
-  padding: var(--spaceS) var(--spaceS) var(--spaceL);
+  padding: var(--spaceS) var(--spaceS);
   z-index: 16;
 
   &:focus {
@@ -50,13 +50,13 @@
 
 .navbar__nav {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
   flex: 1 1 auto;
-  max-width: var(--space2XL);
+  max-height: var(--space2XL);
   position: relative;
-  top: calc(var(--spaceM) * -1);
+  /* top: calc(var(--spaceM) * -1); */
 
   @media (--mediaMobile), (max-height: 696px) {
     & {
@@ -66,7 +66,6 @@
 }
 
 .navbar__nav-list {
-  transform: rotate(-90deg) translate3d(-50%, 0, 0);
   display: flex;
   flex-direction: row-reverse;
 }
@@ -129,7 +128,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
+  position: fixed;
+  z-index: 2048;
+  bottom: var(--spaceOuter);
+  left: var(--spaceOuter);
+  margin-bottom: calc(var(--spaceM) * -1);
+  margin-right: calc(var(--spaceM) * -1);
   z-index: 16;
 
   @media (--mediaMobile), (max-height: 696px) {

@@ -11,7 +11,7 @@ import { reflow } from 'utils/transition';
 import { media, msToNum, numToMs } from 'utils/style';
 import { tokens } from 'components/ThemeProvider/theme';
 import { blurOnMouseUp } from 'utils/focus';
-import './index.scss';
+import './index.css';
 
 const NavbarIcons = () => (
   <div className="navbar__nav-icons">
@@ -64,6 +64,7 @@ function Navbar(props) {
       >
         <Monogram highlight />
       </RouterLink>
+      <NavbarIcons />
       <NavToggle onClick={() => dispatch({ type: 'toggleMenu' })} menuOpen={menuOpen} />
       <nav className="navbar__nav">
         <div className="navbar__nav-list">
@@ -82,7 +83,7 @@ function Navbar(props) {
             </NavLink>
           ))}
         </div>
-        <NavbarIcons />
+        {/* <NavbarIcons /> */}
       </nav>
       <Transition
         mountOnEnter
