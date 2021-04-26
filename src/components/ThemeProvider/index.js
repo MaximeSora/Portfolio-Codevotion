@@ -173,8 +173,8 @@ export const tokenStyles = `
   .dark {
     --rgbBackground: 17 17 17;
     --rgbBackgroundLight: 26 26 26;
-    --rgbPrimary: 245 194 0;
-    --rgbAccent: 245 194 0;
+    --rgbPrimary: 13 197 177;
+    --rgbAccent: 13 197 177;
     --rgbText: 255 255 255;
     --rgbError: 255 0 60;
     --colorTextTitle: rgb(var(--rgbText) / 1);
@@ -185,8 +185,8 @@ export const tokenStyles = `
   .light {
     --rgbBackground: 242 242 242;
     --rgbBackgroundLight: 255 255 255;
-    --rgbPrimary: 93 55 255;
-    --rgbAccent: 93 55 255;
+    --rgbPrimary: 13 197 177;
+    --rgbAccent: 13 197 177;
     --rgbText: 0 0 0;
     --rgbError: 210 14 60;
     --colorTextTitle: rgb(var(--rgbText) / 1);

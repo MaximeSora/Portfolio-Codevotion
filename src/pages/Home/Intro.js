@@ -77,6 +77,34 @@ function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...rest }) 
               </h1>
               <Heading level={0} as="h2" className="intro__title">
                 <VisuallyHidden className="intro__title-label">{`Designer + ${introLabel}`}</VisuallyHidden>
+                <TransitionGroup
+                  className={classNames('intro__title-row', {
+                    'intro__title-row--hidden': prerender,
+                  })}
+                  component="span"
+                >
+                  {currentDisciplines.map(item => (
+                    <Transition
+                      appear
+                      timeout={{ enter: 3000, exit: 2000 }}
+                      key={item}
+                      onEnter={reflow}
+                    >
+                      {wordStatus => (
+                        <span
+                          aria-hidden
+                          className={classNames(
+                            `intro__title-word--${wordStatus}`,
+                            'intro__title-word',                            
+                          )}
+                          style={{ '--delay': tokens.base.durationL }}
+                        >
+                          {item}
+                        </span>
+                      )}
+                    </Transition>
+                  ))}
+                </TransitionGroup>
                 <span
                   aria-hidden
                   className={classNames('intro__title-row', {
@@ -99,35 +127,6 @@ function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...rest }) 
                     )}
                   />
                 </span>
-                <TransitionGroup
-                  className={classNames('intro__title-row', {
-                    'intro__title-row--hidden': prerender,
-                  })}
-                  component="span"
-                >
-                  {currentDisciplines.map(item => (
-                    <Transition
-                      appear
-                      timeout={{ enter: 3000, exit: 2000 }}
-                      key={item}
-                      onEnter={reflow}
-                    >
-                      {wordStatus => (
-                        <span
-                          aria-hidden
-                          className={classNames(
-                            'intro__title-word',
-                            'intro__title-word--plus',
-                            `intro__title-word--${wordStatus}`
-                          )}
-                          style={{ '--delay': tokens.base.durationL }}
-                        >
-                          {item}
-                        </span>
-                      )}
-                    </Transition>
-                  ))}
-                </TransitionGroup>
               </Heading>
             </header>
             {windowSize.width > media.tablet && (
