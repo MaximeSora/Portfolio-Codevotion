@@ -4,6 +4,7 @@ import { Transition } from 'react-transition-group';
 import Section from 'components/Section';
 import { Button } from 'components/Button';
 import Model from 'components/Model';
+import Image from 'components/Image';
 import Divider from 'components/Divider';
 import { useWindowSize } from 'hooks';
 import { reflow, isVisible } from 'utils/transition';
@@ -14,6 +15,14 @@ import Heading from 'components/Heading';
 import Text from 'components/Text';
 import { useTheme } from 'components/ThemeProvider';
 import './ProjectSummary.css';
+
+import {
+  ProjectImage,
+} from 'components/ProjectLayout';
+
+import deviceModelsLarge from 'assets/device-models-large.jpg';
+import deviceModelsPlaceholder from 'assets/device-models-placeholder.jpg';
+
 
 const ProjectSummary = ({
   id,
@@ -95,7 +104,7 @@ const ProjectSummary = ({
             style={{ '--opacity': svgOpacity }}
             className={classNames(
               'project-summary__svg',
-              'project-summary__svg--laptop',
+              'project-summary__svg--right',
               `project-summary__svg--${status}`,
               {
                 'project-summary__svg--light': theme.themeId === 'light',
@@ -166,6 +175,29 @@ const ProjectSummary = ({
           />
         </Fragment>
       )}
+      {model.type === 'solbase' && (
+        <Fragment>
+          <KatakanaProject
+            style={{ '--opacity': svgOpacity }}
+            className={classNames(
+              'project-summary__svg',
+              'project-summary__svg--left',
+              `project-summary__svg--${status}`,
+              {
+                'project-summary__svg--light': theme.themeId === 'light',
+              }
+            )}
+          />
+            <ProjectImage
+              raised
+              srcSet={`${deviceModels} 1280w, ${deviceModelsLarge} 2560w`}
+              placeholder={deviceModelsPlaceholder}
+              sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 800px, 1000px`}
+              alt="Device Models plugin interface."
+            />
+        </Fragment>
+      )}
+
     </div>
   );
 

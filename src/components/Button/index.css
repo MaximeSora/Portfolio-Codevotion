@@ -15,7 +15,7 @@
   transition-timing-function: var(--bezierFastoutSlowin);
   display: inline-flex;
   align-items: center;
-  color: var(--buttonTextColor);
+  color: rgb(var(--colorTextTitle));
   position: relative;
   z-index: 1;
 
@@ -35,7 +35,8 @@
     bottom: 0;
     left: 0;
     z-index: -1;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
+    /* clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%); */
+    clip-path: polygon(7% 0%, 100% 0, 100% 79%, 92% 100%, 0% 100%, 0% 22%);
   }
 
   &:active {
@@ -49,7 +50,7 @@
     }
 
     &:hover {
-      transform: scale(1.05);
+      /* transform: scale(1.05); */
     }
 
     &:active {
@@ -131,6 +132,7 @@
   font-weight: var(--fontWeightMedium);
   visibility: var(--buttonTextVisibility);
   position: relative;
+  color: rgb(var(--colorTextTitle));
   line-height: 1;
   flex: 1 1 auto;
   display: flex;
@@ -149,6 +151,7 @@
   transition-property: opacity, fill;
   transition-duration: var(--durationS);
   transition-timing-function: var(--bezierFastoutSlowin);
+  z-index: 10;
 
   @media (--mediaUseMotion) {
     & {
@@ -173,4 +176,133 @@
 
 .button--loading .button__icon {
   opacity: 0;
+}
+
+
+div.project-summary__button {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  flex-flow: column;
+}
+/* div.project-summary__button a {
+  width: 100%;
+  max-width: 240px;
+  height: 74px;
+  padding: 8px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 0 0 1px inset rgb(var(--rgbText) / 0.2);
+  position: relative;
+  margin: 10px 0;
+} */
+div.project-summary__button a:hover > p {
+  color: rgb(var(--rgbBackground));
+}
+div.project-summary__button a > p {
+  background: rgb(var(--rgbPrimary));
+  color: rgb(var(--rgbBackground));
+}
+div.project-summary__button a > p span.base {
+  border: 1px solid transparent;
+}
+div.project-summary__button a:after, div.project-summary__button a:before {
+  content: "";
+  width: 1px;
+  position: absolute;
+  height: 8px;
+  background: rgb(var(--rgbBackground));
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+div.project-summary__button a:before {
+  right: 0;
+  left: initial;
+}
+div.project-summary__button a p {
+  margin: 0;
+  height: 54px;
+  line-height: 54px;
+  box-sizing: border-box;
+  z-index: 1;
+  left: 0;
+  display: flex;
+  padding: 20px;
+  flex-direction: row;
+  /* width: 100%; */
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s ease-out all;
+  /* -webkit-clip-path: polygon(8% 0%, 100% 0, 100% 79%, 92% 100%, 0% 100%, 0% 22%); */
+  clip-path: polygon(7% 0%, 100% 0, 100% 77%, 92% 100%, 0% 100%, 0% 25%);
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  justify-content: center;
+  align-items: center;
+}
+div.project-summary__button a p span.base {
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  /* border: 1px solid #ff4655; */
+}
+div.project-summary__button a p span.base:before {
+  content: "";
+  width: 2px;
+  height: 2px;
+  left: -1px;
+  top: -1px;
+  background: #0f1923;
+  position: absolute;
+  transition: 0.3s ease-out all;
+}
+div.project-summary__button a p span.bg {
+  left: -5%;
+  position: absolute;
+  background: rgb(var(--rgbText));
+  width: 0;
+  height: 100%;
+  z-index: 3;
+  transition: 0.3s ease-out all;
+  transform: skewX(-10deg);
+}
+div.project-summary__button a p span.button__text {
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  color: rgb(var(--colorTextTitle));
+  position: relative;
+  left: 0;
+  top: 0;
+}
+div.project-summary__button a p span.button__text:after {
+  transition: 0.3s ease-out all;
+  content: '';
+  transition-property: opacity, color, background;
+  transition-duration: var(--durationM);
+  transition-timing-function: var(--bezierFastoutSlowin);
+  background: rgb(var(--rgbPrimary));
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  /* clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%); */
+}
+div.project-summary__button a:hover {
+  color: #ece8e1;
+}
+div.project-summary__button a:hover span.bg {
+  width: 110%;
+}
+div.project-summary__button a:hover span.button__text:after {
+  background: #ece8e1;
 }

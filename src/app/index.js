@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import { Helmet } from 'react-helmet';
 import Navbar from 'components/Navbar';
 import ThemeProvider from 'components/ThemeProvider';
+import CustomCursor from 'components/CustomCursor';
 import VisuallyHidden from 'components/VisuallyHidden';
 import { tokens } from 'components/ThemeProvider/theme';
 import { msToNum } from 'utils/style';
@@ -26,7 +27,7 @@ const Page404 = lazy(() => import('pages/404'));
 export const AppContext = createContext();
 export const TransitionContext = createContext();
 
-const repoPrompt = `\u00A9 2017-${new Date().getFullYear()} Cody Bennett\n\nCheck out the source code: https://github.com/CodyJasonBennett/portfolio`;
+const repoPrompt = `\u00A9 2021-${new Date().getFullYear()} Maxime Pocq\n\nCheck out the source code: https://github.com/CodyJasonBennett/portfolio`;
 
 const App = () => {
   const [storedTheme] = useLocalStorage('theme', 'dark');
@@ -46,6 +47,7 @@ const App = () => {
 
   return (
     <AppContext.Provider value={{ ...state, dispatch }}>
+      <CustomCursor />
       <ThemeProvider themeId={state.theme}>
         <BrowserRouter>
           <AppRoutes />
@@ -62,7 +64,7 @@ const AppRoutes = () => {
   return (
     <Fragment>
       <Helmet>
-        <link rel="canonical" href={`https://codyb.co${pathname}`} />
+        <link rel="canonical" href={`https://maximepocq.com${pathname}`} />
       </Helmet>
       <VisuallyHidden showOnFocus as="a" className="skip-to-main" href="#MainContent">
         Skip to main content

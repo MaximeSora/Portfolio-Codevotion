@@ -1,5 +1,6 @@
 import iphone11 from 'assets/iphone-11.glb';
 import macbookPro from 'assets/macbook-pro.glb';
+import solbaseThumbnail from 'assets/solbase/thumbnail.png';
 
 export const ModelAnimationType = {
   SpringUp: 'spring-up',
@@ -20,6 +21,12 @@ const models = {
     height: 800,
     position: { x: 0, y: 0, z: 0 },
     animation: ModelAnimationType.LaptopOpen,
+  },
+  solbase: {
+    url: solbaseThumbnail,
+    width: 808,
+    height: 632,
+    position: { x: 0, y: 0, z: 0 },
   },
 };
 

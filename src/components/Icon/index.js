@@ -12,6 +12,7 @@ import { ReactComponent as Menu } from 'assets/icons/menu.svg';
 import { ReactComponent as Pause } from 'assets/icons/pause.svg';
 import { ReactComponent as Play } from 'assets/icons/play.svg';
 import { ReactComponent as Send } from 'assets/icons/send.svg';
+import { ReactComponent as Behance } from 'assets/icons/behance.svg';
 import { ReactComponent as Twitter } from 'assets/icons/twitter.svg';
 import './index.css';
 
@@ -29,6 +30,7 @@ export const icons = {
   pause: Pause,
   play: Play,
   send: Send,
+  behance: Behance,
   twitter: Twitter,
 };
 

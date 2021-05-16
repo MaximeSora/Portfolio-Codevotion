@@ -30,7 +30,7 @@ import { usePrefersReducedMotion, useInViewport } from 'hooks';
 import { cleanScene, cleanRenderer, removeLights } from 'utils/three';
 import { rgbToThreeColor } from 'utils/style';
 import { useTheme } from 'components/ThemeProvider';
-import portraitModelPath from 'assets/portrait.glb';
+import portraitModelPath from 'assets/my-model.glb';
 import './index.css';
 
 RectAreaLightUniformsLib.init();
@@ -221,7 +221,7 @@ const Portrait = ({ className, delay, ...rest }) => {
       ref={container}
       style={{ '--delay': delay }}
       role="img"
-      aria-label="A 3D portrait of myself."
+      aria-label="Mon portrait 3D"
       {...rest}
     >
       <canvas aria-hidden className="portrait__canvas" ref={canvas} />

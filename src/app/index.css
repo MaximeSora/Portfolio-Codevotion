@@ -17,6 +17,11 @@ body {
   margin: 0;
   width: 100vw;
   overflow-x: hidden;
+  cursor: none;
+}
+
+a:-webkit-any-link, button:hover, button:active {
+  cursor: none;
 }
 
 ::selection {

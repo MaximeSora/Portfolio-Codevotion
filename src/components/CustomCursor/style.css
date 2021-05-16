@@ -1,0 +1,166 @@
+.main-cursor, .secondary-cursor {
+  z-index: 10000;
+  pointer-events: none;
+  transform: translate3d(0, 0, 0);
+  position: fixed;
+  /* transition: all 150ms ease; */
+  transition-property: background-color, opacity, transform, mix-blend-mode;
+}
+.main-cursor {
+  /* transition: opacity 1s cubic-bezier(0.77, 0, 0.175, 1); */
+  /* animation: fadeIn 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards; */
+  mix-blend-mode: difference;
+  /* z-index: 10024; */
+}
+.main-cursor--hidden, .secondary-cursor--hidden{
+  opacity: 0;
+}
+.main-cursor .main-cursor-background {
+  width: 10px;
+  height: 10px;
+  background: white;
+  transform: rotate(45deg);
+  border-radius: 10%;
+  transition: all 150ms ease;
+  transition-property: background-color, opacity, transform, mix-blend-mode;
+}
+.secondary-cursor {
+  mix-blend-mode: soft-light;
+  width: 24px;
+  height: 24px;
+}
+.secondary-cursor .cursor-background {
+  width: 100%;
+  height: 100%;
+  border-radius: 10%;
+  transform: rotate(45deg);
+  border: 2px solid rgba(255, 255, 255, 1);
+  position: relative;
+}
+.secondary-cursor .cursor-background:after, .secondary-cursor .cursor-background:before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 10%;
+  background: white;
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: fadeOut 0.75s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+}
+.secondary-cursor .cursor-background:before {
+  left: 10px;
+}
+.secondary-cursor .cursor-background:after {
+  right: 10px;
+}
+.slider-drag .cursor-background {
+  animation: scaleUp 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards, bgUp 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+}
+.slider-drag .cursor-background:after {
+  animation: fadeIn 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards, translateRightDot 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+}
+.slider-drag .cursor-background:before {
+  animation: fadeIn 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards, translateLeftDot 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+}
+.slider-drag .main-cursor {
+  animation: fadeOut 0.75s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+}
+.hamburger .cursor-background {
+  animation: fadeOut 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+}
+.hamburger .main-cursor-background {
+  animation: scaleUp 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+ }
+  100% {
+    opacity: 1;
+ }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+ }
+  100% {
+    opacity: 0;
+ }
+}
+@keyframes bgUp {
+  from {
+    background-color: transparent;
+ }
+  to {
+    background-color: black;
+ }
+}
+@keyframes bgDown {
+  from {
+    background-color: black;
+ }
+  to {
+    background-color: transparent;
+ }
+}
+@keyframes scaleUp {
+  from {
+    transform: scale(1) rotate(45deg);
+ }
+  to {
+    transform: scale(2) rotate(45deg);
+ }
+}
+@keyframes scaleDown {
+  from {
+    transform: scale(1.5);
+ }
+  to {
+    transform: scale(1);
+ }
+}
+@keyframes translateLeftDot {
+  from {
+    transform: translate(20px, -50%);
+ }
+  to {
+    transform: translate(0px, -50%);
+ }
+}
+@keyframes translateRightDot {
+  from {
+    transform: translate(-20px, -50%);
+ }
+  to {
+    transform: translate(0px, -50%);
+ }
+}
+/* 
+.cursor {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #fefefe;
+  border-radius: 100%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 150ms ease;
+  transition-property: background-color, opacity, transform, mix-blend-mode;
+  z-index: 9999;
+  mix-blend-mode: difference;
+} */
+
+.cursor--clicked {
+  /* animation: scaleUp 0.3s cubic-bezier(0.77, 0, 0.175, 1); */
+  /* transform: scale(2) rotate(45deg); */
+  transform: scale(0.8) rotate(45deg) !important;
+  background-color: #fefefe;
+  transition: all 150ms ease;
+}
+
+.cursor--link-hovered {
+  transform: translate(-50%, -50%) scale(1.25);
+  background-color: #fefefe;
+}

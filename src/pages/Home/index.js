@@ -5,6 +5,7 @@ import Intro from './Intro';
 import ProjectSummary from './ProjectSummary';
 import Profile from './Profile';
 import Footer from 'components/Footer';
+import CustomCursor from 'components/CustomCursor';
 import { usePrefersReducedMotion, useRouteTransition } from 'hooks';
 import deviceModelsTexture from 'assets/device-models-phone.jpg';
 import deviceModelsTextureLarge from 'assets/device-models-phone-large.jpg';
@@ -17,7 +18,7 @@ import macbookPro from 'assets/macbook-pro.glb';
 import portrait from 'assets/portrait.glb';
 import './index.css';
 
-const disciplines = ['Product', 'Creative', 'UX', 'UI', 'Game'];
+const disciplines = ['Product', 'Creative', 'UX', 'UI', 'Interactive'];
 
 const Home = () => {
   const { status } = useRouteTransition();
@@ -28,11 +29,12 @@ const Home = () => {
   const intro = useRef();
   const projectOne = useRef();
   const projectTwo = useRef();
+  const projectThree = useRef();
   const about = useRef();
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    const revealSections = [intro, projectOne, projectTwo, about];
+    const revealSections = [intro, projectOne, projectTwo, projectThree, about];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -132,10 +134,10 @@ const Home = () => {
   return (
     <div className="home">
       <Helmet>
-        <title>Maxime Pocq | Designer + Developer</title>
+        <title>Maxime Pocq | Designer</title>
         <meta
           name="description"
-          content="Portfolio of Maxime Pocq – a creative designer & developer with a focus on motion and user experience."
+          content="Portfolio de Maxime Pocq – Creative Designer vivant en France, spécialisé dans l'interactivité, l'UI, l'UX."
         />
         <link rel="prefetch" href={iphone11} as="fetch" crossorigin="" />
         <link rel="prefetch" href={macbookPro} as="fetch" crossorigin="" />
@@ -153,12 +155,12 @@ const Home = () => {
         sectionRef={projectOne}
         visible={visibleSections.includes(projectOne.current)}
         index={1}
-        title="Device Models"
-        description="Design and development of a Figma plugin to create mockups with 3D device models."
-        buttonText="View Project"
+        title="Solbase"
+        description="Conceptualisation d'une application pour rendre le solfège accessible au plus grand nombre"
+        buttonText="Voir le projet"
         buttonLink="/projects/device-models"
         model={{
-          type: 'phone',
+          type: 'solbase',
           alt: "Device Model's default image",
           textures: [
             {
@@ -181,7 +183,29 @@ const Home = () => {
         index={2}
         title="A Tool for Everything"
         description="Creating a platform for developers to build better software."
-        buttonText="View Project"
+        buttonText="Voir le projet"
+        buttonLink="/projects/devtech-tools"
+        model={{
+          type: 'laptop',
+          alt: 'DevTech Tools Landing Page',
+          textures: [
+            {
+              src: dttTexture,
+              srcSet: `${dttTexture} 800w, ${dttTextureLarge} 1440w`,
+              placeholder: dttTexturePlaceholder,
+            },
+          ],
+        }}
+      />
+            <ProjectSummary
+        id="project-3"
+        alternate
+        sectionRef={projectThree}
+        visible={visibleSections.includes(projectThree.current)}
+        index={3}
+        title="Refonte Pornhub"
+        description="Revoir la plateforme Pornhub à travers le prisme du TechForGood."
+        buttonText="Voir le projet"
         buttonLink="/projects/devtech-tools"
         model={{
           type: 'laptop',

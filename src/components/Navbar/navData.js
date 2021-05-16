@@ -1,38 +1,38 @@
 export const navLinks = [
+  // {
+  //   label: 'Contact',
+  //   pathname: '/contact',
+  // },
   {
-    label: 'Projects',
-    pathname: '/',
-    hash: '#project-1',
-  },
-  {
-    label: 'Articles',
-    pathname: '/articles',
-  },
-  {
-    label: 'About',
+    label: 'À propos',
     pathname: '/',
     hash: '#about',
   },
+  // {
+  //   label: 'Articles',
+  //   pathname: '/articles',
+  // },
   {
-    label: 'Contact',
-    pathname: '/contact',
+    label: 'Projets',
+    pathname: '/',
+    hash: '#project-1',
   },
 ];
 
 export const socialLinks = [
   {
-    label: 'Twitter',
-    url: 'https://twitter.codyb.co',
-    icon: 'twitter',
+    label: 'Behance',
+    url: 'https://www.behance.net/tidus_khca12',
+    icon: 'behance',
   },
   {
     label: 'Dribbble',
-    url: 'https://dribbble.codyb.co',
+    url: 'https://dribbble.com/SoraYun',
     icon: 'dribbble',
   },
   {
-    label: 'Github',
-    url: 'https://github.codyb.co',
-    icon: 'github',
+    label: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/maxime-pocq/',
+    icon: 'linkedin',
   },
 ];

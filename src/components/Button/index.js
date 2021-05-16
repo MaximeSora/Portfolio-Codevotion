@@ -47,6 +47,7 @@ export const Button = forwardRef(
         ref={ref}
         {...rest}
       >
+        <p><span class="bg"></span><span class="base"></span>
         {!!icon && (
           <Icon
             className={classNames('button__icon', {
@@ -56,7 +57,7 @@ export const Button = forwardRef(
             icon={icon}
           />
         )}
-        {!!children && <span className="button__text">{children}</span>}
+        {!!children && <span class="button__text">{children}</span>}
         {!!iconEnd && (
           <Icon
             className={classNames('button__icon', {
@@ -67,6 +68,7 @@ export const Button = forwardRef(
           />
         )}
         {loading && <Loader className="button__loader" size={32} text={loadingText} />}
+        </p>
       </Component>
     );
   }

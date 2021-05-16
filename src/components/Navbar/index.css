@@ -70,21 +70,27 @@
   flex-direction: row-reverse;
 }
 
+.navbar__nav-list.navbar__nav-link:active, .navbar__nav-list.navbar__nav-link:hover {
+  opacity: 0.5;
+}
+
 .navbar__nav-link {
   padding: var(--spaceM);
-  color: rgb(var(--rgbText) / 0.8);
+  color: rgb(var(--rgbText) / 0.7);
   font-weight: var(--fontWeightMedium);
   font-size: var(--navbarNavFontSize);
   text-decoration: none;
   position: relative;
   transition: color var(--durationS) ease 0.1s;
+  transition: all ease 0.3s;
   line-height: 1;
 
   &:hover,
   &:active,
-  &:focus,
-  &[aria-current='page'] {
-    color: var(--colorTextBody);
+  &:focus
+   {
+    /* color: rgb(var(--rgbText)); */
+    color: var(--rgbPrimary);
   }
 
   &::after {
@@ -107,8 +113,8 @@
 
   &:hover:after,
   &:active:after,
-  &:focus:after,
-  &[aria-current='page']:after {
+  &:focus:after
+   {
     transform: scaleX(1) translateY(-2px);
     transform-origin: left;
   }
@@ -138,10 +144,10 @@
 
   @media (--mediaMobile), (max-height: 696px) {
     & {
-      flex-direction: row;
-      position: absolute;
-      bottom: var(--spaceXL);
-      left: var(--spaceXL);
+      flex-direction: column;
+      /* position: absolute; */
+      /* bottom: var(--spaceXL);
+      left: var(--spaceXL); */
     }
   }
 
@@ -223,11 +229,13 @@
 }
 
 .navbar__mobile-nav-link {
-  width: 100%;
-  font-size: var(--navbarNavFontSize);
+  /* width: 100%; */
+  font-size: calc(var(--navbarNavFontSize) * 3);
   text-align: center;
+  text-transform: uppercase;
+  font-weight: var(--fontWeightBold);
   text-decoration: none;
-  color: var(--colorTextBody);
+  color: rgb(var(--rgbPrimary));
   padding: var(--spaceL);
   opacity: 0;
   transition-property: opacity;
@@ -255,13 +263,20 @@
     }
   }
 
+  &:hover,
+  &:active,
+  &:focus {
+    color: var(--colorTextTitle);
+  }
+
   &::after {
     content: '';
     position: absolute;
     top: 50%;
     right: var(--space3XL);
     left: var(--space3XL);
-    height: 4px;
+    height: 5px;
+    border-radius: 5px;
     background: rgb(var(--rgbAccent));
     transform: scaleX(0) translateY(-1px);
     transform-origin: right;

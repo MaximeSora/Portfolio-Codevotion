@@ -5,14 +5,15 @@ _______________________________________________________________________________
 
 DESIGNER
 
-Cody Bennett
+Maxime Pocq
 Designer, Full-Stack Developer
 
 Design tools:
 Figma
-InVision
+Protopie
+After Effects
 
-github.com/CodyJasonBennett
+github.com/MaximeSora
 
 _______________________________________________________________________________
 
@@ -20,14 +21,14 @@ TECHNOLOGY
 
 React
 Storybook
-Three
+Three.JS
 Popmotion
 
 _______________________________________________________________________________
 
 FONTS
 
-Gotham
+Inter
 SFMono
 Hiragino Kaku Gothic
 Respira Black

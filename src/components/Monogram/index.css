@@ -1,9 +1,11 @@
 .monogram {
   fill: var(--colorTextTitle);
   transition: fill var(--durationL) ease;
+  border: 1px solid transparent;
 }
 
 .monogram__highlight {
+  border: 1px solid transparent;
   fill: rgb(var(--rgbAccent));
   opacity: 0;
   transform: scale3d(1, 0, 1);

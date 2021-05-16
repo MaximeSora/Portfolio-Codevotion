@@ -58,7 +58,7 @@ function Navbar(props) {
       <RouterLink
         className="navbar__logo"
         to={{ pathname: '/', hash: '#intro', state: hashKey }}
-        aria-label="Maxime Pocq, Designer & Developer"
+        aria-label="Maxime Pocq, Designer"
         onClick={handleMobileNavClick}
         onMouseUp={blurOnMouseUp}
       >
@@ -102,11 +102,11 @@ function Navbar(props) {
                 onClick={handleMobileNavClick}
                 to={{ pathname, hash, state: hashKey }}
                 onMouseUp={blurOnMouseUp}
-                style={{
-                  transitionDelay: numToMs(
-                    Number(msToNum(tokens.base.durationS)) + index * 50
-                  ),
-                }}
+                // style={{
+                //   transitionDelay: numToMs(
+                //     Number(msToNum(tokens.base.durationS)) + index * 50
+                //   ),
+                // }}
               >
                 {label}
               </NavLink>

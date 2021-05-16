@@ -22,25 +22,27 @@ const ProfileText = ({ status, titleId }) => (
       level={3}
       id={titleId}
     >
-      <DecoderText text="Hi there" start={status !== 'exited'} delay={500} />
+      <DecoderText text="Bonjour" start={status !== 'exited'} delay={500} />
     </Heading>
     <Text
       className={classNames('profile__description', `profile__description--${status}`)}
       size="l"
     >
-      My name is Maxime. I am a Creative Designer & Developer with a focus on Motion
-      Design and User Experience. My projects include UI/UX design, animation,
-      illustration, and development. If you are interested in the tools and software I
-      use, check out my <Link href="/uses">uses page</Link>.
+      👋 Moi c'est Maxime, je suis Creative Designer avec un background dans le jeu vidéo et le développement. 
+      </Text>
+      <Text
+      className={classNames('profile__description', `profile__description--${status}`)}
+      size="l"
+    >
+      Je me focalise sur plusieurs compétences : le Design, l'animation, le prototypage, le développement d'interactions. 
+      Mais mon objectif est toujours le même : Comment créer l'expérience qui sera la plus appréciée des utilisateurs ?
     </Text>
     <Text
       className={classNames('profile__description', `profile__description--${status}`)}
       size="l"
     >
-      In my spare time, I like to{' '}
-      <Link href="https://youtube.codyb.co">play/compose music</Link> and{' '}
-      <Link href="/articles">write technical articles</Link>. I am always interested in
-      new projects, so feel free to drop me a line.
+      Je suis toujours intéressé à l'idée de travailler sur de nouveaux projets, donc n'hésitez pas à m'envoyer un message.
+  
     </Text>
   </Fragment>
 );
@@ -62,14 +64,24 @@ const Profile = ({ id, visible, sectionRef }) => {
           <div className="profile__content">
             <div className="profile__column">
               <ProfileText status={status} titleId={titleId} />
-              <Button
-                secondary
+              {/* <Button
                 className={classNames('profile__button', `profile__button--${status}`)}
                 href="/contact"
                 icon="send"
               >
-                Send me a message
-              </Button>
+                M'envoyer un email
+              </Button> */}
+
+              <div
+                className={classNames(
+                  'project-summary__button',
+                  `project-summary__button--${status}`
+                )}
+              >
+                <Button iconHoverShift href="mailto:maxime.pocq@gmail.com" icon="send">
+                  M'envoyer un email
+                </Button>
+              </div>
             </div>
             <div className="profile__column">
               <div className="profile__tag" aria-hidden>
@@ -85,7 +97,7 @@ const Profile = ({ id, visible, sectionRef }) => {
                     `profile__tag-text--${status}`
                   )}
                 >
-                  About Me
+                  À propos
                 </div>
               </div>
               <div className="profile__image-wrapper">
