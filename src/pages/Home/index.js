@@ -181,10 +181,10 @@ const Home = () => {
         sectionRef={projectTwo}
         visible={visibleSections.includes(projectTwo.current)}
         index={2}
-        title="A Tool for Everything"
+        title="Jeux Olympiques"
         description="Creating a platform for developers to build better software."
         buttonText="Voir le projet"
-        buttonLink="/projects/devtech-tools"
+        buttonLink="/projects/jo"
         model={{
           type: 'laptop',
           alt: 'DevTech Tools Landing Page',

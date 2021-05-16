@@ -108,8 +108,8 @@ function createMediaTokenProperties() {
           :root {
             --maxWidthS: 480px;
             --maxWidthM: 640px;
-            --maxWidthL: 1000px;
-            --maxWidthXL: 1100px;
+            --maxWidthL: 1200px;
+            --maxWidthXL: 1440px;
             --spaceOuter: 48px;
             --fontSizeH0: 6.25rem;
             --fontSizeH1: 4.375rem;
@@ -150,7 +150,7 @@ export const tokenStyles = `
     --fontSizeBodyM: 1.125rem;
     --fontSizeBodyS: 1rem;
     --fontSizeBodyXS: 0.875rem;
-    --lineHeightTitle: 1.1;
+    --lineHeightTitle: 1.3;
     --lineHeightBody: 1.5;
     --maxWidthS: 540px;
     --maxWidthM: 720px;

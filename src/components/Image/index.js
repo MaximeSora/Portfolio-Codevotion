@@ -74,6 +74,7 @@ const ImageElements = ({
   const placeholderRef = useRef();
   const videoRef = useRef();
   const isVideo = src?.endsWith('.mp4');
+  const isVideoCheck = srcSet?.endsWith('.mp4');
   const imgSrc = src || srcSet?.split(' ')[0];
   const showFullRes = !prerender && inViewport;
 

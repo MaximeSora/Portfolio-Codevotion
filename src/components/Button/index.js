@@ -26,7 +26,8 @@ export const Button = forwardRef(
     },
     ref
   ) => {
-    const isExternalLink = href?.includes('://');
+    const isMail = href?.startsWith('mailto:');
+    const isExternalLink = isMail || href?.includes('://');
     const useLinkTag = isExternalLink || href?.[0] === '#';
     const linkComponent = useLinkTag ? 'a' : Link;
     const defaultComponent = href ? linkComponent : 'button';

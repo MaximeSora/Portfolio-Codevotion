@@ -24,32 +24,32 @@ import prerender from 'utils/prerender';
 import deviceModelsBackground from 'assets/device-models-background.jpg';
 import deviceModelsBackgroundLarge from 'assets/device-models-background-large.jpg';
 import deviceModelsBackgroundPlaceholder from 'assets/device-models-background-placeholder.jpg';
-import deviceModels from 'assets/device-models.jpg';
+import arborescence from 'assets/jo/arbo.png';
 import deviceModelsLarge from 'assets/device-models-large.jpg';
-import deviceModelsPlaceholder from 'assets/device-models-placeholder.jpg';
-import deviceModelsBranding from 'assets/device-models-branding.png';
-import deviceModelsBrandingLarge from 'assets/device-models-branding-large.png';
-import deviceModelsBrandingPlaceholder from 'assets/device-models-branding-placeholder.png';
-import deviceModelsBanner from 'assets/device-models-banner.jpg';
-import deviceModelsBannerLarge from 'assets/device-models-banner-large.jpg';
-import deviceModelsBannerPlaceholder from 'assets/device-models-banner-placeholder.jpg';
-import deviceModelsComponentsDark from 'assets/device-models-components-dark.jpg';
-import deviceModelsComponentsDarkLarge from 'assets/device-models-components-dark-large.jpg';
-import deviceModelsComponentsDarkPlaceholder from 'assets/device-models-components-dark-placeholder.jpg';
-import deviceModelsComponentsLight from 'assets/device-models-components-light.jpg';
-import deviceModelsComponentsLightLarge from 'assets/device-models-components-light-large.jpg';
-import deviceModelsComponentsLightPlaceholder from 'assets/device-models-components-light-placeholder.jpg';
-import deviceModelsLogo from 'assets/device-models-logo.png';
-import deviceModelsLogoLarge from 'assets/device-models-logo-large.png';
-import deviceModelsLogoPlaceholder from 'assets/device-models-logo-placeholder.png';
+import arborescencePlaceholder from 'assets/jo/arbo.png';
+import torch from 'assets/jo/endi.mp4';
+import torchPlaceholder from 'assets/jo/endi.mp4';
+import concept from 'assets/jo/girl_run_tel_7.mp4';
+import conceptPlaceholder from 'assets/jo/girl_run_tel_7.mp4';
+import girlHome from 'assets/jo/stretch_mobile.mp4';
+import girlHomePlaceholder from 'assets/jo/stretch_mobile.mp4';
+import girlRun from 'assets/jo/mockuprun.mp4';
+import girlRunPlaceholder from 'assets/jo/mockuprun.mp4';
+import girlWin from 'assets/jo/mockupwin.mp4';
+import girlWinPlaceholder from 'assets/jo/mockupwin.mp4';
+import girlProfile from 'assets/jo/mockupwin.mp4';
+import girlProfilePlaceholder from 'assets/jo/mockupwin.mp4';
+import girlRank from 'assets/jo/mockupclassement.mp4';
+import girlRankPlaceholder from 'assets/jo/mockupclassement.mp4';
+import appLive from 'assets/jo/mockuplive3.mp4';
+import appLivePlaceholder from 'assets/jo/mockuplive3.mp4';
 
-const title = 'Device Models';
+const title = 'Fan expérience pour les Jeux Olympiques';
 const description =
-  'Design and development of a Figma plugin to create mockups with 3D device models.';
+  "Création d'une expérience immersive, interaactive et accessible pour les fans qui ne peuvent assister physiquement à l'événement";
 const roles = [
-  'Creative Direction',
-  'UX and UI Design',
-  'Front End & App Development',
+  'Product Design',
+  'Direction artistique',
   'Motion Design',
 ];
 
@@ -87,8 +87,8 @@ const ProjectDM = () => {
           <ProjectSectionContent>
             <ProjectImage
               raised
-              srcSet={`${deviceModels} 1280w, ${deviceModelsLarge} 2560w`}
-              placeholder={deviceModelsPlaceholder}
+              srcSet={`${arborescence} 1280w, ${arborescence} 2560w`}
+              placeholder={arborescencePlaceholder}
               sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 800px, 1000px`}
               alt="Device Models plugin interface."
             />
@@ -114,44 +114,45 @@ const ProjectDM = () => {
         <ProjectSection light>
           <ProjectSectionColumns>
             <ProjectTextRow>
-              <ProjectSectionHeading>Visual Identity</ProjectSectionHeading>
+              <ProjectSectionHeading>Un challenge international</ProjectSectionHeading>
               <ProjectSectionText>
-                With a clear mission and audience in mind, it was time to create a name
-                for itself. Branding was critical to stand out in the Figma catalog, where
-                identity in a small 64x64 pixel square was the first thing a user sees.
-              </ProjectSectionText>
-              <ProjectSectionText>
-                I complimented the 3D feel of Device Models with a low poly monogram and
-                bright, modern colors to portray its classy modernism. This included a
-                matching typeface and color scheme that kept true to the feel of Figma.
+                Nous avons décidé de rendre actif le spectateur en lui proposant de participer physiquement à une course de relais qui démarre en même temps que le relais officiel des jeux olympiques et se termine au début officiel des JO.
+                L’objectif est simple, chaque coureur doit accumuler le maximum de km pour son pays. À la fin de l'événement, un calcul est fait pour évaluer quel pays possède la population la plus sportive.
               </ProjectSectionText>
             </ProjectTextRow>
             <Image
-              srcSet={`${deviceModelsBranding} 400w, ${deviceModelsBrandingLarge} 898w`}
-              placeholder={deviceModelsBrandingPlaceholder}
-              sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 100vw, 50vw`}
-              alt="The Device Models color palette and logo, featuring a low poly monogram to convey its 3D allure."
+              src={`${concept}`}
+              placeholder={arborescencePlaceholder}
+              alt="A promotional banner for Device Models, displaying a variety of devices and bright colors."
+              sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 800px, 1400px`}
             />
+          </ProjectSectionColumns>
+        </ProjectSection>
+        <ProjectSection>
+          <ProjectSectionColumns>
+            <Image
+              src={`${torch}`}
+              placeholder={arborescencePlaceholder}
+              alt="A promotional banner for Device Models, displaying a variety of devices and bright colors."
+              sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 800px, 1000px`}
+            />
+            <ProjectTextRow>
+              <ProjectSectionHeading>Interagir avec la Flamme Olympique</ProjectSectionHeading>
+              <ProjectSectionText>
+              Afin de manifester leur soutien au porteur de la flamme olympique, les utilisateurs peuvent envoyer des emojis depuis leur téléphones qui sont retranscrit en direct sur une torche connectée transportée par le coureur.
+              La torche possède des écrans sur chacun de ses côtés qui retransmettent en temps réel les emojis envoyés par les internautes.
+              Elle possède aussi une couleur qui évolue en fonction du nombre de personnes connectées à l’application.
+              </ProjectSectionText>
+            </ProjectTextRow>
           </ProjectSectionColumns>
         </ProjectSection>
         <ProjectSection>
           <ProjectSectionContent>
             <Image
-              key={themeId}
-              srcSet={`${
-                isDark ? deviceModelsComponentsDark : deviceModelsComponentsLight
-              } 800w, ${
-                isDark
-                  ? deviceModelsComponentsDarkLarge
-                  : deviceModelsComponentsLightLarge
-              } 1000w`}
-              placeholder={
-                isDark
-                  ? deviceModelsComponentsDarkPlaceholder
-                  : deviceModelsComponentsLightPlaceholder
-              }
-              alt={`A set of ${themeId} themed components for the Device Models design system`}
-              sizes="100vw"
+              srcSet={`${arborescence} 400w, ${arborescence} 898w`}
+              placeholder={arborescencePlaceholder}
+              sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 100vw, 50vw`}
+              alt="The Device Models color palette and logo, featuring a low poly monogram to convey its 3D allure."
             />
             <ProjectTextRow>
               <SegmentedControl
@@ -198,8 +199,9 @@ const ProjectDM = () => {
               </ProjectSectionText>
             </ProjectTextRow>
             <Image
-              srcSet={`${deviceModelsBanner} 1280w, ${deviceModelsBannerLarge} 2560w`}
-              placeholder={deviceModelsBannerPlaceholder}
+              role="presentation"
+              src={`${arborescence}`}
+              placeholder={arborescencePlaceholder}
               alt="A promotional banner for Device Models, displaying a variety of devices and bright colors."
               sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 800px, 1000px`}
             />
@@ -209,11 +211,11 @@ const ProjectDM = () => {
           <ProjectSectionContent>
             <ProjectTextRow center centerMobile noMargin>
               <Image
-                srcSet={`${deviceModelsLogo} 180w, ${deviceModelsLogoLarge} 320w`}
-                placeholder={deviceModelsLogoPlaceholder}
-                alt="The Device Models logo."
-                sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 100vw, 220px`}
-                style={{ maxWidth: 220, width: '100%', marginBottom: 30 }}
+                role="presentation"
+                src={`${arborescence}`}
+                placeholder={arborescencePlaceholder}
+                alt="A promotional banner for Device Models, displaying a variety of devices and bright colors."
+                sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 800px, 1000px`}
               />
               <ProjectSectionHeading>The Result</ProjectSectionHeading>
               <ProjectSectionText>
