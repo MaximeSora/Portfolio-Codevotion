@@ -72,17 +72,6 @@ const ProjectDM = () => {
           roles={roles}
         />
         <ProjectSection first>
-          <ProjectSectionContent>
-            <ProjectImage
-              raised
-              srcSet={`${deviceModels} 1280w, ${deviceModelsLarge} 2560w`}
-              placeholder={deviceModelsPlaceholder}
-              sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 800px, 1000px`}
-              alt="Device Models plugin interface."
-            />
-          </ProjectSectionContent>
-        </ProjectSection>
-        <ProjectSection first>
           <ProjectSectionColumns>
             <ProjectTextRow>
               <ProjectSectionHeading>Contexte du projet</ProjectSectionHeading>
