@@ -15,7 +15,7 @@ const initDelay = 300;
 export function ProjectHeader({
   title,
   description,
-  linkLabel = 'Visit website',
+  linkLabel = 'Voir le prototype',
   url,
   roles,
   className,
@@ -51,7 +51,7 @@ export function ProjectHeader({
               className={classNames('project__link-button', {
                 'project__link-button--entered': !prerender,
               })}
-              icon="chevronRight"
+              iconEnd="chevronRight"
               href={url}
             >
               {linkLabel}
@@ -164,7 +164,28 @@ export const ProjectSectionContent = ({ className, width = 'l', ...rest }) => (
   />
 );
 
-export const ProjectSectionHeading = ({ className, level = 3, as = 'h2', ...rest }) => (
+export const ProjectSectionBigHeading = ({ className, level = 2, as = 'h2', ...rest }) => (
+  <Heading
+    className={classNames('project__section-big-heading', className)}
+    as={as}
+    level={level}
+    align="auto"
+    {...rest}
+  />
+);
+
+
+export const ProjectSectionHeading = ({ className, level = 3, as = 'h3', ...rest }) => (
+  <Heading
+    className={classNames('project__section-heading', className)}
+    as={as}
+    level={level}
+    align="auto"
+    {...rest}
+  />
+);
+
+export const ProjectSectionNextProject = ({ className, level = 1, as = 'h2', ...rest }) => (
   <Heading
     className={classNames('project__section-heading', className)}
     as={as}

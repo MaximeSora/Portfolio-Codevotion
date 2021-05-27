@@ -61,6 +61,7 @@
 
 .profile__column {
   position: relative;
+  margin-top: 70px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -90,7 +91,7 @@
 }
 
 .profile__tag {
-  margin-top: 220px;
+  margin-top: -70px;
   margin-bottom: 40px;
   display: grid;
   grid-template-columns: var(--space4XL) 1fr;

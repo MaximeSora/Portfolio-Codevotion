@@ -10,6 +10,8 @@ import { usePrefersReducedMotion, useRouteTransition } from 'hooks';
 import deviceModelsTexture from 'assets/device-models-phone.jpg';
 import deviceModelsTextureLarge from 'assets/device-models-phone-large.jpg';
 import deviceModelsTexturePlaceholder from 'assets/device-models-phone-placeholder.jpg';
+import jo from 'assets/jo/jo-thumbnail.mp4';
+import pornhub from 'assets/pornhub/thumbnail.png';
 import dttTexture from 'assets/dtt.jpg';
 import dttTextureLarge from 'assets/dtt-large.jpg';
 import dttTexturePlaceholder from 'assets/dtt-placeholder.jpg';
@@ -156,22 +158,17 @@ const Home = () => {
         visible={visibleSections.includes(projectOne.current)}
         index={1}
         title="Solbase"
-        description="Conceptualisation d'une application pour rendre le solfège accessible au plus grand nombre"
+        description="Conceptualisation d'une application pour rendre le solfège accessible au plus grand nombre."
         buttonText="Voir le projet"
-        buttonLink="/projects/device-models"
+        buttonLink="/projects/solbase"
         model={{
           type: 'solbase',
-          alt: "Device Model's default image",
+          alt: "Thumbnail Solbase",
           textures: [
             {
-              src: deviceModelsTexture,
-              srcSet: `${deviceModelsTexture} 254w, ${deviceModelsTextureLarge} 508w`,
-              placeholder: deviceModelsTexturePlaceholder,
-            },
-            {
-              src: deviceModelsTexture,
-              srcSet: `${deviceModelsTexture} 254w, ${deviceModelsTextureLarge} 508w`,
-              placeholder: deviceModelsTexturePlaceholder,
+              src: jo,
+              srcSet: `${jo} 254w, ${jo} 508w`,
+              placeholder: jo,
             },
           ],
         }}
@@ -182,17 +179,22 @@ const Home = () => {
         visible={visibleSections.includes(projectTwo.current)}
         index={2}
         title="Jeux Olympiques"
-        description="Creating a platform for developers to build better software."
+        description="Expérience immersive et interactive pour les fans des Jeux Olympiques."
         buttonText="Voir le projet"
         buttonLink="/projects/jo"
         model={{
-          type: 'laptop',
-          alt: 'DevTech Tools Landing Page',
+          type: 'jo',
+          alt: 'Animation Thumbnail JO',
           textures: [
             {
-              src: dttTexture,
-              srcSet: `${dttTexture} 800w, ${dttTextureLarge} 1440w`,
-              placeholder: dttTexturePlaceholder,
+              src: deviceModelsTexture,
+              srcSet: `${deviceModelsTexture} 254w, ${deviceModelsTextureLarge} 508w`,
+              placeholder: deviceModelsTexturePlaceholder,
+            },
+            {
+              src: deviceModelsTexture,
+              srcSet: `${deviceModelsTexture} 254w, ${deviceModelsTextureLarge} 508w`,
+              placeholder: deviceModelsTexturePlaceholder,
             },
           ],
         }}
@@ -203,18 +205,18 @@ const Home = () => {
         sectionRef={projectThree}
         visible={visibleSections.includes(projectThree.current)}
         index={3}
-        title="Refonte Pornhub"
+        title="Pornhub Eco-Friendly"
         description="Revoir la plateforme Pornhub à travers le prisme du TechForGood."
         buttonText="Voir le projet"
-        buttonLink="/projects/devtech-tools"
+        buttonLink="/projects/pornhub"
         model={{
-          type: 'laptop',
-          alt: 'DevTech Tools Landing Page',
+          type: 'pornhub',
+          alt: 'Thumbnail Pornhub',
           textures: [
             {
-              src: dttTexture,
-              srcSet: `${dttTexture} 800w, ${dttTextureLarge} 1440w`,
-              placeholder: dttTexturePlaceholder,
+              src: jo,
+              srcSet: `${jo} 254w, ${jo} 508w`,
+              placeholder: jo,
             },
           ],
         }}

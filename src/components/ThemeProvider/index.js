@@ -113,8 +113,8 @@ function createMediaTokenProperties() {
             --spaceOuter: 48px;
             --fontSizeH0: 6.25rem;
             --fontSizeH1: 4.375rem;
-            --fontSizeH2: 3.25rem;
-            --fontSizeH3: 2.25rem;
+            --fontSizeH2: 3.75rem;
+            --fontSizeH3: 2.5rem;
             --fontSizeH4: 1.625rem;
           }
         }
@@ -142,19 +142,19 @@ export const tokenStyles = `
     --fontWeightBold: 700;
     --fontSizeH0: 8.75rem;
     --fontSizeH1: 6.25rem;
-    --fontSizeH2: 3.625rem;
-    --fontSizeH3: 2.375rem;
+    --fontSizeH2: 4.5rem;
+    --fontSizeH3: 3.375rem;
     --fontSizeH4: 1.75rem;
     --fontSizeBodyXL: 1.375rem;
     --fontSizeBodyL: 1.25rem;
     --fontSizeBodyM: 1.125rem;
     --fontSizeBodyS: 1rem;
     --fontSizeBodyXS: 0.875rem;
-    --lineHeightTitle: 1.3;
-    --lineHeightBody: 1.5;
+    --lineHeightTitle: 1.4;
+    --lineHeightBody: 1.6;
     --maxWidthS: 540px;
     --maxWidthM: 720px;
-    --maxWidthL: 1096px;
+    --maxWidthL: 1400px;
     --maxWidthXL: 1680px;
     --spaceOuter: 64px;
     --spaceXS: 4px;

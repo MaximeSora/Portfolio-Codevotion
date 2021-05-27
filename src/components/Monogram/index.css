@@ -4,6 +4,12 @@
   border: 1px solid transparent;
 }
 
+.monogram:hover, .monogram:active {
+  fill: rgb(var(--rgbPrimary));
+  transition: fill var(--durationL) ease;
+  border: 1px solid transparent;
+}
+
 .monogram__highlight {
   border: 1px solid transparent;
   fill: rgb(var(--rgbAccent));

@@ -20,8 +20,10 @@ import {
   ProjectImage,
 } from 'components/ProjectLayout';
 
-import deviceModelsLarge from 'assets/device-models-large.jpg';
+import solbaseLarge from 'assets/solbase/thumbnail.png';
 import deviceModelsPlaceholder from 'assets/device-models-placeholder.jpg';
+import pornhubLarge from 'assets/pornhub/thumbnail.png';
+import joLarge from 'assets/jo/jo-thumbnail.mp4';
 
 
 const ProjectSummary = ({
@@ -190,10 +192,54 @@ const ProjectSummary = ({
           />
             <ProjectImage
               raised
-              srcSet={`${deviceModels} 1280w, ${deviceModelsLarge} 2560w`}
-              placeholder={deviceModelsPlaceholder}
+              srcSet={`${solbaseLarge} 1280w, ${solbaseLarge} 2560w`}
+              placeholder={solbaseLarge}
               sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 800px, 1000px`}
-              alt="Device Models plugin interface."
+              alt="Solbase Thumbnail."
+            />
+        </Fragment>
+      )}
+      {model.type === 'jo' && (
+        <Fragment>
+          <KatakanaProject
+            style={{ '--opacity': svgOpacity }}
+            className={classNames(
+              'project-summary__svg',
+              'project-summary__svg--left',
+              `project-summary__svg--${status}`,
+              {
+                'project-summary__svg--light': theme.themeId === 'light',
+              }
+            )}
+          />
+            <ProjectImage
+              raised
+              src={`${joLarge}`}
+              placeholder={joLarge}
+              sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 800px, 1000px`}
+              alt="Thumbnail Jeux Olympiques"
+            />
+        </Fragment>
+      )}
+            {model.type === 'pornhub' && (
+        <Fragment>
+          <KatakanaProject
+            style={{ '--opacity': svgOpacity }}
+            className={classNames(
+              'project-summary__svg',
+              'project-summary__svg--left',
+              `project-summary__svg--${status}`,
+              {
+                'project-summary__svg--light': theme.themeId === 'light',
+              }
+            )}
+          />
+            <ProjectImage
+              raised
+              srcSet={`${pornhubLarge} 1280w, ${pornhubLarge} 2560w`}
+              placeholder={pornhubLarge}
+              sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 800px, 1000px`}
+              alt="Pornhub Thumbnail."
             />
         </Fragment>
       )}
