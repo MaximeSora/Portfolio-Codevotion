@@ -68,7 +68,7 @@ const ProjectDM = () => {
         <ProjectHeader
           title={title}
           description={description}
-          url="https://www.behance.net/gallery/115425137/Solbase-UIUX-Musical-Games-Webapp-Design?tracking_source=search_projects_recommended%7Csolbase"
+          // url="https://www.behance.net/gallery/115425137/Solbase-UIUX-Musical-Games-Webapp-Design?tracking_source=search_projects_recommended%7Csolbase"
           roles={roles}
         />
         <ProjectSection first>
@@ -96,6 +96,9 @@ const ProjectDM = () => {
               découverte des étapes les plus primordiales pour bien progresser dans ce domaine. Le but étant d'amener un usage régulier de notre produit via la gamification et ses récompenses, 
               afin de progresser sur le long terme.
             </ProjectSectionText>
+            <Button iconHoverShift href="https://www.behance.net/gallery/115425137/Solbase-UIUX-Musical-Games-Webapp-Design?tracking_source=search_projects_recommended%7Csolbase" iconEnd="arrowRight">
+              Voir le projet sur Behance
+            </Button>
           </ProjectTextRow>
         </ProjectSection>
         <ProjectSection>

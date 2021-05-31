@@ -179,7 +179,7 @@
 }
 
 
-div.project-summary__button {
+div.project-summary__button, div.project__text-row {
   display: flex;
   /* align-items: center; */
   justify-content: center;
@@ -197,17 +197,17 @@ div.project-summary__button {
   position: relative;
   margin: 10px 0;
 } */
-div.project-summary__button a:hover > p {
+div.project-summary__button a:hover > p, div.project__text-row a:hover > p {
   color: rgb(var(--rgbBackground));
 }
-div.project-summary__button a > p {
+div.project-summary__button a > p, div.project__text-row a > p {
   background: rgb(var(--rgbPrimary));
   color: rgb(var(--rgbBackground));
 }
-div.project-summary__button a > p span.base {
+div.project-summary__button a > p span.base, div.project__text-row a > p span.base {
   border: 1px solid transparent;
 }
-div.project-summary__button a:after, div.project-summary__button a:before {
+div.project-summary__button a:after, div.project-summary__button a:before, div.project__text-row a:after, div.project__text-row a:before {
   content: "";
   width: 1px;
   position: absolute;
@@ -217,11 +217,11 @@ div.project-summary__button a:after, div.project-summary__button a:before {
   top: 50%;
   transform: translateY(-50%);
 }
-div.project-summary__button a:before {
+div.project-summary__button a:before, div.project__text-row a:before {
   right: 0;
   left: initial;
 }
-div.project-summary__button a p {
+div.project-summary__button a p, div.project__text-row a p {
   margin: 0;
   height: 54px;
   line-height: 54px;
@@ -242,7 +242,7 @@ div.project-summary__button a p {
   justify-content: center;
   align-items: center;
 }
-div.project-summary__button a p span.base {
+div.project-summary__button a p span.base, div.project__text-row a p span.base {
   box-sizing: border-box;
   position: absolute;
   z-index: 2;
@@ -251,7 +251,7 @@ div.project-summary__button a p span.base {
   left: 0;
   /* border: 1px solid #ff4655; */
 }
-div.project-summary__button a p span.base:before {
+div.project-summary__button a p span.base:before, div.project__text-row a p span.base:before {
   content: "";
   width: 2px;
   height: 2px;
@@ -261,7 +261,7 @@ div.project-summary__button a p span.base:before {
   position: absolute;
   transition: 0.3s ease-out all;
 }
-div.project-summary__button a p span.bg {
+div.project-summary__button a p span.bg, div.project__text-row a p span.bg {
   left: -5%;
   position: absolute;
   background: rgb(var(--rgbText));
@@ -271,7 +271,7 @@ div.project-summary__button a p span.bg {
   transition: 0.3s ease-out all;
   transform: skewX(-10deg);
 }
-div.project-summary__button a p span.button__text {
+div.project-summary__button a p span.button__text, div.project__text-row a p span.button__text {
   z-index: 4;
   width: 100%;
   height: 100%;
@@ -280,7 +280,7 @@ div.project-summary__button a p span.button__text {
   left: 0;
   top: 0;
 }
-div.project-summary__button a p span.button__text:after {
+div.project-summary__button a p span.button__text:after, div.project__text-row a p span.button__text:after {
   transition: 0.3s ease-out all;
   content: '';
   transition-property: opacity, color, background;
@@ -297,12 +297,12 @@ div.project-summary__button a p span.button__text:after {
   z-index: 5;
   /* clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%); */
 }
-div.project-summary__button a:hover {
+div.project-summary__button a:hover, div.project__text-row a:hover {
   color: #ece8e1;
 }
-div.project-summary__button a:hover span.bg {
+div.project-summary__button a:hover span.bg, div.project__text-row a:hover span.bg {
   width: 110%;
 }
-div.project-summary__button a:hover span.button__text:after {
+div.project-summary__button a:hover span.button__text:after, div.project__text-row a:hover span.button__text:after {
   background: #ece8e1;
 }

@@ -122,7 +122,7 @@
 
 .image__element--loaded {
   opacity: 1;
-  border-radius: 12px;
+  /* border-radius: 12px; */
 }
 
 .image__button {

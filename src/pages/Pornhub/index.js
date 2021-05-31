@@ -68,7 +68,7 @@ const ProjectDM = () => {
         <ProjectHeader
           title={title}
           description={description}
-          url="https://esd-paris.medium.com/redesign-pornhub-2020-aa368003c1cb"
+          // url="https://esd-paris.medium.com/redesign-pornhub-2020-aa368003c1cb"
           roles={roles}
         />
         <ProjectSection first>
@@ -96,6 +96,9 @@ const ProjectDM = () => {
             Ce re-design de PornHub consiste à proposer une web app mobile de vidéos éphémères qui sera dans un premier temps proposée en version beta. La principale nouveauté par rapport à l’existant est l’ajout de contenus audios.
              L’utilisateur pourra écouter des musiques d’ambiance, des histoires érotiques, du porno audio ou encore de l’ASMR.
             </ProjectSectionText>
+            <Button iconHoverShift href="https://esd-paris.medium.com/redesign-pornhub-2020-aa368003c1cb" iconEnd="arrowRight">
+              Voir le projet sur Medium
+            </Button>
           </ProjectTextRow>
         </ProjectSection>
         <ProjectSection>
