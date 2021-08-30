@@ -15,6 +15,14 @@ import { reflow } from 'utils/transition';
 import prerender from 'utils/prerender';
 import './reset.css';
 import './index.css';
+// import ReactGA from 'react-ga';
+// import { hotjar } from 'react-hotjar';
+
+// hotjar.initialize(2578079, 6);
+// hotjar.identify('USER_ID', { userProperty: 'value' });
+
+// const TRACKING_ID = "UA-52091685-1"; // YOUR_OWN_TRACKING_ID
+// ReactGA.initialize(TRACKING_ID);
 
 const Home = lazy(() => import('pages/Home'));
 const Contact = lazy(() => import('pages/Contact'));
@@ -30,10 +38,10 @@ const Page404 = lazy(() => import('pages/404'));
 export const AppContext = createContext();
 export const TransitionContext = createContext();
 
-const repoPrompt = `\u00A9 2021-${new Date().getFullYear()} Maxime Pocq\n\nCheck out the source code: https://github.com/CodyJasonBennett/portfolio`;
+const repoPrompt = `\u00A9 2021-${new Date().getFullYear()} Maxime Pocq\n\n`;
 
 const App = () => {
-  const [storedTheme] = useLocalStorage('theme', 'dark');
+  const [storedTheme] = useLocalStorage('theme', 'light');
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
@@ -67,7 +75,7 @@ const AppRoutes = () => {
   return (
     <Fragment>
       <Helmet>
-        <link rel="canonical" href={`https://maximepocq.com${pathname}`} />
+        <link rel="canonical" href={`http://v2.maximepocq.com${pathname}`} />
       </Helmet>
       <VisuallyHidden showOnFocus as="a" className="skip-to-main" href="#MainContent">
         Skip to main content

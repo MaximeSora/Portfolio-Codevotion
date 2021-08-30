@@ -23,7 +23,7 @@
 }
 
 .project__section-inner {
-  --section-padding: calc(var(--space5XL));
+  --section-padding: calc(var(--space4XL));
 
   grid-area: 1 / 1;
   display: flex;
@@ -390,7 +390,7 @@
 }
 
 .project__section-big-heading {
-  padding-top: var(--space5XL);
+  /* padding-top: var(--space5XL); */
   margin-bottom: 0.6em;
 }
 

@@ -175,7 +175,7 @@ export const ProjectSectionBigHeading = ({ className, level = 2, as = 'h2', ...r
 );
 
 
-export const ProjectSectionHeading = ({ className, level = 3, as = 'h3', ...rest }) => (
+export const ProjectSectionHeading = ({ className, level = 4, as = 'h4', ...rest }) => (
   <Heading
     className={classNames('project__section-heading', className)}
     as={as}

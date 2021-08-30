@@ -24,6 +24,7 @@ import solbaseLarge from 'assets/solbase/thumbnail.png';
 import deviceModelsPlaceholder from 'assets/device-models-placeholder.jpg';
 import pornhubLarge from 'assets/pornhub/thumbnail.png';
 import joLarge from 'assets/jo/jo-thumbnail.mp4';
+import parcoursLarge from 'assets/pexels-pixabay-33109.jpg';
 
 
 const ProjectSummary = ({
@@ -218,6 +219,28 @@ const ProjectSummary = ({
               placeholder={joLarge}
               sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 800px, 1000px`}
               alt="Thumbnail Jeux Olympiques"
+            />
+        </Fragment>
+      )}
+      {model.type === 'parcours' && (
+        <Fragment>
+          <KatakanaProject
+            style={{ '--opacity': svgOpacity }}
+            className={classNames(
+              'project-summary__svg',
+              'project-summary__svg--left',
+              `project-summary__svg--${status}`,
+              {
+                'project-summary__svg--light': theme.themeId === 'light',
+              }
+            )}
+          />
+            <ProjectImage
+              raised
+              src={`${parcoursLarge}`}
+              placeholder={parcoursLarge}
+              sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 800px, 1000px`}
+              alt="Thumbnail Parcours"
             />
         </Fragment>
       )}

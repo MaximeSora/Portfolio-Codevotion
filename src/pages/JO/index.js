@@ -37,11 +37,11 @@ import concept from 'assets/jo/girl_run_tel_7.webm';
 import conceptPlaceholder from 'assets/jo/girl_run_tel_7.mp4';
 import girlHome from 'assets/jo/stretch_mobile.webm';
 import girlHomePlaceholder from 'assets/jo/stretch_mobile.mp4';
-// import girlRun from 'assets/jo/mockuprun.webm';
-// import girlRunPlaceholder from 'assets/jo/mockuprun.webm';
-import girlWin from 'assets/jo/mockupwin.webm';
-import girlWinPlaceholder from 'assets/jo/mockupwin.webm';
-import girlProfile from 'assets/jo/mockupwin.mp4';
+import girlRun from 'assets/jo/mockuprun.webm';
+import girlRunPlaceholder from 'assets/jo/mockuprun.webm';
+import girlWin from 'assets/jo/mockupwinnew.webm';
+import girlWinPlaceholder from 'assets/jo/mockupwinnew.webm';
+import girlProfile from 'assets/jo/mockuprofil.mp4';
 import girlProfilePlaceholder from 'assets/jo/mockupwin.mp4';
 import girlRank from 'assets/jo/mockupclassement.webm';
 import girlRankPlaceholder from 'assets/jo/mockupclassement.webm';
@@ -105,7 +105,7 @@ const ProjectDM = () => {
             <ProjectTextRow>
               <ProjectSectionHeading>Contexte du projet</ProjectSectionHeading>
               <ProjectSectionText>
-               Le relais de la flamme olympique est une course au cours de laquelle, la flamme olympique voyage d'Olympique, en Grèce, jusqu'au pays hôte.
+              Les Jeux Olympiques sont un moment événementiel d'envergure mondial, ce qui donne de nombreuses possibilités pour lancer des applications innovantes.
               </ProjectSectionText>
             </ProjectTextRow>
             <ProjectTextRow>
@@ -121,7 +121,7 @@ const ProjectDM = () => {
             <ProjectSectionHeading>Problématique à résoudre</ProjectSectionHeading>
             <ProjectSectionText>
               Partie intégrante du compte à rebours des Jeux Olympiques, le relais est d'une grande importance symbolique, car il relie solidement les versions
-              antiques et modernes des Jeux. Cet événement, se déroulant pendant la période pré-Olympique, est aujourd'hui une expérience vécue passivement par la majorité du public qui
+              antiques et modernes des Jeux. Cet événement, se déroulant pendant la période pré-Olympique, est aujourd'hui une expérience vécue sans interaction par la majorité du public qui
               se contente de suivre les coureurs sur les divers médias qui lui sont proposés.
             </ProjectSectionText>
           </ProjectTextRow>
@@ -136,16 +136,16 @@ const ProjectDM = () => {
 
               En nous basant sur des thématiques issues de notre étude de marché,
               nous avons abordé diverses sessions d'idéation afin d’élaborer un concept capable de séduire
-              les sponsors tout en rassemblant et fédérant les fans des Jeux Olympiques en nous basant sur 3 objectifs clairs :
+              les sponsors tout en rassemblant et fédérant les fans des Jeux Olympiques en nous basant sur 3 aspects :
               </ProjectSectionText>
               <ProjectSectionText>
-              Faire participer le fan à distance
+              - Faire participer le fan à distance
               </ProjectSectionText>
               <ProjectSectionText>
-              Offrir un moyen de manifester son encouragement
+              - Offrir un moyen de manifester son encouragement
               </ProjectSectionText>
               <ProjectSectionText>
-              Capitaliser sur l'événement
+              - Capitaliser sur l'événement
               pour mettre en avant les sponsors
               </ProjectSectionText>
             </ProjectTextRow>
@@ -178,29 +178,27 @@ const ProjectDM = () => {
               <ProjectSectionHeading>Un challenge international</ProjectSectionHeading>
               <ProjectSectionText>
                 Nous avons décidé de rendre actif le spectateur en lui proposant de participer physiquement à une course de relais qui démarre en même temps que le relais officiel des jeux olympiques et se termine au début officiel des JO.
-                L’objectif est simple, chaque coureur doit accumuler le maximum de km pour son pays. À la fin de l'événement, un calcul est fait pour évaluer quel pays possède la population la plus sportive.
+                L’objectif est simple, chaque coureur doit accumuler le maximum de kilomètres pour son pays. À la fin de l'événement, un calcul est fait pour évaluer quel pays possède la population la plus sportive.
               </ProjectSectionText>
             </ProjectTextRow>
             <Image
               src={`${concept}`}
-              
-              alt="A promotional banner for Device Models, displaying a variety of devices and bright colors."
+              alt="Concept"
               sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 800px, 1400px`}
             />
           </ProjectSectionColumns>
         </ProjectSection>
-        <ProjectSection>
+        <ProjectSection light>
           <ProjectSectionColumns>
             <Image
               src={`${torch}`}
-              placeholder={arborescencePlaceholder}
-              alt="A promotional banner for Device Models, displaying a variety of devices and bright colors."
+              alt="Flamme olympique"
               sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 800px, 1000px`}
             />
             <ProjectTextRow>
               <ProjectSectionHeading>Interagir avec la Flamme Olympique</ProjectSectionHeading>
               <ProjectSectionText>
-              Afin de manifester leur soutien au porteur de la flamme olympique, les utilisateurs peuvent envoyer des emojis depuis leur téléphones qui sont retranscrits en direct sur une torche connectée transportée par le coureur.
+              Afin de manifester leur soutien au porteur de la flamme olympique, les utilisateurs peuvent envoyer des emojis depuis leur téléphone qui sont retranscrits en direct sur une torche connectée transportée par le coureur.
               La torche possède des écrans sur chacun de ses côtés qui retransmettent en temps réel les emojis envoyés par les internautes.
               Elle possède aussi une couleur qui évolue pour représenter le nombre de personnes connectées à l’application.
               </ProjectSectionText>
@@ -237,12 +235,11 @@ const ProjectDM = () => {
         <ProjectSection>
           <ProjectSectionColumns>
           <ProjectTextRow>
-            <ProjectSectionBigHeading>Prototypage</ProjectSectionBigHeading>
+            <ProjectSectionBigHeading>Maquettes</ProjectSectionBigHeading>
               <ProjectSectionHeading>Accueil</ProjectSectionHeading>
               <ProjectSectionText>
-              Chaque utilisateur possède son propre avatar qu’il peut personnaliser selon ses envies.
-              Sur cet écran l’utilisateur peut choisir d'accéder au live, consulter son profil,
-              ses statistiques, consulter son classement ou encore choisir de débuter une nouvelle course.
+              L'accueil permet de voir son classement actuel. En partant de cet écran, l’utilisateur peut choisir d'accéder au live, consulter son profil,
+              ses statistiques, consulter son classement ou encore choisir de débuter une nouvelle course. Il peut également personnaliser son personnage.
               </ProjectSectionText>
             </ProjectTextRow>
             <Image
@@ -256,8 +253,7 @@ const ProjectDM = () => {
         <ProjectSection>
           <ProjectSectionColumns>
           <Image
-              src={`${girlRank}`}
-              placeholder={girlRankPlaceholder}
+              src={`${girlRun}`}
               alt="Animation de classement lors de la course"
               sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 800px, 1000px`}
             />
@@ -291,8 +287,7 @@ const ProjectDM = () => {
         <ProjectSection>
           <ProjectSectionColumns>
           <Image
-              src={`${girlRank}`}
-              placeholder={girlRankPlaceholder}
+              src={`${girlProfile}`}
               alt="Animation présentant le profil de l'utilisateur"
               sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 800px, 1000px`}
             />
@@ -351,8 +346,7 @@ const ProjectDM = () => {
               </ProjectSectionText>
               <ProjectSectionText>
               Diverses données d'analyse telles que la durée de visionnage du live, la durée d’une course,
-              le classement des utilisateurs, la localisation géographique, la fréquence d’utilisation de l’app etc.
-              sont récoltées au sein de l’application afin de permettre aux sponsors de cibler les utilisateurs en fonction de leur profil.
+              le classement des utilisateurs, la localisation géographique, la fréquence d’utilisation de l’application sont récoltées au sein de l’application afin de permettre aux sponsors de cibler les utilisateurs en fonction de leur profil.
               </ProjectSectionText>
             </ProjectTextRow>
           </ProjectSectionContent>
@@ -362,9 +356,7 @@ const ProjectDM = () => {
             <ProjectTextRow>
               <ProjectSectionBigHeading>Prochaine étape</ProjectSectionBigHeading>
               <ProjectSectionText>
-              À l’avenir, je souhaiterais implémenter des audios de commentateurs sportifs pour encourager l’utilisateur pendant sa course. 
-              Il manque également des micro-interactions et animations sur l'application en général. Pour finir, la déclinaison de cette application à destination de l'Apple Watch
-              mériterait d’être traitée, car courir avec un téléphone n’est pas ce qu’il y’a de plus pratique.
+              Le support des montres connectées de type Apple Watch et montres pour Android permettrait de pouvoir courir sans son téléphone. De plus, ajouter des outils de gamification pour aller avec le personnage 3D tels que des accessoires ou de nouveaux moyens d'interagir avec les autres permettrait un plus fort engagement envers l'application.
               </ProjectSectionText>
             </ProjectTextRow>
           </ProjectSectionContent>
@@ -374,13 +366,11 @@ const ProjectDM = () => {
             <ProjectTextRow>
               <ProjectSectionBigHeading>Apprentissage</ProjectSectionBigHeading>
               <ProjectSectionText>
-              Pour réaliser cet exercice nous n’avions pas le droit de mener de recherche utilisateur en amont du projet.
-              Notre professeur nous a demandé de proposer une solution créative en nous basant uniquement sur l’étude de marché
-              de l’histoire des Jeux Olympiques et la réalisation d’un benchmark des fans expériences passées.
-              J’étais habitué à mener mes recherches en interrogeant directement les utilisateurs sur leurs envies, 
-              ou en étudiant leurs pain point rencontrés. Changer complètement mon approche UX fut pour moi perturbant mais très instructif. 
-              Cela faisait longtemps que j’attendais un projet créatif qui me permette de tester l’intégration d’objets 
-              3D dans une interface à l’aide de la bibliothèque d’animation 3D Mixamo.
+                Par manque de temps, nous avons dû apprendre à lancer un concept sans avoir de recherche utilisateur au préalable. Nous avons donc du trouver 
+                une solution créative en nous basant uniquement sur l’étude de marché
+                de l’histoire des Jeux Olympiques.
+                Étant habitué au suivi des process, j'ai du personnellement sortir de ma zone de confort pour réussir à trouver un concept de cette façon. Mais cela 
+                nous a permis de produire de façon plus réaliste, étant donné que le lancement de projet dans la vie est souvent moins cadré et fait sur le tas.              
               </ProjectSectionText>
             </ProjectTextRow>
           </ProjectSectionContent>
@@ -389,14 +379,14 @@ const ProjectDM = () => {
           <ProjectSectionContent>
             <ProjectTextRow center centerMobile noMargin>
             <ProjectSectionText>
-                NEXT PROJECT
+                À PROPOS
               </ProjectSectionText>
-              <ProjectSectionNextProject>Pornhub</ProjectSectionNextProject>
+              <ProjectSectionNextProject>En savoir plus sur moi</ProjectSectionNextProject>
               <Button
                 secondary
                 iconHoverShift
                 icon="arrowRight"
-                href="/projects/pornhub"
+                href="/#about"
               >
               </Button>
             </ProjectTextRow>

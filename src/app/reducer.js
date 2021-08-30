@@ -1,6 +1,6 @@
 export const initialState = {
   menuOpen: false,
-  theme: 'dark',
+  theme: 'light',
 };
 
 export function reducer(state, action) {
@@ -10,7 +10,7 @@ export function reducer(state, action) {
     case 'setTheme':
       return { ...state, theme: value };
     case 'toggleTheme': {
-      const newThemeId = state.theme === 'dark' ? 'light' : 'dark';
+      const newThemeId = state.theme === 'light' ? 'dark' : 'light';
       return { ...state, theme: newThemeId };
     }
     case 'toggleMenu':

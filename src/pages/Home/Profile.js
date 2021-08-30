@@ -81,6 +81,10 @@ const Profile = ({ id, visible, sectionRef }) => {
                 <Button iconHoverShift href="mailto:maxime.pocq@gmail.com" icon="send">
                   M'envoyer un email
                 </Button>
+                <br></br>
+                <Button iconHoverShift href="https://drive.google.com/file/d/1Wb5mfgmknVAS1r02uwdJ5zTf18qvBS-N/view?usp=sharing">
+                  Voir mon CV
+                </Button>
               </div>
             </div>
             <div className="profile__column">
