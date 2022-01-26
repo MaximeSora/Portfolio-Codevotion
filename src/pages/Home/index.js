@@ -154,35 +154,9 @@ const Home = () => {
       />
       <ProjectSummary
         id="project-1"
+        alternate
         sectionRef={projectOne}
         visible={visibleSections.includes(projectOne.current)}
-        index={1}
-        title="Mon parcours professionnel"
-        description="De l'Informatique au Design Produit"
-        buttonText="Découvrir mon parcours"
-        buttonLink="https://rapport.maximepocq.com/introduction.html"
-        model={{
-          type: 'parcours',
-          alt: 'Image chemin',
-          textures: [
-            {
-              src: deviceModelsTexture,
-              srcSet: `${deviceModelsTexture} 254w, ${deviceModelsTextureLarge} 508w`,
-              placeholder: deviceModelsTexturePlaceholder,
-            },
-            {
-              src: deviceModelsTexture,
-              srcSet: `${deviceModelsTexture} 254w, ${deviceModelsTextureLarge} 508w`,
-              placeholder: deviceModelsTexturePlaceholder,
-            },
-          ],
-        }}
-      />
-      <ProjectSummary
-        id="project-2"
-        alternate
-        sectionRef={projectTwo}
-        visible={visibleSections.includes(projectTwo.current)}
         index={2}
         title="Solbase"
         description="Conceptualisation d'une application pour rendre le solfège accessible au plus grand nombre."
@@ -201,9 +175,9 @@ const Home = () => {
         }}
       />
       <ProjectSummary
-        id="project-3"
-        sectionRef={projectThree}
-        visible={visibleSections.includes(projectThree.current)}
+        id="project-2"
+        sectionRef={projectTwo}
+        visible={visibleSections.includes(projectTwo.current)}
         index={3}
         title="Jeux Olympiques"
         description="Expérience immersive et interactive pour les fans des Jeux Olympiques."
