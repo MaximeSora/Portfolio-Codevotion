@@ -37,7 +37,7 @@ const Home = () => {
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    const revealSections = [intro, projectOne, projectTwo, projectThree, about];
+    const revealSections = [intro, projectOne, projectTwo, about];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -154,10 +154,9 @@ const Home = () => {
       />
       <ProjectSummary
         id="project-1"
-        alternate
         sectionRef={projectOne}
         visible={visibleSections.includes(projectOne.current)}
-        index={2}
+        index={1}
         title="Solbase"
         description="Conceptualisation d'une application pour rendre le solfège accessible au plus grand nombre."
         buttonText="Voir le projet"
@@ -176,9 +175,10 @@ const Home = () => {
       />
       <ProjectSummary
         id="project-2"
+        alternate
         sectionRef={projectTwo}
         visible={visibleSections.includes(projectTwo.current)}
-        index={3}
+        index={2}
         title="Jeux Olympiques"
         description="Expérience immersive et interactive pour les fans des Jeux Olympiques."
         buttonText="Voir le projet"

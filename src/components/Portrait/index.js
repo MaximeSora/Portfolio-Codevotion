@@ -115,7 +115,8 @@ const Portrait = ({ className, delay, ...rest }) => {
     modelLoader.setDRACOLoader(dracoLoader);
 
     modelLoader.load(portraitModelPath, model => {
-      model.scene.position.y = -1.6;
+      model.scene.position.y = -2.98;
+      model.scene.scale.set(1.73,1.73,1.73);
       scene.current.add(model.scene);
 
       composer.current.render();
@@ -198,8 +199,8 @@ const Portrait = ({ className, delay, ...rest }) => {
     const handleResize = () => {
       const { clientWidth, clientHeight } = container.current;
 
-      renderer.current.setSize(clientWidth, clientHeight);
-      composer.current.setSize(clientWidth, clientHeight);
+      renderer.current.setSize(clientWidth*1.2, clientHeight*1.2);
+      composer.current.setSize(clientWidth*1.2, clientHeight*1.2);
       camera.current.aspect = clientWidth / clientHeight;
       camera.current.updateProjectionMatrix();
 
