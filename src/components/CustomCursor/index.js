@@ -30,14 +30,12 @@ const CustomCursor = () => {
   React.useEffect(() => {
     const handleMouseEnter = () => {
       setIsVisible(true);
-      console.log('mouseenter');
       mainCursor.current.style.display = `block`;
       secondaryCursor.current.style.display = `block`;
     };
 
     const handleMouseHover = () => {
       setIsVisible(true);
-      console.log('mouseenter');
       mainCursor.current.style.display = `block`;
       secondaryCursor.current.style.display = `block`;
     };
