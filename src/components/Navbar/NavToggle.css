@@ -1,11 +1,12 @@
 .nav-toggle {
   --buttonSize: var(--space2XL);
 
-  position: fixed;
-  top: var(--spaceL);
-  right: var(--spaceL);
+  position: absolute;
+  top: 0;
+  right: var(--spaceM);
+  bottom: 0;
   width: var(--buttonSize);
-  height: var(--buttonSize);
+  height: 100%;
   z-index: 1024;
   display: none;
 
