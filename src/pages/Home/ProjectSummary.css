@@ -50,7 +50,7 @@
   grid-template-columns: 40% 1fr;
   grid-column-gap: var(--space2XL);
 
-  @nest .project-summary--alternate & {
+  .project-summary--alternate & {
     grid-template-columns: 1fr 40%;
   }
 
@@ -61,7 +61,7 @@
   }
 
   @media (--mediaTablet) {
-    @nest .project-summary--alternate & {
+    .project-summary--alternate & {
       grid-template-columns: 100%;
     }
   }

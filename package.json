@@ -7,6 +7,8 @@
   "private": true,
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.0",
+    "postcss-custom-media": "^12.0.1",
+    "postcss-nesting": "^14.0.0",
     "prettier": "^2.2.1",
     "remark-frontmatter": "^5.0.0",
     "remark-mdx-frontmatter": "^4.0.0",
