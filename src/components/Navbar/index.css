@@ -8,9 +8,9 @@
   padding: 0;
   height: var(--space2XL);
   position: fixed;
-  top: var(--spaceOuter);
-  left: var(--spaceOuter);
-  right: var(--spaceOuter);
+  top: var(--spaceL);
+  left: var(--spaceL);
+  right: var(--spaceL);
   z-index: 1024;
 
   @media (--mediaMobile) {
@@ -136,8 +136,8 @@
   justify-content: center;
   position: fixed;
   z-index: 2048;
-  bottom: var(--spaceOuter);
-  left: var(--spaceOuter);
+  bottom: var(--spaceL);
+  left: var(--spaceL);
   margin-bottom: calc(var(--spaceM) * -1);
   margin-right: calc(var(--spaceM) * -1);
   z-index: 16;

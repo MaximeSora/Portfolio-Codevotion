@@ -12,6 +12,7 @@ export const Button = forwardRef(
       className,
       as,
       secondary,
+      outline,
       loading,
       loadingText = 'loading',
       icon,
@@ -39,6 +40,7 @@ export const Button = forwardRef(
           'button--loading': loading,
           'button--icon-only': iconOnly,
           'button--secondary': secondary,
+          'button--outline': outline,
         })}
         href={href && isExternalLink ? href : undefined}
         to={href && !isExternalLink ? href : undefined}

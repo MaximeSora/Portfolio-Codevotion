@@ -54,6 +54,7 @@
   font-weight: var(--fontWeightMedium);
   line-height: 1;
   opacity: 0;
+  text-align: left;
 
   @media (--mediaDesktop) {
     & {

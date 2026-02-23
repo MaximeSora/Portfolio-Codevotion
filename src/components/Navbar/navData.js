@@ -21,16 +21,6 @@ export const navLinks = [
 
 export const socialLinks = [
   {
-    label: 'Behance',
-    url: 'https://www.behance.net/tidus_khca12',
-    icon: 'behance',
-  },
-  {
-    label: 'Dribbble',
-    url: 'https://dribbble.com/SoraYun',
-    icon: 'dribbble',
-  },
-  {
     label: 'LinkedIn',
     url: 'https://www.linkedin.com/in/maxime-pocq/',
     icon: 'linkedin',

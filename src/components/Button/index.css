@@ -306,3 +306,26 @@ div.project-summary__button a:hover span.bg, div.project__text-row a:hover span.
 div.project-summary__button a:hover span.button__text:after, div.project__text-row a:hover span.button__text:after {
   background: #ece8e1;
 }
+
+div.project-summary__button a.button--outline > p,
+div.project__text-row a.button--outline > p {
+  background: transparent;
+  border: 2px solid rgb(var(--rgbPrimary));
+}
+
+div.project-summary__button a.button--outline > p span.button__text,
+div.project__text-row a.button--outline > p span.button__text {
+  color: rgb(var(--colorTextTitle));
+}
+
+div.project-summary__button a.button--outline:hover > p,
+div.project__text-row a.button--outline:hover > p {
+  color: rgb(var(--rgbBackground));
+}
+
+@media (--mediaMobile) {
+  div.project-summary__button a,
+  div.project__text-row a {
+    width: 100%;
+  }
+}

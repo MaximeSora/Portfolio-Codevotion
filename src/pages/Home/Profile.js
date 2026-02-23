@@ -82,7 +82,7 @@ const Profile = ({ id, visible, sectionRef }) => {
                   M'envoyer un email
                 </Button>
                 <br></br>
-                <Button iconHoverShift href="https://drive.google.com/file/d/1Wb5mfgmknVAS1r02uwdJ5zTf18qvBS-N/view?usp=sharing">
+                <Button outline iconHoverShift href="https://drive.google.com/file/d/1Wb5mfgmknVAS1r02uwdJ5zTf18qvBS-N/view?usp=sharing">
                   Voir mon CV
                 </Button>
               </div>

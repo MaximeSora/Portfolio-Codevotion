@@ -84,6 +84,7 @@
   margin-bottom: var(--spaceXL);
   opacity: 0;
   transition: opacity var(--durationXL) ease var(--durationL);
+  text-align: left;
 }
 
 .profile__description--entered {
