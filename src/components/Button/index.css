@@ -373,4 +373,15 @@ div.project__text-row a.button--outline:hover > p span.button__text {
   div.project__text-row a {
     width: 100%;
   }
+
+  div.project-summary__button,
+  div.project__text-row {
+    align-items: center;
+  }
+
+  div.project-summary__button a.button--secondary,
+  div.project__text-row a.button--secondary {
+    left: 0;
+    width: auto;
+  }
 }

@@ -216,6 +216,53 @@
   }
 }
 
+@keyframes liquid-glass-in-heading {
+  0% {
+    opacity: 0;
+    filter: blur(14px);
+    transform: translate3d(0, 24px, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes liquid-glass-in-text {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translate3d(0, 14px, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (--mediaUseMotion) {
+  .project__text-row .project__section-big-heading,
+  .project__text-row .project__section-heading,
+  .project__text-row .project__section-text {
+    opacity: 0;
+    will-change: opacity, filter, transform;
+  }
+
+  .project__text-row--entered .project__section-big-heading {
+    animation: liquid-glass-in-heading 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .project__text-row--entered .project__section-heading {
+    animation: liquid-glass-in-heading 0.85s cubic-bezier(0.16, 1, 0.3, 1) 90ms forwards;
+  }
+
+  .project__text-row--entered .project__section-text {
+    animation: liquid-glass-in-text 0.8s cubic-bezier(0.16, 1, 0.3, 1) 180ms forwards;
+  }
+}
+
 .project__details {
   position: relative;
 

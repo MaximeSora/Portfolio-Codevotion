@@ -21,7 +21,9 @@ const Image = ({ className, style, reveal, delay = 0, raised, src, ...rest }) =>
   const [loaded, setLoaded] = useState(false);
   const { themeId } = useTheme();
   const containerRef = useRef();
-  const inViewport = useInViewport(containerRef, reveal || !src?.endsWith('.mp4'));
+  const inViewport = useInViewport(containerRef, reveal || !src?.endsWith('.mp4'), {
+    rootMargin: '600px 0px',
+  });
 
   const onLoad = useCallback(() => {
     setLoaded(true);

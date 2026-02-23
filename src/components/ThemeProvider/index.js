@@ -51,9 +51,6 @@ const ThemeProvider = ({
       {isRootProvider && (
         <Fragment>
           <Helmet>
-            <link rel="preload" href={InterBold} as="font" crossorigin="" />
-            <link rel="preload" href={InterRegular} as="font" crossorigin="" />
-            <style>{fontStyles}</style>
             <style>{tokenStyles}</style>
           </Helmet>
           {children}
@@ -134,7 +131,7 @@ export const tokenStyles = `
     --durationL: 600ms;
     --durationXL: 800ms;
     --systemFontStack: system-ui, -apple-system, BlinkMacSystemFont, San Francisco, Roboto, Segoe UI, Ubuntu, Helvetica Neue, sans-serif;
-    --fontStack: Inter, system-ui, -apple-system, BlinkMacSystemFont, San Francisco, Roboto, Segoe UI, Ubuntu, Helvetica Neue, sans-serif;
+    --fontStack: Lora, Georgia, "Times New Roman", serif;
     --monoFontStack: SFMono Regular, Roboto Mono, Consolas, Liberation Mono, Menlo, Courier, monospace;
     --japaneseFontStack: ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, Hiragino Sans, Osaka, メイリオ, Meiryo, Segoe UI, sans-serif;
     --fontWeightRegular: 400;

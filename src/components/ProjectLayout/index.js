@@ -1,8 +1,8 @@
-import { forwardRef } from 'react';
+import { forwardRef, useRef } from 'react';
 import classNames from 'classnames';
 import Image from 'components/Image';
 import { Button } from 'components/Button';
-import { useParallax } from 'hooks';
+import { useParallax, useInViewport } from 'hooks';
 import prerender from 'utils/prerender';
 import Section from 'components/Section';
 import { numToPx, numToMs } from 'utils/style';
@@ -208,23 +208,30 @@ export const ProjectTextRow = ({
   className,
   centerMobile,
   ...rest
-}) => (
-  <div
-    className={classNames(
-      'project__text-row',
-      `project__text-row--justify-${justify}`,
-      `project__text-row--width-${width}`,
-      className,
-      {
-        'project__text-row--center': center,
-        'project__text-row--stretch': stretch,
-        'project__text-row--center-mobile': centerMobile,
-        'project__text-row--no-margin': noMargin,
-      }
-    )}
-    {...rest}
-  />
-);
+}) => {
+  const ref = useRef();
+  const inViewport = useInViewport(ref, true, { rootMargin: '0px 0px -80px 0px' });
+
+  return (
+    <div
+      ref={ref}
+      className={classNames(
+        'project__text-row',
+        `project__text-row--justify-${justify}`,
+        `project__text-row--width-${width}`,
+        className,
+        {
+          'project__text-row--center': center,
+          'project__text-row--stretch': stretch,
+          'project__text-row--center-mobile': centerMobile,
+          'project__text-row--no-margin': noMargin,
+          'project__text-row--entered': inViewport,
+        }
+      )}
+      {...rest}
+    />
+  );
+};
 
 export const ProjectSectionColumns = ({ className, alternate, centered, ...rest }) => (
   <ProjectSectionContent

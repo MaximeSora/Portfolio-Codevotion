@@ -300,7 +300,7 @@ const ProjectDM = () => {
           </ProjectSectionColumns>
         </ProjectSection>
         <ProjectSection>
-          <ProjectTextRow>
+          <ProjectTextRow stretch>
             <ProjectSectionBigHeading>Identité visuelle</ProjectSectionBigHeading>
             <ProjectSectionHeading>Couleurs</ProjectSectionHeading>
           </ProjectTextRow>
