@@ -20,9 +20,9 @@ import {
   ProjectImage,
 } from 'components/ProjectLayout';
 
-import solbaseLarge from 'assets/solbase/thumbnail.png';
+import solbaseLarge from 'assets/solbase/thumbnail.webp';
 import deviceModelsPlaceholder from 'assets/device-models-placeholder.jpg';
-import pornhubLarge from 'assets/pornhub/thumbnail.png';
+import pornhubLarge from 'assets/pornhub/thumbnail.webp';
 import joLarge from 'assets/jo/jo-thumbnail.mp4';
 import parcoursLarge from 'assets/pexels-pixabay-33109.jpg';
 

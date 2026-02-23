@@ -9,7 +9,7 @@ import {
   ShaderMaterial,
   Mesh,
   Color,
-  sRGBEncoding,
+  SRGBColorSpace,
 } from 'three';
 import { spring, value, listen, pointer } from 'popmotion';
 import classNames from 'classnames';
@@ -105,7 +105,7 @@ const Carousel = ({ width, height, images, placeholder, ...rest }) => {
         const imageSrc = await getImageFromSrcSet(image);
         const imageTexture = await textureLoader.loadAsync(imageSrc);
         await renderer.current.initTexture(imageTexture);
-        imageTexture.encoding = sRGBEncoding;
+        imageTexture.colorSpace = SRGBColorSpace;
         imageTexture.minFilter = LinearFilter;
         imageTexture.magFilter = LinearFilter;
         imageTexture.anisotropy = anisotropy;

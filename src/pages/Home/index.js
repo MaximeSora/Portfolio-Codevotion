@@ -11,7 +11,6 @@ import deviceModelsTexture from 'assets/device-models-phone.jpg';
 import deviceModelsTextureLarge from 'assets/device-models-phone-large.jpg';
 import deviceModelsTexturePlaceholder from 'assets/device-models-phone-placeholder.jpg';
 import jo from 'assets/jo/jo-thumbnail.mp4';
-import pornhub from 'assets/pornhub/thumbnail.png';
 import dttTexture from 'assets/dtt.jpg';
 import dttTextureLarge from 'assets/dtt-large.jpg';
 import dttTexturePlaceholder from 'assets/dtt-placeholder.jpg';

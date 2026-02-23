@@ -29,7 +29,7 @@ import deviceModelsBackgroundPlaceholder from 'assets/device-models-background-p
 import deviceModels from 'assets/device-models.jpg';
 import deviceModelsLarge from 'assets/device-models-large.jpg';
 import deviceModelsPlaceholder from 'assets/device-models-placeholder.jpg';
-import pornhubBackground from 'assets/pornhub/thumbnail.png';
+import pornhubBackground from 'assets/pornhub/thumbnail.webp';
 
 const title = 'Pornhub Eco-Friendly';
 const description =

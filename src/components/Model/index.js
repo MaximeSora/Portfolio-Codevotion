@@ -1,7 +1,7 @@
 import { useEffect, useCallback, useRef, useState } from 'react';
 import classNames from 'classnames';
 import {
-  sRGBEncoding,
+  SRGBColorSpace,
   LinearFilter,
   Color,
   TextureLoader,
@@ -84,7 +84,7 @@ const Model = ({
 
     renderer.current.setPixelRatio(2);
     renderer.current.setSize(clientWidth, clientHeight);
-    renderer.current.outputEncoding = sRGBEncoding;
+    renderer.current.outputColorSpace = SRGBColorSpace;
     renderer.current.physicallyCorrectLights = true;
 
     camera.current = new PerspectiveCamera(36, clientWidth / clientHeight, 0.1, 100);
@@ -193,7 +193,7 @@ const Model = ({
     verticalBlurMaterial.current.depthTest = false;
 
     const applyScreenTexture = async (texture, node) => {
-      texture.encoding = sRGBEncoding;
+      texture.colorSpace = SRGBColorSpace;
       texture.minFilter = LinearFilter;
       texture.magFilter = LinearFilter;
       texture.flipY = false;

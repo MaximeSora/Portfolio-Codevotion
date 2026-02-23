@@ -17,6 +17,10 @@ import { useScrollRestore } from 'hooks';
 import fetchPosts from 'posts';
 import './index.css';
 
+const postAssets = import.meta.glob('../../posts/assets/*', { eager: true, import: 'default' });
+const getPostAsset = filename =>
+  postAssets[`../../posts/assets/${filename}`];
+
 const Page404 = lazy(() => import('pages/404'));
 
 const ArticlesPost = ({
@@ -50,8 +54,8 @@ const ArticlesPost = ({
           <Image
             play={hovered}
             className="articles__post-image"
-            src={banner ? require(`posts/assets/${banner}`) : undefined}
-            placeholder={require(`posts/assets/${bannerPlaceholder}`)}
+            src={banner ? getPostAsset(banner) : undefined}
+            placeholder={getPostAsset(bannerPlaceholder)}
             alt={bannerAlt}
           />
           <div className="articles__post-image-tag">K256</div>

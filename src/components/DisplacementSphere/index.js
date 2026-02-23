@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import classNames from 'classnames';
 import {
   Vector2,
-  sRGBEncoding,
+  SRGBColorSpace,
   WebGLRenderer,
   PerspectiveCamera,
   Scene,
@@ -55,7 +55,7 @@ const DisplacementSphere = props => {
     });
     renderer.current.setSize(innerWidth, innerHeight);
     renderer.current.setPixelRatio(1);
-    renderer.current.outputEncoding = sRGBEncoding;
+    renderer.current.outputColorSpace = SRGBColorSpace;
 
     camera.current = new PerspectiveCamera(54, innerWidth / innerHeight, 0.1, 100);
     camera.current.position.z = 52;

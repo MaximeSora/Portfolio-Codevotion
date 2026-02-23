@@ -1,8 +1,8 @@
 import iphone11 from 'assets/iphone-11.glb';
 import macbookPro from 'assets/macbook-pro.glb';
-import solbaseThumbnail from 'assets/solbase/thumbnail.png';
+import solbaseThumbnail from 'assets/solbase/thumbnail.webp';
 import joThumbnail from 'assets/jo/jo-thumbnail.mp4';
-import pornhubThumbnail from 'assets/pornhub/thumbnail.png';
+import pornhubThumbnail from 'assets/pornhub/thumbnail.webp';
 
 export const ModelAnimationType = {
   SpringUp: 'spring-up',

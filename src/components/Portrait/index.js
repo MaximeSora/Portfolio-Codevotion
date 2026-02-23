@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import {
   WebGLRenderer,
   ACESFilmicToneMapping,
-  sRGBEncoding,
+  SRGBColorSpace,
   PerspectiveCamera,
   Scene,
   Fog,
@@ -62,7 +62,7 @@ const Portrait = ({ className, delay, ...rest }) => {
     renderer.current.setSize(clientWidth, clientHeight);
     renderer.current.setPixelRatio(2);
     renderer.current.toneMapping = ACESFilmicToneMapping;
-    renderer.current.outputEncoding = sRGBEncoding;
+    renderer.current.outputColorSpace = SRGBColorSpace;
 
     camera.current = new PerspectiveCamera(45, clientWidth / clientHeight, 0.5, 2.25);
     camera.current.position.z = 0.8;
