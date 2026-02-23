@@ -10,8 +10,8 @@ function Monogram({ highlight, className, ...props }) {
     <svg
       aria-hidden
       className={classNames('monogram', className)}
-      width="50"
-      height="50"
+      width="46"
+      height="46"
       viewBox="0 0 380 380"
       {...props}
     >

@@ -41,14 +41,19 @@ void main() {
   vec3 color = vec3(vUv * (0.2 - 2.0 * noise), 1.0);
   vec3 finalColors = vec3(color.b * 1.5, color.r, color.r);
 
-  // Remap cos intensity to a vivid dark→teal→cyan palette
+  // Remap cos intensity to a teal→cyan→white palette
   float intensity = clamp(cos(finalColors.r * noise * 3.0) * 0.5 + 0.5, 0.0, 1.0);
-  vec3 colorShadow    = vec3(0.0,  0.05, 0.12);  // near-black base
+  vec3 colorBase      = vec3(0.0,  0.30, 0.42);  // mid-teal (lighter default)
   vec3 colorMid       = vec3(0.0,  0.60, 0.78);  // rich teal
   vec3 colorHighlight = vec3(0.0,  0.90, 1.0);   // primary cyan #00E5FF
-  float t = smoothstep(0.0, 0.55, intensity);
-  float s = smoothstep(0.55, 1.0, intensity);
-  vec4 diffuseColor = vec4(mix(mix(colorShadow, colorMid, t), colorHighlight, s), 1.0);
+  vec3 colorWhite     = vec3(0.75, 1.0,  1.0);   // near-white cyan
+  float t0 = smoothstep(0.0,  0.33, intensity);
+  float t1 = smoothstep(0.33, 0.66, intensity);
+  float t2 = smoothstep(0.66, 1.0,  intensity);
+  vec3 rampColor = mix(colorBase, colorMid, t0);
+  rampColor = mix(rampColor, colorHighlight, t1);
+  rampColor = mix(rampColor, colorWhite, t2);
+  vec4 diffuseColor = vec4(rampColor, 1.0);
   ReflectedLight reflectedLight = ReflectedLight(vec3(0.0), vec3(0.0), vec3(0.0), vec3(0.0));
   vec3 totalEmissiveRadiance = emissive;
 

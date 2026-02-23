@@ -28,13 +28,17 @@ const CustomCursor = () => {
   
   //Hide Cursor when leaving page
   React.useEffect(() => {
+    const isTabletOrMobile = () => window.matchMedia('(max-width: 1024px)').matches;
+
     const handleMouseEnter = () => {
+      if (isTabletOrMobile()) return;
       setIsVisible(true);
       mainCursor.current.style.display = `block`;
       secondaryCursor.current.style.display = `block`;
     };
 
     const handleMouseHover = () => {
+      if (isTabletOrMobile()) return;
       setIsVisible(true);
       mainCursor.current.style.display = `block`;
       secondaryCursor.current.style.display = `block`;
@@ -104,6 +108,7 @@ const CustomCursor = () => {
 
   React.useEffect(() => {
     document.addEventListener("mousemove", (event) => {
+      if (window.matchMedia('(max-width: 1024px)').matches) return;
       const { clientX, clientY } = event;
 
       const mouseX = clientX;
