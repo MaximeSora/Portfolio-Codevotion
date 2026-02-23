@@ -61,11 +61,11 @@ void main() {
   vec3 outgoingLight = reflectedLight.directDiffuse + reflectedLight.indirectDiffuse + reflectedLight.directSpecular + reflectedLight.indirectSpecular + totalEmissiveRadiance;
 
   #include <envmap_fragment>
-  #include <premultiplied_alpha_fragment>
-  #include <tonemapping_fragment>
-  #include <output_fragment>
-  #include <fog_fragment>
 
   gl_FragColor = vec4(outgoingLight, diffuseColor.a);
+  #include <tonemapping_fragment>
+  #include <colorspace_fragment>
+  #include <fog_fragment>
+  #include <premultiplied_alpha_fragment>
 }
 `;
