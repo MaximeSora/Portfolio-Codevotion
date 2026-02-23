@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: flex-start;
   padding: 0 var(--spaceS);
-  height: var(--space2XL);
+  height: var(--space3XL);
   position: fixed;
   top: 0;
   left: 0;
@@ -29,6 +29,7 @@
   @media (--mediaMobile) {
     & {
       --navbarNavFontSize: calc((22 / 16) * 1rem);
+      padding-left: var(--spaceM);
     }
   }
 
@@ -56,6 +57,7 @@
 
   @media (--mediaMobile) {
     & {
+      padding-left: 0;
       padding-bottom: var(--spaceS);
     }
   }
@@ -67,7 +69,7 @@
   justify-content: space-between;
   align-items: center;
   flex: 1 1 auto;
-  max-height: var(--space2XL);
+  max-height: var(--space3XL);
   position: relative;
   /* top: calc(var(--spaceM) * -1); */
 

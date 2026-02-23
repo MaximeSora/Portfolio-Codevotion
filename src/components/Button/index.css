@@ -198,6 +198,7 @@ div.project-summary__button, div.project__text-row {
 div.project-summary__button a.button,
 div.project__text-row a.button {
   padding: 0;
+  height: auto;
 }
 /* div.project-summary__button a {
   width: 100%;
@@ -321,23 +322,24 @@ div.project-summary__button a:hover span.button__text:after, div.project__text-r
   background: #ece8e1;
 }
 
-/* Outline button : p = fond primary (le "contour"), span.base = fond page décalé de 2px */
+/* Ghost button: transparent bg, primary icon/text, subtle hover glow */
 div.project-summary__button a.button--outline > p,
 div.project__text-row a.button--outline > p {
-  background: rgb(var(--rgbPrimary));
+  background: transparent;
   border: none;
+  color: rgb(var(--rgbPrimary));
+  transition: background 0.3s ease-out;
 }
 
 div.project-summary__button a.button--outline > p span.base,
 div.project__text-row a.button--outline > p span.base {
-  background: rgb(var(--rgbBackground));
-  top: 2px;
-  right: 2px;
-  bottom: 2px;
-  left: 2px;
+  background: transparent;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   width: auto;
   height: auto;
-  z-index: 1;
 }
 
 div.project-summary__button a.button--outline > p span.button__text,
@@ -347,18 +349,23 @@ div.project__text-row a.button--outline > p span.button__text {
 
 div.project-summary__button a.button--outline > p span.bg,
 div.project__text-row a.button--outline > p span.bg {
-  background: rgb(var(--rgbPrimary));
-  z-index: 2;
+  display: none;
 }
 
-div.project-summary__button a.button--outline:hover > p span.base,
-div.project__text-row a.button--outline:hover > p span.base {
-  background: transparent;
+div.project-summary__button a.button--outline .button__icon,
+div.project__text-row a.button--outline .button__icon {
+  fill: rgb(var(--rgbPrimary));
+  color: rgb(var(--rgbPrimary));
+}
+
+div.project-summary__button a.button--outline:hover > p,
+div.project__text-row a.button--outline:hover > p {
+  background: rgb(var(--rgbPrimary) / 0.1);
 }
 
 div.project-summary__button a.button--outline:hover > p span.button__text,
 div.project__text-row a.button--outline:hover > p span.button__text {
-  color: rgb(var(--rgbBackground));
+  color: rgb(var(--rgbPrimary));
 }
 
 @media (--mediaMobile) {

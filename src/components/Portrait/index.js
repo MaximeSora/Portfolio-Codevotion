@@ -36,7 +36,7 @@ import './index.css';
 RectAreaLightUniformsLib.init();
 
 const Portrait = ({ className, delay, ...rest }) => {
-  const { rgbBackgroundLight, rgbAccent, themeId } = useTheme();
+  const { rgbBackgroundLight, themeId } = useTheme();
   const container = useRef();
   const canvas = useRef();
   const renderer = useRef();
@@ -44,7 +44,6 @@ const Portrait = ({ className, delay, ...rest }) => {
   const scene = useRef();
   const composer = useRef();
   const lights = useRef();
-  const loadedModel = useRef();
   const prefersReducedMotion = usePrefersReducedMotion();
   const isInViewport = useInViewport(container);
 
@@ -118,18 +117,6 @@ const Portrait = ({ className, delay, ...rest }) => {
     modelLoader.load(portraitModelPath, model => {
       model.scene.position.y = -2.98;
       model.scene.scale.set(1.73, 1.73, 1.73);
-      loadedModel.current = model.scene;
-
-      // Tint model materials with a light turquoise (nuance de la primary accent)
-      const [ar, ag, ab] = rgbToThreeColor(rgbAccent);
-      const tintColor = new Color((ar + 1) / 2, (ag + 1) / 2, (ab + 1) / 2);
-      model.scene.traverse(child => {
-        if (child.isMesh && child.material) {
-          child.material.color = tintColor;
-          child.material.needsUpdate = true;
-        }
-      });
-
       scene.current.add(model.scene);
       composer.current.render();
     });
@@ -142,17 +129,13 @@ const Portrait = ({ className, delay, ...rest }) => {
 
   // Lights
   useEffect(() => {
-    // Light turquoise: 50% blend of accent with white
-    const [ar, ag, ab] = rgbToThreeColor(rgbAccent);
-    const tintColor = new Color((ar + 1) / 2, (ag + 1) / 2, (ab + 1) / 2);
+    const ambientLight = new AmbientLight(0xffffff, themeId === 'dark' ? 0.1 : 0.2);
 
-    const ambientLight = new AmbientLight(tintColor, themeId === 'dark' ? 0.1 : 0.2);
-
-    const rectLight1 = new RectAreaLight(tintColor, 6, 10, 10);
+    const rectLight1 = new RectAreaLight(0xffffff, 6, 10, 10);
     rectLight1.position.set(4.5, -1.3, -3);
     rectLight1.lookAt(0, 0, 0);
 
-    const rectLight2 = new RectAreaLight(tintColor, 6, 15, 15);
+    const rectLight2 = new RectAreaLight(0xffffff, 6, 15, 15);
     rectLight2.position.set(-10, 0.7, -10);
     rectLight2.lookAt(0, 0, 0);
 
@@ -162,21 +145,10 @@ const Portrait = ({ className, delay, ...rest }) => {
     scene.current.fog.color = new Color(...rgbToThreeColor(rgbBackgroundLight));
     scene.current.fog.far = 10;
 
-    // Re-apply tint to model materials if already loaded (e.g. on theme change)
-    if (loadedModel.current) {
-      loadedModel.current.traverse(child => {
-        if (child.isMesh && child.material) {
-          child.material.color = tintColor;
-          child.material.needsUpdate = true;
-        }
-      });
-      composer.current.render();
-    }
-
     return () => {
       removeLights(lights.current);
     };
-  }, [themeId, rgbBackgroundLight, rgbAccent]);
+  }, [themeId, rgbBackgroundLight]);
 
   // Handle mouse move animation
   useEffect(() => {

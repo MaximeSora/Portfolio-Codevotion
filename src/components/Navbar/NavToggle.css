@@ -1,5 +1,5 @@
 .nav-toggle {
-  --buttonSize: var(--space2XL);
+  --buttonSize: var(--space3XL);
 
   position: absolute;
   top: 0;
