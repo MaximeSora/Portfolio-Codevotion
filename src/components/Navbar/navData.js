@@ -4,7 +4,7 @@ export const navLinks = [
   //   pathname: '/contact',
   // },
   {
-    label: 'À propos',
+    label: 'About',
     pathname: '/',
     hash: '#about',
   },
@@ -13,16 +13,10 @@ export const navLinks = [
   //   pathname: '/articles',
   // },
   {
-    label: 'Projets',
+    label: 'Projects',
     pathname: '/',
     hash: '#project-1',
   },
 ];
 
-export const socialLinks = [
-  {
-    label: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/maxime-pocq/',
-    icon: 'linkedin',
-  },
-];
+export const socialLinks = [];

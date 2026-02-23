@@ -19,7 +19,7 @@ import macbookPro from 'assets/macbook-pro.glb';
 import portrait from 'assets/portrait.glb';
 import './index.css';
 
-const disciplines = ['Product', 'UX', 'Visual', 'Interaction', 'AI-Augmented'];
+const disciplines = ['Product', 'UX', 'Visual', 'Interaction', 'AI'];
 
 const Home = () => {
   const { status } = useRouteTransition();
@@ -139,7 +139,7 @@ const Home = () => {
         <title>Maxime Pocq | Designer</title>
         <meta
           name="description"
-          content="Portfolio de Maxime Pocq – Creative Designer vivant en France, spécialisé dans l'interactivité, l'UI, l'UX."
+          content="Portfolio of Maxime Pocq – Creative Designer based in France, specializing in interactive design, UI, and UX."
         />
         <link rel="prefetch" href={iphone11} as="fetch" crossorigin="" />
         <link rel="prefetch" href={macbookPro} as="fetch" crossorigin="" />
@@ -157,8 +157,8 @@ const Home = () => {
         visible={visibleSections.includes(projectOne.current)}
         index={1}
         title="Solbase"
-        description="Conceptualisation d'une application pour rendre le solfège accessible au plus grand nombre."
-        buttonText="Voir le projet"
+        description="Designing an app to make music theory accessible for everyone."
+        buttonText="View project"
         buttonLink="/projects/solbase"
         model={{
           type: 'solbase',
@@ -178,9 +178,9 @@ const Home = () => {
         sectionRef={projectTwo}
         visible={visibleSections.includes(projectTwo.current)}
         index={2}
-        title="Jeux Olympiques"
-        description="Expérience immersive et interactive pour les fans des Jeux Olympiques."
-        buttonText="Voir le projet"
+        title="Olympic Games"
+        description="An immersive, interactive experience built for Olympic Games fans."
+        buttonText="View project"
         buttonLink="/projects/jo"
         model={{
           type: 'jo',

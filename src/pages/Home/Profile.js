@@ -22,27 +22,25 @@ const ProfileText = ({ status, titleId }) => (
       level={3}
       id={titleId}
     >
-      <DecoderText text="Bonjour" start={status !== 'exited'} delay={500} />
+      <DecoderText text="Hello" start={status !== 'exited'} delay={500} />
     </Heading>
     <Text
       className={classNames('profile__description', `profile__description--${status}`)}
       size="l"
     >
-      👋 Moi c'est Maxime, je suis Creative Designer avec un background dans le jeu vidéo et le développement. 
-      </Text>
-      <Text
-      className={classNames('profile__description', `profile__description--${status}`)}
-      size="l"
-    >
-      Je me focalise sur plusieurs compétences : le Design, l'animation, le prototypage, le développement d'interactions. 
-      Mais mon objectif est toujours le même : Comment créer l'expérience qui sera la plus appréciée des utilisateurs ?
+      👋 I'm Maxime — a Creative Designer with roots in video games and software development. I bridge the gap between concept and code, bringing depth to every layer of the craft.
     </Text>
     <Text
       className={classNames('profile__description', `profile__description--${status}`)}
       size="l"
     >
-      Je suis toujours intéressé à l'idée de travailler sur de nouveaux projets, donc n'hésitez pas à m'envoyer un message.
-  
+      My work spans product strategy, UX research, motion design, and interaction development. But what drives every decision is one question: how do we build experiences people actually love?
+    </Text>
+    <Text
+      className={classNames('profile__description', `profile__description--${status}`)}
+      size="l"
+    >
+      I'm always open to new challenges and collaborations — if you have a project in mind, let's talk.
     </Text>
   </Fragment>
 );
@@ -76,7 +74,7 @@ const Profile = ({ id, visible, sectionRef }) => {
                     `profile__tag-text--${status}`
                   )}
                 >
-                  À propos
+                  About
                 </div>
               </div>
               <ProfileText status={status} titleId={titleId} />
@@ -95,11 +93,11 @@ const Profile = ({ id, visible, sectionRef }) => {
                 )}
               >
                 <Button iconHoverShift href="mailto:maxime.pocq@gmail.com" icon="send">
-                  M'envoyer un email
+                  Send me an email
                 </Button>
                 <br></br>
-                <Button outline iconHoverShift href="https://drive.google.com/file/d/1Wb5mfgmknVAS1r02uwdJ5zTf18qvBS-N/view?usp=sharing">
-                  Voir mon CV
+                <Button outline iconHoverShift href="https://www.linkedin.com/in/maxime-pocq/" icon="linkedin">
+                  LinkedIn
                 </Button>
               </div>
             </div>

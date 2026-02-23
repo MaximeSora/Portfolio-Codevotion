@@ -122,13 +122,13 @@
 
   @media (--mediaMobile) {
     & {
-      font-size: calc((58 / 16) * 1rem);
+      font-size: calc((60 / 16) * 1rem);
     }
   }
 
   @media (--mediaMobileS) {
     & {
-      font-size: calc((44 / 16) * 1rem);
+      font-size: calc((46 / 16) * 1rem);
     }
   }
 }
