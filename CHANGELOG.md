@@ -4,6 +4,13 @@ Historique des modifications apportées sur la branche `Claude-evol`.
 
 ---
 
+## TODO
+
+- [ ] **Blur animations homepage** — Ajouter l'effet liquid glass (blur + fade + translate) sur les textes de la homepage : titre hero dans `Intro.js`, nom, mots rotatifs disciplines, et textes/titres de la section Profile/About. Actuellement ces éléments ont des transitions basiques sans blur.
+- [ ] **Sphere shader — blanc plus lumineux** — Dans `sphereFragShader.js`, la valeur `colorWhite = vec3(0.75, 1.0, 1.0)` n'est pas assez lumineuse. Monter à `vec3(0.92, 1.0, 1.0)` voire `vec3(1.0, 1.0, 1.0)` pour des highlights vraiment blancs aux pics d'intensité.
+
+---
+
 ## Session en cours — 2026-02-23
 
 ### Typographie
