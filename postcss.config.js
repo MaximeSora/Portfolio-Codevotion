@@ -1,8 +1,9 @@
 export default {
   plugins: {
-    'postcss-custom-media': {
-      importFrom: ['./src/app/index.css'],
+    '@csstools/postcss-global-data': {
+      files: ['./src/app/index.css'],
     },
+    'postcss-custom-media': {},
     'postcss-nesting': {},
   },
 };
