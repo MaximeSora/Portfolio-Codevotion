@@ -270,6 +270,9 @@
 
 .project__link-button {
   /* padding-left: var(--spaceXS); */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 
   @media (--mediaUseMotion) {
     & {
@@ -391,6 +394,7 @@
 
 .project__section-big-heading {
   /* padding-top: var(--space5XL); */
+  font-size: calc(var(--fontSizeH2) - 0.25rem);
   margin-bottom: 0.6em;
 }
 

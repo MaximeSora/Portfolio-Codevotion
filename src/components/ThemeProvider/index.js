@@ -185,8 +185,8 @@ export const tokenStyles = `
   .light {
     --rgbBackground: 242 242 242;
     --rgbBackgroundLight: 255 255 255;
-    --rgbPrimary: 13 197 177;
-    --rgbAccent: 13 197 177;
+    --rgbPrimary: 13 122 109;
+    --rgbAccent: 13 122 109;
     --rgbText: 0 0 0;
     --rgbError: 210 14 60;
     --colorTextTitle: rgb(var(--rgbText) / 1);
