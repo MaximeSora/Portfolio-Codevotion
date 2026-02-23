@@ -386,6 +386,13 @@
 .project__section-heading {
   margin-top: 0.6em;
   margin-bottom: 0.6em;
+  overflow-wrap: break-word;
+
+  @media (--mediaMobile) {
+    & {
+      font-size: min(var(--fontSizeH1), 8.5vw);
+    }
+  }
 }
 
 .big-heading div{
@@ -396,6 +403,13 @@
   /* padding-top: var(--space5XL); */
   font-size: calc(var(--fontSizeH2) - 0.25rem);
   margin-bottom: 0.6em;
+  overflow-wrap: break-word;
+
+  @media (--mediaMobile) {
+    & {
+      font-size: min(calc(var(--fontSizeH2) - 0.25rem), 8vw);
+    }
+  }
 }
 
 .project__section-text + a,
@@ -415,6 +429,8 @@
     & {
       text-align: left;
       align-items: flex-start;
+      max-width: 100%;
+      overflow: hidden;
     }
   }
 }

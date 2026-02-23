@@ -6,6 +6,12 @@
   /* transition: all 150ms ease; */
   transition-property: background-color, opacity, transform, mix-blend-mode;
 }
+
+@media (--mediaTablet) {
+  .main-cursor, .secondary-cursor {
+    display: none;
+  }
+}
 .main-cursor {
   /* transition: opacity 1s cubic-bezier(0.77, 0, 0.175, 1); */
   /* animation: fadeIn 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards; */

@@ -312,11 +312,23 @@ div.project-summary__button a:hover span.button__text:after, div.project__text-r
   background: #ece8e1;
 }
 
+/* Outline button : p = fond primary (le "contour"), span.base = fond page décalé de 2px */
 div.project-summary__button a.button--outline > p,
 div.project__text-row a.button--outline > p {
-  background: transparent;
-  border: 2px solid rgb(var(--rgbPrimary));
-  color: rgb(var(--rgbPrimary));
+  background: rgb(var(--rgbPrimary));
+  border: none;
+}
+
+div.project-summary__button a.button--outline > p span.base,
+div.project__text-row a.button--outline > p span.base {
+  background: rgb(var(--rgbBackground));
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+  width: auto;
+  height: auto;
+  z-index: 1;
 }
 
 div.project-summary__button a.button--outline > p span.button__text,
@@ -327,11 +339,17 @@ div.project__text-row a.button--outline > p span.button__text {
 div.project-summary__button a.button--outline > p span.bg,
 div.project__text-row a.button--outline > p span.bg {
   background: rgb(var(--rgbPrimary));
+  z-index: 2;
+}
+
+div.project-summary__button a.button--outline:hover > p span.base,
+div.project__text-row a.button--outline:hover > p span.base {
+  background: transparent;
 }
 
 div.project-summary__button a.button--outline:hover > p span.button__text,
 div.project__text-row a.button--outline:hover > p span.button__text {
-  color: rgb(var(--colorTextTitle));
+  color: rgb(var(--rgbBackground));
 }
 
 @media (--mediaMobile) {
