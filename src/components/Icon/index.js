@@ -1,19 +1,19 @@
 import classNames from 'classnames';
-import { ReactComponent as ArrowRight } from 'assets/icons/arrow-right.svg';
-import { ReactComponent as ChevronRight } from 'assets/icons/chevron-right.svg';
-import { ReactComponent as Close } from 'assets/icons/close.svg';
-import { ReactComponent as Dribbble } from 'assets/icons/dribbble.svg';
-import { ReactComponent as Email } from 'assets/icons/email.svg';
-import { ReactComponent as Error } from 'assets/icons/error.svg';
-import { ReactComponent as Figma } from 'assets/icons/figma.svg';
-import { ReactComponent as Github } from 'assets/icons/github.svg';
-import { ReactComponent as Linkedin } from 'assets/icons/linkedin.svg';
-import { ReactComponent as Menu } from 'assets/icons/menu.svg';
-import { ReactComponent as Pause } from 'assets/icons/pause.svg';
-import { ReactComponent as Play } from 'assets/icons/play.svg';
-import { ReactComponent as Send } from 'assets/icons/send.svg';
-import { ReactComponent as Behance } from 'assets/icons/behance.svg';
-import { ReactComponent as Twitter } from 'assets/icons/twitter.svg';
+import ArrowRight from 'assets/icons/arrow-right.svg?react';
+import ChevronRight from 'assets/icons/chevron-right.svg?react';
+import Close from 'assets/icons/close.svg?react';
+import Dribbble from 'assets/icons/dribbble.svg?react';
+import Email from 'assets/icons/email.svg?react';
+import Error from 'assets/icons/error.svg?react';
+import Figma from 'assets/icons/figma.svg?react';
+import Github from 'assets/icons/github.svg?react';
+import Linkedin from 'assets/icons/linkedin.svg?react';
+import Menu from 'assets/icons/menu.svg?react';
+import Pause from 'assets/icons/pause.svg?react';
+import Play from 'assets/icons/play.svg?react';
+import Send from 'assets/icons/send.svg?react';
+import Behance from 'assets/icons/behance.svg?react';
+import Twitter from 'assets/icons/twitter.svg?react';
 import './index.css';
 
 export const icons = {

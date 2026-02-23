@@ -16,7 +16,7 @@ import Text from 'components/Text';
 import { reflow } from 'utils/transition';
 import prerender from 'utils/prerender';
 import { media } from 'utils/style';
-import { ReactComponent as ArrowDown } from 'assets/arrow-down.svg';
+import ArrowDown from 'assets/arrow-down.svg?react';
 import { tokens } from 'components/ThemeProvider/theme';
 import './index.css';
 

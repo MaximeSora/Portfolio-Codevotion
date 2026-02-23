@@ -5,7 +5,7 @@ import DecoderText from 'components/DecoderText';
 import Heading from 'components/Heading';
 import Section from 'components/Section';
 import VisuallyHidden from 'components/VisuallyHidden';
-import { ReactComponent as ArrowDown } from 'assets/arrow-down.svg';
+import ArrowDown from 'assets/arrow-down.svg?react';
 import { useInterval, usePrevious, useWindowSize } from 'hooks';
 import { reflow } from 'utils/transition';
 import prerender from 'utils/prerender';
