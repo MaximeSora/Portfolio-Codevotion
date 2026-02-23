@@ -2,8 +2,8 @@
   --buttonSize: var(--space2XL);
 
   position: fixed;
-  top: var(--spaceOuter);
-  right: var(--spaceOuter);
+  top: var(--spaceL);
+  right: var(--spaceL);
   width: var(--buttonSize);
   height: var(--buttonSize);
   z-index: 1024;

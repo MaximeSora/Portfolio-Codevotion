@@ -219,6 +219,7 @@
   font-size: var(--fontSizeBodyS);
   font-weight: var(--fontWeightMedium);
   color: rgb(var(--rgbPrimary));
+  text-align: left;
   opacity: 0;
   transition-property: opacity;
   transition-timing-function: var(--bezierFastoutSlowin);
@@ -240,6 +241,7 @@
 
 .project-summary__title {
   margin-bottom: var(--spaceL);
+  text-align: left;
   transition-property: opacity;
   transition-timing-function: var(--bezierFastoutSlowin);
   transition-duration: var(--durationXL);
@@ -261,6 +263,7 @@
 
 .project-summary__description {
   margin-bottom: var(--spaceXL);
+  text-align: left;
   transition-property: opacity;
   transition-timing-function: var(--bezierFastoutSlowin);
   transition-duration: var(--durationXL);

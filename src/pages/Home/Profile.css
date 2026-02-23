@@ -57,6 +57,16 @@
       grid-template-columns: 100%;
     }
   }
+
+  @media (--mediaTablet) {
+    & .profile__column:first-child {
+      order: 2;
+    }
+
+    & .profile__column:last-child {
+      order: 1;
+    }
+  }
 }
 
 .profile__column {
@@ -185,8 +195,8 @@
 
   @media (--mediaMobile) {
     & {
-      width: 480px;
-      height: 560px;
+      width: 320px;
+      height: 320px;
     }
   }
 }

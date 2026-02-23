@@ -185,6 +185,11 @@ div.project-summary__button, div.project__text-row {
   justify-content: center;
   flex-flow: column;
 }
+
+div.project-summary__button a.button,
+div.project__text-row a.button {
+  padding: 0;
+}
 /* div.project-summary__button a {
   width: 100%;
   max-width: 240px;
@@ -311,16 +316,22 @@ div.project-summary__button a.button--outline > p,
 div.project__text-row a.button--outline > p {
   background: transparent;
   border: 2px solid rgb(var(--rgbPrimary));
+  color: rgb(var(--rgbPrimary));
 }
 
 div.project-summary__button a.button--outline > p span.button__text,
 div.project__text-row a.button--outline > p span.button__text {
-  color: rgb(var(--colorTextTitle));
+  color: rgb(var(--rgbPrimary));
 }
 
-div.project-summary__button a.button--outline:hover > p,
-div.project__text-row a.button--outline:hover > p {
-  color: rgb(var(--rgbBackground));
+div.project-summary__button a.button--outline > p span.bg,
+div.project__text-row a.button--outline > p span.bg {
+  background: rgb(var(--rgbPrimary));
+}
+
+div.project-summary__button a.button--outline:hover > p span.button__text,
+div.project__text-row a.button--outline:hover > p span.button__text {
+  color: rgb(var(--colorTextTitle));
 }
 
 @media (--mediaMobile) {
