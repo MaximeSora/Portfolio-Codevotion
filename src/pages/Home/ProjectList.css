@@ -54,7 +54,8 @@
 
   @media (--mediaMobile) {
     & {
-      gap: var(--spaceL);
+      flex-direction: column;
+      gap: var(--spaceM);
       padding: var(--spaceXL) 0;
     }
   }
@@ -154,7 +155,11 @@
 
   @media (--mediaMobile) {
     & {
-      display: none;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      border-radius: 8px;
+      order: -1;
     }
   }
 }

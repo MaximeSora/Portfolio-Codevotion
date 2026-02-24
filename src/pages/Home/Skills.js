@@ -32,11 +32,13 @@ const skills = [
       'Sketch',
       'VS Code',
       'Github',
+      'Cursor',
+      'Claude Code',
     ],
   },
   {
     category: 'Tech',
-    items: ['HTML', 'CSS', 'JavaScript', 'React', 'Three.js', 'PHP', 'MySQL'],
+    items: ['HTML', 'CSS', 'JavaScript', 'React', 'Three.js', 'Vite', 'Node', 'PHP', 'MySQL'],
   },
   {
     category: 'Other',

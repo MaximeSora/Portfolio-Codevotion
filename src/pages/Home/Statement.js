@@ -4,7 +4,29 @@ import Section from 'components/Section';
 import { useInViewport } from 'hooks';
 import './Statement.css';
 
-const words = 'I craft engaging, user-centric experiences that seamlessly blend aesthetics and functionality — designed to delight users and drive tangible business results.'.split(' ');
+const segments = [
+  { text: 'I', highlight: false },
+  { text: 'craft', highlight: false },
+  { text: 'engaging,', highlight: true },
+  { text: 'user-centric', highlight: true },
+  { text: 'experiences', highlight: false },
+  { text: 'that', highlight: false },
+  { text: 'seamlessly', highlight: true },
+  { text: 'blend', highlight: false },
+  { text: 'aesthetics', highlight: true },
+  { text: 'and', highlight: false },
+  { text: 'functionality', highlight: true },
+  { text: '—', highlight: false },
+  { text: 'designed', highlight: false },
+  { text: 'to', highlight: false },
+  { text: 'delight', highlight: true },
+  { text: 'users', highlight: true },
+  { text: 'and', highlight: false },
+  { text: 'drive', highlight: false },
+  { text: 'tangible', highlight: true },
+  { text: 'business', highlight: true },
+  { text: 'results.', highlight: true },
+];
 
 const Statement = ({ id, sectionRef }) => {
   const ref = useRef();
@@ -19,13 +41,15 @@ const Statement = ({ id, sectionRef }) => {
             'statement__lead--entered': inView,
           })}
         >
-          {words.map((word, i) => (
+          {segments.map((seg, i) => (
             <span
               key={i}
-              className="statement__word"
+              className={classNames('statement__word', {
+                'statement__word--highlight': seg.highlight,
+              })}
               style={{ '--word-index': i }}
             >
-              {word}{' '}
+              {seg.text}
             </span>
           ))}
         </p>

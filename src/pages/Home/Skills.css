@@ -74,9 +74,15 @@
   font-weight: var(--fontWeightRegular);
   color: rgb(var(--rgbText) / 0.6);
   white-space: nowrap;
-  transition: color var(--durationS) ease;
+  border: 1px solid rgb(var(--rgbText) / 0.12);
+  border-radius: 999px;
+  padding: 3px 12px;
+  transition:
+    color var(--durationS) ease,
+    border-color var(--durationS) ease;
 
   &:hover {
     color: rgb(var(--rgbPrimary));
+    border-color: rgb(var(--rgbPrimary) / 0.3);
   }
 }

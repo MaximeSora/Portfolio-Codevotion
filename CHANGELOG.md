@@ -15,6 +15,30 @@ Historique des modifications apportées sur la branche `Claude-evol`.
 
 ---
 
+## Session — 2026-02-25 (suite)
+
+### Intro — overlay de lisibilité
+- Pseudo-élément `::after` sur `.intro` : `background: rgb(var(--rgbBackground) / 0.55)`, `position: absolute; inset: 0`, `pointer-events: none; z-index: 1`
+- Adapte automatiquement au thème (blanc en light, sombre en dark)
+- `z-index: 2` ajouté à `.intro__text` pour rester au-dessus de l'overlay
+
+### Statement — fix espacement + mots clés colorés
+- `.statement__lead` : `display: flex; flex-wrap: wrap; column-gap: 0.3em` — résout le bug d'espace entre `inline-block`
+- Refactorisation en tableau `segments` `{ text, highlight }` au lieu de `words`
+- `.statement__word--highlight` : `color: rgb(var(--rgbPrimary))` sur : `engaging,`, `user-centric`, `seamlessly`, `aesthetics`, `functionality`, `delight`, `users`, `tangible`, `business`, `results.`
+
+### ProjectList — thumbnail mobile au-dessus du titre
+- `.project-list__link` : `flex-direction: column` sur `--mediaMobile`
+- `.project-list__thumb` en mobile : `display: block`, `width: 100%`, `aspect-ratio: 16/9`, `order: -1` (passe au-dessus du titre)
+
+### Skills — pills restaurées + nouveaux outils
+- `.skills__tag` : `border: 1px solid rgb(var(--rgbText) / 0.12)`, `border-radius: 999px`, `padding: 3px 12px`
+- Hover : border-color teal + couleur teal
+- Ajout Tools : `Cursor`, `Claude Code`
+- Ajout Tech : `Vite`, `Node`
+
+---
+
 ## Session — 2026-02-25
 
 ### Available badge — timing d'apparition
