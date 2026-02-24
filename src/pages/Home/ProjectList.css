@@ -27,10 +27,9 @@
   opacity: 0;
   animation: project-item-in var(--durationXL) var(--bezierFastoutSlowin) forwards;
   animation-play-state: paused;
-  animation-delay: calc(var(--item-index) * 80ms);
 }
 
-.project-list__items--entered .project-list__item {
+.project-list__item--entered {
   animation-play-state: running;
 }
 

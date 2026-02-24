@@ -129,7 +129,7 @@
 
 .button__text {
   font-size: var(--buttonFontSize);
-  font-weight: var(--fontWeightMedium);
+  font-weight: var(--fontWeightBold);
   visibility: var(--buttonTextVisibility);
   position: relative;
   color: rgb(var(--colorTextTitle));

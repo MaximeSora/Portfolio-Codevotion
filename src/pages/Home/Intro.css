@@ -173,19 +173,12 @@
 @keyframes intro-text-reveal {
   0% {
     color: rgb(var(--rgbText) / 0);
-    filter: blur(16px);
-  }
-  50% {
-    color: rgb(var(--rgbText) / 0);
-    filter: blur(6px);
   }
   65% {
     color: var(--colorTextTitle);
-    filter: blur(0px);
   }
   100% {
     color: var(--colorTextTitle);
-    filter: blur(0px);
   }
 }
 

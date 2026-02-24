@@ -11,6 +11,7 @@ import {
   HalfFloatType,
   AmbientLight,
   RectAreaLight,
+  Clock,
 } from 'three';
 import {
   EffectComposer,
@@ -18,10 +19,9 @@ import {
   NormalPass,
   SSAOEffect,
   BlendFunction,
-  BloomEffect,
-  KernelSize,
   EffectPass,
 } from 'postprocessing';
+import { AnimationMixer } from 'three';
 import { spring, value } from 'popmotion';
 import { RectAreaLightUniformsLib } from 'three/examples/jsm/lights/RectAreaLightUniformsLib.js';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
@@ -44,6 +44,8 @@ const Portrait = ({ className, delay, ...rest }) => {
   const scene = useRef();
   const composer = useRef();
   const lights = useRef();
+  const mixer = useRef();
+  const clock = useRef(new Clock());
   const prefersReducedMotion = usePrefersReducedMotion();
   const isInViewport = useInViewport(container);
 
@@ -92,17 +94,7 @@ const Portrait = ({ className, delay, ...rest }) => {
       bias: 0.25,
     });
 
-    const bloomEffect = new BloomEffect({
-      opacity: 1,
-      blendFunction: BlendFunction.SCREEN,
-      kernelSize: KernelSize.SMALL,
-      luminanceThreshold: 0.65,
-      luminanceSmoothing: 0.07,
-      height: 600,
-    });
-    bloomEffect.blendMode.opacity.value = 1;
-
-    const effectPass = new EffectPass(camera.current, ssaoEffect, bloomEffect);
+    const effectPass = new EffectPass(camera.current, ssaoEffect);
     effectPass.renderToScreen = true;
 
     composer.current.addPass(normalPass);
@@ -118,10 +110,21 @@ const Portrait = ({ className, delay, ...rest }) => {
       model.scene.position.y = -2.98;
       model.scene.scale.set(1.73, 1.73, 1.73);
       scene.current.add(model.scene);
-      composer.current.render();
+
+      if (model.animations?.length > 0) {
+        mixer.current = new AnimationMixer(model.scene);
+        mixer.current.clipAction(model.animations[0]).play();
+      }
+
+      renderer.current.setAnimationLoop(() => {
+        const delta = clock.current.getDelta();
+        if (mixer.current) mixer.current.update(delta);
+        composer.current.render();
+      });
     });
 
     return () => {
+      renderer.current.setAnimationLoop(null);
       cleanScene(scene.current);
       cleanRenderer(renderer.current);
     };

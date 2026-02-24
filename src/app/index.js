@@ -41,7 +41,7 @@ export const TransitionContext = createContext();
 const repoPrompt = `\u00A9 2021-${new Date().getFullYear()} Maxime Pocq\n\n`;
 
 const App = () => {
-  const [storedTheme] = useLocalStorage('theme', 'light');
+  const [storedTheme] = useLocalStorage('theme', 'dark');
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {

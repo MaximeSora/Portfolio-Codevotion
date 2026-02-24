@@ -7,7 +7,7 @@ import './Statement.css';
 const segments = [
   { text: 'I', highlight: false },
   { text: 'craft', highlight: false },
-  { text: 'engaging,', highlight: true },
+  { text: 'engaging', highlight: true },
   { text: 'user', highlight: true },
   { text: 'focused', highlight: true },
   { text: 'experiences', highlight: true },

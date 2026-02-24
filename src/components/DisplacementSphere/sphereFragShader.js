@@ -45,11 +45,11 @@ void main() {
   // Remap cos intensity to a theme-aware palette
   float intensity = clamp(cos(finalColors.r * noise * 3.0) * 0.5 + 0.5, 0.0, 1.0);
 
-  // Dark mode palette
-  vec3 dColorBase      = vec3(0.0,  0.18, 0.32);
-  vec3 dColorMid       = vec3(0.0,  0.55, 0.75);
-  vec3 dColorHighlight = vec3(0.0,  0.88, 1.0);
-  vec3 dColorWhite     = vec3(0.70, 0.97, 1.0);
+  // Dark mode palette — teal primary (0, 229, 255)
+  vec3 dColorBase      = vec3(0.0,  0.30, 0.50);
+  vec3 dColorMid       = vec3(0.0,  0.70, 0.90);
+  vec3 dColorHighlight = vec3(0.0,  0.90, 1.0);
+  vec3 dColorWhite     = vec3(0.55, 0.98, 1.0);
 
   // Light mode palette — bright cyan→white, high luminosity
   vec3 lColorBase      = vec3(0.45, 0.88, 0.95);
