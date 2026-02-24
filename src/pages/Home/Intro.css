@@ -216,7 +216,6 @@
   &::after {
     content: '';
     width: 100%;
-    height: 100%;
     background: rgb(var(--rgbAccent));
     animation-duration: 1.5s;
     animation-delay: var(--delay);
@@ -225,9 +224,9 @@
     transform-origin: left;
     transform: scale3d(0, 1, 1);
     position: absolute;
-    top: 0;
+    top: -4px;
     right: 0;
-    bottom: 0;
+    bottom: -4px;
     left: 0;
     z-index: 1;
     will-change: transform;
@@ -241,6 +240,7 @@
 }
 
 .intro__title-word--entering {
+  color: rgb(var(--rgbText) / 0);
   animation-name: intro-text-reveal;
 
   @media (--mediaUseMotion) {
@@ -443,7 +443,7 @@
   white-space: nowrap;
   border: 1px solid rgb(var(--rgbText) / 0.15);
   border-radius: 999px;
-  padding: var(--spaceXS) var(--spaceM);
+  padding: var(--spaceS) var(--spaceL);
 }
 
 .intro__available--entering {

@@ -54,6 +54,10 @@
   color: rgb(var(--rgbPrimary));
 }
 
+.statement__suffix {
+  color: var(--colorTextBody);
+}
+
 @media (--mediaUseMotion) {
   .statement__word {
     opacity: 0;

@@ -4,6 +4,7 @@ import Link from 'components/Link';
 import Section from 'components/Section';
 import { useWindowSize, useInViewport } from 'hooks';
 import { media } from 'utils/style';
+import KatakanaProject from 'assets/katakana-project.svg?react';
 import './ProjectList.css';
 
 const ProjectItem = ({ project, index, dimmed, onMouseEnter, onMouseLeave }) => {
@@ -53,6 +54,7 @@ const ProjectItem = ({ project, index, dimmed, onMouseEnter, onMouseLeave }) => 
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
+      <KatakanaProject aria-hidden className="project-list__katakana" />
       {content}
     </li>
   );

@@ -7,7 +7,7 @@ import './Statement.css';
 const segments = [
   { text: 'I', highlight: false },
   { text: 'craft', highlight: false },
-  { text: 'engaging', highlight: true },
+  { text: 'engaging', highlight: true, suffix: ',' },
   { text: 'user', highlight: true },
   { text: 'focused', highlight: true },
   { text: 'experiences', highlight: true },
@@ -49,7 +49,7 @@ const Statement = ({ id, sectionRef }) => {
               })}
               style={{ '--word-index': i }}
             >
-              {seg.text}
+              {seg.text}{seg.suffix && <span className="statement__suffix">{seg.suffix}</span>}
             </span>
           ))}
         </p>

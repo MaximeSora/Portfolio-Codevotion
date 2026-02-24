@@ -27,6 +27,8 @@
   opacity: 0;
   animation: project-item-in var(--durationXL) var(--bezierFastoutSlowin) forwards;
   animation-play-state: paused;
+  position: relative;
+  overflow: hidden;
 }
 
 .project-list__item--entered {
@@ -79,6 +81,8 @@
   color: inherit;
   border-radius: 4px;
   transition: background var(--durationS) ease;
+  position: relative;
+  z-index: 1;
 
   @media (--mediaDesktop) {
     & {
@@ -140,7 +144,7 @@
 }
 
 .project-list__description {
-  font-size: var(--fontSizeBodyS);
+  font-size: var(--fontSizeBodyM);
   color: rgb(var(--rgbText) / 0.5);
   line-height: 1.3;
   margin-top: var(--spaceS);
@@ -214,4 +218,24 @@
 .project-list__item:hover .project-list__thumb video,
 .project-list__item:hover .project-list__thumb img {
   transform: scale(1.05);
+}
+
+/* Katakana decorative background */
+.project-list__katakana {
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 65%;
+  width: auto;
+  fill: var(--colorTextTitle);
+  opacity: 0.05;
+  z-index: 0;
+  pointer-events: none;
+
+  @media (--mediaMobile) {
+    & {
+      display: none;
+    }
+  }
 }
