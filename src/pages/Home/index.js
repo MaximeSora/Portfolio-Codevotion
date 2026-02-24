@@ -4,9 +4,10 @@ import { Helmet } from 'react-helmet';
 import Intro from './Intro';
 import Statement from './Statement';
 import Marquee from './Marquee';
+import Approach from './Approach';
 import ProjectList from './ProjectList';
 import Profile from './Profile';
-import Skills from './Skills';
+import Contact from './Contact';
 import Footer from 'components/Footer';
 import { usePrefersReducedMotion, useRouteTransition } from 'hooks';
 import joThumbnail from 'assets/jo/jo-thumbnail.mp4';
@@ -171,6 +172,7 @@ const Home = () => {
         scrollIndicatorHidden={scrollIndicatorHidden}
       />
       <Statement id="statement" />
+      <Approach id="approach" />
       <Marquee />
       <ProjectList
         id="projects"
@@ -182,7 +184,7 @@ const Home = () => {
         visible={visibleSections.includes(about.current)}
         id="about"
       />
-      <Skills id="skills" />
+      <Contact id="contact" />
       <Footer />
     </div>
   );

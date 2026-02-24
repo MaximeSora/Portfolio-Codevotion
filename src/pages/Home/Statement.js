@@ -5,6 +5,11 @@ import { useInViewport } from 'hooks';
 import './Statement.css';
 
 const segments = [
+  { text: 'With', highlight: false },
+  { text: '6', highlight: false },
+  { text: 'years', highlight: false },
+  { text: 'of', highlight: false },
+  { text: 'experience,', highlight: false },
   { text: 'I', highlight: false },
   { text: 'craft', highlight: false },
   { text: 'engaging', highlight: true, suffix: ',' },

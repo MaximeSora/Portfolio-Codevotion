@@ -1,8 +1,6 @@
 import { lazy, Fragment, Suspense } from 'react';
 import classNames from 'classnames';
 import { Transition } from 'react-transition-group';
-import Link from 'components/Link';
-import { Button } from 'components/Button';
 import DecoderText from 'components/DecoderText';
 import Divider from 'components/Divider';
 import Section from 'components/Section';
@@ -78,28 +76,6 @@ const Profile = ({ id, visible, sectionRef }) => {
                 </div>
               </div>
               <ProfileText status={status} titleId={titleId} />
-              {/* <Button
-                className={classNames('profile__button', `profile__button--${status}`)}
-                href="/contact"
-                icon="send"
-              >
-                M'envoyer un email
-              </Button> */}
-
-              <div
-                className={classNames(
-                  'project-summary__button',
-                  `project-summary__button--${status}`
-                )}
-              >
-                <Button iconHoverShift href="/resume.pdf" icon="chevronRight">
-                  See my resume
-                </Button>
-                <br></br>
-                <Button outline iconHoverShift href="https://www.linkedin.com/in/maxime-pocq/" icon="linkedin">
-                  Let's connect
-                </Button>
-              </div>
             </div>
             <div className="profile__column">
               <div className="profile__image-wrapper">
