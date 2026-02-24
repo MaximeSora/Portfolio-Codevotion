@@ -15,6 +15,40 @@ Historique des modifications apportées sur la branche `Claude-evol`.
 
 ---
 
+## Session — 2026-02-25 (suite 5)
+
+### Portrait — suppression bloom + animation idle GLB
+- Suppression de `BloomEffect` et `KernelSize` du composant Portrait — `EffectPass` ne contient plus que `SSAOEffect`
+- Ajout de `AnimationMixer` (Three.js) + `Clock` pour lire les animations du GLB
+- `renderer.current.setAnimationLoop()` : loop continu qui appelle `mixer.update(delta)` à chaque frame
+- Le modèle joue son animation idle au lieu de rester en T-pose
+- Cleanup : `renderer.current.setAnimationLoop(null)` à la destruction du composant
+
+### ProjectList — taille de la description agrandie
+- `.project-list__description` : `fontSizeBodyS` → `fontSizeBodyM`
+
+### Intro — fix flash du mot avant la bande primary
+- `.intro__title-word--entering` : ajout de `color: rgb(var(--rgbText) / 0)` explicite pour écraser tout état résiduel avant le démarrage de l'animation
+- `::after` (bande primary) : `top: 0; bottom: 0` → `top: -4px; bottom: -4px` (suppression de `height: 100%`) pour couvrir les ascendants/descendants du texte
+
+### ProjectList — décoration katakana
+- Import de `katakana-project.svg?react` dans `ProjectList.js`
+- SVG placé comme élément `aria-hidden` dans chaque `<li>`, positionné en absolu à droite (`right: -10px; top: 50%; transform: translateY(-50%)`)
+- Styles : `height: 65%; width: auto; opacity: 0.05; fill: var(--colorTextTitle); z-index: 0`
+- `.project-list__item` : ajout de `position: relative; overflow: hidden`
+- `.project-list__link` : ajout de `position: relative; z-index: 1`
+- Masqué sur mobile (`@media (--mediaMobile) { display: none }`)
+
+### Available badge — padding augmenté
+- `.intro__available` : `padding: var(--spaceXS) var(--spaceM)` → `padding: var(--spaceS) var(--spaceL)` pour plus d'espace intérieur
+
+### Statement — virgule après "engaging" en couleur neutre
+- Ajout d'une propriété `suffix: ','` sur le segment `engaging` dans le tableau `segments`
+- Rendu : `<span className="statement__suffix">{seg.suffix}</span>` à l'intérieur du span du mot (sans gap flex avant)
+- `.statement__suffix { color: var(--colorTextBody) }` — la virgule reste en couleur neutre, le mot reste en primary
+
+---
+
 ## Session — 2026-02-25 (suite 4)
 
 ### Statement — highlights mis à jour
