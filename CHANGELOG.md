@@ -15,6 +15,20 @@ Historique des modifications apportées sur la branche `Claude-evol`.
 
 ---
 
+## Session — 2026-02-25 (suite 4)
+
+### Statement — highlights mis à jour
+- `engaging,`, `user`, `focused`, `experiences` passés en primary
+- Highlights finaux : `engaging, user focused experiences` + `delight users` + `tangible business results.`
+
+### DisplacementSphere — opacité remise à 1
+- `index.css` : opacity `0.2` → `1`
+
+### ProjectList — numéro agrandi + marge augmentée
+- `.project-list__num` : `fontSizeBodyXS` → `fontSizeBodyS`, `margin-bottom: 4px` → `var(--spaceS)`
+
+---
+
 ## Session — 2026-02-25 (suite 3)
 
 ### DisplacementSphere — opacité 0.2 + light mode plus bright

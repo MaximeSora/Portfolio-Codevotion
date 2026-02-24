@@ -111,12 +111,12 @@
 }
 
 .project-list__num {
-  font-size: var(--fontSizeBodyXS);
+  font-size: var(--fontSizeBodyS);
   font-weight: var(--fontWeightMedium);
   color: rgb(var(--rgbPrimary));
   font-variant-numeric: tabular-nums;
   line-height: 1;
-  margin-bottom: 4px;
+  margin-bottom: var(--spaceS);
 }
 
 .project-list__text {
