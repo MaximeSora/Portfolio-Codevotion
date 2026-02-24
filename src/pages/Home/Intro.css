@@ -90,10 +90,35 @@
 
 .intro__name--entering {
   animation: fade-in var(--durationL) ease 0.2s forwards;
+
+  @media (--mediaUseMotion) {
+    & {
+      animation: intro-name-reveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+    }
+  }
 }
 
 .intro__name--entered {
   animation: fade-in var(--durationL) ease 0.2s forwards;
+
+  @media (--mediaUseMotion) {
+    & {
+      animation: intro-name-reveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+    }
+  }
+}
+
+@keyframes intro-name-reveal {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translate3d(0, 12px, 0);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 .intro__title {
@@ -147,15 +172,19 @@
 @keyframes intro-text-reveal {
   0% {
     color: rgb(var(--rgbText) / 0);
+    filter: blur(16px);
   }
   50% {
     color: rgb(var(--rgbText) / 0);
+    filter: blur(6px);
   }
-  60% {
+  65% {
     color: var(--colorTextTitle);
+    filter: blur(0px);
   }
   100% {
     color: var(--colorTextTitle);
+    filter: blur(0px);
   }
 }
 

@@ -46,7 +46,7 @@ void main() {
   vec3 colorBase      = vec3(0.0,  0.30, 0.42);  // mid-teal (lighter default)
   vec3 colorMid       = vec3(0.0,  0.60, 0.78);  // rich teal
   vec3 colorHighlight = vec3(0.0,  0.90, 1.0);   // primary cyan #00E5FF
-  vec3 colorWhite     = vec3(0.75, 1.0,  1.0);   // near-white cyan
+  vec3 colorWhite     = vec3(1.0,  1.0,  1.0);   // pure white
   float t0 = smoothstep(0.0,  0.33, intensity);
   float t1 = smoothstep(0.33, 0.66, intensity);
   float t2 = smoothstep(0.66, 1.0,  intensity);
