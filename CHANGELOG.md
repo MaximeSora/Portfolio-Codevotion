@@ -15,6 +15,58 @@ Historique des modifications apportées sur la branche `Claude-evol`.
 
 ---
 
+## Session — 2026-02-25
+
+### Available badge — timing d'apparition
+- Transition : `opacity var(--durationXL) ease 1.6s` → `opacity 0.9s ease 0.2s`
+- Apparaît maintenant en même temps que le nom "Maxime Pocq"
+
+### Statement — reveal mot par mot
+- Texte découpé en `<span className="statement__word" style={{ '--word-index': i }}>` en JS
+- CSS : `animation-delay: calc(var(--word-index) * 40ms)` sur chaque mot
+- Keyframe `statement-word-in` : blur(12px) + translateY(8px) → clear en 0.7s
+- Sous `@media (--mediaUseMotion)` uniquement ; fallback = fade-in simple sur le `<p>`
+
+### Statement — texte mis à jour
+- "I craft engaging, user-centric experiences that seamlessly blend aesthetics and functionality — designed to delight users and drive tangible business results."
+- Aligné avec le Notion portfolio et le texte About
+
+### Portrait desktop — hauteur contrainte
+- `max-height: 540px` sur `.profile__image`
+- `aspect-ratio: 3/4` maintenu — largeur réduite proportionnellement (~405px)
+
+### Profile / About — texte réécrit
+- P1 : emphasis UI + "seamlessly integrate aesthetics and functionality" + full product cycle
+- P2 : dev constraints + AI + "delight users and drive tangible business results"
+- P3 : CTA inchangé
+
+### Profile — boutons
+- "Send me an email" → "See my resume" (`/resume.pdf`, icône `chevronRight`)
+- "LinkedIn" → "Let's connect" (LinkedIn, icône `linkedin`)
+
+### DisplacementSphere — palette light mode
+- Ajout de `uniform float uIsLight` dans le fragment shader
+- Palette dark (inchangée) vs palette light (teal moyen → cyan vif → mint → blanc pur)
+- `dirLight` : 1.2 → 2.0 en light mode ; `ambientLight` : 0.8 → 0.3 en light mode
+- `uniforms.current.uIsLight.value` mis à jour à chaque changement de thème
+
+### ProjectList — redesign visuel
+- Suppression du cursor-following preview flottant
+- Ajout d'un thumbnail inline permanent à droite de chaque item (280×175px desktop, 200×125px tablette, caché mobile)
+- Titre vire au teal au hover ; hover scale `1.05` sur le thumbnail
+- Tags déplacés sous le titre (hiérarchie verticale)
+- Padding item : `var(--space2XL)` par défaut, `var(--space3XL)` sur `--mediaDesktop`
+- Placeholder dashed pour les items "Soon"
+
+### Navbar mobile — taille typographie
+- `.navbar__mobile-nav-link` : `font-size: calc(var(--navbarNavFontSize) * 3)` → `* 2` (~44px au lieu de ~66px)
+
+### Skills — suppression des contours
+- `.skills__tag` : suppression de `border`, `border-radius`, `padding`
+- Texte simple `color: rgb(var(--rgbText) / 0.6)`, hover teal
+
+---
+
 ## Session — 2026-02-24 (suite)
 
 ### Available badge — alignement gauche

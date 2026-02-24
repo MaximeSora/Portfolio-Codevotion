@@ -70,17 +70,13 @@
 }
 
 .skills__tag {
-  font-size: var(--fontSizeBodyXS);
-  font-weight: var(--fontWeightMedium);
-  color: rgb(var(--rgbText) / 0.7);
-  border: 1px solid rgb(var(--rgbText) / 0.15);
-  border-radius: 999px;
-  padding: 4px 12px;
+  font-size: var(--fontSizeBodyS);
+  font-weight: var(--fontWeightRegular);
+  color: rgb(var(--rgbText) / 0.6);
   white-space: nowrap;
-  transition: border-color var(--durationS) ease, color var(--durationS) ease;
+  transition: color var(--durationS) ease;
 
   &:hover {
-    border-color: rgb(var(--rgbPrimary) / 0.5);
     color: rgb(var(--rgbPrimary));
   }
 }

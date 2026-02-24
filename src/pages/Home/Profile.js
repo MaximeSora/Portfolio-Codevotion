@@ -28,13 +28,13 @@ const ProfileText = ({ status, titleId }) => (
       className={classNames('profile__description', `profile__description--${status}`)}
       size="l"
     >
-      I'm Maxime — a Product Designer rooted in interactive design, with a background that spans video games, software, and digital product work. I'm comfortable navigating the full product cycle: from early-stage research and UX strategy to motion design and working alongside engineering teams to ship.
+      I'm Maxime — a Product Designer with an emphasis on UI. I craft engaging, user-centric experiences that seamlessly integrate aesthetics and functionality, across the full product cycle: from early research and UX strategy to motion design and working closely with engineering teams.
     </Text>
     <Text
       className={classNames('profile__description', `profile__description--${status}`)}
       size="l"
     >
-      What sets my approach apart is a genuine understanding of dev constraints and business realities — technical limits, competing priorities, tight timelines. I use AI throughout ideation, prototyping, and validation to move faster without sacrificing depth. The goal is always the same: experiences that feel right for users and make sense for the business.
+      What sets my approach apart: a genuine understanding of dev constraints and business realities. I use AI throughout ideation and prototyping to move faster without sacrificing depth — building interfaces that delight users and drive tangible business results.
     </Text>
     <Text
       className={classNames('profile__description', `profile__description--${status}`)}
@@ -92,12 +92,12 @@ const Profile = ({ id, visible, sectionRef }) => {
                   `project-summary__button--${status}`
                 )}
               >
-                <Button iconHoverShift href="mailto:maxime.pocq@gmail.com" icon="send">
-                  Send me an email
+                <Button iconHoverShift href="/resume.pdf" icon="chevronRight">
+                  See my resume
                 </Button>
                 <br></br>
                 <Button outline iconHoverShift href="https://www.linkedin.com/in/maxime-pocq/" icon="linkedin">
-                  LinkedIn
+                  Let's connect
                 </Button>
               </div>
             </div>

@@ -4,6 +4,8 @@ import Section from 'components/Section';
 import { useInViewport } from 'hooks';
 import './Statement.css';
 
+const words = 'I craft engaging, user-centric experiences that seamlessly blend aesthetics and functionality — designed to delight users and drive tangible business results.'.split(' ');
+
 const Statement = ({ id, sectionRef }) => {
   const ref = useRef();
   const inView = useInViewport(ref, true, { rootMargin: '0px 0px -20% 0px' });
@@ -17,9 +19,15 @@ const Statement = ({ id, sectionRef }) => {
             'statement__lead--entered': inView,
           })}
         >
-          I design products that move people — and metrics.
-          Fluent in UX strategy, dev constraints, and AI-assisted workflows
-          to ship experiences that earn their place in the roadmap.
+          {words.map((word, i) => (
+            <span
+              key={i}
+              className="statement__word"
+              style={{ '--word-index': i }}
+            >
+              {word}{' '}
+            </span>
+          ))}
         </p>
       </div>
     </Section>

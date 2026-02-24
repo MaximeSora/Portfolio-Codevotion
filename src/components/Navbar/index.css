@@ -245,7 +245,7 @@
 
 .navbar__mobile-nav-link {
   /* width: 100%; */
-  font-size: calc(var(--navbarNavFontSize) * 3);
+  font-size: calc(var(--navbarNavFontSize) * 2);
   text-align: center;
   text-transform: uppercase;
   font-weight: var(--fontWeightBold);

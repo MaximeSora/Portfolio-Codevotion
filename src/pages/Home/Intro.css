@@ -446,7 +446,7 @@
   color: rgb(var(--rgbText) / 0.6);
   letter-spacing: 0.04em;
   opacity: 0;
-  transition: opacity var(--durationXL) ease 1.6s;
+  transition: opacity 0.9s ease 0.2s;
   white-space: nowrap;
   border: 1px solid rgb(var(--rgbText) / 0.15);
   border-radius: 999px;

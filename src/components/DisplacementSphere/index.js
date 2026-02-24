@@ -69,6 +69,7 @@ const DisplacementSphere = props => {
         UniformsLib['lights'],
         shader.uniforms,
         { time: { type: 'f', value: 0 } },
+        { uIsLight: { value: 0.0 } },
       ]);
 
       shader.uniforms = uniforms.current;
@@ -88,14 +89,18 @@ const DisplacementSphere = props => {
   }, []);
 
   useEffect(() => {
-    const dirLight = new DirectionalLight(colorWhite, 1.2);
-    const ambientLight = new AmbientLight(colorWhite, themeId === 'light' ? 0.8 : 0.05);
+    const dirLight = new DirectionalLight(colorWhite, themeId === 'light' ? 2.0 : 1.2);
+    const ambientLight = new AmbientLight(colorWhite, themeId === 'light' ? 0.3 : 0.05);
 
     dirLight.position.set(100, 100, 200);
 
     lights.current = [dirLight, ambientLight];
     scene.current.background = new Color().setRGB(...rgbToThreeColor(rgbBackground), SRGBColorSpace);
     lights.current.forEach(light => scene.current.add(light));
+
+    if (uniforms.current) {
+      uniforms.current.uIsLight.value = themeId === 'light' ? 1.0 : 0.0;
+    }
 
     return () => {
       removeLights(lights.current);

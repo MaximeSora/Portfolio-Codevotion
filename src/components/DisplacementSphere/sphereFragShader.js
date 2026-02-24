@@ -3,6 +3,7 @@ export default `
 
 uniform vec3 diffuse;
 uniform vec3 emissive;
+uniform float uIsLight;
 uniform vec3 specular;
 uniform float shininess;
 uniform float opacity;
@@ -41,12 +42,26 @@ void main() {
   vec3 color = vec3(vUv * (0.2 - 2.0 * noise), 1.0);
   vec3 finalColors = vec3(color.b * 1.5, color.r, color.r);
 
-  // Remap cos intensity to a teal→cyan→white palette
+  // Remap cos intensity to a theme-aware palette
   float intensity = clamp(cos(finalColors.r * noise * 3.0) * 0.5 + 0.5, 0.0, 1.0);
-  vec3 colorBase      = vec3(0.0,  0.18, 0.32);  // teal sombre (contraste maximal côté dos)
-  vec3 colorMid       = vec3(0.0,  0.55, 0.75);  // teal riche
-  vec3 colorHighlight = vec3(0.0,  0.88, 1.0);   // cyan vif #00E0FF
-  vec3 colorWhite     = vec3(0.70, 0.97, 1.0);   // cyan-blanc (garde la teinte, évite le blanc pur)
+
+  // Dark mode palette
+  vec3 dColorBase      = vec3(0.0,  0.18, 0.32);
+  vec3 dColorMid       = vec3(0.0,  0.55, 0.75);
+  vec3 dColorHighlight = vec3(0.0,  0.88, 1.0);
+  vec3 dColorWhite     = vec3(0.70, 0.97, 1.0);
+
+  // Light mode palette — vivid teal→cyan→mint→white
+  vec3 lColorBase      = vec3(0.0,  0.55, 0.75);
+  vec3 lColorMid       = vec3(0.0,  0.88, 1.0);
+  vec3 lColorHighlight = vec3(0.3,  1.0,  0.95);
+  vec3 lColorWhite     = vec3(1.0,  1.0,  1.0);
+
+  vec3 colorBase      = mix(dColorBase,      lColorBase,      uIsLight);
+  vec3 colorMid       = mix(dColorMid,       lColorMid,       uIsLight);
+  vec3 colorHighlight = mix(dColorHighlight, lColorHighlight, uIsLight);
+  vec3 colorWhite     = mix(dColorWhite,     lColorWhite,     uIsLight);
+
   float t0 = smoothstep(0.0,  0.33, intensity);
   float t1 = smoothstep(0.33, 0.66, intensity);
   float t2 = smoothstep(0.66, 1.0,  intensity);
