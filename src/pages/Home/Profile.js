@@ -28,19 +28,19 @@ const ProfileText = ({ status, titleId }) => (
       className={classNames('profile__description', `profile__description--${status}`)}
       size="l"
     >
-      I'm Maxime — a Product Designer with an emphasis on UI. I craft engaging, user-centric experiences that seamlessly integrate aesthetics and functionality, across the full product cycle: from early research and UX strategy to motion design and working closely with engineering teams.
+      I'm Maxime, a Product Designer with an emphasis on UI. I craft engaging, user focused experiences that seamlessly integrate aesthetics and functionality, across the full product cycle: from early research and UX strategy to motion design and working closely with engineering teams.
     </Text>
     <Text
       className={classNames('profile__description', `profile__description--${status}`)}
       size="l"
     >
-      What sets my approach apart: a genuine understanding of dev constraints and business realities. I use AI throughout ideation and prototyping to move faster without sacrificing depth — building interfaces that delight users and drive tangible business results.
+      What sets my approach apart: a genuine understanding of dev constraints and business realities. I use AI throughout ideation and prototyping to move faster without sacrificing depth, building interfaces that delight users and drive tangible business results.
     </Text>
     <Text
       className={classNames('profile__description', `profile__description--${status}`)}
       size="l"
     >
-      I'm open to new projects and collaborations — if you have something in mind, let's talk.
+      I'm open to new projects and collaborations. If you have something in mind, let's talk.
     </Text>
   </Fragment>
 );

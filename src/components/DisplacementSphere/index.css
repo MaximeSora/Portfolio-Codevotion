@@ -13,5 +13,5 @@
 
 .displacement-sphere--entering,
 .displacement-sphere--entered {
-  opacity: 1;
+  opacity: 0.4;
 }

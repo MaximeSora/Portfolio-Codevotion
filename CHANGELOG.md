@@ -15,6 +15,26 @@ Historique des modifications apportées sur la branche `Claude-evol`.
 
 ---
 
+## Session — 2026-02-25 (suite 2)
+
+### Portrait — canvas alignée sur le reveal
+- `Portrait/index.css` : `width: 100% !important; height: 100% !important;` sur `.portrait__canvas`
+- Three.js `setSize(w*1.2, h*1.2)` injectait un `style.width/height` en inline à 1.2× — la canvas débordait du container
+- Le `::before` reveal (inset: 0) est maintenant parfaitement aligné avec la canvas
+
+### Statement — réduction des mots clés en primary
+- Highlights réduits à 4 mots/groupes : `seamlessly` + `delight` + `users` + `tangible business results.`
+
+### Sphere hero — overlay remplacé par opacity
+- Suppression du `::after` overlay sur `.intro`
+- `.displacement-sphere--entering/entered` : `opacity: 1` → `opacity: 0.4`
+
+### Profile / Statement — suppression des tirets
+- Em dashes `—` remplacés par virgules ou point dans Profile.js et Statement.js
+- `user-centric` → `user focused` (sans trait d'union)
+
+---
+
 ## Session — 2026-02-25 (suite)
 
 ### Intro — overlay de lisibilité
