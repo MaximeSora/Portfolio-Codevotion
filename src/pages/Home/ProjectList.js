@@ -44,7 +44,7 @@ const ProjectList = ({ id, sectionRef, projects }) => {
                   </span>
                   <div className="project-list__text">
                     <span className="project-list__title">{project.title}</span>
-                    <span className="project-list__tags">{project.tags}</span>
+                    <span className="project-list__description">{project.description}</span>
                   </div>
                   <span className="project-list__arrow" aria-hidden>↗</span>
                 </div>
@@ -64,7 +64,7 @@ const ProjectList = ({ id, sectionRef, projects }) => {
                   </span>
                   <div className="project-list__text">
                     <span className="project-list__title">{project.title}</span>
-                    <span className="project-list__tags">{project.tags}</span>
+                    <span className="project-list__description">{project.description}</span>
                   </div>
                   <span className="project-list__badge">Soon</span>
                 </div>

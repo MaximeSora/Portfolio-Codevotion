@@ -19,24 +19,24 @@ import './index.css';
 const projects = [
   {
     title: 'Solbase',
-    tags: 'Product Design · UX',
+    description: 'Gamified music learning platform. Full product cycle from research and UX strategy to visual design and developer handoff.',
     link: '/projects/solbase',
     image: solbaseThumbnail,
   },
   {
     title: 'Olympic Games',
-    tags: 'Motion · Interaction',
+    description: 'Interactive motion experience for Paris 2024. 3D animations, data storytelling and rich interactions.',
     link: '/projects/jo',
     video: joThumbnail,
   },
   {
     title: 'Coming soon',
-    tags: 'Case study',
+    description: 'New case study in progress.',
     link: null,
   },
   {
     title: 'Coming soon',
-    tags: 'Case study',
+    description: 'New case study in progress.',
     link: null,
   },
 ];
