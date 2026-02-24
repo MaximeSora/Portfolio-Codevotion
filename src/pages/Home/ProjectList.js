@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import classNames from 'classnames';
 import Link from 'components/Link';
 import Section from 'components/Section';
-import { useWindowSize } from 'hooks';
+import { useWindowSize, useInViewport } from 'hooks';
 import { media } from 'utils/style';
 import './ProjectList.css';
 
@@ -10,6 +10,8 @@ const ProjectList = ({ id, sectionRef, projects }) => {
   const [hoveredIdx, setHoveredIdx] = useState(null);
   const { width } = useWindowSize();
   const isMobile = width <= media.tablet;
+  const listRef = useRef();
+  const inView = useInViewport(listRef, true, { rootMargin: '0px 0px -10% 0px' });
 
   return (
     <Section className="project-list" as="section" id={id} ref={sectionRef}>
@@ -17,7 +19,12 @@ const ProjectList = ({ id, sectionRef, projects }) => {
         <span className="project-list__label">Selected work</span>
       </div>
 
-      <ul className="project-list__items">
+      <ul
+        ref={listRef}
+        className={classNames('project-list__items', {
+          'project-list__items--entered': inView,
+        })}
+      >
         {projects.map((project, i) => (
           <li
             key={i}
@@ -25,6 +32,7 @@ const ProjectList = ({ id, sectionRef, projects }) => {
               'project-list__item--dimmed': hoveredIdx !== null && hoveredIdx !== i,
               'project-list__item--soon': !project.link,
             })}
+            style={{ '--item-index': i }}
             onMouseEnter={() => !isMobile && setHoveredIdx(i)}
             onMouseLeave={() => !isMobile && setHoveredIdx(null)}
           >

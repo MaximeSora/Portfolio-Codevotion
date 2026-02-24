@@ -24,6 +24,42 @@
 .project-list__item {
   border-top: 1px solid rgb(var(--rgbText) / 0.08);
   transition: opacity var(--durationM) ease;
+  opacity: 0;
+  animation: project-item-in var(--durationXL) var(--bezierFastoutSlowin) forwards;
+  animation-play-state: paused;
+  animation-delay: calc(var(--item-index) * 80ms);
+}
+
+.project-list__items--entered .project-list__item {
+  animation-play-state: running;
+}
+
+.project-list__item--dimmed {
+  opacity: 0.25 !important;
+}
+
+@keyframes project-item-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (--mediaUseMotion) {
+  @keyframes project-item-in {
+    from {
+      opacity: 0;
+      filter: blur(6px);
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      filter: none;
+      transform: none;
+    }
+  }
 }
 
 .project-list__item:last-child {
