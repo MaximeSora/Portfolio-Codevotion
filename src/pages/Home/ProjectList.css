@@ -111,12 +111,12 @@
 }
 
 .project-list__num {
-  font-size: var(--fontSizeBodyS);
+  font-size: var(--fontSizeBodyXS);
   font-weight: var(--fontWeightMedium);
   color: rgb(var(--rgbPrimary));
   font-variant-numeric: tabular-nums;
-  flex-shrink: 0;
-  width: 2.5rem;
+  line-height: 1;
+  margin-bottom: 4px;
 }
 
 .project-list__text {
@@ -143,10 +143,8 @@
 .project-list__description {
   font-size: var(--fontSizeBodyS);
   color: rgb(var(--rgbText) / 0.5);
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  line-height: 1.3;
+  margin-top: var(--spaceS);
 }
 
 .project-list__arrow {

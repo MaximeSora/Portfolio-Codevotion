@@ -51,10 +51,10 @@ void main() {
   vec3 dColorHighlight = vec3(0.0,  0.88, 1.0);
   vec3 dColorWhite     = vec3(0.70, 0.97, 1.0);
 
-  // Light mode palette — vivid teal→cyan→mint→white
-  vec3 lColorBase      = vec3(0.0,  0.55, 0.75);
-  vec3 lColorMid       = vec3(0.0,  0.88, 1.0);
-  vec3 lColorHighlight = vec3(0.3,  1.0,  0.95);
+  // Light mode palette — bright cyan→white, high luminosity
+  vec3 lColorBase      = vec3(0.45, 0.88, 0.95);
+  vec3 lColorMid       = vec3(0.65, 0.96, 1.0);
+  vec3 lColorHighlight = vec3(0.85, 1.0,  1.0);
   vec3 lColorWhite     = vec3(1.0,  1.0,  1.0);
 
   vec3 colorBase      = mix(dColorBase,      lColorBase,      uIsLight);

@@ -39,10 +39,10 @@ const ProjectList = ({ id, sectionRef, projects }) => {
             {project.link ? (
               <Link href={project.link} className="project-list__link">
                 <div className="project-list__info">
-                  <span className="project-list__num">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
                   <div className="project-list__text">
+                    <span className="project-list__num">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
                     <span className="project-list__title">{project.title}</span>
                     <span className="project-list__description">{project.description}</span>
                   </div>
@@ -59,10 +59,10 @@ const ProjectList = ({ id, sectionRef, projects }) => {
             ) : (
               <div className="project-list__link project-list__link--disabled">
                 <div className="project-list__info">
-                  <span className="project-list__num">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
                   <div className="project-list__text">
+                    <span className="project-list__num">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
                     <span className="project-list__title">{project.title}</span>
                     <span className="project-list__description">{project.description}</span>
                   </div>

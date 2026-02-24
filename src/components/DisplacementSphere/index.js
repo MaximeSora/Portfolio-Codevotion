@@ -89,8 +89,8 @@ const DisplacementSphere = props => {
   }, []);
 
   useEffect(() => {
-    const dirLight = new DirectionalLight(colorWhite, themeId === 'light' ? 2.0 : 1.2);
-    const ambientLight = new AmbientLight(colorWhite, themeId === 'light' ? 0.3 : 0.05);
+    const dirLight = new DirectionalLight(colorWhite, themeId === 'light' ? 4.0 : 1.2);
+    const ambientLight = new AmbientLight(colorWhite, themeId === 'light' ? 1.2 : 0.05);
 
     dirLight.position.set(100, 100, 200);
 

@@ -15,6 +15,24 @@ Historique des modifications apportées sur la branche `Claude-evol`.
 
 ---
 
+## Session — 2026-02-25 (suite 3)
+
+### DisplacementSphere — opacité 0.2 + light mode plus bright
+- `index.css` : opacity `0.65` → `0.2`
+- `sphereFragShader.js` : palette light mode remontée vers cyan clair/blanc (`lColorBase: 0.45,0.88,0.95` / `lColorMid: 0.65,0.96,1.0` / `lColorHighlight: 0.85,1.0,1.0`)
+- `index.js` : dirLight `2.0` → `4.0`, ambientLight `0.3` → `1.2` en light mode
+
+### Statement — seamlessly repassé en noir
+- `highlight: true` → `false` sur `seamlessly`
+- Highlights restants : `delight`, `users`, `tangible`, `business`, `results.`
+
+### ProjectList — numéro en stack vertical + description sans troncature
+- JSX : `.project-list__num` déplacé dans `.project-list__text` (au-dessus du titre)
+- CSS : num en `fontSizeBodyXS`, `margin-bottom: 4px`, suppression du `width: 2.5rem`
+- Description : suppression de `-webkit-line-clamp`, ajout `line-height: 1.3`, `margin-top: var(--spaceS)`
+
+---
+
 ## Session — 2026-02-25 (suite 2)
 
 ### Portrait — canvas alignée sur le reveal

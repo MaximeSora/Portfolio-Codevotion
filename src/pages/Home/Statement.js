@@ -12,7 +12,7 @@ const segments = [
   { text: 'focused', highlight: false },
   { text: 'experiences', highlight: false },
   { text: 'that', highlight: false },
-  { text: 'seamlessly', highlight: true },
+  { text: 'seamlessly', highlight: false },
   { text: 'blend', highlight: false },
   { text: 'aesthetics', highlight: false },
   { text: 'and', highlight: false },
