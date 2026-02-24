@@ -113,8 +113,22 @@ Chunks séparés (lazy-loaded) :
 
 ---
 
+### État de la homepage (branche Claude-evol)
+
+Structure actuelle de la page :
+1. `Intro` — hero 100vh, titre "Product / Designer→Builder→Developer", badge available, sphère 3D
+2. `Statement` — grande phrase éditoriale (3 lignes max)
+3. `Marquee` — bandeau services scrolling horizontal
+4. `ProjectList` — liste éditoriale cursor-following (Solbase, Olympic Games, 2× Coming soon)
+5. `Profile` — About avec portrait 3D, texte riche, boutons email + LinkedIn
+6. `Skills` — tags pills par catégorie (Design, Tools, Tech, Other)
+7. `Footer`
+
+Navbar : About · Projects · Resume (/resume.pdf) · LinkedIn
+
 ### À faire (prochaines sessions)
 
+- [ ] **Ajouter les vrais projets** dans `ProjectList` dès que le contenu est prêt (remplacer les "Coming soon")
 - [ ] **Tester visuellement** avec `npm run preview` — vérifier le rendu 3D, les animations, les pages projets
 - [ ] **Déployer sur Vercel** depuis ce repo source (configurer Vercel pour pointer sur `portfolio-codevotion`)
 - [ ] **Vérifier les headers** dans DevTools → Network → Response Headers après déploiement

@@ -9,6 +9,75 @@ Historique des modifications apportées sur la branche `Claude-evol`.
 - [x] **Blur animations homepage** — Liquid glass sur `Intro.css` (nom, discipline, keyframe `intro-text-reveal`) et `Profile.css` (titre Hello + 3 paragraphes staggerés +120ms/+240ms).
 - [x] **Sphere shader — blanc plus lumineux** — `colorWhite` passé à `vec3(1.0, 1.0, 1.0)` (blanc pur).
 - [x] **Portrait 3D About — format portrait en desktop** — `.profile__image` : `height: 560px` remplacé par `aspect-ratio: 3/4` pour un format portrait naturel sur desktop.
+- [x] **Redesign homepage** — Statement, Marquee, ProjectList cursor-following, hero restructuré.
+- [x] **Skills section** — Tags pills sous le About, 4 catégories inspirées du CV.
+- [x] **Navbar Resume + LinkedIn** — Liens externes dans le header.
+
+---
+
+## Session — 2026-02-24
+
+### Hero (Intro)
+- **Restructuration du titre** : "Product" statique sur la ligne 1 avec ligne décorative, rotation "Designer → Builder → Developer" sur la ligne 2
+- **Badge "Available for new projects"** : élément `position: absolute` en bas de la section hero, dot teal avec animation pulse
+  - Fix : ajout de `position: relative` sur `.intro` (le badge se positionnait par rapport à un ancêtre plus haut, finissant en bas de page)
+  - Contour pill ajouté : `border: 1px solid rgb(var(--rgbText) / 0.15)` + `border-radius: 999px` + padding
+- **Disciplines** : `['Product', 'UX', 'Visual', 'Interaction', 'AI']` → `['Designer', 'Builder', 'Developer']`
+
+### Section Statement (`Statement.js` + `Statement.css`) — nouveau fichier
+- Grande phrase éditoriale en intro de contenu, après le hero
+- `useInViewport` pour déclenchement au scroll
+- Typographie : `var(--fontSizeH2)` desktop → `var(--fontSizeH4)` mobile
+- Texte : "I design products that move people — and business metrics. Fluent in UX strategy, comfortable with product building and dev constraints, I use AI throughout the process to prototype faster, validate smarter, and deliver experiences that earn their place in the roadmap."
+
+### Marquee (`Marquee.js` + `Marquee.css`) — nouveau fichier
+- Bandeau scrolling horizontal après Statement
+- 10 services : Product Design, UX Research, Motion Design, Interaction Dev, AI, 3D, Product Strategy, Creative Direction, Prototyping, Design Systems
+- Double track pour boucle seamless (`translateX(-50%)`)
+- `mask-image` fade transparent sur les bords gauche/droit
+- Hover : couleur item → `rgb(var(--rgbPrimary))`
+- Animation uniquement sous `@media (--mediaUseMotion)`
+
+### ProjectList (`ProjectList.js` + `ProjectList.css`) — nouveau fichier
+Remplace les deux `<ProjectSummary>` par une liste éditoriale style Karolis Kosas.
+- **Cursor-following preview** : `requestAnimationFrame` lerp loop (LERP = 0.1), `position: fixed`, `transform: translate(x, y)`, supporte `<video autoPlay muted loop>` et `<img>`
+- **Layout par item** : grille `3rem | 1fr | auto | auto` (numéro / titre / tags / flèche)
+- **Hover** : flèche ↗ slide-in, autres items dimment à 25% d'opacité
+- **Badge "Soon"** : pill border pour les projets sans lien
+- **Mobile** : preview cachée, listeners mouse désactivés, tags masqués
+- Fix padding : `padding: var(--space5XL) 0` → `padding-top/bottom` pour préserver les marges latérales du `Section`
+
+### Profile / About
+- Réécriture des 3 paragraphes : parcours (jeux vidéo → software → product), contraintes dev + AI, CTA collaborations
+- Boutons Send email + LinkedIn conservés
+
+### Navbar (`navData.js` + `index.js`)
+- Ajout de `Resume` → `/resume.pdf` (nouvel onglet) et `LinkedIn` → `https://www.linkedin.com/in/maxime-pocq/` (nouvel onglet)
+- Rendu conditionnel : `href` présent → `<a target="_blank">`, sinon `<NavLink>` React Router
+- Fix hash : `#project-1` → `#projects` (correspond au nouvel `id` de `ProjectList`)
+- `public/resume.pdf` ajouté
+
+### Skills (`Skills.js` + `Skills.css`) — nouveau fichier
+Section après About avec les compétences du CV en tags pills.
+- 4 catégories : Design, Tools, Tech, Other
+- Tags `border-radius: 999px`, border subtile, hover teal
+- Grille 4 colonnes → 2 → 1 selon breakpoint
+- Animation `opacity` + `translateY` au scroll via `useInViewport`
+
+### DisplacementSphere — restauration éclairage Phong
+- **Problème** : `colorWhite: vec3(1.0, 1.0, 1.0)` (blanc pur) rendait la sphère uniformément lumineuse, masquant le contraste directionnel
+- **Fix** : `colorWhite` → `vec3(0.70, 0.97, 1.0)` (cyan-blanc), `colorBase` assombri, `dirLight` intensity `0.6` → `1.2`, `ambientLight` dark `0.1` → `0.05`
+
+### ThemeProvider — marges mobile
+- `createMediaTokenProperties()` écrasait `--spaceOuter` à 48px sur tous les breakpoints
+- Fix : overrides explicites en fin de `tokenStyles` : `24px` pour ≤696px, `16px` pour ≤400px
+
+### Home/index.js — refonte
+- Remplacement des deux `<ProjectSummary>` par `<ProjectList projects={projects} />`
+- Définition du tableau `projects` avec Solbase (image), Olympic Games (video), 2 × "Coming soon"
+- Suppression des refs inutilisées (`projectTwo`, `projectThree`, `projectFour`)
+- `revealSections` et `hashSections` réduits à `[intro, projectOne, about]`
+- `rootMargin` section observer : `'0px 0px -10% 0px'` → `'0px 0px -30% 0px'`
 
 ---
 
