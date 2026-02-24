@@ -437,13 +437,10 @@
 }
 
 .intro__available {
-  position: absolute;
-  bottom: var(--space3XL);
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: var(--spaceS);
+  margin-top: var(--space2XL);
   font-size: var(--fontSizeBodyS);
   font-weight: var(--fontWeightMedium);
   color: rgb(var(--rgbText) / 0.6);
@@ -454,12 +451,6 @@
   border: 1px solid rgb(var(--rgbText) / 0.15);
   border-radius: 999px;
   padding: var(--spaceXS) var(--spaceM);
-
-  @media (--mediaMobile) {
-    & {
-      bottom: var(--space5XL);
-    }
-  }
 }
 
 .intro__available--entered {

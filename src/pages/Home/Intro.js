@@ -132,17 +132,17 @@ function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...rest }) 
                   </TransitionGroup>
                 </span>
               </Heading>
+              <div
+                aria-label="Availability status"
+                className={classNames(
+                  'intro__available',
+                  `intro__available--${status}`
+                )}
+              >
+                <span className="intro__available-dot" aria-hidden />
+                Available for new projects
+              </div>
             </header>
-            <div
-              aria-label="Availability status"
-              className={classNames(
-                'intro__available',
-                `intro__available--${status}`
-              )}
-            >
-              <span className="intro__available-dot" aria-hidden />
-              Available for new projects
-            </div>
             {windowSize.width > media.tablet && (
               <div
                 className={classNames(

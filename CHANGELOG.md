@@ -15,6 +15,24 @@ Historique des modifications apportées sur la branche `Claude-evol`.
 
 ---
 
+## Session — 2026-02-24 (suite)
+
+### Available badge — alignement gauche
+- Déplacé à l'intérieur du `<header className="intro__text">` (était un sibling du header)
+- CSS : suppression de `position: absolute`, `bottom`, `left: 50%`, `transform: translateX(-50%)`
+- Remplacé par `display: inline-flex` + `margin-top: var(--space2XL)` — s'aligne naturellement à gauche avec le titre
+
+### Statement — texte raccourci
+- Avant : 4 lignes avec détail prototype/validate
+- Après : "I design products that move people — and metrics. Fluent in UX strategy, dev constraints, and AI-assisted workflows to ship experiences that earn their place in the roadmap."
+
+### Portrait desktop — hauteur contrainte
+- Ajout de `max-height: 540px` sur `.profile__image`
+- `aspect-ratio: 3/4` maintenu — le navigateur réduit aussi la largeur (~405px) pour garder les proportions
+- Évite le débordement du canvas par rapport au bloc texte
+
+---
+
 ## Session — 2026-02-24
 
 ### Hero (Intro)

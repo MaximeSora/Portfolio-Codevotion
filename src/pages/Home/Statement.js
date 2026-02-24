@@ -17,10 +17,9 @@ const Statement = ({ id, sectionRef }) => {
             'statement__lead--entered': inView,
           })}
         >
-          I design products that move people — and business metrics. Fluent in
-          UX strategy, comfortable with product building and dev constraints,
-          I use AI throughout the process to prototype faster, validate smarter,
-          and deliver experiences that earn their place in the roadmap.
+          I design products that move people — and metrics.
+          Fluent in UX strategy, dev constraints, and AI-assisted workflows
+          to ship experiences that earn their place in the roadmap.
         </p>
       </div>
     </Section>
