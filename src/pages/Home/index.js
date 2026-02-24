@@ -6,6 +6,7 @@ import Statement from './Statement';
 import Marquee from './Marquee';
 import ProjectList from './ProjectList';
 import Profile from './Profile';
+import Skills from './Skills';
 import Footer from 'components/Footer';
 import { usePrefersReducedMotion, useRouteTransition } from 'hooks';
 import joThumbnail from 'assets/jo/jo-thumbnail.mp4';
@@ -181,6 +182,7 @@ const Home = () => {
         visible={visibleSections.includes(about.current)}
         id="about"
       />
+      <Skills id="skills" />
       <Footer />
     </div>
   );

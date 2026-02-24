@@ -1,21 +1,23 @@
 export const navLinks = [
-  // {
-  //   label: 'Contact',
-  //   pathname: '/contact',
-  // },
   {
     label: 'About',
     pathname: '/',
     hash: '#about',
   },
-  // {
-  //   label: 'Articles',
-  //   pathname: '/articles',
-  // },
   {
     label: 'Projects',
     pathname: '/',
-    hash: '#project-1',
+    hash: '#projects',
+  },
+  {
+    label: 'Resume',
+    href: '/resume.pdf',
+    newTab: true,
+  },
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/maxime-pocq/',
+    newTab: true,
   },
 ];
 

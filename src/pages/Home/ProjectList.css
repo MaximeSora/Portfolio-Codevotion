@@ -1,5 +1,6 @@
 .project-list {
-  padding: var(--space5XL) 0;
+  padding-top: var(--space5XL);
+  padding-bottom: var(--space5XL);
 }
 
 .project-list__header {
