@@ -434,3 +434,53 @@
 .intro__mobile-scroll-indicator svg {
   stroke: rgb(var(--rgbText) / 0.5);
 }
+
+.intro__available {
+  position: absolute;
+  bottom: var(--space3XL);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: var(--spaceS);
+  font-size: var(--fontSizeBodyS);
+  font-weight: var(--fontWeightMedium);
+  color: rgb(var(--rgbText) / 0.6);
+  letter-spacing: 0.04em;
+  opacity: 0;
+  transition: opacity var(--durationXL) ease 1.6s;
+  white-space: nowrap;
+
+  @media (--mediaMobile) {
+    & {
+      bottom: var(--space5XL);
+    }
+  }
+}
+
+.intro__available--entered {
+  opacity: 1;
+}
+
+.intro__available-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgb(var(--rgbPrimary));
+  flex-shrink: 0;
+
+  @media (--mediaUseMotion) {
+    & {
+      animation: available-pulse 2.4s ease-in-out 2s infinite;
+    }
+  }
+}
+
+@keyframes available-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgb(var(--rgbPrimary) / 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgb(var(--rgbPrimary) / 0);
+  }
+}

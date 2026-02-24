@@ -43,10 +43,10 @@ void main() {
 
   // Remap cos intensity to a teal→cyan→white palette
   float intensity = clamp(cos(finalColors.r * noise * 3.0) * 0.5 + 0.5, 0.0, 1.0);
-  vec3 colorBase      = vec3(0.0,  0.30, 0.42);  // mid-teal (lighter default)
-  vec3 colorMid       = vec3(0.0,  0.60, 0.78);  // rich teal
-  vec3 colorHighlight = vec3(0.0,  0.90, 1.0);   // primary cyan #00E5FF
-  vec3 colorWhite     = vec3(1.0,  1.0,  1.0);   // pure white
+  vec3 colorBase      = vec3(0.0,  0.18, 0.32);  // teal sombre (contraste maximal côté dos)
+  vec3 colorMid       = vec3(0.0,  0.55, 0.75);  // teal riche
+  vec3 colorHighlight = vec3(0.0,  0.88, 1.0);   // cyan vif #00E0FF
+  vec3 colorWhite     = vec3(0.70, 0.97, 1.0);   // cyan-blanc (garde la teinte, évite le blanc pur)
   float t0 = smoothstep(0.0,  0.33, intensity);
   float t1 = smoothstep(0.33, 0.66, intensity);
   float t2 = smoothstep(0.66, 1.0,  intensity);

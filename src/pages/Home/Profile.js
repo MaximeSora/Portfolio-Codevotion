@@ -28,19 +28,19 @@ const ProfileText = ({ status, titleId }) => (
       className={classNames('profile__description', `profile__description--${status}`)}
       size="l"
     >
-      👋 I'm Maxime — a Creative Designer with roots in video games and software development. I bridge the gap between concept and code, bringing depth to every layer of the craft.
+      I'm Maxime — a Product Designer rooted in interactive design, with a background that spans video games, software, and digital product work. I'm comfortable navigating the full product cycle: from early-stage research and UX strategy to motion design and working alongside engineering teams to ship.
     </Text>
     <Text
       className={classNames('profile__description', `profile__description--${status}`)}
       size="l"
     >
-      My work spans product strategy, UX research, motion design, and interaction development. But what drives every decision is one question: how do we build experiences people actually love?
+      What sets my approach apart is a genuine understanding of dev constraints and business realities — technical limits, competing priorities, tight timelines. I use AI throughout ideation, prototyping, and validation to move faster without sacrificing depth. The goal is always the same: experiences that feel right for users and make sense for the business.
     </Text>
     <Text
       className={classNames('profile__description', `profile__description--${status}`)}
       size="l"
     >
-      I'm always open to new challenges and collaborations — if you have a project in mind, let's talk.
+      I'm open to new projects and collaborations — if you have something in mind, let's talk.
     </Text>
   </Fragment>
 );

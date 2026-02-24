@@ -76,35 +76,8 @@ function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...rest }) 
                 <DecoderText text="Maxime Pocq" start={!prerender} delay={300} />
               </h1>
               <Heading level={0} as="h2" className="intro__title">
-                <VisuallyHidden className="intro__title-label">{`Designer + ${introLabel}`}</VisuallyHidden>
-                <TransitionGroup
-                  className={classNames('intro__title-row', {
-                    'intro__title-row--hidden': prerender,
-                  })}
-                  component="span"
-                >
-                  {currentDisciplines.map(item => (
-                    <Transition
-                      appear
-                      timeout={{ enter: 3000, exit: 2000 }}
-                      key={item}
-                      onEnter={reflow}
-                    >
-                      {wordStatus => (
-                        <span
-                          aria-hidden
-                          className={classNames(
-                            `intro__title-word--${wordStatus}`,
-                            'intro__title-word',                            
-                          )}
-                          style={{ '--delay': tokens.base.durationL }}
-                        >
-                          {item}
-                        </span>
-                      )}
-                    </Transition>
-                  ))}
-                </TransitionGroup>
+                <VisuallyHidden className="intro__title-label">{`Product ${introLabel}`}</VisuallyHidden>
+                {/* Ligne 1 : "Product" statique + ligne déco */}
                 <span
                   aria-hidden
                   className={classNames('intro__title-row', {
@@ -118,7 +91,7 @@ function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...rest }) 
                     )}
                     style={{ '--delay': tokens.base.durationXS }}
                   >
-                    Designer
+                    Product
                   </span>
                   <span
                     className={classNames(
@@ -127,8 +100,49 @@ function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...rest }) 
                     )}
                   />
                 </span>
+                {/* Ligne 2 : rotation Designer → Builder → Developer */}
+                <span
+                  aria-hidden
+                  className={classNames('intro__title-row', {
+                    'intro__title-row--hidden': prerender,
+                  })}
+                >
+                  <TransitionGroup component="span">
+                    {currentDisciplines.map(item => (
+                      <Transition
+                        appear
+                        timeout={{ enter: 3000, exit: 2000 }}
+                        key={item}
+                        onEnter={reflow}
+                      >
+                        {wordStatus => (
+                          <span
+                            aria-hidden
+                            className={classNames(
+                              `intro__title-word--${wordStatus}`,
+                              'intro__title-word',
+                            )}
+                            style={{ '--delay': tokens.base.durationL }}
+                          >
+                            {item}
+                          </span>
+                        )}
+                      </Transition>
+                    ))}
+                  </TransitionGroup>
+                </span>
               </Heading>
             </header>
+            <div
+              aria-label="Availability status"
+              className={classNames(
+                'intro__available',
+                `intro__available--${status}`
+              )}
+            >
+              <span className="intro__available-dot" aria-hidden />
+              Available for new projects
+            </div>
             {windowSize.width > media.tablet && (
               <div
                 className={classNames(

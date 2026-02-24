@@ -2,24 +2,45 @@ import { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import Intro from './Intro';
-import ProjectSummary from './ProjectSummary';
+import Statement from './Statement';
+import Marquee from './Marquee';
+import ProjectList from './ProjectList';
 import Profile from './Profile';
 import Footer from 'components/Footer';
-import CustomCursor from 'components/CustomCursor';
 import { usePrefersReducedMotion, useRouteTransition } from 'hooks';
-import deviceModelsTexture from 'assets/device-models-phone.jpg';
-import deviceModelsTextureLarge from 'assets/device-models-phone-large.jpg';
-import deviceModelsTexturePlaceholder from 'assets/device-models-phone-placeholder.jpg';
-import jo from 'assets/jo/jo-thumbnail.mp4';
-import dttTexture from 'assets/dtt.jpg';
-import dttTextureLarge from 'assets/dtt-large.jpg';
-import dttTexturePlaceholder from 'assets/dtt-placeholder.jpg';
+import joThumbnail from 'assets/jo/jo-thumbnail.mp4';
+import solbaseThumbnail from 'assets/solbase/thumbnail.webp';
 import iphone11 from 'assets/iphone-11.glb';
 import macbookPro from 'assets/macbook-pro.glb';
 import portrait from 'assets/portrait.glb';
 import './index.css';
 
-const disciplines = ['Product', 'UX', 'Visual', 'Interaction', 'AI'];
+const projects = [
+  {
+    title: 'Solbase',
+    tags: 'Product Design · UX',
+    link: '/projects/solbase',
+    image: solbaseThumbnail,
+  },
+  {
+    title: 'Olympic Games',
+    tags: 'Motion · Interaction',
+    link: '/projects/jo',
+    video: joThumbnail,
+  },
+  {
+    title: 'Coming soon',
+    tags: 'Case study',
+    link: null,
+  },
+  {
+    title: 'Coming soon',
+    tags: 'Case study',
+    link: null,
+  },
+];
+
+const disciplines = ['Designer', 'Builder', 'Developer'];
 
 const Home = () => {
   const { status } = useRouteTransition();
@@ -29,14 +50,11 @@ const Home = () => {
   const [scrollIndicatorHidden, setScrollIndicatorHidden] = useState(false);
   const intro = useRef();
   const projectOne = useRef();
-  const projectTwo = useRef();
-  const projectThree = useRef();
-  const projectFour = useRef();
   const about = useRef();
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    const revealSections = [intro, projectOne, projectTwo, about];
+    const revealSections = [intro, projectOne, about];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -49,7 +67,7 @@ const Home = () => {
           }
         });
       },
-      { rootMargin: '0px 0px -10% 0px' }
+      { rootMargin: '0px 0px -30% 0px' }
     );
 
     const indicatorObserver = new IntersectionObserver(
@@ -79,7 +97,7 @@ const Home = () => {
 
     const handleHashchange = (hash, scroll) => {
       clearTimeout(scrollTimeout);
-      const hashSections = [intro, projectOne, projectTwo, about];
+      const hashSections = [intro, projectOne, about];
       const hashString = hash.replace('#', '');
       const element = hashSections.filter(item => item.current.id === hashString)[0];
       if (!element) return;
@@ -151,53 +169,12 @@ const Home = () => {
         disciplines={disciplines}
         scrollIndicatorHidden={scrollIndicatorHidden}
       />
-      <ProjectSummary
-        id="project-1"
+      <Statement id="statement" />
+      <Marquee />
+      <ProjectList
+        id="projects"
         sectionRef={projectOne}
-        visible={visibleSections.includes(projectOne.current)}
-        index={1}
-        title="Solbase"
-        description="Designing an app to make music theory accessible for everyone."
-        buttonText="View project"
-        buttonLink="/projects/solbase"
-        model={{
-          type: 'solbase',
-          alt: "Thumbnail Solbase",
-          textures: [
-            {
-              src: jo,
-              srcSet: `${jo} 254w, ${jo} 508w`,
-              placeholder: jo,
-            },
-          ],
-        }}
-      />
-      <ProjectSummary
-        id="project-2"
-        alternate
-        sectionRef={projectTwo}
-        visible={visibleSections.includes(projectTwo.current)}
-        index={2}
-        title="Olympic Games"
-        description="An immersive, interactive experience built for Olympic Games fans."
-        buttonText="View project"
-        buttonLink="/projects/jo"
-        model={{
-          type: 'jo',
-          alt: 'Animation Thumbnail JO',
-          textures: [
-            {
-              src: deviceModelsTexture,
-              srcSet: `${deviceModelsTexture} 254w, ${deviceModelsTextureLarge} 508w`,
-              placeholder: deviceModelsTexturePlaceholder,
-            },
-            {
-              src: deviceModelsTexture,
-              srcSet: `${deviceModelsTexture} 254w, ${deviceModelsTextureLarge} 508w`,
-              placeholder: deviceModelsTexturePlaceholder,
-            },
-          ],
-        }}
+        projects={projects}
       />
       <Profile
         sectionRef={about}

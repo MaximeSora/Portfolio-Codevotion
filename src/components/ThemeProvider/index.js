@@ -190,6 +190,18 @@ export const tokenStyles = `
     --colorTextBody: rgb(var(--rgbText) / 0.7);
     --colorTextLight: rgb(var(--rgbText) / 0.6);
   }
+
+  @media (max-width: 696px) {
+    :root {
+      --spaceOuter: 24px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    :root {
+      --spaceOuter: 16px;
+    }
+  }
 `;
 
 export {
