@@ -1,13 +1,12 @@
 import { useRef } from 'react';
 import classNames from 'classnames';
 import Section from 'components/Section';
+import Divider from 'components/Divider';
 import { Button } from 'components/Button';
 import { useInViewport } from 'hooks';
 import './Contact.css';
 
 const infoCards = [
-  { label: 'Location', value: 'Lyon, France' },
-  { label: 'Remote', value: 'Worldwide' },
   {
     label: 'Networks',
     value: 'LinkedIn',
@@ -28,8 +27,19 @@ const Contact = ({ id }) => {
           'contact__content--entered': inView,
         })}
       >
+        <span aria-hidden className="contact__katakana">コンタクト</span>
         <div className="contact__left">
-          <span className="contact__label">// Contact</span>
+          <div className="contact__tag" aria-hidden>
+            <Divider
+              notchWidth="64px"
+              notchHeight="8px"
+              collapsed={!inView}
+              collapseDelay={400}
+            />
+            <div className={classNames('contact__tag-text', { 'contact__tag-text--entered': inView })}>
+              Contact
+            </div>
+          </div>
           <h2 className="contact__heading">
             Let's build your<br />
             <span className="contact__heading-accent">next project</span>

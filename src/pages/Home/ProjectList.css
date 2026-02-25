@@ -1,4 +1,5 @@
 .project-list {
+  position: relative;
   padding-top: var(--space5XL);
   padding-bottom: var(--space5XL);
 }
@@ -7,12 +8,37 @@
   margin-bottom: var(--space2XL);
 }
 
-.project-list__label {
+.project-list__tag {
+  display: grid;
+  grid-template-columns: var(--space4XL) 1fr;
+  gap: 12px;
+  align-items: center;
+}
+
+.project-list__tag-text {
   font-size: var(--fontSizeBodyS);
   font-weight: var(--fontWeightMedium);
-  color: rgb(var(--rgbText) / 0.4);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  color: rgb(var(--rgbPrimary));
+  opacity: 0;
+  transition-property: opacity;
+  transition-timing-function: var(--bezierFastoutSlowin);
+  transition-duration: var(--durationM);
+  transition-delay: 400ms;
+}
+
+.project-list__tag-text--entered {
+  opacity: 1;
+}
+
+@media (--mediaUseMotion) {
+  .project-list__tag-text {
+    transition-property: opacity, transform;
+    transform: translate3d(calc(var(--spaceM) * -1), 0, 0);
+  }
+
+  .project-list__tag-text--entered {
+    transform: none;
+  }
 }
 
 .project-list__items {
@@ -220,18 +246,22 @@
   transform: scale(1.05);
 }
 
-/* Katakana decorative background */
-.project-list__katakana {
+/* Katakana section label (absolute, under content, aligned with header) */
+.project-list__section-katakana {
   position: absolute;
-  right: -10px;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 65%;
-  width: auto;
-  fill: var(--colorTextTitle);
-  opacity: 0.05;
-  z-index: 0;
+  right: 10vw;
+  top: var(--space5XL);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: var(--japaneseFontStack);
+  font-size: clamp(4rem, 7vw, 8rem);
+  font-weight: var(--fontWeightBold);
+  color: rgb(var(--rgbText) / 0.05);
+  line-height: 1;
   pointer-events: none;
+  user-select: none;
+  letter-spacing: 0.05em;
+  z-index: 0;
 
   @media (--mediaMobile) {
     & {
@@ -239,3 +269,4 @@
     }
   }
 }
+

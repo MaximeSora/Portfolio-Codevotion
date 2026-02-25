@@ -2,9 +2,9 @@ import { useState, useRef } from 'react';
 import classNames from 'classnames';
 import Link from 'components/Link';
 import Section from 'components/Section';
+import Divider from 'components/Divider';
 import { useWindowSize, useInViewport } from 'hooks';
 import { media } from 'utils/style';
-import KatakanaProject from 'assets/katakana-project.svg?react';
 import './ProjectList.css';
 
 const ProjectItem = ({ project, index, dimmed, onMouseEnter, onMouseLeave }) => {
@@ -54,7 +54,6 @@ const ProjectItem = ({ project, index, dimmed, onMouseEnter, onMouseLeave }) => 
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <KatakanaProject aria-hidden className="project-list__katakana" />
       {content}
     </li>
   );
@@ -62,13 +61,26 @@ const ProjectItem = ({ project, index, dimmed, onMouseEnter, onMouseLeave }) => 
 
 const ProjectList = ({ id, sectionRef, projects }) => {
   const [hoveredIdx, setHoveredIdx] = useState(null);
+  const headerRef = useRef();
+  const inView = useInViewport(headerRef, true, { rootMargin: '0px 0px -10% 0px' });
   const { width } = useWindowSize();
   const isMobile = width <= media.tablet;
 
   return (
     <Section className="project-list" as="section" id={id} ref={sectionRef}>
-      <div className="project-list__header">
-        <span className="project-list__label">Selected work</span>
+      <span aria-hidden className="project-list__section-katakana">プロジェクト</span>
+      <div ref={headerRef} className="project-list__header">
+        <div className="project-list__tag" aria-hidden>
+          <Divider
+            notchWidth="64px"
+            notchHeight="8px"
+            collapsed={!inView}
+            collapseDelay={400}
+          />
+          <div className={classNames('project-list__tag-text', { 'project-list__tag-text--entered': inView })}>
+            Selected work
+          </div>
+        </div>
       </div>
       <ul className="project-list__items">
         {projects.map((project, i) => (

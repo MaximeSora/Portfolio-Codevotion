@@ -1,4 +1,4 @@
-import { lazy, Fragment, Suspense } from 'react';
+import { Fragment, useRef } from 'react';
 import classNames from 'classnames';
 import { Transition } from 'react-transition-group';
 import DecoderText from 'components/DecoderText';
@@ -6,22 +6,44 @@ import Divider from 'components/Divider';
 import Section from 'components/Section';
 import Heading from 'components/Heading';
 import Text from 'components/Text';
-import KatakanaProfile from 'assets/katakana-profile.svg?react';
+import Icon from 'components/Icon';
+import portraitPhoto from 'assets/portrait-photo.png';
 import { reflow } from 'utils/transition';
-import prerender from 'utils/prerender';
+import { useInViewport } from 'hooks';
 import './Profile.css';
 
-const Portrait = lazy(() => import('components/Portrait'));
+const travelCountries = [
+  'Japan', 'South Korea', 'Canada', 'Switzerland', 'Thailand', 'Indonesia', 'Italy', 'Norway',
+  'Uruguay', 'Brazil', 'Argentina', 'Spain', 'England', 'Morocco', 'Caribbean', 'Netherlands',
+  'Hungary', 'Czech Republic', 'Austria',
+];
 
-const ProfileText = ({ status, titleId }) => (
+const passions = [
+  { label: 'Video games', detail: 'Competitive, indie', icon: 'gamepad' },
+  { label: 'Sport', detail: 'Climbing, Fitness, Dance', icon: 'sport' },
+  { label: 'Reading', detail: 'Manga, novels, personal development', icon: 'book' },
+  { label: 'Travel', countries: travelCountries, icon: 'plane' },
+];
+
+const ProfileText = ({ status, titleId, portraitPhoto, avatarInView }) => (
   <Fragment>
-    <Heading
-      className={classNames('profile__title', `profile__title--${status}`)}
-      level={3}
-      id={titleId}
-    >
-      <DecoderText text="Hello" start={status !== 'exited'} delay={500} />
-    </Heading>
+    <div className="profile__header-row">
+      <Heading
+        className={classNames('profile__title', `profile__title--${status}`)}
+        level={3}
+        id={titleId}
+      >
+        <DecoderText text="Hello" start={status !== 'exited'} delay={500} />
+      </Heading>
+      <div className={classNames('profile__avatar', { 'profile__avatar--in-view': avatarInView })}>
+        <img
+          src={portraitPhoto}
+          alt=""
+          className="profile__avatar-img"
+          aria-hidden
+        />
+      </div>
+    </div>
     <Text
       className={classNames('profile__description', `profile__description--${status}`)}
       size="l"
@@ -34,17 +56,13 @@ const ProfileText = ({ status, titleId }) => (
     >
       What sets my approach apart: a genuine understanding of dev constraints and business realities. I use AI throughout ideation and prototyping to move faster without sacrificing depth, building interfaces that delight users and drive tangible business results.
     </Text>
-    <Text
-      className={classNames('profile__description', `profile__description--${status}`)}
-      size="l"
-    >
-      I'm open to new projects and collaborations. If you have something in mind, let's talk.
-    </Text>
   </Fragment>
 );
 
 const Profile = ({ id, visible, sectionRef }) => {
   const titleId = `${id}-title`;
+  const contentRef = useRef();
+  const avatarInView = useInViewport(contentRef, true, { rootMargin: '0px 0px -15% 0px' });
 
   return (
     <Section
@@ -57,8 +75,8 @@ const Profile = ({ id, visible, sectionRef }) => {
     >
       <Transition in={visible} timeout={0} onEnter={reflow}>
         {status => (
-          <div className="profile__content">
-            <div className="profile__column">
+          <div ref={contentRef} className={classNames('profile__content', { 'profile__content--entered': status === 'entered' })}>
+            <div className="profile__header">
               <div className="profile__tag" aria-hidden>
                 <Divider
                   notchWidth="64px"
@@ -75,24 +93,41 @@ const Profile = ({ id, visible, sectionRef }) => {
                   About
                 </div>
               </div>
-              <ProfileText status={status} titleId={titleId} />
             </div>
-            <div className="profile__column">
-              <div className="profile__image-wrapper">
-                {!prerender && (
-                  <Suspense fallback={null}>
-                    <Portrait
-                      className={classNames(
-                        'profile__image',
-                        `profile__image--${status}`
-                      )}
-                      delay={100}
-                    />
-                  </Suspense>
-                )}
-                <KatakanaProfile
-                  className={classNames('profile__svg', `profile__svg--${status}`)}
-                />
+
+            <div className="profile__columns">
+              <div className="profile__col">
+                <ProfileText status={status} titleId={titleId} portraitPhoto={portraitPhoto} avatarInView={avatarInView} />
+              </div>
+              <div className="profile__col">
+                <span className="profile__col-label">// Passions</span>
+                <h2 className="profile__col-title">What I love</h2>
+                <div className="profile__passions-grid">
+                  {passions.map(({ label, detail, countries, icon }) => (
+                    <div key={label} className="profile__passion-card">
+                      <span className="profile__passion-icon" aria-hidden>
+                        <Icon icon={icon} />
+                      </span>
+                      <div className="profile__passion-body">
+                        <span className="profile__passion-label">{label}</span>
+                        {countries ? (
+                          <div className="profile__passion-travel-scroll" aria-label="Countries visited">
+                            <div className="profile__passion-travel-track">
+                              {countries.map((country) => (
+                                <span key={country} className="profile__passion-travel-item">{country}</span>
+                              ))}
+                              {countries.map((country) => (
+                                <span key={`${country}-dup`} className="profile__passion-travel-item" aria-hidden>{country}</span>
+                              ))}
+                            </div>
+                          </div>
+                        ) : (
+                          <span className="profile__passion-detail">{detail}</span>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

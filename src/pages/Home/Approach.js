@@ -1,8 +1,22 @@
 import { useRef } from 'react';
 import classNames from 'classnames';
 import Section from 'components/Section';
+import Divider from 'components/Divider';
+import Icon from 'components/Icon';
 import { useInViewport } from 'hooks';
 import './Approach.css';
+
+const stackTools = [
+  { name: 'Figma', icon: 'figma' },
+  { name: 'Notion', icon: 'notion' },
+  { name: 'Cursor', icon: 'cursor' },
+  { name: 'Claude', icon: 'claude' },
+  { name: 'Miro', icon: 'miro' },
+  { name: 'Github', icon: 'github' },
+  { name: 'Gemini', icon: 'gemini' },
+  { name: 'N8N', icon: 'n8n' },
+  { name: 'Adobe CC', icon: 'adobecc' },
+];
 
 const disciplines = [
   { name: 'Product Design', description: 'Full product cycle, research to dev handoff' },
@@ -45,8 +59,19 @@ const Approach = ({ id }) => {
           'approach__content--entered': inView,
         })}
       >
+        <span aria-hidden className="approach__katakana">アプローチ</span>
         <div className="approach__header">
-          <span className="approach__eyebrow">My approach</span>
+          <div className="approach__tag" aria-hidden>
+            <Divider
+              notchWidth="64px"
+              notchHeight="8px"
+              collapsed={!inView}
+              collapseDelay={400}
+            />
+            <div className={classNames('approach__tag-text', { 'approach__tag-text--entered': inView })}>
+              My approach
+            </div>
+          </div>
         </div>
 
         <div className="approach__columns">
@@ -66,7 +91,7 @@ const Approach = ({ id }) => {
 
           {/* Right — collaboration modes */}
           <div className="approach__col">
-            <span className="approach__col-label">// How we work</span>
+            <span className="approach__col-label">// How I work</span>
             <h2 className="approach__col-title">
               Multiple ways <em>to collaborate</em>
             </h2>
@@ -81,6 +106,23 @@ const Approach = ({ id }) => {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+
+        {/* My Stack */}
+        <div className="approach__stack">
+          <span className="approach__col-label">// My Stack</span>
+          <div className="approach__stack-pills">
+            {stackTools.map(({ name, icon }) => (
+              <span key={name} className="approach__stack-pill">
+                {icon && (
+                  <span className="approach__stack-pill-icon" aria-hidden>
+                    <Icon icon={icon} />
+                  </span>
+                )}
+                <span className="approach__stack-pill-name">{name}</span>
+              </span>
+            ))}
           </div>
         </div>
       </div>
