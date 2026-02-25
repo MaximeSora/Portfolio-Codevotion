@@ -3,7 +3,7 @@
   --buttonFontSize: calc((18 / 16) * 1rem);
   --buttonFocusWidth: 4px;
   --buttonPadding: 0 var(--spaceL);
-  --buttonTextColor: rgb(var(--rgbBackground));
+  --buttonTextColor: rgb(255 255 255);
   --buttonTextVisibility: visible;
 
   outline: none;
@@ -15,7 +15,7 @@
   transition-timing-function: var(--bezierFastoutSlowin);
   display: inline-flex;
   align-items: center;
-  color: rgb(var(--colorTextTitle));
+  color: rgb(255 255 255);
   position: relative;
   z-index: 1;
 
@@ -132,7 +132,7 @@
   font-weight: var(--fontWeightBold);
   visibility: var(--buttonTextVisibility);
   position: relative;
-  color: rgb(var(--colorTextTitle));
+  color: var(--buttonTextColor);
   line-height: 1;
   flex: 1 1 auto;
   display: flex;

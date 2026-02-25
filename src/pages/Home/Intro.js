@@ -76,8 +76,8 @@ function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...rest }) 
                 <DecoderText text="Maxime Pocq" start={!prerender} delay={300} />
               </h1>
               <Heading level={0} as="h2" className="intro__title">
-                <VisuallyHidden className="intro__title-label">{`Product ${introLabel}`}</VisuallyHidden>
-                {/* Ligne 1 : "Product" statique + ligne déco */}
+                <VisuallyHidden className="intro__title-label">{`Designer ${introLabel}`}</VisuallyHidden>
+                {/* Ligne 1 : "Designer" statique + ligne déco */}
                 <span
                   aria-hidden
                   className={classNames('intro__title-row', {
@@ -91,7 +91,7 @@ function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...rest }) 
                     )}
                     style={{ '--delay': tokens.base.durationXS }}
                   >
-                    Product
+                    Designer
                   </span>
                   <span
                     className={classNames(
@@ -100,13 +100,14 @@ function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...rest }) 
                     )}
                   />
                 </span>
-                {/* Ligne 2 : rotation Designer → Builder → Developer */}
+                {/* Ligne 2 : "+" + rotation Developer / Product Builder / Researcher */}
                 <span
                   aria-hidden
                   className={classNames('intro__title-row', {
                     'intro__title-row--hidden': prerender,
                   })}
                 >
+                  <span className={classNames('intro__title-plus', `intro__title-plus--${status}`)} aria-hidden>+</span>
                   <TransitionGroup component="span">
                     {currentDisciplines.map(item => (
                       <Transition
@@ -132,38 +133,40 @@ function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...rest }) 
                   </TransitionGroup>
                 </span>
               </Heading>
-              <div
-                aria-label="Availability status"
-                className={classNames(
-                  'intro__available',
-                  `intro__available--${status}`
-                )}
-              >
-                <span className="intro__available-dot" aria-hidden />
-                Available for new projects
-              </div>
             </header>
-            {windowSize.width > media.tablet && (
-              <div
-                className={classNames(
-                  'intro__scroll-indicator',
-                  `intro__scroll-indicator--${status}`,
-                  { 'intro__scroll-indicator--hidden': scrollIndicatorHidden }
-                )}
-                status={status}
-              />
-            )}
-            {windowSize.width <= media.tablet && (
-              <div
-                className={classNames(
-                  'intro__mobile-scroll-indicator',
-                  `intro__mobile-scroll-indicator--${status}`,
-                  { 'intro__mobile-scroll-indicator--hidden': scrollIndicatorHidden }
-                )}
-              >
-                <ArrowDown aria-hidden />
-              </div>
-            )}
+            <div
+              aria-label="Availability status"
+              className={classNames(
+                'intro__available',
+                `intro__available--${status}`
+              )}
+            >
+              <span className="intro__available-dot" aria-hidden />
+              <span className="intro__available-full">Available for Work</span>
+              <span className="intro__available-short">Available</span>
+            </div>
+            <div className="intro__bottom">
+              {windowSize.width > media.tablet && (
+                <div
+                  className={classNames(
+                    'intro__scroll-indicator',
+                    `intro__scroll-indicator--${status}`,
+                    { 'intro__scroll-indicator--hidden': scrollIndicatorHidden }
+                  )}
+                />
+              )}
+              {windowSize.width <= media.tablet && (
+                <div
+                  className={classNames(
+                    'intro__mobile-scroll-indicator',
+                    `intro__mobile-scroll-indicator--${status}`,
+                    { 'intro__mobile-scroll-indicator--hidden': scrollIndicatorHidden }
+                  )}
+                >
+                  <ArrowDown aria-hidden />
+                </div>
+              )}
+            </div>
           </Fragment>
         )}
       </Transition>

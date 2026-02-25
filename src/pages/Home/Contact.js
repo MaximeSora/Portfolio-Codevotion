@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import Section from 'components/Section';
 import Divider from 'components/Divider';
 import { Button } from 'components/Button';
+import Link from 'components/Link';
 import { useInViewport } from 'hooks';
 import './Contact.css';
 
@@ -45,38 +46,25 @@ const Contact = ({ id }) => {
             <span className="contact__heading-accent">next project</span>
           </h2>
           <p className="contact__sub">
-            Available for new projects and collaborations in product design, UX, visual, and interaction.
+            Got a product to shape, a Design System to scale, or a team to embed into? I bring senior craft, AI-powered processes, and a bias for real results.
           </p>
           <div className="contact__actions">
             <Button iconHoverShift href="mailto:hello@maximepocq.com" icon="send">
               Send me an email
             </Button>
-            <a className="contact__email" href="mailto:hello@maximepocq.com">
-              hello@maximepocq.com
-            </a>
+            <div className="contact__links">
+              <Link secondary className="contact__link" href="https://www.linkedin.com/in/maxime-pocq/">
+                LinkedIn
+              </Link>
+              <Link secondary className="contact__link" href="/resume.pdf">
+                See my Resume
+              </Link>
+            </div>
           </div>
         </div>
 
-        <div className="contact__right">
-          <div className="contact__cards">
-            {infoCards.map(({ label, value, href }) => (
-              <div key={label} className="contact__card">
-                <span className="contact__card-label">{label}</span>
-                {href ? (
-                  <a
-                    className="contact__card-value contact__card-link"
-                    href={href}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {value}
-                  </a>
-                ) : (
-                  <span className="contact__card-value">{value}</span>
-                )}
-              </div>
-            ))}
-          </div>
+        <div className="contact__right" aria-hidden style={{ display: 'none' }}>
+          {/* infoCards kept for potential future use */}
         </div>
       </div>
     </Section>

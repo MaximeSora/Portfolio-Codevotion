@@ -42,7 +42,7 @@ const projects = [
   },
 ];
 
-const disciplines = ['Designer', 'Builder', 'Developer'];
+const disciplines = ['Developer', 'Builder', 'Researcher'];
 
 const Home = () => {
   const { status } = useRouteTransition();

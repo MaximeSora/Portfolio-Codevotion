@@ -295,7 +295,8 @@
   flex-wrap: nowrap;
   align-items: center;
   gap: 0.35em;
-  animation: profile-travel-scroll 10s linear infinite;
+  width: max-content;
+  animation: profile-travel-scroll 45s linear infinite;
 }
 
 .profile__passion-travel-track:hover {

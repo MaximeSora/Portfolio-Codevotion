@@ -71,7 +71,6 @@
   flex: 1 1 auto;
   max-height: var(--space3XL);
   position: relative;
-  /* top: calc(var(--spaceM) * -1); */
 
   @media (--mediaMobile), (max-height: 696px) {
     & {

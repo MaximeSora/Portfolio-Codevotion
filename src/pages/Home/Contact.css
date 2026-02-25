@@ -6,7 +6,7 @@
 .contact__content {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 680px);
   gap: var(--space4XL);
   align-items: start;
   opacity: 0;
@@ -21,7 +21,6 @@
 
   @media (--mediaTablet) {
     & {
-      grid-template-columns: 1fr;
       gap: var(--space3XL);
     }
   }
@@ -127,20 +126,15 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--spaceM);
+  gap: var(--space2XL);
   margin-top: var(--spaceS);
 }
 
-.contact__email {
-  font-size: var(--fontSizeBodyM);
-  font-weight: var(--fontWeightMedium);
-  color: rgb(var(--rgbText));
-  text-decoration: none;
-  transition: color var(--durationS) ease;
-
-  &:hover {
-    color: rgb(var(--rgbPrimary));
-  }
+.contact__links {
+  display: flex;
+  align-items: center;
+  gap: var(--spaceXL);
+  margin-top: var(--spaceS);
 }
 
 /* Right column — info cards */

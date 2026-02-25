@@ -4,7 +4,7 @@ import { blurOnMouseUp } from 'utils/focus';
 import './index.css';
 
 // File extensions that can be linked to
-const VALID_EXT = ['txt', 'png', 'jpg'];
+const VALID_EXT = ['txt', 'png', 'jpg', 'pdf'];
 
 const Link = ({ rel, target, children, secondary, className, href, as, ...rest }) => {
   const isValidExtension = VALID_EXT.includes(href?.split('.').pop());
