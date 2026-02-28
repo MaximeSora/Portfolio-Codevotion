@@ -97,7 +97,7 @@
 /* Left column: text + avatar */
 .profile__header-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: var(--spaceL);
   width: 100%;
@@ -106,8 +106,8 @@
 
 .profile__avatar {
   flex-shrink: 0;
-  width: 80px;
-  height: 80px;
+  width: 88px;
+  height: 88px;
   border-radius: 50%;
   overflow: hidden;
   background: rgb(var(--rgbText) / 0.04);
@@ -131,13 +131,15 @@
 
 @media (--mediaMobile) {
   .profile__avatar {
-    width: 64px;
-    height: 64px;
+    width: 72px;
+    height: 72px;
   }
 }
 
 .profile__title {
-  white-space: nowrap;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: var(--fontWeightBold);
+  line-height: 1.15;
   margin-bottom: 0;
   opacity: 0;
   transition: opacity var(--durationXL) ease var(--durationM);
@@ -225,6 +227,13 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--spaceL);
+
+  @media (--mediaLaptop) {
+    & {
+      grid-template-columns: 1fr;
+      gap: var(--spaceM);
+    }
+  }
 }
 
 .profile__passion-card {
@@ -234,7 +243,30 @@
   padding: var(--spaceXL);
   border: 1px solid rgb(var(--rgbText) / 0.08);
   border-radius: 12px;
-  transition: border-color var(--durationS) ease;
+  opacity: 0;
+  transition:
+    opacity var(--durationM) var(--bezierFastoutSlowin) var(--card-delay, 0ms),
+    border-color var(--durationS) ease;
+
+  @media (--mediaUseMotion) {
+    & {
+      transform: translate3d(0, var(--spaceM), 0) scale(0.97);
+      transition:
+        opacity var(--durationM) var(--bezierFastoutSlowin) var(--card-delay, 0ms),
+        transform var(--durationM) var(--bezierFastoutSlowin) var(--card-delay, 0ms),
+        border-color var(--durationS) ease;
+    }
+  }
+}
+
+.profile__passion-card--entered {
+  opacity: 1;
+
+  @media (--mediaUseMotion) {
+    & {
+      transform: none;
+    }
+  }
 }
 
 .profile__passion-card:hover {

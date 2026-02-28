@@ -100,11 +100,14 @@ const Profile = ({ id, visible, sectionRef }) => {
                 <ProfileText status={status} titleId={titleId} portraitPhoto={portraitPhoto} avatarInView={avatarInView} />
               </div>
               <div className="profile__col">
-                <span className="profile__col-label">// Passions</span>
                 <h2 className="profile__col-title">What I love</h2>
                 <div className="profile__passions-grid">
-                  {passions.map(({ label, detail, countries, icon }) => (
-                    <div key={label} className="profile__passion-card">
+                  {passions.map(({ label, detail, countries, icon }, i) => (
+                    <div
+                      key={label}
+                      className={classNames('profile__passion-card', { 'profile__passion-card--entered': status === 'entered' })}
+                      style={{ '--card-delay': `${400 + i * 100}ms` }}
+                    >
                       <span className="profile__passion-icon" aria-hidden>
                         <Icon icon={icon} />
                       </span>

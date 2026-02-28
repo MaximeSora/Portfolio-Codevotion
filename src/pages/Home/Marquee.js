@@ -6,6 +6,7 @@ const items = [
   'Motion Design',
   'Interaction Dev',
   'AI',
+  'Vibe Coding',
   '3D',
   'Product Strategy',
   'Creative Direction',

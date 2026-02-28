@@ -6,6 +6,7 @@ import Heading from 'components/Heading';
 import Section from 'components/Section';
 import VisuallyHidden from 'components/VisuallyHidden';
 import ArrowDown from 'assets/arrow-down.svg?react';
+import portraitPhoto from 'assets/portrait-photo.png';
 import { useInterval, usePrevious, useWindowSize } from 'hooks';
 import { reflow } from 'utils/transition';
 import prerender from 'utils/prerender';
@@ -73,6 +74,9 @@ function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...rest }) 
                 className={classNames('intro__name', `intro__name--${status}`)}
                 id={titleId}
               >
+                <span className="intro__avatar" aria-hidden>
+                  <img src={portraitPhoto} alt="" className="intro__avatar-img" />
+                </span>
                 <DecoderText text="Maxime Pocq" start={!prerender} delay={300} />
               </h1>
               <Heading level={0} as="h2" className="intro__title">

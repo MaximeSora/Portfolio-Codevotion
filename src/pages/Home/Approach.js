@@ -76,12 +76,19 @@ const Approach = ({ id }) => {
 
         <div className="approach__columns">
           {/* Left — disciplines */}
-          <div className="approach__col">
+          <div
+            className={classNames('approach__col', { 'approach__col--entered': inView })}
+            style={{ '--col-delay': '200ms' }}
+          >
             <span className="approach__col-label">// Disciplines</span>
             <h2 className="approach__col-title">What I do</h2>
             <ul className="approach__list">
-              {disciplines.map(({ name, description }) => (
-                <li key={name} className="approach__list-item">
+              {disciplines.map(({ name, description }, i) => (
+                <li
+                  key={name}
+                  className={classNames('approach__list-item', { 'approach__list-item--entered': inView })}
+                  style={{ '--item-delay': `${300 + i * 80}ms` }}
+                >
                   <span className="approach__list-name">{name}</span>
                   <span className="approach__list-desc">{description}</span>
                 </li>
@@ -90,14 +97,21 @@ const Approach = ({ id }) => {
           </div>
 
           {/* Right — collaboration modes */}
-          <div className="approach__col">
+          <div
+            className={classNames('approach__col', { 'approach__col--entered': inView })}
+            style={{ '--col-delay': '400ms' }}
+          >
             <span className="approach__col-label">// How I work</span>
             <h2 className="approach__col-title">
               Multiple ways <em>to collaborate</em>
             </h2>
             <div className="approach__cards">
-              {collaborations.map(({ num, title, description }) => (
-                <div key={title} className="approach__card">
+              {collaborations.map(({ num, title, description }, i) => (
+                <div
+                  key={title}
+                  className={classNames('approach__card', { 'approach__card--entered': inView })}
+                  style={{ '--item-delay': `${500 + i * 100}ms` }}
+                >
                   <span className="approach__card-num">{num}</span>
                   <div className="approach__card-body">
                     <h3 className="approach__card-title">{title}</h3>
@@ -110,11 +124,15 @@ const Approach = ({ id }) => {
         </div>
 
         {/* My Stack */}
-        <div className="approach__stack">
+        <div className={classNames('approach__stack', { 'approach__stack--entered': inView })}>
           <span className="approach__col-label">// My Stack</span>
           <div className="approach__stack-pills">
-            {stackTools.map(({ name, icon }) => (
-              <span key={name} className="approach__stack-pill">
+            {stackTools.map(({ name, icon }, i) => (
+              <span
+                key={name}
+                className={classNames('approach__stack-pill', { 'approach__stack-pill--entered': inView })}
+                style={{ '--pill-delay': `${750 + i * 60}ms` }}
+              >
                 {icon && (
                   <span className="approach__stack-pill-icon" aria-hidden>
                     <Icon icon={icon} />

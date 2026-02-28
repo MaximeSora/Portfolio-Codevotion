@@ -22,13 +22,7 @@
   opacity: 0;
 }
 .main-cursor .main-cursor-background {
-  width: 10px;
-  height: 10px;
-  background: white;
-  transform: rotate(45deg);
-  border-radius: 10%;
-  transition: all 150ms ease;
-  transition-property: background-color, opacity, transform, mix-blend-mode;
+  display: none;
 }
 .secondary-cursor {
   mix-blend-mode: soft-light;
