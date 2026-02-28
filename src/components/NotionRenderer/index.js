@@ -1,5 +1,22 @@
+import { useRef } from 'react';
 import Image from 'components/Image';
+import { useInViewport } from 'hooks';
 import './NotionRenderer.css';
+
+// Wrapper qui déclenche l'animation d'entrée quand le bloc est visible
+function InViewBlock({ children, delay = 0 }) {
+  const ref = useRef();
+  const inView = useInViewport(ref, true, { rootMargin: '0px 0px -6% 0px' });
+  return (
+    <div
+      ref={ref}
+      className={`notion-block${inView ? ' notion-block--entered' : ''}`}
+      style={{ '--block-delay': `${delay}ms` }}
+    >
+      {children}
+    </div>
+  );
+}
 
 // Render inline rich_text with annotations (bold, italic, code, links, colors)
 function RichText({ items = [] }) {
@@ -267,27 +284,39 @@ function groupBlocks(blocks) {
   return groups;
 }
 
-export default function NotionRenderer({ blocks = [] }) {
+export default function NotionRenderer({ blocks = [], animate = true }) {
   const grouped = groupBlocks(blocks);
 
   return (
     <div className="notion-renderer">
       {grouped.map((group, i) => {
+        const delay = Math.min(i * 40, 200); // stagger plafonné à 200ms
+
         if (group.type === 'bulleted_list') {
-          return (
+          const el = (
             <ul key={group.key} className="notion-list notion-list--bulleted">
               {group.items.map(b => <Block key={b.id} block={b} />)}
             </ul>
           );
+          return animate
+            ? <InViewBlock key={group.key} delay={delay}>{el}</InViewBlock>
+            : el;
         }
         if (group.type === 'numbered_list') {
-          return (
+          const el = (
             <ol key={group.key} className="notion-list notion-list--numbered">
               {group.items.map(b => <Block key={b.id} block={b} />)}
             </ol>
           );
+          return animate
+            ? <InViewBlock key={group.key} delay={delay}>{el}</InViewBlock>
+            : el;
         }
-        return <Block key={group.id ?? i} block={group} />;
+
+        const el = <Block key={group.id ?? i} block={group} />;
+        return animate
+          ? <InViewBlock key={group.id ?? i} delay={delay}>{el}</InViewBlock>
+          : el;
       })}
     </div>
   );

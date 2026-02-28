@@ -1,10 +1,11 @@
-import { Fragment } from 'react';
+import { Fragment, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import classNames from 'classnames';
 import Footer from 'components/Footer';
 import { ProjectContainer, ProjectSection, ProjectSectionContent } from 'components/ProjectLayout';
 import NotionRenderer from 'components/NotionRenderer';
-import { useScrollRestore } from 'hooks';
+import { useScrollRestore, useInViewport } from 'hooks';
 import allProjects from '../../data/projects.json';
 import './CaseStudy.css';
 
@@ -25,6 +26,8 @@ const TAG_COLORS = {
 const CaseStudy = () => {
   const { slug } = useParams();
   useScrollRestore();
+  const headerRef = useRef();
+  const headerInView = useInViewport(headerRef, true, { rootMargin: '0px 0px -5% 0px' });
 
   const project = allProjects.find(p => p.slug === slug);
 
@@ -70,7 +73,12 @@ const CaseStudy = () => {
         {/* ── Header ── */}
         <ProjectSection first className="case-study__header-section">
           <ProjectSectionContent width="l">
-            <div className="case-study__header">
+            <div
+              ref={headerRef}
+              className={classNames('case-study__header', {
+                'case-study__header--entered': headerInView,
+              })}
+            >
               {tags.length > 0 && (
                 <ul className="case-study__tags" aria-label="Tags">
                   {tags.map(tag => (

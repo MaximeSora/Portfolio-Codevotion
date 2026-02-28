@@ -69,6 +69,27 @@
   border-bottom: 1px solid rgb(var(--rgbText) / 0.08);
 }
 
+/* ── Header entrance ───────────────────────────── */
+@media (--mediaUseMotion) {
+  .case-study__header .case-study__tags,
+  .case-study__header .case-study__title,
+  .case-study__header .case-study__meta {
+    opacity: 0;
+  }
+
+  .case-study__header--entered .case-study__tags {
+    animation: case-study-fadein 0.6s var(--bezierFastoutSlowin) 0.1s forwards;
+  }
+
+  .case-study__header--entered .case-study__title {
+    animation: case-study-slidein 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+  }
+
+  .case-study__header--entered .case-study__meta {
+    animation: case-study-fadein 0.6s var(--bezierFastoutSlowin) 0.4s forwards;
+  }
+}
+
 /* ── Tags ──────────────────────────────────────── */
 .case-study__tags {
   display: flex;
@@ -77,12 +98,6 @@
   list-style: none;
   padding: 0;
   margin: 0;
-
-  @media (--mediaUseMotion) {
-    & {
-      animation: case-study-fadein 0.6s var(--bezierFastoutSlowin) 0.3s both;
-    }
-  }
 }
 
 .case-study__tag {
@@ -105,12 +120,6 @@
   line-height: 1.1;
   letter-spacing: -0.02em;
   margin: 0;
-
-  @media (--mediaUseMotion) {
-    & {
-      animation: case-study-slidein 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
-    }
-  }
 }
 
 /* ── Meta (company · year) ─────────────────────── */
@@ -120,12 +129,6 @@
   gap: var(--spaceM);
   font-size: var(--fontSizeBodyS);
   color: rgb(var(--rgbText) / 0.45);
-
-  @media (--mediaUseMotion) {
-    & {
-      animation: case-study-fadein 0.6s var(--bezierFastoutSlowin) 0.4s both;
-    }
-  }
 }
 
 .case-study__meta-sep {
@@ -135,12 +138,6 @@
 /* ── Body section ──────────────────────────────── */
 .case-study__body-section {
   padding-top: var(--space3XL);
-
-  @media (--mediaUseMotion) {
-    & {
-      animation: case-study-fadein 0.8s var(--bezierFastoutSlowin) 0.5s both;
-    }
-  }
 }
 
 /* ── Not found ─────────────────────────────────── */
