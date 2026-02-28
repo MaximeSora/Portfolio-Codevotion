@@ -5,6 +5,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Generated Notion data (fetched at build time)
+src/data/
+
 # Runtime data
 pids
 *.pid

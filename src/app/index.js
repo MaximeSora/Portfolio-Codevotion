@@ -31,6 +31,7 @@ const ProjectDTT = lazy(() => import('pages/DevTechTools'));
 const ProjectJO = lazy(() => import('pages/JO'));
 const ProjectSolbase = lazy(() => import('pages/Solbase'));
 const ProjectPornhub = lazy(() => import('pages/Pornhub'));
+const CaseStudy = lazy(() => import('pages/CaseStudy'));
 const Articles = lazy(() => import('pages/Articles'));
 const Uses = lazy(() => import('pages/Uses'));
 const Page404 = lazy(() => import('pages/404'));
@@ -99,6 +100,7 @@ const AppRoutes = () => {
                     <Route path="/projects/jo" component={ProjectJO} />
                     <Route path="/projects/Solbase" component={ProjectSolbase} />
                     <Route path="/projects/Pornhub" component={ProjectPornhub} />
+                    <Route path="/projects/:slug" component={CaseStudy} />
                     <Route path="/uses" component={Uses} />
                     <Route path="/articles" component={Articles} />
                     <Route component={Page404} />

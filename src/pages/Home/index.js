@@ -10,37 +10,22 @@ import Profile from './Profile';
 import Contact from './Contact';
 import Footer from 'components/Footer';
 import { usePrefersReducedMotion, useRouteTransition } from 'hooks';
-import joThumbnail from 'assets/jo/jo-thumbnail.mp4';
-import solbaseThumbnail from 'assets/solbase/thumbnail.webp';
 import iphone11 from 'assets/iphone-11.glb';
 import macbookPro from 'assets/macbook-pro.glb';
 import portrait from 'assets/portrait.glb';
+import notionProjects from '../../data/projects.json';
 import './index.css';
 
-const projects = [
-  {
-    title: 'Solbase',
-    description: 'Gamified music learning platform. Full product cycle from research and UX strategy to visual design and developer handoff.',
-    link: '/projects/solbase',
-    image: solbaseThumbnail,
-  },
-  {
-    title: 'Olympic Games',
-    description: 'Interactive motion experience for Paris 2024. 3D animations, data storytelling and rich interactions.',
-    link: '/projects/jo',
-    video: joThumbnail,
-  },
-  {
-    title: 'Coming soon',
-    description: 'New case study in progress.',
-    link: null,
-  },
-  {
-    title: 'Coming soon',
-    description: 'New case study in progress.',
-    link: null,
-  },
-];
+// Saved legacy projects (hardcoded case studies still accessible via direct URL)
+// /projects/solbase, /projects/jo, /projects/device-models, /projects/devtech-tools
+
+const projects = notionProjects.map(p => ({
+  title: p.name,
+  description: [p.company, p.tags.slice(0, 3).map(t => t.name).join(', ')].filter(Boolean).join(' · '),
+  link: `/projects/${p.slug}`,
+  image: p.cover,
+  tags: p.tags,
+}));
 
 const disciplines = ['Developer', 'Builder', 'Researcher'];
 
