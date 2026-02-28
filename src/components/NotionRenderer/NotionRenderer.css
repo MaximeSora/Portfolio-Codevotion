@@ -54,9 +54,30 @@
   height: var(--spaceL);
 }
 
+/* ─── Largeur éditoriale (style Medium) ─────────
+   Les blocs texte sont contraints à 68ch centré.
+   Images, vidéos, colonnes restent pleine largeur.
+   ─────────────────────────────────────────────── */
+.notion-paragraph,
+.notion-h1,
+.notion-h2,
+.notion-h3,
+.notion-list,
+.notion-quote,
+.notion-callout,
+.notion-code,
+.notion-toggle,
+.notion-bookmark,
+.notion-spacer {
+  max-width: 68ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* ─── Paragraphs ──────────────────────────────── */
 .notion-paragraph {
-  margin: 0 0 var(--spaceL);
+  margin-top: 0;
+  margin-bottom: var(--spaceL);
   color: rgb(var(--rgbText) / 0.85);
   line-height: 1.75;
 }
@@ -67,7 +88,8 @@
   font-weight: var(--fontWeightBold);
   color: rgb(var(--rgbText));
   line-height: 1.15;
-  margin: var(--space3XL) 0 var(--spaceL);
+  margin-top: var(--space3XL);
+  margin-bottom: var(--spaceL);
   letter-spacing: -0.01em;
 }
 
@@ -76,7 +98,8 @@
   font-weight: var(--fontWeightBold);
   color: rgb(var(--rgbText));
   line-height: 1.25;
-  margin: var(--space2XL) 0 var(--spaceM);
+  margin-top: var(--space2XL);
+  margin-bottom: var(--spaceM);
 }
 
 .notion-h3 {
@@ -84,13 +107,15 @@
   font-weight: var(--fontWeightMedium);
   color: rgb(var(--rgbText));
   line-height: 1.35;
-  margin: var(--spaceXL) 0 var(--spaceS);
+  margin-top: var(--spaceXL);
+  margin-bottom: var(--spaceS);
 }
 
 /* ─── Lists ───────────────────────────────────── */
 .notion-list {
   padding-left: var(--spaceXL);
-  margin: 0 0 var(--spaceL);
+  margin-top: 0;
+  margin-bottom: var(--spaceL);
   display: flex;
   flex-direction: column;
   gap: var(--spaceS);
@@ -124,7 +149,8 @@
   position: relative;
   border-left: 2px solid rgb(var(--rgbPrimary));
   padding: var(--spaceM) var(--spaceXL);
-  margin: var(--spaceXL) 0;
+  margin-top: var(--spaceXL);
+  margin-bottom: var(--spaceXL);
   color: rgb(var(--rgbText) / 0.65);
   font-style: italic;
   font-size: var(--fontSizeBodyL);
@@ -140,7 +166,8 @@
   border: 1px solid rgb(var(--rgbText) / 0.08);
   border-radius: 10px;
   padding: var(--spaceL) var(--spaceXL);
-  margin: var(--spaceXL) 0;
+  margin-top: var(--spaceXL);
+  margin-bottom: var(--spaceXL);
 }
 
 .notion-callout__icon {
@@ -161,7 +188,8 @@
   border: 1px solid rgb(var(--rgbText) / 0.08);
   border-radius: 10px;
   padding: var(--spaceL) var(--spaceXL);
-  margin: var(--spaceXL) 0;
+  margin-top: var(--spaceXL);
+  margin-bottom: var(--spaceXL);
   overflow-x: auto;
   font-family: var(--monoFontStack);
   font-size: var(--fontSizeBodyXS);

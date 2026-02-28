@@ -108,7 +108,7 @@ const CaseStudy = () => {
 
         {/* ── Body (Notion blocks) ── */}
         <ProjectSection className="case-study__body-section">
-          <ProjectSectionContent width="m">
+          <ProjectSectionContent width="l">
             <NotionRenderer blocks={blocks} />
           </ProjectSectionContent>
         </ProjectSection>
