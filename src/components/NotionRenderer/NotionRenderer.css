@@ -118,12 +118,17 @@
   list-style: none;
 }
 
+/* Diamant cyan — reprend le langage visuel du Divider notch */
 .notion-list--bulleted > .notion-bulleted-item::before {
-  content: '–';
+  content: '';
   position: absolute;
-  left: calc(var(--spaceXL) * -1);
-  color: rgb(var(--rgbPrimary));
-  font-weight: var(--fontWeightMedium);
+  left: calc(var(--spaceXL) * -1 + 2px);
+  top: 0.58em;
+  width: 6px;
+  height: 6px;
+  background: rgb(var(--rgbPrimary));
+  transform: rotate(45deg);
+  flex-shrink: 0;
 }
 
 .notion-bulleted-item,
