@@ -55,23 +55,16 @@
 }
 
 /* ─── Largeur éditoriale (style Medium) ─────────
-   Les blocs texte sont contraints à 68ch centré.
-   Images, vidéos, colonnes restent pleine largeur.
+   Tous les blocs à 68ch centré, sauf les images.
    ─────────────────────────────────────────────── */
-.notion-paragraph,
-.notion-h1,
-.notion-h2,
-.notion-h3,
-.notion-list,
-.notion-quote,
-.notion-callout,
-.notion-code,
-.notion-toggle,
-.notion-bookmark,
-.notion-spacer {
+.notion-block {
   max-width: 68ch;
   margin-left: auto;
   margin-right: auto;
+}
+
+.notion-block:has(.notion-image) {
+  max-width: 100%;
 }
 
 /* ─── Paragraphs ──────────────────────────────── */
