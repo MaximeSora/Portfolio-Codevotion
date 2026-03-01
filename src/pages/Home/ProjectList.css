@@ -139,6 +139,7 @@
   font: inherit;
   color: inherit;
   text-align: left;
+  width: 100%;
 }
 
 /* Left: num + text + arrow */

@@ -1,3 +1,6 @@
+import { useRef } from 'react';
+import classNames from 'classnames';
+import { useInViewport } from 'hooks';
 import './Marquee.css';
 
 const items = [
@@ -25,14 +28,19 @@ const MarqueeTrack = () => (
   </div>
 );
 
-const Marquee = () => (
-  <div className="marquee" aria-label="Services">
-    <div className="marquee__inner">
-      {/* Duplicated for seamless loop */}
-      <MarqueeTrack />
-      <MarqueeTrack />
+const Marquee = () => {
+  const ref = useRef();
+  const inView = useInViewport(ref, true, { rootMargin: '0px 0px -20% 0px' });
+
+  return (
+    <div ref={ref} className={classNames('marquee', { 'marquee--entered': inView })} aria-label="Services">
+      <div className="marquee__inner">
+        {/* Duplicated for seamless loop */}
+        <MarqueeTrack />
+        <MarqueeTrack />
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Marquee;

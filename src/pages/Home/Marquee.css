@@ -11,6 +11,25 @@
     black 90%,
     transparent
   );
+  opacity: 0;
+  transition: opacity var(--durationXL) ease;
+
+  @media (--mediaUseMotion) {
+    & {
+      transform: translateY(var(--spaceL));
+      transition: opacity var(--durationXL) ease, transform var(--durationXL) var(--bezierFastoutSlowin);
+    }
+  }
+}
+
+.marquee--entered {
+  opacity: 1;
+
+  @media (--mediaUseMotion) {
+    & {
+      transform: none;
+    }
+  }
 }
 
 .marquee__inner {

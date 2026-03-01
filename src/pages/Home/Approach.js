@@ -49,7 +49,9 @@ const collaborations = [
 
 const Approach = ({ id }) => {
   const ref = useRef();
+  const stackRef = useRef();
   const inView = useInViewport(ref, true, { rootMargin: '0px 0px -10% 0px' });
+  const stackInView = useInViewport(stackRef, true, { rootMargin: '0px 0px -25% 0px' });
 
   return (
     <Section className="approach" as="section" id={id}>
@@ -124,14 +126,14 @@ const Approach = ({ id }) => {
         </div>
 
         {/* My Stack */}
-        <div className={classNames('approach__stack', { 'approach__stack--entered': inView })}>
+        <div ref={stackRef} className={classNames('approach__stack', { 'approach__stack--entered': stackInView })}>
           <span className="approach__col-label">// My Stack</span>
           <div className="approach__stack-pills">
             {stackTools.map(({ name, icon }, i) => (
               <span
                 key={name}
-                className={classNames('approach__stack-pill', { 'approach__stack-pill--entered': inView })}
-                style={{ '--pill-delay': `${750 + i * 60}ms` }}
+                className={classNames('approach__stack-pill', { 'approach__stack-pill--entered': stackInView })}
+                style={{ '--pill-delay': `${i * 60}ms` }}
               >
                 {icon && (
                   <span className="approach__stack-pill-icon" aria-hidden>

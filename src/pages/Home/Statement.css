@@ -67,8 +67,8 @@
   }
 
   .statement__lead--entered .statement__word {
-    animation: statement-word-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: calc(var(--word-index) * 40ms);
+    animation: statement-word-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: calc(var(--word-index) * 25ms);
   }
 }
 
