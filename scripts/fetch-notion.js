@@ -101,7 +101,7 @@ async function main() {
 
   const response = await notion.databases.query({
     database_id: DATABASE_ID,
-    sorts: [{ timestamp: 'created_time', direction: 'descending' }],
+    sorts: [{ timestamp: 'created_time', direction: 'ascending' }],
   });
 
   const projects = [];
