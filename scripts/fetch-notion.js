@@ -114,6 +114,10 @@ async function main() {
     }));
     const company = page.properties.Company?.rich_text?.[0]?.plain_text ?? '';
     const year = page.properties.Year?.rich_text?.[0]?.plain_text ?? '';
+    const extractText = prop => (prop?.rich_text ?? []).map(t => t.plain_text).join('');
+    const summary = extractText(page.properties.Summary);
+    const challenge = extractText(page.properties.Challenge);
+    const impact = extractText(page.properties.Impact);
     const slug = toSlug(name);
 
     console.log(`  → ${name}`);
@@ -129,7 +133,7 @@ async function main() {
     const blocks = await fetchBlocks(page.id);
     await processBlocks(blocks);
 
-    projects.push({ id: page.id, slug, name, company, year, tags, cover, blocks });
+    projects.push({ id: page.id, slug, name, company, year, summary, challenge, impact, tags, cover, blocks });
   }
 
   mkdirSync(resolve(ROOT, 'src/data'), { recursive: true });
