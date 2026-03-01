@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import classNames from 'classnames';
 import Link from 'components/Link';
+import Icon from 'components/Icon';
 import Section from 'components/Section';
 import Divider from 'components/Divider';
 import { useWindowSize, useInViewport } from 'hooks';
@@ -19,7 +20,7 @@ const ProjectItem = ({ project, index, dimmed, onMouseEnter, onMouseLeave }) => 
           <span className="project-list__title">{project.title}</span>
           <span className="project-list__description">{project.description}</span>
         </div>
-        <span className="project-list__arrow" aria-hidden>↗</span>
+        <span className="project-list__arrow" aria-hidden><Icon icon="arrowUpRight" /></span>
       </div>
       <div className="project-list__thumb">
         {project.video ? (

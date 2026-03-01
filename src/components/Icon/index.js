@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import ArrowRight from 'assets/icons/arrow-right.svg?react';
+import ArrowUpRight from 'assets/icons/arrow-up-right.svg?react';
 import ChevronRight from 'assets/icons/chevron-right.svg?react';
 import Close from 'assets/icons/close.svg?react';
 import Dribbble from 'assets/icons/dribbble.svg?react';
@@ -29,6 +30,7 @@ import './index.css';
 
 export const icons = {
   arrowRight: ArrowRight,
+  arrowUpRight: ArrowUpRight,
   chevronRight: ChevronRight,
   close: Close,
   dribbble: Dribbble,

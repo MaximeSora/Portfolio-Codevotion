@@ -32,6 +32,7 @@ export default defineConfig({
       posts: resolve(__dirname, 'src/posts'),
       utils: resolve(__dirname, 'src/utils'),
       app: resolve(__dirname, 'src/app'),
+      contexts: resolve(__dirname, 'src/contexts'),
     },
   },
   assetsInclude: ['**/*.glb'],

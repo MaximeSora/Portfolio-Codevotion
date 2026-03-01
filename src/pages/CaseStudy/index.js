@@ -3,13 +3,20 @@ import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import classNames from 'classnames';
 import Footer from 'components/Footer';
-import { ProjectContainer, ProjectSection, ProjectSectionContent } from 'components/ProjectLayout';
+import {
+  ProjectContainer,
+  ProjectSection,
+  ProjectSectionContent,
+  ProjectSectionNextProject,
+  ProjectTextRow,
+  ProjectSectionText,
+} from 'components/ProjectLayout';
+import { Button } from 'components/Button';
 import NotionRenderer from 'components/NotionRenderer';
 import { useScrollRestore, useInViewport } from 'hooks';
 import allProjects from '../../data/projects.json';
 import './CaseStudy.css';
 
-// Tag color map — matches Notion palette to the site's DA
 const TAG_COLORS = {
   purple: '#9065B0',
   green: '#448361',
@@ -29,7 +36,8 @@ const CaseStudy = () => {
   const headerRef = useRef();
   const headerInView = useInViewport(headerRef, true, { rootMargin: '0px 0px -5% 0px' });
 
-  const project = allProjects.find(p => p.slug === slug);
+  const projectIndex = allProjects.findIndex(p => p.slug === slug);
+  const project = allProjects[projectIndex];
 
   if (!project) {
     return (
@@ -40,8 +48,8 @@ const CaseStudy = () => {
   }
 
   const { name, company, year, tags, cover, blocks } = project;
+  const nextProject = allProjects[(projectIndex + 1) % allProjects.length];
 
-  // Extract a short description from first paragraph block
   const firstParagraph = blocks.find(
     b => b.type === 'paragraph' && b.paragraph?.rich_text?.length > 0
   );
@@ -57,20 +65,13 @@ const CaseStudy = () => {
       </Helmet>
 
       <ProjectContainer className="case-study">
-        {/* ── Hero cover ── */}
         {cover && (
           <div className="case-study__hero" aria-hidden>
-            <img
-              className="case-study__hero-img"
-              src={cover}
-              alt=""
-              loading="eager"
-            />
+            <img className="case-study__hero-img" src={cover} alt="" loading="eager" />
             <div className="case-study__hero-scrim" />
           </div>
         )}
 
-        {/* ── Header ── */}
         <ProjectSection first className="case-study__header-section">
           <ProjectSectionContent width="l">
             <div
@@ -92,9 +93,7 @@ const CaseStudy = () => {
                   ))}
                 </ul>
               )}
-
               <h1 className="case-study__title">{name}</h1>
-
               {(company || year) && (
                 <div className="case-study__meta">
                   {company && <span className="case-study__meta-company">{company}</span>}
@@ -106,10 +105,19 @@ const CaseStudy = () => {
           </ProjectSectionContent>
         </ProjectSection>
 
-        {/* ── Body (Notion blocks) ── */}
         <ProjectSection className="case-study__body-section">
           <ProjectSectionContent width="l">
             <NotionRenderer blocks={blocks} />
+          </ProjectSectionContent>
+        </ProjectSection>
+
+        <ProjectSection className="case-study__next-section">
+          <ProjectSectionContent>
+            <ProjectTextRow center centerMobile noMargin>
+              <ProjectSectionText>NEXT PROJECT</ProjectSectionText>
+              <ProjectSectionNextProject>{nextProject.name}</ProjectSectionNextProject>
+              <Button secondary iconHoverShift icon="arrowUpRight" href={`/projects/${nextProject.slug}`} />
+            </ProjectTextRow>
           </ProjectSectionContent>
         </ProjectSection>
 

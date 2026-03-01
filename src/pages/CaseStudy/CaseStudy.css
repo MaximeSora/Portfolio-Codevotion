@@ -136,8 +136,140 @@
 }
 
 /* ── Body section ──────────────────────────────── */
-.case-study__body-section {
-  padding-top: var(--space3XL);
+.case-study__body-section .project__section-inner {
+  --section-padding: var(--spaceXL);
+}
+
+/* ── Next project section ──────────────────────── */
+.case-study__next-section .project__section-inner {
+  --section-padding: var(--space2XL);
+}
+
+/* ── Gate ──────────────────────────────────────── */
+.case-study__body {
+  position: relative;
+}
+
+.case-study__gate-wrapper {
+  position: relative;
+  margin-top: calc(var(--spaceXL) * -1);
+}
+
+.case-study__gate-fade {
+  height: 220px;
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--rgbBackground) / 0) 0%,
+    rgb(var(--rgbBackground) / 1) 80%
+  );
+  pointer-events: none;
+}
+
+.case-study__gate {
+  max-width: 440px;
+  margin: 0 auto var(--space3XL);
+  padding: var(--space2XL);
+  border: 1px solid rgb(var(--rgbText) / 0.1);
+  border-radius: 16px;
+  background: rgb(var(--rgbBackground));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spaceL);
+  text-align: center;
+}
+
+.case-study__gate--shake {
+  animation: gate-shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+@keyframes gate-shake {
+  10%, 90% { transform: translateX(-3px); }
+  20%, 80% { transform: translateX(4px); }
+  30%, 50%, 70% { transform: translateX(-5px); }
+  40%, 60% { transform: translateX(5px); }
+}
+
+.case-study__gate-icon {
+  width: 32px;
+  height: 32px;
+  color: rgb(var(--rgbText) / 0.35);
+}
+
+.case-study__gate-title {
+  font-size: var(--fontSizeBodyL);
+  font-weight: var(--fontWeightBold);
+  color: rgb(var(--rgbText));
+  margin: 0;
+}
+
+.case-study__gate-desc {
+  font-size: var(--fontSizeBodyS);
+  color: rgb(var(--rgbText) / 0.5);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 320px;
+}
+
+.case-study__gate-form {
+  display: flex;
+  gap: var(--spaceM);
+  width: 100%;
+}
+
+.case-study__gate-input {
+  flex: 1;
+  background: rgb(var(--rgbText) / 0.04);
+  border: 1px solid rgb(var(--rgbText) / 0.1);
+  border-radius: 8px;
+  padding: var(--spaceM) var(--spaceL);
+  font-size: var(--fontSizeBodyS);
+  color: rgb(var(--rgbText));
+  outline: none;
+  transition: border-color var(--durationS) ease;
+
+  &::placeholder {
+    color: rgb(var(--rgbText) / 0.3);
+  }
+
+  &:focus {
+    border-color: rgb(var(--rgbPrimary) / 0.5);
+  }
+}
+
+.case-study__gate-input--error {
+  border-color: rgb(var(--rgbError, 200 50 50) / 0.6);
+}
+
+.case-study__gate-submit {
+  display: flex;
+  align-items: center;
+  gap: var(--spaceS);
+  padding: var(--spaceM) var(--spaceL);
+  background: rgb(var(--rgbPrimary));
+  color: rgb(var(--rgbBackground));
+  border: none;
+  border-radius: 8px;
+  font-size: var(--fontSizeBodyS);
+  font-weight: var(--fontWeightMedium);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity var(--durationS) ease;
+
+  & svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.case-study__gate-error {
+  font-size: var(--fontSizeBodyXS);
+  color: rgb(200 80 80);
+  margin: 0;
 }
 
 /* ── Not found ─────────────────────────────────── */

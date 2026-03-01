@@ -51,7 +51,7 @@
 
 /* ─── Spacing utility ─────────────────────────── */
 .notion-spacer {
-  height: var(--spaceL);
+  height: var(--spaceS);
 }
 
 /* ─── Largeur éditoriale (style Medium) ─────────
@@ -410,13 +410,33 @@ details[open] .notion-toggle__summary::before {
 
 /* ─── Links ───────────────────────────────────── */
 .notion-link {
-  color: rgb(var(--rgbPrimary));
-  text-decoration: underline;
-  text-decoration-color: rgb(var(--rgbPrimary) / 0.3);
-  text-underline-offset: 3px;
-  transition: text-decoration-color var(--durationS) ease;
+  --lineStrokeWidth: 2px;
+  --linkColor: var(--rgbPrimary);
+  --lineOpacity: 0.3;
+  --filledLineGradient: linear-gradient(rgb(var(--linkColor)), rgb(var(--linkColor)));
+  --unfilledLineGradient: linear-gradient(
+    rgb(var(--linkColor) / var(--lineOpacity)),
+    rgb(var(--linkColor) / var(--lineOpacity))
+  );
+
+  display: inline;
+  color: rgb(var(--linkColor));
+  background: var(--filledLineGradient) no-repeat 100% 100% / 0 var(--lineStrokeWidth),
+    var(--unfilledLineGradient) no-repeat 0 100% / 100% var(--lineStrokeWidth);
+  padding-bottom: var(--lineStrokeWidth);
+  text-decoration: none;
+
+  @media (--mediaUseMotion) {
+    & {
+      transition-duration: var(--durationM);
+      transition-timing-function: var(--bezierFastoutSlowin);
+      transition-property: background-size;
+    }
+  }
 }
 
-.notion-link:hover {
-  text-decoration-color: rgb(var(--rgbPrimary));
+.notion-link:hover,
+.notion-link:focus {
+  background: var(--filledLineGradient) no-repeat 0 100% / 100% var(--lineStrokeWidth),
+    var(--unfilledLineGradient) no-repeat 0 100% / 100% var(--lineStrokeWidth);
 }

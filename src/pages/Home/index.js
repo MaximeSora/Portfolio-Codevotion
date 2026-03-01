@@ -7,8 +7,7 @@ import Marquee from './Marquee';
 import Approach from './Approach';
 import ProjectList from './ProjectList';
 import Profile from './Profile';
-import Contact from './Contact';
-import Footer from 'components/Footer';
+import Contact from './ContactV2';
 import { usePrefersReducedMotion, useRouteTransition } from 'hooks';
 import iphone11 from 'assets/iphone-11.glb';
 import macbookPro from 'assets/macbook-pro.glb';
@@ -170,7 +169,6 @@ const Home = () => {
         id="about"
       />
       <Contact id="contact" />
-      <Footer />
     </div>
   );
 };

@@ -1,0 +1,164 @@
+.private-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgb(var(--rgbBackground));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space2XL);
+  padding: var(--spaceXL);
+  animation: gate-enter 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes gate-enter {
+  from {
+    opacity: 0;
+    filter: blur(12px);
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: none;
+  }
+}
+
+.private-gate--shake {
+  animation: gate-shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+@keyframes gate-shake {
+  10%, 90% { transform: translateX(-4px); }
+  20%, 80% { transform: translateX(6px); }
+  30%, 50%, 70% { transform: translateX(-6px); }
+  40%, 60% { transform: translateX(6px); }
+}
+
+/* ── Header ─────────────────────────────────────── */
+.private-gate__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spaceS);
+  text-align: center;
+}
+
+.private-gate__name {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: var(--fontWeightBold);
+  color: rgb(var(--rgbText));
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.private-gate__role {
+  font-size: var(--fontSizeBodyS);
+  color: rgb(var(--rgbText) / 0.4);
+  font-weight: var(--fontWeightMedium);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ── Divider ─────────────────────────────────────── */
+.private-gate__divider {
+  width: 40px;
+  height: 1px;
+  background: rgb(var(--rgbPrimary) / 0.5);
+}
+
+/* ── Body ────────────────────────────────────────── */
+.private-gate__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spaceL);
+  width: 100%;
+  max-width: 360px;
+}
+
+.private-gate__desc {
+  font-size: var(--fontSizeBodyS);
+  color: rgb(var(--rgbText) / 0.4);
+  margin: 0;
+  text-align: center;
+}
+
+.private-gate__form {
+  display: flex;
+  gap: var(--spaceS);
+  width: 100%;
+}
+
+.private-gate__input {
+  flex: 1;
+  background: rgb(var(--rgbText) / 0.04);
+  border: 1px solid rgb(var(--rgbText) / 0.1);
+  border-radius: 8px;
+  padding: var(--spaceM) var(--spaceL);
+  font-size: var(--fontSizeBodyS);
+  color: rgb(var(--rgbText));
+  outline: none;
+  transition: border-color var(--durationS) ease;
+
+  &::placeholder {
+    color: rgb(var(--rgbText) / 0.25);
+  }
+
+  &:focus {
+    border-color: rgb(var(--rgbPrimary) / 0.5);
+  }
+}
+
+.private-gate__input--error {
+  border-color: rgb(220 60 60 / 0.5);
+}
+
+.private-gate__submit {
+  display: flex;
+  align-items: center;
+  gap: var(--spaceXS);
+  padding: var(--spaceM) var(--spaceL);
+  background: rgb(var(--rgbPrimary));
+  color: rgb(var(--rgbBackground));
+  border: none;
+  border-radius: 8px;
+  font-size: var(--fontSizeBodyS);
+  font-weight: var(--fontWeightMedium);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity var(--durationS) ease;
+
+  & svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.private-gate__error {
+  font-size: var(--fontSizeBodyXS);
+  color: rgb(220 80 80);
+  margin: 0;
+}
+
+/* ── Katakana deco ───────────────────────────────── */
+.private-gate__katakana {
+  position: fixed;
+  bottom: var(--spaceXL);
+  right: var(--spaceXL);
+  font-family: var(--japaneseFontStack);
+  font-size: var(--fontSizeBodyXS);
+  color: rgb(var(--rgbText) / 0.15);
+  pointer-events: none;
+
+  @media (--mediaMobile) {
+    & {
+      display: none;
+    }
+  }
+}

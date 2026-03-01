@@ -6,11 +6,59 @@ import 'dotenv/config';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
+const IMAGES_DIR = resolve(ROOT, 'public/notion-images');
 
 const notion = new Client({ auth: process.env.NOTION_TOKEN });
 const DATABASE_ID = process.env.NOTION_DATABASE_ID;
 
-// Fetch all blocks of a page, recursively for children
+// Extract extension from URL (before query string)
+function getExt(url) {
+  const path = url.split('?')[0];
+  const ext = path.split('.').pop().toLowerCase();
+  return ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg'].includes(ext) ? ext : 'jpg';
+}
+
+// Download an image and return its local public path, or null on failure
+async function downloadImage(url, filename) {
+  if (!url) return null;
+  mkdirSync(IMAGES_DIR, { recursive: true });
+  try {
+    const res = await fetch(url);
+    if (!res.ok) {
+      console.warn(`  ⚠️  Image download failed (${res.status}): ${filename}`);
+      return null;
+    }
+    const buffer = await res.arrayBuffer();
+    writeFileSync(resolve(IMAGES_DIR, filename), Buffer.from(buffer));
+    return `/notion-images/${filename}`;
+  } catch (err) {
+    console.warn(`  ⚠️  Image download error: ${filename} — ${err.message}`);
+    return null;
+  }
+}
+
+// Recursively walk blocks and download every image, replacing S3 URLs with local paths
+async function processBlocks(blocks) {
+  for (const block of blocks) {
+    if (block.type === 'image') {
+      const src = block.image?.file?.url ?? block.image?.external?.url;
+      if (src) {
+        const ext = getExt(src);
+        const filename = `${block.id}.${ext}`;
+        const localPath = await downloadImage(src, filename);
+        if (localPath) {
+          if (block.image.file) block.image.file.url = localPath;
+          else if (block.image.external) block.image.external.url = localPath;
+        }
+      }
+    }
+    if (block.children?.length) {
+      await processBlocks(block.children);
+    }
+  }
+}
+
+// Fetch all blocks of a page, recursively
 async function fetchBlocks(blockId) {
   const blocks = [];
   let cursor;
@@ -66,16 +114,20 @@ async function main() {
     }));
     const company = page.properties.Company?.rich_text?.[0]?.plain_text ?? '';
     const year = page.properties.Year?.rich_text?.[0]?.plain_text ?? '';
-
-    const cover =
-      page.cover?.external?.url ??
-      page.cover?.file?.url ??
-      null;
-
     const slug = toSlug(name);
 
     console.log(`  → ${name}`);
+
+    // Download cover image
+    const rawCover = page.cover?.file?.url ?? page.cover?.external?.url ?? null;
+    let cover = rawCover;
+    if (rawCover) {
+      const ext = getExt(rawCover);
+      cover = await downloadImage(rawCover, `cover-${page.id}.${ext}`);
+    }
+
     const blocks = await fetchBlocks(page.id);
+    await processBlocks(blocks);
 
     projects.push({ id: page.id, slug, name, company, year, tags, cover, blocks });
   }
@@ -88,6 +140,7 @@ async function main() {
   );
 
   console.log(`✅ ${projects.length} projets écrits dans src/data/projects.json`);
+  console.log(`🖼️  Images téléchargées dans public/notion-images/`);
 }
 
 main().catch(err => {

@@ -13,6 +13,8 @@ import { useLocalStorage } from 'hooks';
 import { initialState, reducer } from 'app/reducer';
 import { reflow } from 'utils/transition';
 import prerender from 'utils/prerender';
+import { UnlockProvider } from 'contexts/UnlockContext';
+import PrivateGuard from 'components/PrivateGate';
 import './reset.css';
 import './index.css';
 // import ReactGA from 'react-ga';
@@ -59,12 +61,16 @@ const App = () => {
 
   return (
     <AppContext.Provider value={{ ...state, dispatch }}>
-      <CustomCursor />
-      <ThemeProvider themeId={state.theme}>
-        <BrowserRouter>
-          <AppRoutes />
-        </BrowserRouter>
-      </ThemeProvider>
+      <UnlockProvider>
+        <CustomCursor />
+        <ThemeProvider themeId={state.theme}>
+          <PrivateGuard>
+            <BrowserRouter>
+              <AppRoutes />
+            </BrowserRouter>
+          </PrivateGuard>
+        </ThemeProvider>
+      </UnlockProvider>
     </AppContext.Provider>
   );
 };

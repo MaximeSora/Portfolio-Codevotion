@@ -3,6 +3,29 @@ import Image from 'components/Image';
 import { useInViewport } from 'hooks';
 import './NotionRenderer.css';
 
+// Convertit un href Notion en ancre in-page si c'est un lien interne.
+// Les IDs de blocs Notion sont des UUIDs sans tirets dans l'URL.
+function resolveHref(href) {
+  if (!href) return { href, internal: false };
+  const hashIdx = href.lastIndexOf('#');
+  if (hashIdx !== -1) {
+    const fragment = href.slice(hashIdx + 1);
+    // UUID sans tirets = 32 caractères hex
+    if (/^[0-9a-f]{32}$/i.test(fragment)) {
+      const uuid = [
+        fragment.slice(0, 8),
+        fragment.slice(8, 12),
+        fragment.slice(12, 16),
+        fragment.slice(16, 20),
+        fragment.slice(20),
+      ].join('-');
+      return { href: `#${uuid}`, internal: true };
+    }
+  }
+  if (href.startsWith('#')) return { href, internal: true };
+  return { href, internal: false };
+}
+
 // Wrapper qui déclenche l'animation d'entrée quand le bloc est visible
 function InViewBlock({ children, delay = 0 }) {
   const ref = useRef();
@@ -34,8 +57,13 @@ function RichText({ items = [] }) {
     const spanStyle = color && color !== 'default' ? { color: `var(--notion-${color.replace('_background', '')})` } : undefined;
 
     if (href) {
-      return (
-        <a key={i} href={href} target="_blank" rel="noopener noreferrer" style={spanStyle} className="notion-link">
+      const { href: resolvedHref, internal } = resolveHref(href);
+      return internal ? (
+        <a key={i} href={resolvedHref} style={spanStyle} className="notion-link">
+          {node}
+        </a>
+      ) : (
+        <a key={i} href={resolvedHref} target="_blank" rel="noopener noreferrer" style={spanStyle} className="notion-link">
           {node}
         </a>
       );
@@ -63,21 +91,21 @@ function Block({ block }) {
 
     case 'heading_1':
       return (
-        <h2 className="notion-h1">
+        <h2 id={block.id} className="notion-h1">
           <RichText items={data?.rich_text} />
         </h2>
       );
 
     case 'heading_2':
       return (
-        <h3 className="notion-h2">
+        <h3 id={block.id} className="notion-h2">
           <RichText items={data?.rich_text} />
         </h3>
       );
 
     case 'heading_3':
       return (
-        <h4 className="notion-h3">
+        <h4 id={block.id} className="notion-h3">
           <RichText items={data?.rich_text} />
         </h4>
       );
