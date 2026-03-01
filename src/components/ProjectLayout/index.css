@@ -519,10 +519,12 @@
   justify-self: flex-end;
 }
 
-@media (--mediaMobile) {
-  & {
-    align-items: center;
-    text-align: center;
+.project__text-row--center-mobile {
+  @media (--mediaMobile) {
+    & {
+      align-items: center;
+      text-align: center;
+    }
   }
 }
 

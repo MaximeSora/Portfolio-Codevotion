@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
-import Footer from 'components/Footer';
+import ContactV2 from 'pages/Home/ContactV2';
 import {
   ProjectContainer,
   ProjectBackground,
@@ -55,7 +55,7 @@ const ProjectDTT = () => {
           <ProjectSectionHeading>Full project coming soon...</ProjectSectionHeading>
         </ProjectSection>
       </ProjectContainer>
-      <Footer />
+      <ContactV2 />
     </Fragment>
   );
 };

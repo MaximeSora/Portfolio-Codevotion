@@ -8,12 +8,12 @@ import { useWindowSize, useInViewport } from 'hooks';
 import { media } from 'utils/style';
 import './ProjectList.css';
 
-const ProjectItem = ({ project, index, dimmed, onMouseEnter, onMouseLeave }) => {
+const ProjectItem = ({ project, index, dimmed, onMouseEnter, onMouseLeave, onItemClick }) => {
   const ref = useRef();
   const inView = useInViewport(ref, true, { rootMargin: '0px 0px -8% 0px' });
 
-  const content = project.link ? (
-    <Link href={project.link} className="project-list__link">
+  const inner = (
+    <>
       <div className="project-list__info">
         <div className="project-list__text">
           <span className="project-list__num">{String(index + 1).padStart(2, '0')}</span>
@@ -29,20 +29,37 @@ const ProjectItem = ({ project, index, dimmed, onMouseEnter, onMouseLeave }) => 
           <img src={project.image} alt={project.title} />
         ) : null}
       </div>
-    </Link>
-  ) : (
-    <div className="project-list__link project-list__link--disabled">
-      <div className="project-list__info">
-        <div className="project-list__text">
-          <span className="project-list__num">{String(index + 1).padStart(2, '0')}</span>
-          <span className="project-list__title">{project.title}</span>
-          <span className="project-list__description">{project.description}</span>
-        </div>
-        <span className="project-list__badge">Soon</span>
-      </div>
-      <div className="project-list__thumb project-list__thumb--placeholder" />
-    </div>
+    </>
   );
+
+  let content;
+  if (onItemClick) {
+    content = (
+      <button className="project-list__link project-list__link--btn" onClick={() => onItemClick(project)}>
+        {inner}
+      </button>
+    );
+  } else if (project.link) {
+    content = (
+      <Link href={project.link} className="project-list__link">
+        {inner}
+      </Link>
+    );
+  } else {
+    content = (
+      <div className="project-list__link project-list__link--disabled">
+        <div className="project-list__info">
+          <div className="project-list__text">
+            <span className="project-list__num">{String(index + 1).padStart(2, '0')}</span>
+            <span className="project-list__title">{project.title}</span>
+            <span className="project-list__description">{project.description}</span>
+          </div>
+          <span className="project-list__badge">Soon</span>
+        </div>
+        <div className="project-list__thumb project-list__thumb--placeholder" />
+      </div>
+    );
+  }
 
   return (
     <li
@@ -50,7 +67,7 @@ const ProjectItem = ({ project, index, dimmed, onMouseEnter, onMouseLeave }) => 
       className={classNames('project-list__item', {
         'project-list__item--entered': inView,
         'project-list__item--dimmed': dimmed,
-        'project-list__item--soon': !project.link,
+        'project-list__item--soon': !project.link && !onItemClick,
       })}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
@@ -60,7 +77,7 @@ const ProjectItem = ({ project, index, dimmed, onMouseEnter, onMouseLeave }) => 
   );
 };
 
-const ProjectList = ({ id, sectionRef, projects }) => {
+const ProjectList = ({ id, sectionRef, projects, onItemClick, footer }) => {
   const [hoveredIdx, setHoveredIdx] = useState(null);
   const headerRef = useRef();
   const inView = useInViewport(headerRef, true, { rootMargin: '0px 0px -10% 0px' });
@@ -92,9 +109,11 @@ const ProjectList = ({ id, sectionRef, projects }) => {
             dimmed={hoveredIdx !== null && hoveredIdx !== i}
             onMouseEnter={() => !isMobile && setHoveredIdx(i)}
             onMouseLeave={() => !isMobile && setHoveredIdx(null)}
+            onItemClick={onItemClick}
           />
         ))}
       </ul>
+      {footer}
     </Section>
   );
 };

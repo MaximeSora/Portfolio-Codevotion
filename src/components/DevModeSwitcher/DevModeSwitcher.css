@@ -1,0 +1,46 @@
+.dev-switcher {
+  position: fixed;
+  bottom: var(--spaceL);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: rgb(15 15 15 / 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgb(255 255 255 / 0.1);
+  border-radius: 999px;
+  padding: 4px;
+}
+
+.dev-switcher__label {
+  font-size: 10px;
+  font-weight: 700;
+  color: rgb(255 165 0);
+  letter-spacing: 0.1em;
+  padding: 0 8px;
+  font-family: monospace;
+}
+
+.dev-switcher__btn {
+  padding: 6px 16px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: rgb(255 255 255 / 0.45);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    color: rgb(255 255 255 / 0.8);
+  }
+}
+
+.dev-switcher__btn--active {
+  background: rgb(255 255 255 / 0.12);
+  color: rgb(255 255 255);
+}

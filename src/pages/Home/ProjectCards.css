@@ -1,0 +1,310 @@
+/* ─────────────────────────────────────────────────
+   Project Cards — modal overlay for public site
+   ───────────────────────────────────────────────── */
+
+/* ── CTA after list ── */
+.project-cards__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spaceM);
+  margin-top: var(--space3XL);
+  text-align: center;
+}
+
+.project-cards__cta-sub {
+  font-size: var(--fontSizeBodyL);
+  color: rgb(var(--rgbText) / 0.6);
+  margin: 0;
+}
+
+/* ── Modal backdrop ── */
+.project-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgb(var(--rgbBackground));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spaceL);
+  animation: modal-backdrop-in 0.25s ease;
+
+  @media (--mediaMobile) {
+    & {
+      align-items: flex-end;
+      padding: 0;
+    }
+  }
+}
+
+@keyframes modal-backdrop-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ── Modal ── */
+.project-modal {
+  background: rgb(var(--rgbText) / 0.07);
+  border: 1px solid rgb(var(--rgbText) / 0.1);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 1020px;
+  max-height: 88vh;
+  overflow-y: auto;
+  position: relative;
+  animation: modal-slide-in 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  @media (--mediaMobile) {
+    & {
+      max-height: 90vh;
+      border-radius: 20px 20px 0 0;
+      animation: modal-sheet-in 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  }
+}
+
+@keyframes modal-slide-in {
+  from { transform: translateY(20px) scale(0.98); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+
+@keyframes modal-sheet-in {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes modal-sheet-out {
+  from { transform: translateY(0); }
+  to { transform: translateY(100%); }
+}
+
+@keyframes modal-backdrop-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.project-modal__backdrop--closing {
+  animation: modal-backdrop-out 0.38s ease forwards;
+}
+
+.project-modal--closing {
+  @media (--mediaMobile) {
+    & {
+      animation: modal-sheet-out 0.38s cubic-bezier(0.4, 0, 1, 1) forwards;
+    }
+  }
+
+  @media not (--mediaMobile) {
+    & {
+      animation: modal-backdrop-out 0.38s ease forwards;
+    }
+  }
+}
+
+/* ── Drag handle (mobile only) ── */
+.project-modal__handle {
+  display: none;
+
+  @media (--mediaMobile) {
+    & {
+      display: block;
+      position: absolute;
+      top: var(--spaceM);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 36px;
+      height: 4px;
+      border-radius: 2px;
+      background: rgb(var(--rgbBackground) / 0.55);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 5;
+    }
+  }
+}
+
+/* ── Close button ── */
+.project-modal__close {
+  position: absolute;
+  top: var(--spaceL);
+  right: var(--spaceL);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgb(var(--rgbText) / 0.15);
+  background: rgb(var(--rgbBackground) / 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: rgb(var(--rgbText));
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  flex-shrink: 0;
+  transition: background var(--durationS) ease;
+
+  & svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  &:hover {
+    background: rgb(var(--rgbBackground) / 0.8);
+  }
+}
+
+/* ── Modal inner layout ── */
+.project-modal__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 480px;
+
+  @media (--mediaMobile) {
+    & {
+      grid-template-columns: 1fr;
+      min-height: unset;
+    }
+  }
+}
+
+/* ── Left column ── */
+.project-modal__left {
+  padding: var(--space3XL) var(--space2XL);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spaceL);
+
+  @media (--mediaMobile) {
+    & {
+      padding: var(--spaceXL) var(--spaceL);
+    }
+  }
+}
+
+.project-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.project-modal__year {
+  font-size: var(--fontSizeBodyXS);
+  color: rgb(var(--rgbText) / 0.5);
+}
+
+.project-modal__title {
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  font-weight: var(--fontWeightBold);
+  color: rgb(var(--rgbText));
+  margin: calc(var(--spaceL) * -0.6) 0 0;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.project-modal__summary {
+  font-size: var(--fontSizeBodyS);
+  color: rgb(var(--rgbText));
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── Sections ── */
+.project-modal__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spaceXS);
+  padding-top: var(--spaceM);
+  border-top: 1px solid rgb(var(--rgbText) / 0.08);
+}
+
+.project-modal__label {
+  font-size: var(--fontSizeBodyXS);
+  color: rgb(var(--rgbText) / 0.5);
+  font-weight: var(--fontWeightMedium);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+
+.project-modal__text {
+  font-size: var(--fontSizeBodyS);
+  color: rgb(var(--rgbText));
+  line-height: 1.55;
+  margin: 0;
+}
+
+.project-modal__text--bold {
+  font-weight: var(--fontWeightMedium);
+  color: rgb(var(--rgbText));
+}
+
+/* ── Tags ── */
+.project-modal__tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spaceXS);
+  padding-top: var(--spaceM);
+  border-top: 1px solid rgb(var(--rgbText) / 0.08);
+}
+
+.project-modal__tag {
+  padding: 3px 10px;
+  border: 1px solid rgb(var(--rgbText) / 0.1);
+  border-radius: 999px;
+  font-size: var(--fontSizeBodyXS);
+  color: rgb(var(--rgbText) / 0.5);
+  background: rgb(var(--rgbText) / 0.03);
+}
+
+/* ── Footer banner ── */
+.project-modal__footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spaceM);
+  border-top: 1px solid rgb(var(--rgbText) / 0.06);
+  background: rgb(var(--rgbText) / 0.07);
+  border-radius: 0 0 20px 20px;
+  font-size: var(--fontSizeBodyXS);
+
+  @media (--mediaMobile) {
+    & {
+      border-radius: 0;
+    }
+  }
+}
+
+/* ── Right column (cover) ── */
+.project-modal__right {
+  border-radius: 0 20px 20px 0;
+  overflow: hidden;
+
+  @media (--mediaMobile) {
+    & {
+      height: 220px;
+      border-radius: 20px 20px 0 0;
+      order: -1;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgb(0 0 0 / 0.25) 0%, transparent 50%);
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+.project-modal__cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

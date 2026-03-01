@@ -3,6 +3,7 @@
    ───────────────────────────────────────────────── */
 
 .contact2 {
+  width: 100%;
   padding-top: var(--space2XL);
   padding-bottom: 0;
   overflow: hidden;
@@ -56,16 +57,23 @@
   }
 }
 
-.contact2__badge-photo {
+.contact2__badge-photo-clip {
   position: absolute;
   top: 18%;
   left: 18%;
   width: 64%;
   height: 64%;
   border-radius: 50%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.contact2__badge-photo {
+  width: 125%;
+  height: 125%;
+  margin-left: -12.5%;
   object-fit: cover;
   object-position: center top;
-  z-index: 1;
 }
 
 @keyframes contact2-spin {

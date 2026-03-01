@@ -130,6 +130,17 @@
   cursor: default;
 }
 
+.project-list__link--btn {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+}
+
 /* Left: num + text + arrow */
 .project-list__info {
   flex: 1;

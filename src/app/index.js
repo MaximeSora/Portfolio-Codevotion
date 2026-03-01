@@ -15,6 +15,7 @@ import { reflow } from 'utils/transition';
 import prerender from 'utils/prerender';
 import { UnlockProvider } from 'contexts/UnlockContext';
 import PrivateGuard from 'components/PrivateGate';
+import DevModeSwitcher from 'components/DevModeSwitcher';
 import './reset.css';
 import './index.css';
 // import ReactGA from 'react-ga';
@@ -69,6 +70,7 @@ const App = () => {
               <AppRoutes />
             </BrowserRouter>
           </PrivateGuard>
+          <DevModeSwitcher />
         </ThemeProvider>
       </UnlockProvider>
     </AppContext.Provider>

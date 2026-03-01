@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import Image from 'components/Image';
 import Link from 'components/Link';
 import { Button } from 'components/Button';
-import Footer from 'components/Footer';
+import ContactV2 from 'pages/Home/ContactV2';
 import {
   ProjectContainer,
   ProjectBackground,
@@ -370,7 +370,7 @@ const ProjectDM = () => {
         </ProjectSection>
 
       </ProjectContainer>
-      <Footer />
+      <ContactV2 />
     </Fragment>
   );
 };

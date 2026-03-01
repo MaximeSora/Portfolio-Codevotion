@@ -6,6 +6,8 @@ import Statement from './Statement';
 import Marquee from './Marquee';
 import Approach from './Approach';
 import ProjectList from './ProjectList';
+import ProjectCards from './ProjectCards';
+import { getPrivateMode } from 'utils/privateMode';
 import Profile from './Profile';
 import Contact from './ContactV2';
 import { usePrefersReducedMotion, useRouteTransition } from 'hooks';
@@ -19,11 +21,11 @@ import './index.css';
 // /projects/solbase, /projects/jo, /projects/device-models, /projects/devtech-tools
 
 const projects = notionProjects.map(p => ({
+  ...p,
   title: p.name,
   description: [p.company, p.tags.slice(0, 3).map(t => t.name).join(', ')].filter(Boolean).join(' · '),
   link: `/projects/${p.slug}`,
   image: p.cover,
-  tags: p.tags,
 }));
 
 const disciplines = ['Developer', 'Builder', 'Researcher'];
@@ -158,11 +160,19 @@ const Home = () => {
       <Statement id="statement" />
       <Approach id="approach" />
       <Marquee />
-      <ProjectList
-        id="projects"
-        sectionRef={projectOne}
-        projects={projects}
-      />
+      {getPrivateMode() ? (
+        <ProjectList
+          id="projects"
+          sectionRef={projectOne}
+          projects={projects}
+        />
+      ) : (
+        <ProjectCards
+          id="projects"
+          sectionRef={projectOne}
+          projects={projects}
+        />
+      )}
       <Profile
         sectionRef={about}
         visible={visibleSections.includes(about.current)}

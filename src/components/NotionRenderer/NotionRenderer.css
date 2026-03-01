@@ -36,6 +36,7 @@
   color: rgb(var(--rgbText));
   font-size: var(--fontSizeBodyM);
   line-height: 1.75;
+  text-align: left;
 
   /* Notion color vars matching the site palette */
   --notion-gray: rgb(var(--rgbText) / 0.45);
@@ -63,9 +64,6 @@
   margin-right: auto;
 }
 
-.notion-block:has(.notion-image) {
-  max-width: 100%;
-}
 
 /* ─── Paragraphs ──────────────────────────────── */
 .notion-paragraph {

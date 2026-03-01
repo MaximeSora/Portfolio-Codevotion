@@ -2,7 +2,7 @@ import { Fragment, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import classNames from 'classnames';
-import Footer from 'components/Footer';
+import ContactV2 from 'pages/Home/ContactV2';
 import {
   ProjectContainer,
   ProjectSection,
@@ -116,12 +116,12 @@ const CaseStudy = () => {
             <ProjectTextRow center centerMobile noMargin>
               <ProjectSectionText>NEXT PROJECT</ProjectSectionText>
               <ProjectSectionNextProject>{nextProject.name}</ProjectSectionNextProject>
-              <Button secondary iconHoverShift icon="arrowUpRight" href={`/projects/${nextProject.slug}`} />
+              <Button secondary iconHoverShift icon="arrowRight" href={`/projects/${nextProject.slug}`} />
             </ProjectTextRow>
           </ProjectSectionContent>
         </ProjectSection>
 
-        <Footer />
+        <ContactV2 />
       </ProjectContainer>
     </Fragment>
   );

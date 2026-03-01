@@ -103,9 +103,9 @@
 .case-study__tag {
   font-size: var(--fontSizeBodyXS);
   font-weight: var(--fontWeightMedium);
-  color: var(--tag-color, rgb(var(--rgbText) / 0.5));
-  background: color-mix(in srgb, var(--tag-color, rgb(var(--rgbText) / 0.5)) 10%, transparent);
-  border: 1px solid color-mix(in srgb, var(--tag-color, rgb(var(--rgbText) / 0.5)) 25%, transparent);
+  color: rgb(var(--rgbText) / 0.5);
+  background: rgb(var(--rgbText) / 0.03);
+  border: 1px solid rgb(var(--rgbText) / 0.1);
   padding: 3px var(--spaceM);
   border-radius: 999px;
   white-space: nowrap;

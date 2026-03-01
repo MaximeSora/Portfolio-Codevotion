@@ -112,10 +112,11 @@ function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...rest }) 
                   })}
                 >
                   <span className={classNames('intro__title-plus', `intro__title-plus--${status}`)} aria-hidden>+</span>
-                  <TransitionGroup component="span">
+                  <TransitionGroup component="span" className="intro__title-words">
                     {currentDisciplines.map(item => (
                       <Transition
                         appear
+                        unmountOnExit
                         timeout={{ enter: 3000, exit: 2000 }}
                         key={item}
                         onEnter={reflow}

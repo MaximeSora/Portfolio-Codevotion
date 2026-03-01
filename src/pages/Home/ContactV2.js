@@ -30,20 +30,22 @@ const ContactV2 = ({ id }) => {
               <defs>
                 <path
                   id="contact2-circle-path"
-                  d="M 100,100 m -72,0 a 72,72 0 1,1 144,0 a 72,72 0 1,1 -144,0"
+                  d="M 100,100 m -83,0 a 83,83 0 1,1 166,0 a 83,83 0 1,1 -166,0"
                 />
               </defs>
-              <text fontSize="20" fontWeight="600" letterSpacing="3" fill="currentColor">
+              <text fontSize="24" fontWeight="600" letterSpacing="2" fill="currentColor">
                 <textPath href="#contact2-circle-path">
-                  Contact Me · Contact Me · Contact Me ·
+                  Contact me · Contact me · Contact me ·
                 </textPath>
               </text>
             </svg>
-            <img
-              src={portraitPhoto}
-              alt=""
-              className="contact2__badge-photo"
-            />
+            <div className="contact2__badge-photo-clip">
+              <img
+                src={portraitPhoto}
+                alt=""
+                className="contact2__badge-photo"
+              />
+            </div>
           </div>
         </div>
 

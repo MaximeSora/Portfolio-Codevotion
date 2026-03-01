@@ -1,19 +1,13 @@
 @keyframes image-reveal {
-  0% {
-    transform: scale3d(0, 1, 1);
-    transform-origin: left;
+  from {
+    opacity: 0;
+    filter: blur(12px);
+    transform: translateY(20px);
   }
-  49% {
-    transform: scale3d(1, 1, 1);
-    transform-origin: left;
-  }
-  50% {
-    transform: scale3d(1, 1, 1);
-    transform-origin: right;
-  }
-  100% {
-    transform: scale3d(0, 1, 1);
-    transform-origin: right;
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: none;
   }
 }
 
@@ -32,26 +26,6 @@
 .image--reveal {
   &:not(.image--in-viewport) {
     box-shadow: none;
-  }
-
-  &::before {
-    content: '';
-    background-color: rgb(var(--rgbAccent));
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    transform: scale3d(0, 1, 1);
-    transform-origin: left;
-    will-change: transform;
-    z-index: 16;
-  }
-
-  @media (--mediaUseMotion) {
-    &.image--in-viewport::before {
-      animation: image-reveal 1.8s var(--bezierFastoutSlowin) var(--delay);
-    }
   }
 }
 
@@ -87,7 +61,16 @@
 
 .image__element-wrapper--reveal {
   opacity: 0;
-  transition: opacity var(--durationM) ease var(--delay);
+}
+
+.image__element-wrapper--reveal.image__element-wrapper--in-viewport {
+  @media (--mediaUseMotion) {
+    animation: image-reveal 0.8s var(--bezierFastoutSlowin) var(--delay) forwards;
+  }
+
+  @media (--mediaReduceMotion) {
+    opacity: 1;
+  }
 }
 
 .image__element-wrapper--in-viewport {
