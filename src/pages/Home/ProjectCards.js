@@ -17,16 +17,29 @@ const TAG_COLORS = {
   default: 'rgb(var(--rgbText) / 0.4)',
 };
 
-const ProjectModal = ({ project, onClose }) => {
+const ProjectModal = ({ projects, activeIndex, onClose }) => {
   const [closing, setClosing] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(activeIndex);
+
+  const project = projects[currentIndex];
+  const total = projects.length;
+  const prevProject = projects[(currentIndex - 1 + total) % total];
+  const nextProject = projects[(currentIndex + 1) % total];
 
   const handleClose = () => {
     setClosing(true);
     setTimeout(onClose, 380);
   };
 
+  const handlePrev = () => setCurrentIndex(i => (i - 1 + total) % total);
+  const handleNext = () => setCurrentIndex(i => (i + 1) % total);
+
   useEffect(() => {
-    const onKey = e => e.key === 'Escape' && handleClose();
+    const onKey = e => {
+      if (e.key === 'Escape') handleClose();
+      if (e.key === 'ArrowLeft') handlePrev();
+      if (e.key === 'ArrowRight') handleNext();
+    };
     document.addEventListener('keydown', onKey);
     document.body.style.overflow = 'hidden';
     return () => {
@@ -53,54 +66,84 @@ const ProjectModal = ({ project, onClose }) => {
           </svg>
         </button>
 
-        <div className="project-modal__inner">
-          <div className="project-modal__left">
-            <div className="project-modal__header">
-              <span className="project-modal__year">
-                {project.company}
-                {project.company && project.year && <span aria-hidden> · </span>}
-                {project.year}
-              </span>
+        <div key={currentIndex} className="project-modal__content">
+          <div className="project-modal__inner">
+            <div className="project-modal__left">
+              <div className="project-modal__header">
+                <span className="project-modal__year">
+                  {project.company}
+                  {project.company && project.year && <span aria-hidden> · </span>}
+                  {project.year}
+                </span>
+              </div>
+
+              <h2 className="project-modal__title">{project.name}</h2>
+
+              <p className="project-modal__summary">{project.summary}</p>
+
+              {project.challenge && (
+                <div className="project-modal__section">
+                  <span className="project-modal__label">Challenge</span>
+                  <p className="project-modal__text">{project.challenge}</p>
+                </div>
+              )}
+
+              {project.impact && (
+                <div className="project-modal__section">
+                  <span className="project-modal__label">Impact</span>
+                  <p className="project-modal__text project-modal__text--bold">{project.impact}</p>
+                </div>
+              )}
+
+              {project.tags?.length > 0 && (
+                <ul className="project-modal__tags" aria-label="Tags">
+                  {project.tags.map(tag => (
+                    <li
+                      key={tag.name}
+                      className="project-modal__tag"
+                      style={{ '--tag-color': TAG_COLORS[tag.color] ?? TAG_COLORS.default }}
+                    >
+                      {tag.name}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
 
-            <h2 className="project-modal__title">{project.name}</h2>
-
-            <p className="project-modal__summary">{project.summary}</p>
-
-            {project.challenge && (
-              <div className="project-modal__section">
-                <span className="project-modal__label">Challenge</span>
-                <p className="project-modal__text">{project.challenge}</p>
-              </div>
-            )}
-
-            {project.impact && (
-              <div className="project-modal__section">
-                <span className="project-modal__label">Impact</span>
-                <p className="project-modal__text project-modal__text--bold">{project.impact}</p>
-              </div>
-            )}
-
-            {project.tags?.length > 0 && (
-              <ul className="project-modal__tags" aria-label="Tags">
-                {project.tags.map(tag => (
-                  <li
-                    key={tag.name}
-                    className="project-modal__tag"
-                    style={{ '--tag-color': TAG_COLORS[tag.color] ?? TAG_COLORS.default }}
-                  >
-                    {tag.name}
-                  </li>
-                ))}
-              </ul>
-            )}
+            <div className="project-modal__right">
+              {project.cover && (
+                <img src={project.cover} alt="" className="project-modal__cover" />
+              )}
+            </div>
           </div>
+        </div>
 
-          <div className="project-modal__right">
-            {project.cover && (
-              <img src={project.cover} alt="" className="project-modal__cover" />
-            )}
-          </div>
+        <div className="project-modal__nav">
+          <button
+            className="project-modal__nav-btn project-modal__nav-btn--prev"
+            onClick={handlePrev}
+            aria-label="Previous project"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+            <span className="project-modal__nav-name">{prevProject.name}</span>
+          </button>
+
+          <span className="project-modal__nav-count" aria-label={`Project ${currentIndex + 1} of ${total}`}>
+            {currentIndex + 1} / {total}
+          </span>
+
+          <button
+            className="project-modal__nav-btn project-modal__nav-btn--next"
+            onClick={handleNext}
+            aria-label="Next project"
+          >
+            <span className="project-modal__nav-name">{nextProject.name}</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
         </div>
 
         <div className="project-modal__footer">
@@ -114,7 +157,12 @@ const ProjectModal = ({ project, onClose }) => {
 };
 
 const ProjectCards = ({ id, sectionRef, projects }) => {
-  const [activeProject, setActiveProject] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const handleItemClick = project => {
+    const index = projects.findIndex(p => p.id === project.id);
+    setActiveIndex(index !== -1 ? index : 0);
+  };
 
   return (
     <>
@@ -122,7 +170,7 @@ const ProjectCards = ({ id, sectionRef, projects }) => {
         id={id}
         sectionRef={sectionRef}
         projects={projects}
-        onItemClick={setActiveProject}
+        onItemClick={handleItemClick}
         footer={
           <div className="project-cards__cta">
             <p className="project-cards__cta-sub">Interested to see more?</p>
@@ -132,8 +180,12 @@ const ProjectCards = ({ id, sectionRef, projects }) => {
           </div>
         }
       />
-      {activeProject && (
-        <ProjectModal project={activeProject} onClose={() => setActiveProject(null)} />
+      {activeIndex !== null && (
+        <ProjectModal
+          projects={projects}
+          activeIndex={activeIndex}
+          onClose={() => setActiveIndex(null)}
+        />
       )}
     </>
   );

@@ -261,6 +261,73 @@
   background: rgb(var(--rgbText) / 0.03);
 }
 
+/* ── Content fade on project change ── */
+.project-modal__content {
+  animation: modal-project-in 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modal-project-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ── Project nav ── */
+.project-modal__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spaceM) var(--spaceL);
+  border-top: 1px solid rgb(var(--rgbText) / 0.06);
+  gap: var(--spaceM);
+}
+
+.project-modal__nav-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--spaceS);
+  background: none;
+  border: none;
+  color: rgb(var(--rgbText) / 0.5);
+  cursor: pointer;
+  font-size: var(--fontSizeBodyXS);
+  font-weight: var(--fontWeightMedium);
+  font-family: inherit;
+  padding: var(--spaceXS) var(--spaceS);
+  border-radius: 6px;
+  transition: color var(--durationS) ease, background var(--durationS) ease;
+  min-width: 0;
+  max-width: 38%;
+
+  & svg {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+  }
+
+  &:hover {
+    color: rgb(var(--rgbText));
+    background: rgb(var(--rgbText) / 0.05);
+  }
+}
+
+.project-modal__nav-btn--next {
+  justify-content: flex-end;
+}
+
+.project-modal__nav-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.project-modal__nav-count {
+  font-size: var(--fontSizeBodyXS);
+  color: rgb(var(--rgbText) / 0.3);
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}
+
 /* ── Footer banner ── */
 .project-modal__footer {
   display: flex;
