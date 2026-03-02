@@ -25,28 +25,34 @@ const ContactV2 = ({ id }) => {
           </p>
 
           {/* Spinning badge */}
-          <div className="contact2__badge" aria-hidden>
-            <svg className="contact2__badge-ring" viewBox="0 0 200 200">
-              <defs>
-                <path
-                  id="contact2-circle-path"
-                  d="M 100,100 m -83,0 a 83,83 0 1,1 166,0 a 83,83 0 1,1 -166,0"
+          <a
+            href="mailto:maxime.pocq@gmail.com"
+            className="contact2__badge-link"
+            aria-label="Contact me by email"
+          >
+            <div className="contact2__badge" aria-hidden>
+              <svg className="contact2__badge-ring" viewBox="0 0 200 200">
+                <defs>
+                  <path
+                    id="contact2-circle-path"
+                    d="M 100,100 m -83,0 a 83,83 0 1,1 166,0 a 83,83 0 1,1 -166,0"
+                  />
+                </defs>
+                <text fontSize="24" fontWeight="600" letterSpacing="2" fill="currentColor">
+                  <textPath href="#contact2-circle-path">
+                    Contact me · Contact me · Contact me ·
+                  </textPath>
+                </text>
+              </svg>
+              <div className="contact2__badge-photo-clip">
+                <img
+                  src={portraitPhoto}
+                  alt=""
+                  className="contact2__badge-photo"
                 />
-              </defs>
-              <text fontSize="24" fontWeight="600" letterSpacing="2" fill="currentColor">
-                <textPath href="#contact2-circle-path">
-                  Contact me · Contact me · Contact me ·
-                </textPath>
-              </text>
-            </svg>
-            <div className="contact2__badge-photo-clip">
-              <img
-                src={portraitPhoto}
-                alt=""
-                className="contact2__badge-photo"
-              />
+              </div>
             </div>
-          </div>
+          </a>
         </div>
 
         {/* ── Divider ── */}

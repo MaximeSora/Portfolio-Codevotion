@@ -35,12 +35,25 @@
 }
 
 /* ── Spinning badge ───────────────────────────── */
-.contact2__badge {
-  position: relative;
-  width: clamp(90px, 11vw, 150px);
-  height: clamp(90px, 11vw, 150px);
+.contact2__badge-link {
   flex-shrink: 0;
   margin-top: 0.3em;
+  width: clamp(90px, 11vw, 150px);
+  height: clamp(90px, 11vw, 150px);
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  transition: transform var(--durationM) var(--bezierFastoutSlowin);
+
+  &:hover {
+    transform: scale(1.08);
+  }
+}
+
+.contact2__badge {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .contact2__badge-ring {
@@ -303,7 +316,7 @@
     padding-bottom: var(--spaceL);
   }
 
-  .contact2__badge {
+  .contact2__badge-link {
     width: 80px;
     height: 80px;
     align-self: flex-end;
