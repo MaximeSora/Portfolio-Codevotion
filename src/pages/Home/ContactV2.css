@@ -21,7 +21,7 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: var(--spaceL);
-  padding-bottom: var(--spaceL);
+  padding-bottom: var(--space2XL);
 }
 
 .contact2__line1 {
@@ -183,14 +183,14 @@
 }
 
 .contact2__katakana {
-  font-family: var(--japaneseFontStack);
   font-size: var(--fontSizeBodyXS);
   color: rgb(var(--rgbText) / 0.25);
   white-space: nowrap;
 
   @media (--mediaMobile) {
     & {
-      display: none;
+      order: 1;
+      width: 100%;
     }
   }
 }
@@ -296,6 +296,11 @@
   .contact2__top {
     flex-direction: column-reverse;
     gap: var(--spaceL);
+    padding-bottom: var(--spaceL);
+  }
+
+  .contact2__line2 {
+    padding-bottom: var(--spaceL);
   }
 
   .contact2__badge {

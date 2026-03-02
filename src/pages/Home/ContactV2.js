@@ -86,8 +86,8 @@ const ContactV2 = ({ id }) => {
               Resume
             </Link>
           </div>
-          <span className="contact2__katakana" aria-hidden>
-            著作権 2026 マキシム・ポック
+          <span className="contact2__katakana">
+            © 2026 Maxime Pocq
           </span>
         </div>
       </div>
