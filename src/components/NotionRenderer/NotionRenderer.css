@@ -109,7 +109,7 @@
   margin-bottom: var(--spaceL);
   display: flex;
   flex-direction: column;
-  gap: var(--spaceS);
+  gap: 4px;
 }
 
 .notion-list--bulleted {

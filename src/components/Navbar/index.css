@@ -249,7 +249,7 @@
   text-transform: uppercase;
   font-weight: var(--fontWeightBold);
   text-decoration: none;
-  color: rgb(var(--rgbPrimary));
+  color: rgb(var(--rgbText));
   padding: var(--spaceL);
   opacity: 0;
   transition-property: opacity;

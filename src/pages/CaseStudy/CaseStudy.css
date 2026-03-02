@@ -13,6 +13,7 @@
   width: 100%;
   height: clamp(340px, 55vh, 680px);
   overflow: hidden;
+  margin-top: var(--space3XL);
   margin-bottom: 0;
 }
 

@@ -1,7 +1,7 @@
 .statement {
   width: 100%;
-  padding-top: var(--space5XL);
-  padding-bottom: var(--space5XL);
+  padding-top: var(--space4XL);
+  padding-bottom: var(--space4XL);
   display: flex;
   justify-content: center;
 }

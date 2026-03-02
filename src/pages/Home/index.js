@@ -26,7 +26,7 @@ const projects = notionProjects.map(p => ({
   description: [p.company, p.tags.slice(0, 3).map(t => t.name).join(', ')].filter(Boolean).join(' · '),
   link: `/projects/${p.slug}`,
   image: p.cover,
-}));
+})).reverse();
 
 const disciplines = ['Developer', 'Builder', 'Researcher'];
 
