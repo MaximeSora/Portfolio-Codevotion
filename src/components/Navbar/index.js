@@ -68,35 +68,36 @@ function Navbar(props) {
       <NavToggle onClick={() => dispatch({ type: 'toggleMenu' })} menuOpen={menuOpen} />
       <nav className="navbar__nav">
         <div className="navbar__nav-list">
-          {navLinks.map(({ label, pathname, hash, href, newTab }) =>
-            href ? (
-              <a
-                key={label}
-                className="navbar__nav-link"
-                href={href}
-                target={newTab ? '_blank' : undefined}
-                rel={newTab ? 'noopener noreferrer' : undefined}
-                onMouseUp={blurOnMouseUp}
-              >
-                {label}
-              </a>
-            ) : (
-              <NavLink
-                exact
-                className="navbar__nav-link"
-                activeClassName="navbar__nav-link--active"
-                isActive={match => isMatch({ match, hash })}
-                onClick={handleNavClick}
-                key={label}
-                to={{ pathname, hash, state: hashKey }}
-                onMouseUp={blurOnMouseUp}
-              >
-                {label}
-              </NavLink>
-            )
-          )}
+          {navLinks.filter(l => !l.cta).map(({ label, pathname, hash }) => (
+            <NavLink
+              exact
+              className="navbar__nav-link"
+              activeClassName="navbar__nav-link--active"
+              isActive={match => isMatch({ match, hash })}
+              onClick={handleNavClick}
+              key={label}
+              to={{ pathname, hash, state: hashKey }}
+              onMouseUp={blurOnMouseUp}
+            >
+              {label}
+            </NavLink>
+          ))}
         </div>
-        {/* <NavbarIcons /> */}
+        <div className="navbar__cta-group">
+          {navLinks.filter(l => l.cta).map(({ label, href, newTab, cta }) => (
+            <a
+              key={label}
+              className={`navbar__nav-cta navbar__nav-cta--${cta}`}
+              href={href}
+              target={newTab ? '_blank' : undefined}
+              rel={newTab ? 'noopener noreferrer' : undefined}
+              onMouseUp={blurOnMouseUp}
+            >
+              <span className="navbar__cta-bg" aria-hidden />
+              <span className="navbar__cta-text">{label}</span>
+            </a>
+          ))}
+        </div>
       </nav>
       <Transition
         mountOnEnter
@@ -107,32 +108,34 @@ function Navbar(props) {
       >
         {status => (
           <nav className={`navbar__mobile-nav navbar__mobile-nav--${status}`}>
-            {navLinks.map(({ label, pathname, hash, href, newTab }) =>
-              href ? (
+            {navLinks.filter(l => !l.cta).map(({ label, pathname, hash }) => (
+              <NavLink
+                className={`navbar__mobile-nav-link navbar__mobile-nav-link--${status}`}
+                activeClassName="navbar__mobile-nav-link--active"
+                key={label}
+                onClick={handleMobileNavClick}
+                to={{ pathname, hash, state: hashKey }}
+                onMouseUp={blurOnMouseUp}
+              >
+                {label}
+              </NavLink>
+            ))}
+            <div className="navbar__mobile-cta-group">
+              {navLinks.filter(l => l.cta).map(({ label, href, newTab, cta }) => (
                 <a
                   key={label}
-                  className={`navbar__mobile-nav-link navbar__mobile-nav-link--${status}`}
+                  className={`navbar__mobile-nav-cta navbar__mobile-nav-cta--${cta} navbar__mobile-nav-link--${status}`}
                   href={href}
                   target={newTab ? '_blank' : undefined}
                   rel={newTab ? 'noopener noreferrer' : undefined}
                   onClick={handleMobileNavClick}
                   onMouseUp={blurOnMouseUp}
                 >
-                  {label}
+                  <span className="navbar__cta-bg" aria-hidden />
+                  <span className="navbar__cta-text">{label}</span>
                 </a>
-              ) : (
-                <NavLink
-                  className={`navbar__mobile-nav-link navbar__mobile-nav-link--${status}`}
-                  activeClassName="navbar__mobile-nav-link--active"
-                  key={label}
-                  onClick={handleMobileNavClick}
-                  to={{ pathname, hash, state: hashKey }}
-                  onMouseUp={blurOnMouseUp}
-                >
-                  {label}
-                </NavLink>
-              )
-            )}
+              ))}
+            </div>
             <NavbarIcons />
             <ThemeToggle isMobile />
           </nav>

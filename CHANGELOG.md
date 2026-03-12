@@ -4,6 +4,38 @@ Historique des modifications apportées sur la branche `Claude-evol`.
 
 ---
 
+## Session — 2026-03-12
+
+### Testimonials — nouveau composant
+- `Testimonials.js` + `Testimonials.css` : section avec citations de collègues
+- Avatars : `pierre.jpeg`, `florian.jpeg` en assets
+- Animation scroll via `useInViewport`
+- Intégré dans `Home/index.js` après la section Profile
+
+### Marquee — refonte logos clients
+- Remplacement des items texte par des logos d'entreprises (Renault Digital, Thales, MFS, Ercom)
+- Assets ajoutés : `renault-digital.png`, `thales-logo-white.png`, `mfs.png`, `ercom_logo.png`
+- Structure `logos[]` avec `src`, `alt`, `width`, `height` optionnelle
+
+### Statement — texte raccourci
+- Texte réduit à : "I design products people love — built to scale and perform."
+- Mots clés : `products`, `people`, `love`, `scale`, `perform.`
+- `rootMargin` de l'observer : `-20%` → `15%`
+
+### Home — simplification
+- `Statement` commenté (non rendu)
+- Suppression du toggle `getPrivateMode()` / `ProjectCards` — `ProjectList` toujours rendu
+- `Testimonials` ajouté après Profile
+- `rootMargin` section observer : `-30%` → `15%`
+
+### CaseStudy — section "At a glance"
+- Destructuration de `summary`, `challenge`, `impact` depuis le projet Notion
+- Nouvelle section `case-study__glance` entre le header et le body
+- 3 colonnes animées avec stagger `--glance-delay` (80ms/item)
+- Affiché seulement si au moins un des champs est renseigné dans Notion
+
+---
+
 ## TODO
 
 - [x] **Blur animations homepage** — Liquid glass sur `Intro.css` (nom, discipline, keyframe `intro-text-reveal`) et `Profile.css` (titre Hello + 3 paragraphes staggerés +120ms/+240ms).

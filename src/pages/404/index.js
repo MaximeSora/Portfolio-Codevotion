@@ -8,7 +8,7 @@ import Heading from 'components/Heading';
 import Text from 'components/Text';
 import { reflow } from 'utils/transition';
 import notFound from 'assets/notfound.mp4';
-import notFoundPoster from 'assets/notfound.jpg';
+import notFoundPoster from 'assets/notfound.webp';
 import './index.css';
 
 const NotFound = () => (

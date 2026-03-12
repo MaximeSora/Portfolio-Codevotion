@@ -7,7 +7,7 @@ import Section from 'components/Section';
 import Heading from 'components/Heading';
 import Text from 'components/Text';
 import Icon from 'components/Icon';
-import portraitPhoto from 'assets/portrait-photo.png';
+import portraitPhoto from 'assets/portrait-photo.webp';
 import { reflow } from 'utils/transition';
 import { useInViewport } from 'hooks';
 import './Profile.css';

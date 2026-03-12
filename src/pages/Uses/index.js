@@ -16,7 +16,7 @@ import Footer from 'components/Footer';
 import { useScrollRestore } from 'hooks';
 import prerender from 'utils/prerender';
 import usesBackground from 'assets/uses-background.mp4';
-import usesBackgroundPlaceholder from 'assets/uses-background-placeholder.jpg';
+import usesBackgroundPlaceholder from 'assets/uses-background-placeholder.webp';
 import './index.css';
 
 const Uses = () => {

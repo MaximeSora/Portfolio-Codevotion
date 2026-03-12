@@ -53,6 +53,7 @@ export default defineConfig({
         manualChunks: {
           three: ['three'],
           postprocessing: ['postprocessing'],
+          react: ['react', 'react-dom', 'react-router-dom', 'react-transition-group'],
         },
       },
     },

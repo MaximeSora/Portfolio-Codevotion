@@ -1,10 +1,10 @@
 import { useRef } from 'react';
 import classNames from 'classnames';
 import { useInViewport } from 'hooks';
-import mfs from 'assets/MFS.png';
-import ercom from 'assets/ercom_logo.png';
-import thales from 'assets/thales-logo-white.png';
-import renaultDigital from 'assets/renault-digital.png';
+import mfs from 'assets/MFS.webp';
+import ercom from 'assets/ercom_logo.webp';
+import thales from 'assets/thales-logo-white.webp';
+import renaultDigital from 'assets/renault-digital.webp';
 import './Marquee.css';
 
 const logos = [
@@ -22,6 +22,7 @@ const MarqueeTrack = () => (
           src={logo.src}
           alt={logo.alt}
           className="marquee__logo"
+          loading="lazy"
           style={{ width: logo.width, ...(logo.height && { height: logo.height }) }}
         />
       </span>
@@ -34,7 +35,7 @@ const Marquee = () => {
   const inView = useInViewport(ref, true, { rootMargin: '0px 0px 15% 0px' });
 
   return (
-    <div ref={ref} className={classNames('marquee', { 'marquee--entered': inView })} aria-label="Services">
+    <div ref={ref} className={classNames('marquee', { 'marquee--entered': inView })} role="region" aria-label="Clients">
       <div className="marquee__inner">
         {/* Duplicated for seamless loop */}
         <MarqueeTrack />

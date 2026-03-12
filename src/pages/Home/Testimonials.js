@@ -3,8 +3,8 @@ import classNames from 'classnames';
 import Section from 'components/Section';
 import Divider from 'components/Divider';
 import { useInViewport } from 'hooks';
-import pierreAvatar from 'assets/pierre.jpeg';
-import florianAvatar from 'assets/florian.jpeg';
+import pierreAvatar from 'assets/pierre.webp';
+import florianAvatar from 'assets/florian.webp';
 import './Testimonials.css';
 
 const testimonials = [
@@ -86,7 +86,7 @@ const Testimonials = ({ id }) => {
               <blockquote className="testimonials__quote">{quote}</blockquote>
 
               <footer className="testimonials__author">
-                <img className="testimonials__avatar" src={avatar} alt={name} />
+                <img className="testimonials__avatar" src={avatar} alt={name} loading="lazy" />
                 <div className="testimonials__author-info">
                   <span className="testimonials__author-name">{name}</span>
                   <span className="testimonials__author-role">

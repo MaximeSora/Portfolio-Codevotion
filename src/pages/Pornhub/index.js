@@ -23,12 +23,12 @@ import { useTheme } from 'components/ThemeProvider';
 import { useAppContext, useScrollRestore } from 'hooks';
 import { media } from 'utils/style';
 import prerender from 'utils/prerender';
-import deviceModelsBackground from 'assets/device-models-background.jpg';
-import deviceModelsBackgroundLarge from 'assets/device-models-background-large.jpg';
-import deviceModelsBackgroundPlaceholder from 'assets/device-models-background-placeholder.jpg';
-import deviceModels from 'assets/device-models.jpg';
-import deviceModelsLarge from 'assets/device-models-large.jpg';
-import deviceModelsPlaceholder from 'assets/device-models-placeholder.jpg';
+import deviceModelsBackground from 'assets/device-models-background.webp';
+import deviceModelsBackgroundLarge from 'assets/device-models-background-large.webp';
+import deviceModelsBackgroundPlaceholder from 'assets/device-models-background-placeholder.webp';
+import deviceModels from 'assets/device-models.webp';
+import deviceModelsLarge from 'assets/device-models-large.webp';
+import deviceModelsPlaceholder from 'assets/device-models-placeholder.webp';
 import pornhubBackground from 'assets/pornhub/thumbnail.webp';
 
 const title = 'Pornhub Eco-Friendly';

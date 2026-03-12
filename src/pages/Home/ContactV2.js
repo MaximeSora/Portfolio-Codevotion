@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import Section from 'components/Section';
 import { useInViewport } from 'hooks';
 import Link from 'components/Link';
-import portraitPhoto from 'assets/portrait-photo.png';
+import portraitPhoto from 'assets/portrait-photo.webp';
 import './ContactV2.css';
 
 const ContactV2 = ({ id }) => {
