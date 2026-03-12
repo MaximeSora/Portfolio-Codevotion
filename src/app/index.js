@@ -1,4 +1,5 @@
 import { lazy, Suspense, useEffect, createContext, useReducer, Fragment } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { BrowserRouter, Switch, Route, useLocation } from 'react-router-dom';
 import { Transition, TransitionGroup } from 'react-transition-group';
 import classNames from 'classnames';
@@ -59,6 +60,7 @@ const App = () => {
 
   return (
     <AppContext.Provider value={{ ...state, dispatch }}>
+      <Analytics />
       <CustomCursor />
       <ThemeProvider themeId={state.theme}>
         <BrowserRouter>
