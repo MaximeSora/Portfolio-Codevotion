@@ -183,7 +183,7 @@
   font-size: var(--fontSizeBodyM);
   color: rgb(var(--rgbText) / 0.5);
   line-height: 1.3;
-  margin-top: var(--spaceS);
+  margin-top: var(--spaceM);
 }
 
 .project-list__arrow {
