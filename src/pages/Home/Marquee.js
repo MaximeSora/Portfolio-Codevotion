@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import classNames from 'classnames';
 import { useInViewport } from 'hooks';
-import mfs from 'assets/mfs.png';
+import mfs from 'assets/MFS.png';
 import ercom from 'assets/ercom_logo.png';
 import thales from 'assets/thales-logo-white.png';
 import renaultDigital from 'assets/renault-digital.png';
