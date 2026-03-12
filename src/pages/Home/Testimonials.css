@@ -1,0 +1,201 @@
+.testimonials {
+  padding-top: var(--space4XL);
+  padding-bottom: var(--space4XL);
+}
+
+.testimonials__content {
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+
+  @media (--mediaUseMotion) {
+    & {
+      transform: translateY(var(--spaceL));
+      transition: opacity 0.3s ease, transform 0.3s var(--bezierFastoutSlowin);
+    }
+  }
+}
+
+.testimonials__content--entered {
+  opacity: 1;
+
+  @media (--mediaUseMotion) {
+    & {
+      transform: none;
+    }
+  }
+}
+
+/* ── Header ── */
+.testimonials__header {
+  margin-bottom: var(--space2XL);
+}
+
+.testimonials__tag {
+  display: grid;
+  grid-template-columns: var(--space4XL) 1fr;
+  gap: 12px;
+  align-items: center;
+}
+
+.testimonials__tag-text {
+  font-size: var(--fontSizeBodyS);
+  font-weight: var(--fontWeightMedium);
+  color: rgb(var(--rgbPrimary));
+  opacity: 0;
+  transition-property: opacity;
+  transition-timing-function: var(--bezierFastoutSlowin);
+  transition-duration: 0.3s;
+  transition-delay: 200ms;
+
+  @media (--mediaUseMotion) {
+    & {
+      transition-property: opacity, transform;
+      transform: translate3d(calc(var(--spaceM) * -1), 0, 0);
+    }
+  }
+}
+
+.testimonials__tag-text--entered {
+  opacity: 1;
+
+  @media (--mediaUseMotion) {
+    & {
+      transform: none;
+    }
+  }
+}
+
+.testimonials__intro {
+  margin-bottom: var(--space3XL);
+}
+
+.testimonials__title {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: var(--fontWeightBold);
+  color: rgb(var(--rgbText));
+  line-height: 1.15;
+  margin: 0;
+
+  & em {
+    font-style: italic;
+    color: rgb(var(--rgbText) / 0.45);
+    font-weight: var(--fontWeightRegular);
+  }
+}
+
+/* ── Grid ── */
+.testimonials__grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spaceL);
+  align-items: stretch;
+
+  @media (--mediaTablet) {
+    & {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+/* ── Card ── */
+.testimonials__card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spaceL);
+  padding: var(--spaceXL);
+  border: 1px solid rgb(var(--rgbText) / 0.08);
+  border-radius: 16px;
+  background: rgb(var(--rgbText) / 0.02);
+  min-width: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    opacity 0.3s var(--bezierFastoutSlowin) var(--card-delay, 0ms),
+    border-color var(--durationS) ease;
+
+  &:hover {
+    border-color: rgb(var(--rgbPrimary) / 0.25);
+  }
+
+  @media (--mediaUseMotion) {
+    & {
+      transform: translate3d(0, var(--spaceM), 0) scale(0.98);
+      transition:
+        opacity 0.3s var(--bezierFastoutSlowin) var(--card-delay, 0ms),
+        transform 0.3s var(--bezierFastoutSlowin) var(--card-delay, 0ms),
+        border-color var(--durationS) ease;
+    }
+  }
+}
+
+.testimonials__card--entered {
+  opacity: 1;
+
+  @media (--mediaUseMotion) {
+    & {
+      transform: none;
+    }
+  }
+}
+
+/* ── Quote icon ── */
+.testimonials__quote-icon {
+  width: 28px;
+  height: auto;
+  color: rgb(var(--rgbPrimary) / 0.3);
+  flex-shrink: 0;
+}
+
+/* ── Quote text ── */
+.testimonials__quote {
+  font-size: var(--fontSizeBodyM);
+  color: rgb(var(--rgbText) / 0.85);
+  line-height: 1.65;
+  margin: 0;
+  flex: 1;
+}
+
+/* ── Author ── */
+.testimonials__author {
+  display: flex;
+  align-items: center;
+  gap: var(--spaceM);
+  padding-top: var(--spaceL);
+  border-top: 1px solid rgb(var(--rgbText) / 0.08);
+}
+
+.testimonials__avatar {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonials__author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.testimonials__author-name {
+  font-size: var(--fontSizeBodyS);
+  font-weight: var(--fontWeightBold);
+  color: rgb(var(--rgbText));
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.testimonials__author-role {
+  font-size: var(--fontSizeBodyXS);
+  color: rgb(var(--rgbText) / 0.45);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

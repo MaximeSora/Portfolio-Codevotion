@@ -6,10 +6,9 @@ import Statement from './Statement';
 import Marquee from './Marquee';
 import Approach from './Approach';
 import ProjectList from './ProjectList';
-import ProjectCards from './ProjectCards';
-import { getPrivateMode } from 'utils/privateMode';
 import Profile from './Profile';
 import Contact from './ContactV2';
+import Testimonials from './Testimonials';
 import { usePrefersReducedMotion, useRouteTransition } from 'hooks';
 import iphone11 from 'assets/iphone-11.glb';
 import macbookPro from 'assets/macbook-pro.glb';
@@ -55,7 +54,7 @@ const Home = () => {
           }
         });
       },
-      { rootMargin: '0px 0px -30% 0px' }
+      { rootMargin: '0px 0px 15% 0px' }
     );
 
     const indicatorObserver = new IntersectionObserver(
@@ -157,27 +156,20 @@ const Home = () => {
         disciplines={disciplines}
         scrollIndicatorHidden={scrollIndicatorHidden}
       />
-      <Statement id="statement" />
+      {/* <Statement id="statement" /> */}
       <Approach id="approach" />
       <Marquee />
-      {getPrivateMode() ? (
-        <ProjectList
-          id="projects"
-          sectionRef={projectOne}
-          projects={projects}
-        />
-      ) : (
-        <ProjectCards
-          id="projects"
-          sectionRef={projectOne}
-          projects={projects}
-        />
-      )}
+      <ProjectList
+        id="projects"
+        sectionRef={projectOne}
+        projects={projects}
+      />
       <Profile
         sectionRef={about}
         visible={visibleSections.includes(about.current)}
         id="about"
       />
+      <Testimonials id="testimonials" />
       <Contact id="contact" />
     </div>
   );

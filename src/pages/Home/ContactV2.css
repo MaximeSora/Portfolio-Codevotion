@@ -251,19 +251,19 @@
   }
 
   .contact2__inner--entered .contact2__line1 {
-    animation: contact2-slidein 1s cubic-bezier(0.16, 1, 0.3, 1) 0ms forwards;
+    animation: contact2-slidein 0.3s cubic-bezier(0.16, 1, 0.3, 1) 0ms forwards;
   }
   .contact2__inner--entered .contact2__badge {
-    animation: contact2-fadein 0.8s cubic-bezier(0.16, 1, 0.3, 1) 100ms forwards;
+    animation: contact2-fadein 0.3s cubic-bezier(0.16, 1, 0.3, 1) 60ms forwards;
   }
   .contact2__inner--entered .contact2__divider {
-    animation: contact2-dividerin 0.7s cubic-bezier(0.16, 1, 0.3, 1) 200ms forwards;
+    animation: contact2-dividerin 0.3s cubic-bezier(0.16, 1, 0.3, 1) 100ms forwards;
   }
   .contact2__inner--entered .contact2__line2 {
-    animation: contact2-slidein 1s cubic-bezier(0.16, 1, 0.3, 1) 300ms forwards;
+    animation: contact2-slidein 0.3s cubic-bezier(0.16, 1, 0.3, 1) 150ms forwards;
   }
   .contact2__inner--entered .contact2__bottom {
-    animation: contact2-fadein 0.7s cubic-bezier(0.16, 1, 0.3, 1) 450ms forwards;
+    animation: contact2-fadein 0.3s cubic-bezier(0.16, 1, 0.3, 1) 220ms forwards;
   }
 }
 

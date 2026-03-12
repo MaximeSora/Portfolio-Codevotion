@@ -8,7 +8,7 @@ import './ContactV2.css';
 
 const ContactV2 = ({ id }) => {
   const ref = useRef();
-  const inView = useInViewport(ref, true, { rootMargin: '0px 0px -10% 0px' });
+  const inView = useInViewport(ref, true, { rootMargin: '0px 0px 15% 0px' });
 
   return (
     <Section className="contact2" as="section" id={id}>

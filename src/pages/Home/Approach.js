@@ -51,7 +51,7 @@ const Approach = ({ id }) => {
   const ref = useRef();
   const stackRef = useRef();
   const inView = useInViewport(ref, true, { rootMargin: '0px 0px -10% 0px' });
-  const stackInView = useInViewport(stackRef, true, { rootMargin: '0px 0px -25% 0px' });
+  const stackInView = useInViewport(stackRef, true, { rootMargin: '0px 0px -5% 0px' });
 
   return (
     <Section className="approach" as="section" id={id}>

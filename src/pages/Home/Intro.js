@@ -138,6 +138,9 @@ function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...rest }) 
                   </TransitionGroup>
                 </span>
               </Heading>
+              <p className={classNames('intro__description', `intro__description--${status}`)}>
+                6 years designing high-impact digital products — bridging user insight, visual craft, engineering & AI.
+              </p>
             </header>
             <div
               aria-label="Availability status"

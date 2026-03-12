@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import classNames from 'classnames';
-import Link from 'components/Link';
 import ProjectList from './ProjectList';
 import './ProjectCards.css';
 
@@ -147,9 +146,9 @@ const ProjectModal = ({ projects, activeIndex, onClose }) => {
         </div>
 
         <div className="project-modal__footer">
-          <Link secondary href="mailto:maxime.pocq@gmail.com">
+          <a href="mailto:maxime.pocq@gmail.com" className="link link--secondary">
             get in touch to see more
-          </Link>
+          </a>
         </div>
       </div>
     </div>
@@ -174,9 +173,9 @@ const ProjectCards = ({ id, sectionRef, projects }) => {
         footer={
           <div className="project-cards__cta">
             <p className="project-cards__cta-sub">Interested to see more?</p>
-            <Link secondary href="mailto:maxime.pocq@gmail.com">
+            <a href="mailto:maxime.pocq@gmail.com" className="link link--secondary">
               Contact me to see detailed projects →
-            </Link>
+            </a>
           </div>
         }
       />

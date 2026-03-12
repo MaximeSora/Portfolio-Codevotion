@@ -210,7 +210,7 @@ export const ProjectTextRow = ({
   ...rest
 }) => {
   const ref = useRef();
-  const inViewport = useInViewport(ref, true, { rootMargin: '0px 0px -80px 0px' });
+  const inViewport = useInViewport(ref, true, { rootMargin: '0px 0px 20px 0px' });
 
   return (
     <div

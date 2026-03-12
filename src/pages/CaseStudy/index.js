@@ -47,8 +47,16 @@ const CaseStudy = () => {
     );
   }
 
-  const { name, company, year, tags, cover, blocks } = project;
+  const { name, company, year, tags, cover, blocks, summary, challenge, impact } = project;
   const nextProject = allProjects[(projectIndex + 1) % allProjects.length];
+
+  const glanceRef = useRef();
+  const glanceInView = useInViewport(glanceRef, true, { rootMargin: '0px 0px -5% 0px' });
+  const glanceItems = [
+    { label: 'Summary', text: summary },
+    { label: 'Challenge', text: challenge },
+    { label: 'Impact', text: impact },
+  ].filter(item => item.text);
 
   const firstParagraph = blocks.find(
     b => b.type === 'paragraph' && b.paragraph?.rich_text?.length > 0
@@ -104,6 +112,30 @@ const CaseStudy = () => {
             </div>
           </ProjectSectionContent>
         </ProjectSection>
+
+        {glanceItems.length > 0 && (
+          <ProjectSection className="case-study__glance-section">
+            <ProjectSectionContent width="l">
+              <div
+                ref={glanceRef}
+                className={classNames('case-study__glance', {
+                  'case-study__glance--entered': glanceInView,
+                })}
+              >
+                {glanceItems.map((item, i) => (
+                  <div
+                    key={item.label}
+                    className="case-study__glance-item"
+                    style={{ '--glance-delay': `${i * 80}ms` }}
+                  >
+                    <span className="case-study__glance-label">{item.label}</span>
+                    <p className="case-study__glance-text">{item.text}</p>
+                  </div>
+                ))}
+              </div>
+            </ProjectSectionContent>
+          </ProjectSection>
+        )}
 
         <ProjectSection className="case-study__body-section">
           <ProjectSectionContent width="l">
