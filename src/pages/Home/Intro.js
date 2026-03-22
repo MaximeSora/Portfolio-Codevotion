@@ -70,21 +70,15 @@ function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...rest }) 
                 <DecoderText text="Maxime Pocq" start={!prerender} delay={300} />
               </h1>
               <Heading level={0} as="h2" className="intro__title">
-<<<<<<< ours
                 <VisuallyHidden className="intro__title-label">{introLabel}</VisuallyHidden>
 
                 {/* Ligne 1 : prefix rotatif (Product / Fullstack / Product) + ligne déco */}
-=======
-                <VisuallyHidden className="intro__title-label">{`Senior Product Designer ${introLabel}`}</VisuallyHidden>
-                {/* Line 1: static role title */}
->>>>>>> theirs
                 <span
                   aria-hidden
                   className={classNames('intro__title-row', {
                     'intro__title-row--hidden': prerender,
                   })}
                 >
-<<<<<<< ours
                   <TransitionGroup component="span" className="intro__title-words intro__title-words--large">
                     {[current.prefix].map(item => (
                       <Transition
@@ -109,25 +103,6 @@ function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...rest }) 
                 </span>
 
                 {/* Ligne 2 : "+" + suffix rotatif ; ne re-anime que si le texte change */}
-=======
-                  <span
-                    className={classNames(
-                      'intro__title-word',
-                      `intro__title-word--${status}`
-                    )}
-                    style={{ '--delay': tokens.base.durationXS }}
-                  >
-                    Senior Product Designer
-                  </span>
-                  <span
-                    className={classNames(
-                      'intro__title-line',
-                      `intro__title-line--${status}`
-                    )}
-                  />
-                </span>
-                {/* Line 2: rotating complementary strengths */}
->>>>>>> theirs
                 <span
                   aria-hidden
                   className={classNames('intro__title-row', {

@@ -2,6 +2,14 @@
 
 ## Current Task
 
+- [x] Goal: résoudre le merge conflict du PR GitHub `#2` sur `Portfolio-Codevotion`
+- [x] Inspect: comparer `main` et `pr-2` pour identifier les conflits réels et les fichiers impactés
+- [x] Resolve: nettoyer les conflits dans `Home/index.js`, `Home/Intro.js`, `Home/Profile.js` et `CaseStudy/CaseStudy.css`
+- [x] Verification: valider l'absence de marqueurs de merge et lancer un build ciblé
+- [x] Result: merge local sur `codex/pr-2-merge-fix` sans conflits restants, avec build `npm run build` OK
+
+## Current Task
+
 - [x] Goal: analyser les case studies Notion du portfolio et identifier les projets récents encore en rédaction
 - [x] Fetch: récupérer les pages portfolio et case studies principales
 - [x] Review: analyser positionnement, structure, clarté, preuve, langue, et défauts de packaging

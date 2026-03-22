@@ -128,7 +128,6 @@
   color: rgb(var(--rgbText) / 0.2);
 }
 
-<<<<<<< ours
 /* ── At a glance ───────────────────────────────── */
 .case-study__glance-section .project__section-inner {
   --section-padding: var(--spaceXL);
@@ -198,9 +197,6 @@
     padding: var(--spaceL) var(--spaceXL);
   }
 }
-
-=======
->>>>>>> theirs
 /* ── Overview cards (Summary / Challenge / Impact) ───────────── */
 .case-study__overview {
   display: grid;

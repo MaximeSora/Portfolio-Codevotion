@@ -27,15 +27,11 @@ const projects = notionProjects.map(p => ({
   image: p.cover,
 })).reverse();
 
-<<<<<<< ours
 const disciplines = [
   { prefix: 'Product', suffix: 'Designer' },
   { prefix: 'Fullstack', suffix: 'Designer' },
   { prefix: 'Product', suffix: 'Builder' },
 ];
-=======
-const disciplines = ['Strategist', 'AI-Enabled Builder', 'Systems Thinker'];
->>>>>>> theirs
 
 const Home = () => {
   const { status } = useRouteTransition();
