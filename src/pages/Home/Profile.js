@@ -20,7 +20,7 @@ const travelCountries = [
 
 const passions = [
   { label: 'Video games', detail: 'Competitive, indie', icon: 'gamepad' },
-  { label: 'Sport', detail: 'Climbing, Fitness, Dance', icon: 'sport' },
+  { label: 'Sports', detail: 'Climbing, fitness, dance', icon: 'sport' },
   { label: 'Reading', detail: 'Manga, novels, personal development', icon: 'book' },
   { label: 'Travel', countries: travelCountries, icon: 'plane' },
 ];
@@ -48,13 +48,13 @@ const ProfileText = ({ status, titleId, portraitPhoto, avatarInView }) => (
       className={classNames('profile__description', `profile__description--${status}`)}
       size="l"
     >
-      I'm Maxime, a Product Designer with an emphasis on UI. I craft engaging, user focused experiences that seamlessly integrate aesthetics and functionality, across the full product cycle: from early research and UX strategy to motion design and working closely with engineering teams.
+      I'm Maxime, a Senior Product Designer focused on complex digital products. I design clear, high-quality experiences from early discovery and UX strategy to polished interfaces and production handoff with engineering.
     </Text>
     <Text
       className={classNames('profile__description', `profile__description--${status}`)}
       size="l"
     >
-      What sets my approach apart: a genuine understanding of dev constraints and business realities. I use AI throughout ideation and prototyping to move faster without sacrificing depth, building interfaces that delight users and drive tangible business results.
+      What sets my approach apart is the balance between craft and execution: strong product thinking, awareness of technical constraints, and pragmatic business alignment. I also use AI intentionally across research synthesis, ideation, and prototyping to accelerate outcomes without reducing quality.
     </Text>
   </Fragment>
 );
@@ -100,7 +100,7 @@ const Profile = ({ id, visible, sectionRef }) => {
                 <ProfileText status={status} titleId={titleId} portraitPhoto={portraitPhoto} avatarInView={avatarInView} />
               </div>
               <div className="profile__col">
-                <h2 className="profile__col-title">What I love</h2>
+                <h2 className="profile__col-title">Beyond design</h2>
                 <div className="profile__passions-grid">
                   {passions.map(({ label, detail, countries, icon }, i) => (
                     <div

@@ -47,15 +47,21 @@ const CaseStudy = () => {
     );
   }
 
-  const { name, company, year, tags, cover, blocks } = project;
+  const { name, company, year, tags, cover, blocks, summary, challenge, impact } = project;
   const nextProject = allProjects[(projectIndex + 1) % allProjects.length];
 
   const firstParagraph = blocks.find(
     b => b.type === 'paragraph' && b.paragraph?.rich_text?.length > 0
   );
-  const description = firstParagraph
-    ? firstParagraph.paragraph.rich_text.map(t => t.plain_text).join('')
-    : [company, tags.slice(0, 3).map(t => t.name).join(', ')].filter(Boolean).join(' · ');
+  const description = summary
+    || (firstParagraph
+      ? firstParagraph.paragraph.rich_text.map(t => t.plain_text).join('')
+      : [company, tags.slice(0, 3).map(t => t.name).join(', ')].filter(Boolean).join(' · '));
+  const overviewItems = [
+    { label: 'Summary', content: summary },
+    { label: 'Challenge', content: challenge },
+    { label: 'Impact', content: impact },
+  ].filter(item => item.content);
 
   return (
     <Fragment>
@@ -99,6 +105,16 @@ const CaseStudy = () => {
                   {company && <span className="case-study__meta-company">{company}</span>}
                   {company && year && <span className="case-study__meta-sep" aria-hidden>·</span>}
                   {year && <span className="case-study__meta-year">{year}</span>}
+                </div>
+              )}
+              {overviewItems.length > 0 && (
+                <div className="case-study__overview" aria-label="Project overview">
+                  {overviewItems.map(item => (
+                    <article key={item.label} className="case-study__overview-card">
+                      <h2 className="case-study__overview-label">{item.label}</h2>
+                      <p className="case-study__overview-text">{item.content}</p>
+                    </article>
+                  ))}
                 </div>
               )}
             </div>

@@ -47,7 +47,7 @@ const ProjectModal = ({ project, onClose }) => {
         onClick={e => e.stopPropagation()}
       >
         <div className="project-modal__handle" aria-hidden />
-        <button className="project-modal__close" onClick={handleClose} aria-label="Fermer">
+        <button className="project-modal__close" onClick={handleClose} aria-label="Close">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
             <path d="M18 6L6 18M6 6l12 12" />
           </svg>
@@ -105,7 +105,7 @@ const ProjectModal = ({ project, onClose }) => {
 
         <div className="project-modal__footer">
           <Link secondary href="mailto:maxime.pocq@gmail.com">
-            get in touch to see more
+            Request full case studies
           </Link>
         </div>
       </div>
@@ -125,9 +125,9 @@ const ProjectCards = ({ id, sectionRef, projects }) => {
         onItemClick={setActiveProject}
         footer={
           <div className="project-cards__cta">
-            <p className="project-cards__cta-sub">Interested to see more?</p>
+            <p className="project-cards__cta-sub">Want to explore more work?</p>
             <Link secondary href="mailto:maxime.pocq@gmail.com">
-              Contact me to see detailed projects →
+              Contact me for detailed case studies →
             </Link>
           </div>
         }

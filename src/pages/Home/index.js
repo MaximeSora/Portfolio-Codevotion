@@ -28,7 +28,7 @@ const projects = notionProjects.map(p => ({
   image: p.cover,
 })).reverse();
 
-const disciplines = ['Developer', 'Builder', 'Researcher'];
+const disciplines = ['Strategist', 'AI-Enabled Builder', 'Systems Thinker'];
 
 const Home = () => {
   const { status } = useRouteTransition();
@@ -142,10 +142,10 @@ const Home = () => {
   return (
     <div className="home">
       <Helmet>
-        <title>Maxime Pocq | Designer</title>
+        <title>Maxime Pocq | Senior Product Designer</title>
         <meta
           name="description"
-          content="Portfolio of Maxime Pocq – Creative Designer based in France, specializing in interactive design, UI, and UX."
+          content="Portfolio of Maxime Pocq, Senior Product Designer crafting scalable digital products across UX strategy, interface design, and AI-enabled workflows."
         />
         <link rel="prefetch" href={iphone11} as="fetch" crossorigin="" />
         <link rel="prefetch" href={macbookPro} as="fetch" crossorigin="" />

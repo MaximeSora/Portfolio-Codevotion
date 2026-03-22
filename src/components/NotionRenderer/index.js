@@ -75,6 +75,16 @@ function RichText({ items = [] }) {
   });
 }
 
+function richTextToPlain(items = []) {
+  return items.map(item => item?.plain_text ?? '').join('').trim();
+}
+
+function isWhatIWorkedOnHeading(block) {
+  if (!block || !['heading_1', 'heading_2', 'heading_3'].includes(block.type)) return false;
+  const text = richTextToPlain(block[block.type]?.rich_text).toLowerCase();
+  return text.includes('what i worked on') || text.includes('what i worked');
+}
+
 // Single block renderer
 function Block({ block }) {
   const { type } = block;
@@ -319,6 +329,33 @@ export default function NotionRenderer({ blocks = [], animate = true }) {
     <div className="notion-renderer">
       {grouped.map((group, i) => {
         const delay = Math.min(i * 40, 200); // stagger plafonné à 200ms
+        const previous = i > 0 ? grouped[i - 1] : null;
+        const isWorkedOnSection = group.type === 'bulleted_list' && isWhatIWorkedOnHeading(previous);
+
+        if (isWorkedOnSection) {
+          const el = (
+            <div key={group.key} className="notion-work-grid" aria-label="What I worked on">
+              {group.items.map((b, idx) => (
+                <article key={b.id} className="notion-work-card">
+                  <span className="notion-work-card__index">{String(idx + 1).padStart(2, '0')}</span>
+                  <div className="notion-work-card__content">
+                    <p className="notion-work-card__text">
+                      <RichText items={b.bulleted_list_item?.rich_text} />
+                    </p>
+                    {b.children?.length > 0 && (
+                      <ul className="notion-list notion-list--bulleted notion-work-card__sublist">
+                        {b.children.map(child => <Block key={child.id} block={child} />)}
+                      </ul>
+                    )}
+                  </div>
+                </article>
+              ))}
+            </div>
+          );
+          return animate
+            ? <InViewBlock key={group.key} delay={delay}>{el}</InViewBlock>
+            : el;
+        }
 
         if (group.type === 'bulleted_list') {
           const el = (

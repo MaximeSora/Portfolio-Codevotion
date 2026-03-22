@@ -80,8 +80,8 @@ function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...rest }) 
                 <DecoderText text="Maxime Pocq" start={!prerender} delay={300} />
               </h1>
               <Heading level={0} as="h2" className="intro__title">
-                <VisuallyHidden className="intro__title-label">{`Designer ${introLabel}`}</VisuallyHidden>
-                {/* Ligne 1 : "Designer" statique + ligne déco */}
+                <VisuallyHidden className="intro__title-label">{`Senior Product Designer ${introLabel}`}</VisuallyHidden>
+                {/* Line 1: static role title */}
                 <span
                   aria-hidden
                   className={classNames('intro__title-row', {
@@ -95,7 +95,7 @@ function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...rest }) 
                     )}
                     style={{ '--delay': tokens.base.durationXS }}
                   >
-                    Designer
+                    Senior Product Designer
                   </span>
                   <span
                     className={classNames(
@@ -104,7 +104,7 @@ function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...rest }) 
                     )}
                   />
                 </span>
-                {/* Ligne 2 : "+" + rotation Developer / Product Builder / Researcher */}
+                {/* Line 2: rotating complementary strengths */}
                 <span
                   aria-hidden
                   className={classNames('intro__title-row', {
@@ -147,8 +147,8 @@ function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...rest }) 
               )}
             >
               <span className="intro__available-dot" aria-hidden />
-              <span className="intro__available-full">Available for Work</span>
-              <span className="intro__available-short">Available</span>
+              <span className="intro__available-full">Open to Senior Product Design roles</span>
+              <span className="intro__available-short">Open to work</span>
             </div>
             <div className="intro__bottom">
               {windowSize.width > media.tablet && (

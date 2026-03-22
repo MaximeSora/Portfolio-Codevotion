@@ -136,6 +136,40 @@
   color: rgb(var(--rgbText) / 0.2);
 }
 
+/* ── Overview cards (Summary / Challenge / Impact) ───────────── */
+.case-study__overview {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--spaceM);
+  margin-top: var(--spaceL);
+}
+
+.case-study__overview-card {
+  border: 1px solid rgb(var(--rgbText) / 0.1);
+  background: rgb(var(--rgbText) / 0.03);
+  border-radius: 14px;
+  padding: var(--spaceL);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spaceS);
+}
+
+.case-study__overview-label {
+  margin: 0;
+  font-size: var(--fontSizeBodyXS);
+  font-weight: var(--fontWeightBold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgb(var(--rgbText) / 0.55);
+}
+
+.case-study__overview-text {
+  margin: 0;
+  font-size: var(--fontSizeBodyS);
+  line-height: 1.6;
+  color: rgb(var(--rgbText) / 0.86);
+}
+
 /* ── Body section ──────────────────────────────── */
 .case-study__body-section .project__section-inner {
   --section-padding: var(--spaceXL);
@@ -313,6 +347,10 @@
 @media (--mediaMobile) {
   .case-study__hero {
     height: 240px;
+  }
+
+  .case-study__overview {
+    grid-template-columns: 1fr;
   }
 
   .case-study__title {

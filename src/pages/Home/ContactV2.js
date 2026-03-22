@@ -21,7 +21,7 @@ const ContactV2 = ({ id }) => {
         {/* ── Top row ── */}
         <div className="contact2__top">
           <p className="contact2__line1">
-            <a href="mailto:maxime.pocq@gmail.com" className="contact2__line1-link">Talk to me</a>
+            <a href="mailto:maxime.pocq@gmail.com" className="contact2__line1-link">Let's build together</a>
           </p>
 
           {/* Spinning badge */}
@@ -40,7 +40,7 @@ const ContactV2 = ({ id }) => {
                 </defs>
                 <text fontSize="24" fontWeight="600" letterSpacing="2" fill="currentColor">
                   <textPath href="#contact2-circle-path">
-                    Contact me · Contact me · Contact me ·
+                    Get in touch · Get in touch · Get in touch ·
                   </textPath>
                 </text>
               </svg>
@@ -66,7 +66,7 @@ const ContactV2 = ({ id }) => {
             target="_blank"
             rel="noopener noreferrer"
             className="contact2__accent contact2__accent-link"
-          >connect.</a>
+          >connect on LinkedIn.</a>
         </p>
 
         {/* ── Bottom strip ── */}

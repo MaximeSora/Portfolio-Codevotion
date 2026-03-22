@@ -140,6 +140,49 @@
   list-style: decimal;
 }
 
+/* ─── Highlighted "What I worked on" section ───────────────── */
+.notion-work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--spaceM);
+}
+
+.notion-work-card {
+  border: 1px solid rgb(var(--rgbText) / 0.1);
+  background: rgb(var(--rgbText) / 0.03);
+  border-radius: 12px;
+  padding: var(--spaceL);
+  display: flex;
+  gap: var(--spaceM);
+  align-items: flex-start;
+}
+
+.notion-work-card__index {
+  font-family: var(--monoFontStack);
+  font-size: var(--fontSizeBodyXS);
+  color: rgb(var(--rgbPrimary));
+  background: rgb(var(--rgbPrimary) / 0.12);
+  border-radius: 999px;
+  padding: 2px 8px;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+.notion-work-card__content {
+  min-width: 0;
+}
+
+.notion-work-card__text {
+  margin: 0;
+  color: rgb(var(--rgbText) / 0.88);
+  line-height: 1.6;
+}
+
+.notion-work-card__sublist {
+  margin-top: var(--spaceS);
+  margin-bottom: 0;
+}
+
 /* ─── Quote ───────────────────────────────────── */
 .notion-quote {
   position: relative;
@@ -437,4 +480,10 @@ details[open] .notion-toggle__summary::before {
 .notion-link:focus {
   background: var(--filledLineGradient) no-repeat 0 100% / 100% var(--lineStrokeWidth),
     var(--unfilledLineGradient) no-repeat 0 100% / 100% var(--lineStrokeWidth);
+}
+
+@media (--mediaMobile) {
+  .notion-work-grid {
+    grid-template-columns: 1fr;
+  }
 }

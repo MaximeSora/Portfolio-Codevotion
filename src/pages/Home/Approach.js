@@ -19,31 +19,31 @@ const stackTools = [
 ];
 
 const disciplines = [
-  { name: 'Product Design', description: 'Full product cycle, research to dev handoff' },
-  { name: 'UX Design', description: 'User flows, wireframing, prototyping' },
-  { name: 'Visual Design', description: 'UI systems, motion, brand identity' },
-  { name: 'Interaction Design', description: 'Micro-interactions, animations, immersive web' },
-  { name: 'AI-Assisted Design', description: 'Rapid iteration with AI workflows' },
+  { name: 'Product Design', description: 'End-to-end design from discovery to launch' },
+  { name: 'UX Design', description: 'Journey mapping, flows, wireframes, and prototyping' },
+  { name: 'Visual Design', description: 'Interface craft, visual systems, and motion language' },
+  { name: 'Interaction Design', description: 'Interaction patterns, micro-interactions, and prototyping' },
+  { name: 'AI-Enhanced Workflows', description: 'Faster iteration and stronger decisions with AI tooling' },
 ];
 
 const collaborations = [
   {
     num: '01',
-    title: 'Full Project',
+    title: 'End-to-End Project',
     description:
-      'End-to-end design from discovery to delivery. I own the process and deliver production-ready assets.',
+      'From discovery to delivery, I lead the full design track and provide implementation-ready outputs.',
   },
   {
     num: '02',
-    title: 'Embedded Designer',
+    title: 'Embedded Senior Designer',
     description:
-      'I join your team for a sprint or the long run, fitting into your workflow and culture.',
+      'I integrate with your product squad for focused sprints or long-term ownership.',
   },
   {
     num: '03',
     title: 'Consulting',
     description:
-      'Design reviews, audits, and rapid prototyping sprints to unblock your team.',
+      'Targeted audits, design reviews, and rapid prototyping to unblock product decisions.',
   },
 ];
 
@@ -71,7 +71,7 @@ const Approach = ({ id }) => {
               collapseDelay={400}
             />
             <div className={classNames('approach__tag-text', { 'approach__tag-text--entered': inView })}>
-              My approach
+              How I create impact
             </div>
           </div>
         </div>
@@ -83,7 +83,7 @@ const Approach = ({ id }) => {
             style={{ '--col-delay': '200ms' }}
           >
             <span className="approach__col-label">// Disciplines</span>
-            <h2 className="approach__col-title">What I do</h2>
+            <h2 className="approach__col-title">Core capabilities</h2>
             <ul className="approach__list">
               {disciplines.map(({ name, description }, i) => (
                 <li
@@ -103,9 +103,9 @@ const Approach = ({ id }) => {
             className={classNames('approach__col', { 'approach__col--entered': inView })}
             style={{ '--col-delay': '400ms' }}
           >
-            <span className="approach__col-label">// How I work</span>
+            <span className="approach__col-label">// Collaboration models</span>
             <h2 className="approach__col-title">
-              Multiple ways <em>to collaborate</em>
+              Flexible ways <em>to collaborate</em>
             </h2>
             <div className="approach__cards">
               {collaborations.map(({ num, title, description }, i) => (
@@ -127,7 +127,7 @@ const Approach = ({ id }) => {
 
         {/* My Stack */}
         <div ref={stackRef} className={classNames('approach__stack', { 'approach__stack--entered': stackInView })}>
-          <span className="approach__col-label">// My Stack</span>
+          <span className="approach__col-label">// Tool stack</span>
           <div className="approach__stack-pills">
             {stackTools.map(({ name, icon }, i) => (
               <span
