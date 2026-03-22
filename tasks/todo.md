@@ -2,6 +2,21 @@
 
 ## Current Task
 
+- [x] Goal: vérifier et nettoyer les fichiers doublons `* 2.*` et `* 3.*` du repo local
+- [x] Inspect: comparer chaque doublon non suivi à son fichier source probable
+- [x] Cleanup: supprimer uniquement les doublons confirmés inutiles
+- [x] Verification: valider l'état Git après nettoyage
+- [x] Result: les doublons du worktree ont été nettoyés; il ne reste plus que `.git/index 2`, `.git/index 3` et `.git/index 4`, qui sont des artefacts internes Git hors repo et non des fichiers du projet
+
+## Current Task
+
+- [ ] Goal: vérifier complètement la PR `#2` après résolution du conflit
+- [ ] Discover: lister les checks locaux réellement disponibles dans le repo
+- [ ] Verify: exécuter les checks locaux pertinents
+- [ ] Monitor: suivre les checks GitHub/Vercel jusqu'à un état final
+
+## Current Task
+
 - [x] Goal: résoudre le merge conflict du PR GitHub `#2` sur `Portfolio-Codevotion`
 - [x] Inspect: comparer `main` et `pr-2` pour identifier les conflits réels et les fichiers impactés
 - [x] Resolve: nettoyer les conflits dans `Home/index.js`, `Home/Intro.js`, `Home/Profile.js` et `CaseStudy/CaseStudy.css`
