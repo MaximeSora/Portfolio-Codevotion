@@ -244,9 +244,14 @@
   border: 1px solid rgb(var(--rgbText) / 0.08);
   border-radius: 12px;
   opacity: 0;
+  background: rgb(var(--rgbText) / 0.02);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   transition:
     opacity 0.3s var(--bezierFastoutSlowin) var(--card-delay, 0ms),
-    border-color var(--durationS) ease;
+    border-color var(--durationS) ease,
+    background-color var(--durationS) ease,
+    box-shadow var(--durationS) ease;
 
   @media (--mediaUseMotion) {
     & {
@@ -270,7 +275,14 @@
 }
 
 .profile__passion-card:hover {
-  border-color: rgb(var(--rgbPrimary) / 0.3);
+  border-color: rgb(var(--rgbPrimary) / 0.35);
+  background: rgb(var(--rgbPrimary) / 0.04);
+  box-shadow: 0 4px 24px rgb(var(--rgbPrimary) / 0.08), inset 0 1px 0 rgb(var(--rgbText) / 0.05);
+}
+
+.profile__passion-card:hover .profile__passion-icon {
+  color: rgb(var(--rgbPrimary));
+  transition: color var(--durationS) ease;
 }
 
 .profile__passion-icon {

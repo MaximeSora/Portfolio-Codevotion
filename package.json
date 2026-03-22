@@ -39,7 +39,9 @@
     "start": "vite",
     "fetch-notion": "node scripts/fetch-notion.js",
     "build": "node scripts/fetch-notion.js && vite build",
+    "build:clean": "node scripts/clean-build.mjs && npm run build",
+    "build:vite": "vite build",
     "preview": "vite preview",
-    "analyze": "source-map-explorer 'dist/assets/*.js'"
+    "analyze": "source-map-explorer 'build/assets/*.js'"
   }
 }

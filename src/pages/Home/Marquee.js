@@ -5,13 +5,15 @@ import mfs from 'assets/MFS.webp';
 import ercom from 'assets/ercom_logo.webp';
 import thales from 'assets/thales-logo-white.webp';
 import renaultDigital from 'assets/renault-digital.webp';
+import devoteam from 'assets/DevoteamLogo.png';
 import './Marquee.css';
 
 const logos = [
   { src: renaultDigital, alt: 'Renault Digital', width: 160 },
-  { src: thales,         alt: 'Thales',          width: 100 },
-  { src: mfs,            alt: 'Mobilize Financial Services', width: 130, height: 48 },
-  { src: ercom,          alt: 'Ercom',            width: 100 },
+  { src: thales, alt: 'Thales', width: 100 },
+  { src: mfs, alt: 'Mobilize Financial Services', width: 130, height: 48 },
+  { src: ercom, alt: 'Ercom', width: 100 },
+  { src: devoteam, alt: 'Devoteam', width: 220, height: 72 },
 ];
 
 const MarqueeTrack = () => (

@@ -55,6 +55,25 @@
   animation-play-state: paused;
   position: relative;
   overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse 80% 100% at 70% 50%,
+      rgb(var(--rgbPrimary) / 0.04) 0%,
+      transparent 70%
+    );
+    opacity: 0;
+    transition: opacity var(--durationL) ease;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
 }
 
 .project-list__item--entered {
@@ -250,6 +269,14 @@
   background: transparent;
 }
 
+.project-list__thumb {
+  transition: box-shadow var(--durationL) ease;
+}
+
+.project-list__item:hover .project-list__thumb {
+  box-shadow: 0 8px 32px rgb(var(--rgbPrimary) / 0.15), 0 0 0 1px rgb(var(--rgbPrimary) / 0.1);
+}
+
 .project-list__thumb video,
 .project-list__thumb img {
   width: 100%;
@@ -268,7 +295,7 @@
 
 .project-list__item:hover .project-list__thumb video,
 .project-list__item:hover .project-list__thumb img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 /* Katakana section label (absolute, under content, aligned with header) */

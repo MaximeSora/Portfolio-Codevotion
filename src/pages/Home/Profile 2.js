@@ -48,24 +48,16 @@ const ProfileText = ({ status, titleId, portraitPhoto, avatarInView }) => (
       className={classNames('profile__description', `profile__description--${status}`)}
       size="l"
     >
-<<<<<<< ours
       I&apos;m Maxime, a Senior Product Designer focused on complex digital products. I design clear, high-quality
       experiences from early discovery and UX strategy to polished interfaces and production handoff with engineering.
-=======
-      I'm Maxime, a Senior Product Designer focused on complex digital products. I design clear, high-quality experiences from early discovery and UX strategy to polished interfaces and production handoff with engineering.
->>>>>>> theirs
     </Text>
     <Text
       className={classNames('profile__description', `profile__description--${status}`)}
       size="l"
     >
-<<<<<<< ours
       What sets my approach apart is the balance between craft and execution: strong product thinking, awareness of
       technical constraints, and pragmatic business alignment. I also use AI intentionally across research synthesis,
       ideation, and prototyping to accelerate outcomes without reducing quality.
-=======
-      What sets my approach apart is the balance between craft and execution: strong product thinking, awareness of technical constraints, and pragmatic business alignment. I also use AI intentionally across research synthesis, ideation, and prototyping to accelerate outcomes without reducing quality.
->>>>>>> theirs
     </Text>
   </Fragment>
 );
