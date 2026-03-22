@@ -25,6 +25,7 @@ const CustomCursor = () => {
   });
 
   const [isVisible, setIsVisible] = useState(false);
+  const [hasMoved, setHasMoved] = useState(false);
   
   //Hide Cursor when leaving page
   React.useEffect(() => {
@@ -109,6 +110,7 @@ const CustomCursor = () => {
   React.useEffect(() => {
     document.addEventListener("mousemove", (event) => {
       if (window.matchMedia('(max-width: 1024px)').matches) return;
+      setHasMoved(true);
       const { clientX, clientY } = event;
 
       const mouseX = clientX;
@@ -162,7 +164,7 @@ const CustomCursor = () => {
   return (
     // <div className={`cursor-wrapper ${type}`}>
     
-    <div className={`cursor-wrapper`}>
+    <div className={`cursor-wrapper`} style={{ opacity: hasMoved ? 1 : 0 }}>
       <div className="main-cursor " ref={mainCursor}>
         <div className={cursorClasses}></div>
       </div>

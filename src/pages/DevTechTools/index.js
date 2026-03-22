@@ -13,12 +13,12 @@ import {
 import { useScrollRestore } from 'hooks';
 import { media } from 'utils/style';
 import prerender from 'utils/prerender';
-import dttBackground from 'assets/dtt-background.jpg';
-import dttBackgroundLarge from 'assets/dtt-background-large.jpg';
-import dttBackgroundPlaceholder from 'assets/dtt-background-placeholder.jpg';
-import dtt from 'assets/dtt.jpg';
-import dttLarge from 'assets/dtt-large.jpg';
-import dttPlaceholder from 'assets/dtt-placeholder.jpg';
+import dttBackground from 'assets/dtt-background.webp';
+import dttBackgroundLarge from 'assets/dtt-background-large.webp';
+import dttBackgroundPlaceholder from 'assets/dtt-background-placeholder.webp';
+import dtt from 'assets/dtt.webp';
+import dttLarge from 'assets/dtt-large.webp';
+import dttPlaceholder from 'assets/dtt-placeholder.webp';
 
 const title = 'A Tool for Everything';
 const description = 'Creating a platform for developers to build better software.';

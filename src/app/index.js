@@ -1,4 +1,5 @@
 import { lazy, Suspense, useEffect, createContext, useReducer, Fragment } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { BrowserRouter, Switch, Route, useLocation } from 'react-router-dom';
 import { Transition, TransitionGroup } from 'react-transition-group';
 import classNames from 'classnames';
@@ -13,8 +14,6 @@ import { useLocalStorage } from 'hooks';
 import { initialState, reducer } from 'app/reducer';
 import { reflow } from 'utils/transition';
 import prerender from 'utils/prerender';
-import { UnlockProvider } from 'contexts/UnlockContext';
-import PrivateGuard from 'components/PrivateGate';
 import './reset.css';
 import './index.css';
 // import ReactGA from 'react-ga';
@@ -61,16 +60,13 @@ const App = () => {
 
   return (
     <AppContext.Provider value={{ ...state, dispatch }}>
-      <UnlockProvider>
-        <CustomCursor />
-        <ThemeProvider themeId={state.theme}>
-          <PrivateGuard>
-            <BrowserRouter>
-              <AppRoutes />
-            </BrowserRouter>
-          </PrivateGuard>
-        </ThemeProvider>
-      </UnlockProvider>
+      <Analytics />
+      <CustomCursor />
+      <ThemeProvider themeId={state.theme}>
+        <BrowserRouter>
+          <AppRoutes />
+        </BrowserRouter>
+      </ThemeProvider>
     </AppContext.Provider>
   );
 };
@@ -82,7 +78,7 @@ const AppRoutes = () => {
   return (
     <Fragment>
       <Helmet>
-        <link rel="canonical" href={`http://v2.maximepocq.com${pathname}`} />
+        <link rel="canonical" href={`https://maximepocq.com${pathname}`} />
       </Helmet>
       <VisuallyHidden showOnFocus as="a" className="skip-to-main" href="#MainContent">
         Skip to main content

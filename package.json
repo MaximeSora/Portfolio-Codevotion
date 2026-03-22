@@ -23,6 +23,7 @@
   "dependencies": {
     "@mdx-js/react": "^2.3.0",
     "@mdx-js/rollup": "^3.1.0",
+    "@vercel/analytics": "^2.0.0",
     "classnames": "^2.3.1",
     "popmotion": "^8.7.6",
     "postprocessing": "^6.21.3",
@@ -38,7 +39,9 @@
     "start": "vite",
     "fetch-notion": "node scripts/fetch-notion.js",
     "build": "node scripts/fetch-notion.js && vite build",
+    "build:clean": "node scripts/clean-build.mjs && npm run build",
+    "build:vite": "vite build",
     "preview": "vite preview",
-    "analyze": "source-map-explorer 'dist/assets/*.js'"
+    "analyze": "source-map-explorer 'build/assets/*.js'"
   }
 }

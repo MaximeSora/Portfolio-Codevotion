@@ -7,7 +7,7 @@ import Section from 'components/Section';
 import Heading from 'components/Heading';
 import Text from 'components/Text';
 import Icon from 'components/Icon';
-import portraitPhoto from 'assets/portrait-photo.png';
+import portraitPhoto from 'assets/portrait-photo.webp';
 import { reflow } from 'utils/transition';
 import { useInViewport } from 'hooks';
 import './Profile.css';
@@ -62,7 +62,7 @@ const ProfileText = ({ status, titleId, portraitPhoto, avatarInView }) => (
 const Profile = ({ id, visible, sectionRef }) => {
   const titleId = `${id}-title`;
   const contentRef = useRef();
-  const avatarInView = useInViewport(contentRef, true, { rootMargin: '0px 0px -15% 0px' });
+  const avatarInView = useInViewport(contentRef, true, { rootMargin: '0px 0px 15% 0px' });
 
   return (
     <Section

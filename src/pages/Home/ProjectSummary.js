@@ -21,10 +21,10 @@ import {
 } from 'components/ProjectLayout';
 
 import solbaseLarge from 'assets/solbase/thumbnail.webp';
-import deviceModelsPlaceholder from 'assets/device-models-placeholder.jpg';
+import deviceModelsPlaceholder from 'assets/device-models-placeholder.webp';
 import pornhubLarge from 'assets/pornhub/thumbnail.webp';
 import joLarge from 'assets/jo/jo-thumbnail.mp4';
-import parcoursLarge from 'assets/pexels-pixabay-33109.jpg';
+import parcoursLarge from 'assets/pexels-pixabay-33109.webp';
 
 
 const ProjectSummary = ({

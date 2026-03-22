@@ -6,12 +6,12 @@
 .approach__content {
   position: relative;
   opacity: 0;
-  transition: opacity var(--durationXL) ease;
+  transition: opacity 0.5s ease;
 
   @media (--mediaUseMotion) {
     & {
-      transform: translateY(var(--spaceL));
-      transition: opacity var(--durationXL) ease, transform var(--durationXL) var(--bezierFastoutSlowin);
+      transform: translateY(24px);
+      transition: opacity 0.5s ease, transform 0.5s var(--bezierFastoutSlowin);
     }
   }
 }
@@ -107,7 +107,7 @@
   opacity: 0;
   transition-property: opacity;
   transition-timing-function: var(--bezierFastoutSlowin);
-  transition-duration: var(--durationXL);
+  transition-duration: 0.3s;
   transition-delay: var(--col-delay, 0ms);
 
   @media (--mediaUseMotion) {
@@ -171,7 +171,7 @@
   opacity: 0;
   transition-property: opacity;
   transition-timing-function: var(--bezierFastoutSlowin);
-  transition-duration: var(--durationM);
+  transition-duration: 0.3s;
   transition-delay: var(--item-delay, 0ms);
 
   &:first-child {
@@ -231,20 +231,25 @@
   border-radius: 12px;
   padding: var(--spaceXL);
   opacity: 0;
-  transition-property: opacity, border-color;
-  transition-timing-function: var(--bezierFastoutSlowin), ease;
-  transition-duration: var(--durationM), var(--durationS);
-  transition-delay: var(--item-delay, 0ms), 0ms;
+  background: rgb(var(--rgbText) / 0.02);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition-property: opacity, border-color, background-color, box-shadow;
+  transition-timing-function: var(--bezierFastoutSlowin), ease, ease, ease;
+  transition-duration: 0.3s, var(--durationS), var(--durationS), var(--durationS);
+  transition-delay: var(--item-delay, 0ms), 0ms, 0ms, 0ms;
 
   &:hover {
-    border-color: rgb(var(--rgbPrimary) / 0.3);
+    border-color: rgb(var(--rgbPrimary) / 0.35);
+    background: rgb(var(--rgbPrimary) / 0.04);
+    box-shadow: 0 4px 24px rgb(var(--rgbPrimary) / 0.08), inset 0 1px 0 rgb(var(--rgbText) / 0.05);
   }
 
   @media (--mediaUseMotion) {
     & {
       transition-property: opacity, transform, border-color;
       transition-timing-function: var(--bezierFastoutSlowin), var(--bezierFastoutSlowin), ease;
-      transition-duration: var(--durationM), var(--durationM), var(--durationS);
+      transition-duration: 0.3s, 0.3s, var(--durationS);
       transform: translate3d(0, var(--spaceM), 0);
     }
   }
@@ -297,7 +302,7 @@
   opacity: 0;
   transition-property: opacity;
   transition-timing-function: var(--bezierFastoutSlowin);
-  transition-duration: var(--durationXL);
+  transition-duration: 0.3s;
   transition-delay: 0ms;
 
   @media (--mediaUseMotion) {
@@ -337,7 +342,7 @@
   color: rgb(var(--rgbText));
   opacity: 0;
   transition:
-    opacity var(--durationM) var(--bezierFastoutSlowin) var(--pill-delay, 0ms),
+    opacity 0.3s var(--bezierFastoutSlowin) var(--pill-delay, 0ms),
     border-color var(--durationS) ease,
     background-color var(--durationS) ease,
     color var(--durationS) ease;
@@ -346,8 +351,8 @@
     & {
       transform: translate3d(0, var(--spaceS), 0) scale(0.96);
       transition:
-        opacity var(--durationM) var(--bezierFastoutSlowin) var(--pill-delay, 0ms),
-        transform var(--durationM) var(--bezierFastoutSlowin) var(--pill-delay, 0ms),
+        opacity 0.3s var(--bezierFastoutSlowin) var(--pill-delay, 0ms),
+        transform 0.3s var(--bezierFastoutSlowin) var(--pill-delay, 0ms),
         border-color var(--durationS) ease,
         background-color var(--durationS) ease,
         color var(--durationS) ease;
@@ -365,10 +370,16 @@
   }
 }
 
+.approach__stack-pill {
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
 .approach__stack-pill:hover {
-  border-color: rgb(var(--rgbPrimary) / 0.35);
-  background: rgb(var(--rgbPrimary) / 0.06);
+  border-color: rgb(var(--rgbPrimary) / 0.4);
+  background: rgb(var(--rgbPrimary) / 0.08);
   color: rgb(var(--rgbText));
+  box-shadow: 0 0 16px rgb(var(--rgbPrimary) / 0.12), inset 0 1px 0 rgb(var(--rgbText) / 0.06);
 }
 
 .approach__stack-pill-icon {

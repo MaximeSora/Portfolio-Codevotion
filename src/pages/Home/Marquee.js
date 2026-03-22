@@ -1,28 +1,32 @@
 import { useRef } from 'react';
 import classNames from 'classnames';
 import { useInViewport } from 'hooks';
+import mfs from 'assets/MFS.webp';
+import ercom from 'assets/ercom_logo.webp';
+import thales from 'assets/thales-logo-white.webp';
+import renaultDigital from 'assets/renault-digital.webp';
+import devoteam from 'assets/DevoteamLogo.png';
 import './Marquee.css';
 
-const items = [
-  'Product Design',
-  'UX Research',
-  'Motion Design',
-  'Interaction Dev',
-  'AI',
-  'Vibe Coding',
-  '3D',
-  'Product Strategy',
-  'Creative Direction',
-  'Prototyping',
-  'Design Systems',
+const logos = [
+  { src: renaultDigital, alt: 'Renault Digital', width: 160 },
+  { src: thales, alt: 'Thales', width: 100 },
+  { src: mfs, alt: 'Mobilize Financial Services', width: 130, height: 48 },
+  { src: ercom, alt: 'Ercom', width: 100 },
+  { src: devoteam, alt: 'Devoteam', width: 220, height: 72 },
 ];
 
 const MarqueeTrack = () => (
   <div className="marquee__track" aria-hidden>
-    {items.map((item, i) => (
+    {logos.map((logo, i) => (
       <span key={i} className="marquee__item">
-        {item}
-        <span className="marquee__sep">·</span>
+        <img
+          src={logo.src}
+          alt={logo.alt}
+          className="marquee__logo"
+          loading="lazy"
+          style={{ width: logo.width, ...(logo.height && { height: logo.height }) }}
+        />
       </span>
     ))}
   </div>
@@ -30,10 +34,10 @@ const MarqueeTrack = () => (
 
 const Marquee = () => {
   const ref = useRef();
-  const inView = useInViewport(ref, true, { rootMargin: '0px 0px -20% 0px' });
+  const inView = useInViewport(ref, true, { rootMargin: '0px 0px 15% 0px' });
 
   return (
-    <div ref={ref} className={classNames('marquee', { 'marquee--entered': inView })} aria-label="Services">
+    <div ref={ref} className={classNames('marquee', { 'marquee--entered': inView })} role="region" aria-label="Clients">
       <div className="marquee__inner">
         {/* Duplicated for seamless loop */}
         <MarqueeTrack />

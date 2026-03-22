@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import classNames from 'classnames';
 import Link from 'components/Link';
 import Icon from 'components/Icon';
@@ -10,7 +10,9 @@ import './ProjectList.css';
 
 const ProjectItem = ({ project, index, dimmed, onMouseEnter, onMouseLeave, onItemClick }) => {
   const ref = useRef();
-  const inView = useInViewport(ref, true, { rootMargin: '0px 0px -8% 0px' });
+  const inView = useInViewport(ref, true, { rootMargin: '0px 0px 0% 0px' });
+  const [imgLoaded, setImgLoaded] = useState(false);
+  const handleImgLoad = useCallback(() => setImgLoaded(true), []);
 
   const inner = (
     <>
@@ -26,7 +28,12 @@ const ProjectItem = ({ project, index, dimmed, onMouseEnter, onMouseLeave, onIte
         {project.video ? (
           <video src={project.video} autoPlay muted loop playsInline />
         ) : project.image ? (
-          <img src={project.image} alt={project.title} />
+          <img
+            src={project.image}
+            alt={project.title}
+            onLoad={handleImgLoad}
+            className={imgLoaded ? 'project-list__thumb-img--loaded' : ''}
+          />
         ) : null}
       </div>
     </>
@@ -80,7 +87,7 @@ const ProjectItem = ({ project, index, dimmed, onMouseEnter, onMouseLeave, onIte
 const ProjectList = ({ id, sectionRef, projects, onItemClick, footer }) => {
   const [hoveredIdx, setHoveredIdx] = useState(null);
   const headerRef = useRef();
-  const inView = useInViewport(headerRef, true, { rootMargin: '0px 0px -10% 0px' });
+  const inView = useInViewport(headerRef, true, { rootMargin: '0px 0px 0% 0px' });
   const { width } = useWindowSize();
   const isMobile = width <= media.tablet;
 
