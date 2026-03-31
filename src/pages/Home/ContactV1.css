@@ -154,7 +154,7 @@
 
 .contact__sub {
   font-size: var(--fontSizeBodyM);
-  color: rgb(var(--rgbText) / 0.5);
+  color: rgb(var(--rgbText) / 0.6);
   line-height: 1.5;
   max-width: 380px;
   margin: 0;
@@ -212,7 +212,7 @@
 .contact__card-label {
   font-size: var(--fontSizeBodyXS);
   font-weight: var(--fontWeightMedium);
-  color: rgb(var(--rgbText) / 0.35);
+  color: rgb(var(--rgbText) / 0.6);
   text-transform: uppercase;
   letter-spacing: 0.12em;
 }

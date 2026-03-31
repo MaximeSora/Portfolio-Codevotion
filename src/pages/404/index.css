@@ -168,7 +168,7 @@
   padding-bottom: var(--spaceL);
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: rgb(var(--rgbText) / 0.4);
+  color: rgb(var(--rgbText) / 0.6);
   transition-property: opacity;
   transition-timing-function: var(--bezierFastoutSlowin);
   transition-duration: var(--durationXL);

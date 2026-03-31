@@ -79,7 +79,7 @@
   display: block;
   font-size: var(--fontSizeBodyXS);
   font-weight: var(--fontWeightMedium);
-  color: rgb(var(--rgbText) / 0.35);
+  color: rgb(var(--rgbText) / 0.6);
   text-transform: uppercase;
   letter-spacing: 0.15em;
   font-variant-numeric: tabular-nums;
@@ -248,18 +248,14 @@
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   transition:
-    opacity 0.3s var(--bezierFastoutSlowin) var(--card-delay, 0ms),
-    border-color var(--durationS) ease,
-    background-color var(--durationS) ease,
-    box-shadow var(--durationS) ease;
+    opacity 0.3s var(--bezierFastoutSlowin) var(--card-delay, 0ms);
 
   @media (--mediaUseMotion) {
     & {
       transform: translate3d(0, var(--spaceM), 0) scale(0.97);
       transition:
         opacity 0.3s var(--bezierFastoutSlowin) var(--card-delay, 0ms),
-        transform 0.3s var(--bezierFastoutSlowin) var(--card-delay, 0ms),
-        border-color var(--durationS) ease;
+        transform 0.3s var(--bezierFastoutSlowin) var(--card-delay, 0ms);
     }
   }
 }
@@ -274,16 +270,6 @@
   }
 }
 
-.profile__passion-card:hover {
-  border-color: rgb(var(--rgbPrimary) / 0.35);
-  background: rgb(var(--rgbPrimary) / 0.04);
-  box-shadow: 0 4px 24px rgb(var(--rgbPrimary) / 0.08), inset 0 1px 0 rgb(var(--rgbText) / 0.05);
-}
-
-.profile__passion-card:hover .profile__passion-icon {
-  color: rgb(var(--rgbPrimary));
-  transition: color var(--durationS) ease;
-}
 
 .profile__passion-icon {
   flex-shrink: 0;
@@ -316,7 +302,7 @@
 
 .profile__passion-detail {
   font-size: var(--fontSizeBodyS);
-  color: rgb(var(--rgbText) / 0.5);
+  color: rgb(var(--rgbText) / 0.6);
   line-height: 1.4;
 }
 
@@ -350,13 +336,13 @@
 .profile__passion-travel-item {
   flex-shrink: 0;
   font-size: var(--fontSizeBodyS);
-  color: rgb(var(--rgbText) / 0.5);
+  color: rgb(var(--rgbText) / 0.6);
   white-space: nowrap;
 }
 
 .profile__passion-travel-item::after {
   content: ' · ';
-  color: rgb(var(--rgbText) / 0.35);
+  color: rgb(var(--rgbText) / 0.6);
   margin-left: 0.35em;
 }
 

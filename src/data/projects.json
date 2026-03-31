@@ -1,0 +1,2131 @@
+[
+  {
+    "id": "7ead9657-8fc2-4b3a-9dac-91cae2d1bc52",
+    "slug": "mypowerbox-mobile-app-mv",
+    "name": "MyPowerbox - Mobile app MV",
+    "company": "Renault Digital",
+    "year": "2023",
+    "headline": "Launched the first official Mobilize mobile app around a connected charging product, turning hardware constraints into a usable daily experience.",
+    "roleSummary": "Owned the UI direction and drove the UX flows end-to-end, from prototyping through brand alignment and user testing.",
+    "summary": "Defined the visual language, interaction patterns, and screen architecture for Mobilize's first connected charging product. The resulting design system became the foundation for the brand's mobile experiences.",
+    "challenge": "Designing one of the first official Mobilize mobile experiences meant turning a technically constrained charging-station product into a clear day-to-day app, while shaping an emerging brand with limited budget and white-label ambitions.",
+    "tags": [
+      {
+        "name": "Facilitation",
+        "color": "pink"
+      },
+      {
+        "name": "UX Design",
+        "color": "purple"
+      },
+      {
+        "name": "UI Design",
+        "color": "green"
+      },
+      {
+        "name": "Application",
+        "color": "red"
+      },
+      {
+        "name": "B2C",
+        "color": "blue"
+      },
+      {
+        "name": "Workshops",
+        "color": "default"
+      },
+      {
+        "name": "Test",
+        "color": "orange"
+      },
+      {
+        "name": "Branding",
+        "color": "gray"
+      }
+    ],
+    "cover": "/notion-images/cover-7ead9657-8fc2-4b3a-9dac-91cae2d1bc52.png",
+    "blocks": {
+      "kind": "cosmic-blocks",
+      "version": 1,
+      "blocks": [
+        {
+          "id": "8e09e3d1-ebed-4b29-b76b-562741e1abd6",
+          "type": "heading",
+          "title": "Overview"
+        },
+        {
+          "id": "7022172b-eaf2-4c05-93d8-7b09453ed882",
+          "type": "paragraph",
+          "content": "Designing the first official Mobilize mobile app around a physical home-charging product meant turning hardware constraints, pairing friction, and a young brand into a usable daily experience that could scale over time."
+        },
+        {
+          "id": "376c193e-ba7e-4bc3-ac41-88783972f21a",
+          "type": "facts",
+          "title": "Project frame",
+          "items": [
+            {
+              "label": "Scope",
+              "value": "UI / UX Designer with UI ownership and UX co-construction\n\nResponsibilities\n\nUI design, prototype creation, brand collaboration, user testing, mobile design-system foundations, Lottie and Rive motion work"
+            },
+            {
+              "label": "Team and setup",
+              "value": "UX Designer, Product Leader, Product Owner, 2 Developers, Renault Energy Design studio, Brand Vision team\n\nTools\n\nFigma and FigJam, Jira, Rive, Lottie, Teams\n\nTimeline\n\n2023"
+            }
+          ]
+        },
+        {
+          "id": "04d4fc54-a292-47c8-8851-8c3c0e47f78c",
+          "type": "heading",
+          "title": "Goals"
+        },
+        {
+          "id": "fcc6988c-79fe-4b8c-b61a-3ed32246e305",
+          "type": "list",
+          "title": "Key points",
+          "style": "bullets",
+          "items": [
+            "Create a credible first Mobilize mobile experience around the MyPowerbox charging station",
+            "Design a navigation model built for daily use, not only initial setup",
+            "Support white-label B2B potential while delivering a strong B2C product",
+            "Establish early mobile design-system foundations for the Mobilize ecosystem"
+          ]
+        },
+        {
+          "id": "e8aecb75-83bc-41d5-9901-fa75b137f2c9",
+          "type": "beforeAfter",
+          "title": "Navigation structure evolution",
+          "intro": "Compare the original setup-centric architecture with the redesigned daily-use navigation. Add 2 images later with captions Before and After.",
+          "beforeLabel": "Before",
+          "beforeBody": "Legacy before visual or initial state",
+          "afterLabel": "After",
+          "afterBody": "Legacy after visual or target state",
+          "note": ""
+        },
+        {
+          "id": "2b83dcd3-4d8a-4dca-b559-eec014157e93",
+          "type": "heading",
+          "title": "What was risky"
+        },
+        {
+          "id": "cbc9bc8b-7408-48ba-bec9-7a95210961c4",
+          "type": "paragraph",
+          "content": "The project carried four overlapping product risks."
+        },
+        {
+          "id": "55194eb6-678f-4286-9905-97201fe0c33e",
+          "type": "list",
+          "title": "Key points",
+          "style": "bullets",
+          "items": [
+            "Value risk: the app was tied to a physical charging station with limited differentiation in a crowded EV market. The experience had to make the product feel useful beyond first setup.",
+            "Usability risk: pairing a physical device to a mobile app created strong technical constraints. Half of test users struggled to navigate parameters, and the charging wheel was misread as a call to action.",
+            "Viability risk: Mobilize was a young brand with no established mobile identity. The app had to feel credible as a consumer product while staying flexible for future enterprise white-label deployment.",
+            "Feasibility risk: limited budget, SAFe constraints, and a physical-device dependency meant the design had to work inside tight boundaries."
+          ]
+        },
+        {
+          "id": "e1575bd1-caaf-46d2-b389-533593abb0f5",
+          "type": "heading",
+          "title": "What I worked on"
+        },
+        {
+          "id": "79e8a57e-584e-43d2-b09f-d4d96325360c",
+          "type": "paragraph",
+          "content": "I was the principal owner of the UI work, with strong involvement in product shaping."
+        },
+        {
+          "id": "86be75a4-4a24-4eef-8214-cb056e275825",
+          "type": "paragraph",
+          "content": "My contribution included:"
+        },
+        {
+          "id": "2cad02ba-4286-41c8-9d00-46131537262c",
+          "type": "list",
+          "title": "Key points",
+          "style": "bullets",
+          "items": [
+            "designing the full MVP interface from home dashboard to charging management, settings, and edge cases",
+            "co-constructing UX decisions with the UX Designer through co-design workshops",
+            "creating a complete interactive prototype with motion for validation and development",
+            "defining and running a guerrilla test covering first impressions, pairing flow smoothness, and secondary-feature usability",
+            "collaborating with Renault Energy Design studio and Brand Vision team on the first Mobilize visual direction",
+            "building the first mobile design-system components for the Mobilize ecosystem",
+            "running acceptance testing to verify component behavior and appearance after development",
+            "setting up HEART metrics to measure user experience and engagement"
+          ]
+        },
+        {
+          "id": "1ca89aa0-17cf-4d41-89d0-250b466f017e",
+          "type": "visual",
+          "title": "Research evidence",
+          "description": "Show the competitive benchmark board with key user flows, positive patterns, and weak points across competitors.",
+          "assetUrl": "/assets/projects/mypowerbox-mobile-app-mv/wireframe.png",
+          "caption": "Wireframes and initial flows"
+        },
+        {
+          "id": "39aa0868-92d3-4e81-8609-45346ea98673",
+          "type": "heading",
+          "title": "What I learned from the current product"
+        },
+        {
+          "id": "99aca84e-b954-4ffa-8266-71b711495917",
+          "type": "paragraph",
+          "content": "The guerrilla test on the MVP prototype revealed six concrete usability problems:"
+        },
+        {
+          "id": "95fe54b7-1be9-4f74-a29e-b9c72f0945aa",
+          "type": "list",
+          "title": "Key points",
+          "style": "checks",
+          "items": [
+            "Half of users could not navigate through parameters",
+            "Security settings were hard to find in the list",
+            "Users had difficulty passing forms when the button was below the fold",
+            "The solution lacked enough guidance",
+            "Users interpreted the charging wheel as a call to action",
+            "UX writing was imprecise in several flows"
+          ]
+        },
+        {
+          "id": "23361144-40d0-4cf1-ac37-89ac47713ad5",
+          "type": "paragraph",
+          "content": "The pairing flow was the most sensitive area. Because the experience depended on a physical product, technical constraints heavily shaped the UX and required multiple iterations with product and technical stakeholders."
+        },
+        {
+          "id": "58f46939-25c1-4e85-a511-3396d882d8b0",
+          "type": "visual",
+          "title": "Test findings board",
+          "description": "Show the 6 usability issues with severity, screenshots, and the fixes they triggered.",
+          "assetUrl": "/assets/projects/mypowerbox-mobile-app-mv/concept-workshop.png",
+          "caption": "Brainwriting workshop — ideation session"
+        },
+        {
+          "id": "f9cbae37-1f0e-4e52-b866-5fbdab013538",
+          "type": "heading",
+          "title": "What I changed"
+        },
+        {
+          "id": "b4347285-27bc-4780-848d-1f15fce22d8b",
+          "type": "heading",
+          "title": "A daily-use navigation model"
+        },
+        {
+          "id": "281c6b41-dea1-4d5d-9636-f7b50a8013d9",
+          "type": "paragraph",
+          "content": "The original app structure was setup-centric. I restructured navigation around recurring daily actions: checking charging status, managing sessions, and accessing settings. Testing confirmed users needed clearer navigation landmarks, which led to adding a bottom tab bar."
+        },
+        {
+          "id": "1c296707-99ce-4db9-b022-9e824551207d",
+          "type": "heading",
+          "title": "A clearer pairing flow with stronger guidance"
+        },
+        {
+          "id": "8c318045-ce12-42b9-9aea-9cb83136d09b",
+          "type": "paragraph",
+          "content": "The pairing flow between the charging station and the app was the highest-friction area. I iterated it multiple times with architects and the Product Leader to reduce unnecessary steps and clarify system feedback."
+        },
+        {
+          "id": "01c837d6-e7d2-4d89-a694-4455311a90a2",
+          "type": "visual",
+          "title": "Pairing flow feedback",
+          "description": "Show one short sequence with state changes, loading feedback, and success confirmation.",
+          "assetUrl": "/assets/projects/mypowerbox-mobile-app-mv/flow.png",
+          "caption": "Redesigned pairing flow"
+        },
+        {
+          "id": "a531e538-d648-42cc-b027-2e754a4e6395",
+          "type": "heading",
+          "title": "Lottie and Rive animations for product credibility"
+        },
+        {
+          "id": "5448e6d6-10d4-4ed9-a9d0-c214d8fb415e",
+          "type": "paragraph",
+          "content": "I crafted animations in Figma, then reconstructed them with Lottie and Rive so developers could integrate them more easily. These motion details helped the app feel polished and credible as a first Mobilize product, not only a functional utility."
+        },
+        {
+          "id": "317bfa50-8ea5-4f8d-aa8a-235804311e50",
+          "type": "heading",
+          "title": "Two personae driving design priorities"
+        },
+        {
+          "id": "e635827e-4499-46f7-b0a9-5a5899f5545b",
+          "type": "paragraph",
+          "content": "Design decisions were grounded in two validated personae: the Early adopter who wanted visibility over all connected devices, and the Gradual discovery user who wanted simplified energy management. This kept the product tied to real behavior differences rather than generic assumptions."
+        },
+        {
+          "id": "da13b2b0-ab31-48af-8222-8a18d418ea59",
+          "type": "heading",
+          "title": "An early Mobilize mobile design system"
+        },
+        {
+          "id": "3c090654-9dff-4c99-a225-72ea7f668c2f",
+          "type": "paragraph",
+          "content": "I built the first component library for Mobilize mobile apps and documented behavior through interactive prototypes. This created a reusable base that extended beyond MyPowerbox to other Mobilize products."
+        },
+        {
+          "id": "ffddca18-dbe0-46e4-b992-bb781fcf4e23",
+          "type": "visual",
+          "title": "System foundations",
+          "description": "Show the early Mobilize mobile library with key components, states, and usage patterns.",
+          "assetUrl": "/assets/projects/mypowerbox-mobile-app-mv/mvp-result.png",
+          "caption": "MVP result"
+        },
+        {
+          "id": "14726fae-a74f-43a8-a5b5-3d068b760318",
+          "type": "heading",
+          "title": "Outcome"
+        },
+        {
+          "id": "ddba4a17-e5ee-4f48-a0c1-2aa17b7fb4dc",
+          "type": "paragraph",
+          "content": "The MVP launched on iOS and Android app stores and was validated through testing."
+        },
+        {
+          "id": "acf82198-be7c-489a-9340-1dc9e3bc1da5",
+          "type": "paragraph",
+          "content": "Beyond the release:"
+        },
+        {
+          "id": "33171f72-08c7-4b8b-a8cb-7883b8ed649a",
+          "type": "list",
+          "title": "Key points",
+          "style": "bullets",
+          "items": [
+            "the concept was reused as a foundation for V2 of the product",
+            "the mobile design-system layer became a shared base for future Mobilize apps",
+            "V2 explorations opened a broader MyEnergy platform direction connecting charging to a wider energy ecosystem"
+          ]
+        },
+        {
+          "id": "892517f1-513f-4afb-891b-96ea8f83776f",
+          "type": "quote",
+          "quote": "The project did not only ship as an MVP. It created a reusable base for later iterations, brand maturation, and future product extensions.",
+          "attribution": "Imported note",
+          "role": "Callout 🚀"
+        },
+        {
+          "id": "5d8dc65c-33a0-40c5-9ccb-fed43950dbc7",
+          "type": "toggle",
+          "title": "Research, workshops, and exploration details",
+          "content": "RESEARCH AND EXPLORATION DETAILS\n\nThe project followed a full double-diamond approach: Discover, Define, Develop, Deploy.\n\nKey activities included:\n\n- alignment workshops with key stakeholders to clarify business goals\n\n- problem framing around EV charging positioning in a crowded market\n\n- interview synthesis during exploration\n\n- competitive benchmark mapping flows and positive or negative patterns across competitors\n\n- brainwriting workshops with potential users\n\n- two validated personae: Early adopter and Gradual discovery\n\n- user-journey mapping to identify IoT-specific friction points\n\n- HEART metrics setup\n\nARCHIVED PROCESS VISUALS\n\nThe original workshop boards, competitive analysis, and journey artifacts are preserved in the archived case study here:\n\nMyPowerbox archive with original process visuals"
+        },
+        {
+          "id": "3be9b7f1-6d9a-4020-95d6-2647f7862a58",
+          "type": "toggle",
+          "title": "Pairing flow, testing, and iteration details",
+          "content": "PAIRING FLOW, TESTING, AND ITERATION DETAILS\n\nThe pairing flow required synchronization with architects and the Product Leader across multiple iterations. Critical technical constraints were collected during the definition phase.\n\nThe guerrilla test covered three objectives:\n\n1. check user impressions and understanding on first use\n\n1. observe the smoothness of the pairing process\n\n1. examine understanding and usability of secondary features\n\nPost-test, we reworked the information hierarchy through a workshop and added a bottom tab bar to simplify navigation.\n\nARCHIVED PROCESS VISUALS\n\nThe original pairing-flow wireframes, handoff flow, and test outputs are preserved in the archived case study here:\n\nMyPowerbox archive with original process visuals"
+        },
+        {
+          "id": "c12e6bab-86d0-4475-be96-e1c994861d05",
+          "type": "toggle",
+          "title": "Design system and delivery details",
+          "content": "DESIGN SYSTEM AND DELIVERY DETAILS\n\nI built the first mobile component library for Mobilize products and documented behavior through interactive prototypes.\n\nDuring handoff, I created complete user flows capturing interdependencies with other features and edge cases. Detailed functional specifications accompanied each flow.\n\nAcceptance testing verified component behavior and appearance after development, with priority-based correction tracking.\n\nARCHIVED PROCESS VISUALS\n\nThe original design-system captures are preserved in the archived case study here:\n\nMyPowerbox archive with original process visuals"
+        },
+        {
+          "id": "mypowerbox-mobile-app-mv-learned-heading",
+          "type": "heading",
+          "title": "What I learned"
+        },
+        {
+          "id": "mypowerbox-mobile-app-mv-learned-p0",
+          "type": "paragraph",
+          "content": "This project taught me how different mobile design becomes when the product is tied to a physical device. The UX is not only about screens, but about helping people succeed through technical uncertainty."
+        },
+        {
+          "id": "mypowerbox-mobile-app-mv-learned-p1",
+          "type": "paragraph",
+          "content": "It also showed how much responsibility sits inside a first product for a young brand. The interface becomes part of the brand definition itself. If I were to redo this, I would map brand-governance stakeholders earlier and invest more in framing workshops before diving into detailed design."
+        }
+      ]
+    }
+  },
+  {
+    "id": "0e92c48e-682f-4a61-9436-b9d5e0e28c74",
+    "slug": "fleetui-web-app-design",
+    "name": "FleetUI - Web App Design",
+    "company": "Renault Digital",
+    "year": "2024",
+    "headline": "Turned a fragmented fleet tool into a credible B2B dashboard platform for administrators and managers.",
+    "roleSummary": "Redesigned existing screens and created new product views. Defined the framing logic and reusable dashboard patterns that structured the platform.",
+    "summary": "Designed the UX and UI foundations of FleetUI, restructuring disconnected workflows into a coherent dashboard platform for fleet administrators and managers.",
+    "challenge": "Turning an internal, fragmented fleet tool into a credible B2B platform required making complex telematics data easier to navigate and act on, despite no strong UX foundation and multiple disconnected workflows.",
+    "tags": [
+      {
+        "name": "Facilitation",
+        "color": "pink"
+      },
+      {
+        "name": "UX Design",
+        "color": "purple"
+      },
+      {
+        "name": "UI Design",
+        "color": "green"
+      },
+      {
+        "name": "Workshops",
+        "color": "default"
+      },
+      {
+        "name": "Test",
+        "color": "orange"
+      },
+      {
+        "name": "Branding",
+        "color": "gray"
+      },
+      {
+        "name": "SAAS",
+        "color": "purple"
+      },
+      {
+        "name": "B2B",
+        "color": "brown"
+      }
+    ],
+    "cover": "/notion-images/cover-0e92c48e-682f-4a61-9436-b9d5e0e28c74.png",
+    "blocks": {
+      "kind": "cosmic-blocks",
+      "version": 1,
+      "blocks": [
+        {
+          "id": "b0ff55b0-90e1-4217-ac5c-ca2cfbd0786f",
+          "type": "heading",
+          "title": "Overview"
+        },
+        {
+          "id": "d0cf37fe-2a20-44f8-a31a-bb6ab7cab44c",
+          "type": "paragraph",
+          "content": "Transforming a fragmented internal fleet tool into a credible B2B SaaS dashboard platform meant making dense telematics data easier to navigate, easier to act on, and easier to trust for administrators and fleet managers."
+        },
+        {
+          "id": "6d67ba48-bea9-46dc-b6c3-583556ac0ffd",
+          "type": "facts",
+          "title": "Project frame",
+          "items": [
+            {
+              "label": "Scope",
+              "value": "UI / UX Designer\n\nResponsibilities\n\nScreen redesign, new feature design, research and framing, reusable dashboard patterns, product design-system layer, developer collaboration"
+            },
+            {
+              "label": "Team and setup",
+              "value": "UX Designer, Product Manager, 2 Product Owners, 2 Developers, Mobilize Financial Services\n\nTools\n\nFigma and FigJam, Jira, Teams\n\nTimeline\n\n2023 to 2024"
+            }
+          ]
+        },
+        {
+          "id": "fbd61309-6e76-41e1-9428-172cd41e2130",
+          "type": "heading",
+          "title": "Goals"
+        },
+        {
+          "id": "8bf1f3f5-1123-4cef-b166-62ce49e1c941",
+          "type": "list",
+          "title": "Key points",
+          "style": "bullets",
+          "items": [
+            "Make fleet data easier to navigate and act on for operational users",
+            "Move the product from internal-tool logic toward a credible B2B platform",
+            "Create reusable dashboard patterns instead of solving each screen in isolation",
+            "Reduce cognitive overload in a data-heavy environment"
+          ]
+        },
+        {
+          "id": "3897805a-5115-4e49-aac9-adcdc66d1725",
+          "type": "beforeAfter",
+          "title": "Main dashboard hierarchy",
+          "intro": "Compare the original scattered dashboard with the redesigned task-oriented structure. Add 2 images later with captions Before and After.",
+          "beforeLabel": "Before",
+          "beforeBody": "Legacy before visual or initial state",
+          "afterLabel": "After",
+          "afterBody": "Legacy after visual or target state",
+          "note": ""
+        },
+        {
+          "id": "5e25d16f-8f51-412e-b38d-e2229d87edeb",
+          "type": "heading",
+          "title": "What was risky"
+        },
+        {
+          "id": "666e31e9-71e8-4480-957e-a7fd524d9646",
+          "type": "paragraph",
+          "content": "The product carried four overlapping risks."
+        },
+        {
+          "id": "8ac4d944-a387-430b-a5c1-d5026bdcd1d2",
+          "type": "list",
+          "title": "Key points",
+          "style": "bullets",
+          "items": [
+            "Value risk: the existing tool was built for internal operators, not external fleet managers. Their needs, mental models, and expectations were fundamentally different.",
+            "Usability risk: fleet data was spread across disconnected tools with no coherent navigation. Key information existed but was not presented in a way that supported action.",
+            "Viability risk: the product needed to become credible enough to sell as a B2B SaaS in a highly competitive market where players like Geotab and Samsara already had mature UX.",
+            "Feasibility risk: the product had to scale across multiple user profiles and task types without becoming harder to navigate."
+          ]
+        },
+        {
+          "id": "7301e102-bd92-4db0-8742-c344d578c15a",
+          "type": "heading",
+          "title": "What I worked on"
+        },
+        {
+          "id": "aeb1d6be-a1be-4b5f-8410-dfbd8d60655d",
+          "type": "paragraph",
+          "content": "I identified the need for this product after learning that existing tools for fleet managers within Renault were either costly external platforms or internal products built without UX consideration."
+        },
+        {
+          "id": "7fe84cf0-d5ec-41f3-a2bc-38a00bf6d900",
+          "type": "paragraph",
+          "content": "My contribution included:"
+        },
+        {
+          "id": "64fae3e0-8784-4f60-b1bb-dd037b4588da",
+          "type": "list",
+          "title": "Key points",
+          "style": "bullets",
+          "items": [
+            "conducting stakeholder interviews and market research to understand the fleet-management ecosystem",
+            "running a heuristic evaluation of the existing interface to map structural UX problems",
+            "performing competitive analysis against established players in the fleet-management space",
+            "conducting user interviews with fleet administrators and managers",
+            "redesigning existing screens to improve usability and readability",
+            "designing new product views including fleet dashboards, asset detail pages, event tracking, and map interfaces",
+            "creating reusable dashboard patterns and layout templates for systematic feature development",
+            "building a dedicated design-system layer for the dashboard product",
+            "collaborating with developers on component logic and implementation alignment"
+          ]
+        },
+        {
+          "id": "1dd1d12c-baa0-485c-b68a-d03c8c03a31c",
+          "type": "visual",
+          "title": "Research and audit evidence",
+          "description": "Show the heuristic evaluation board with fragmented navigation, weak hierarchy, and inconsistent component behavior highlighted.",
+          "assetUrl": "/assets/projects/fleetui-web-app-design/asset-details.png",
+          "caption": "Asset details screen"
+        },
+        {
+          "id": "cac6fd91-dd20-4164-aaef-19ad47abc035",
+          "type": "heading",
+          "title": "What I learned from the current product"
+        },
+        {
+          "id": "ddfe35a5-1fb9-4f14-8fea-3520bd3209e2",
+          "type": "paragraph",
+          "content": "The heuristic evaluation and user research revealed recurring structural problems:"
+        },
+        {
+          "id": "ec371b09-a78e-4d98-aa88-75b9d4feaaaf",
+          "type": "list",
+          "title": "Key points",
+          "style": "bullets",
+          "items": [
+            "navigation between fleet-level and asset-level views was unclear and inconsistent",
+            "data tables lacked strong hierarchy, making it difficult to separate critical information from noise",
+            "the interface mixed operational views and administrative views without clear separation",
+            "there was no coherent visual system connecting dashboard components across screens",
+            "users had to context-switch between multiple tools to complete basic fleet-management tasks"
+          ]
+        },
+        {
+          "id": "9cdfef85-3861-45cb-bda7-c2ba9b5a6ec9",
+          "type": "paragraph",
+          "content": "The product was not broken screen by screen. The problem was systemic: no coherent structure connected the screens into a usable platform."
+        },
+        {
+          "id": "b53d2cfe-11fd-4041-919e-10fb8720cae3",
+          "type": "visual",
+          "title": "Benchmark comparison",
+          "description": "Show how competitors structure navigation, data density, filters, and table readability across 3 to 5 fleet platforms.",
+          "assetUrl": "/assets/projects/fleetui-web-app-design/events-log.png",
+          "caption": "Events log — existing product state"
+        },
+        {
+          "id": "5544670d-51d2-4a75-87d2-8b936e5a092b",
+          "type": "heading",
+          "title": "What I changed"
+        },
+        {
+          "id": "469f8460-f25e-4c19-8bc8-c9613936036a",
+          "type": "heading",
+          "title": "A task-oriented navigation model"
+        },
+        {
+          "id": "7c6ac037-9b33-4d2c-8b06-8e77144e337b",
+          "type": "paragraph",
+          "content": "I restructured navigation so it matched real operational workflows rather than exposing data by source. Fleet view, asset view, tables, maps, and event tracking became connected views supporting the way administrators actually monitor and manage vehicles."
+        },
+        {
+          "id": "819e6c7e-cf0a-4ffd-9099-23d189a6e1e9",
+          "type": "heading",
+          "title": "Reusable dashboard patterns"
+        },
+        {
+          "id": "28889b61-12e6-48dc-9ae2-22116e113d6a",
+          "type": "paragraph",
+          "content": "Rather than treating each screen as a separate design problem, I built a pattern library of dashboard components: data cards, status indicators, table configurations, and chart layouts. This created coherence across screens and made future feature design more systematic."
+        },
+        {
+          "id": "2a8d5ac4-7abb-4277-aecf-c0bb640f35a0",
+          "type": "heading",
+          "title": "Reduced cognitive load on data-heavy screens"
+        },
+        {
+          "id": "ea1a134a-5d52-42cb-9dea-d58b776b3a7e",
+          "type": "paragraph",
+          "content": "I redesigned the information hierarchy on tables and maps so fleet managers could scan, filter, and act without being overwhelmed. This included clearer visual weight, better progressive disclosure, and smarter default views."
+        },
+        {
+          "id": "edd00f21-d40f-42bf-90ab-9039cec84d09",
+          "type": "heading",
+          "title": "A dedicated design-system layer"
+        },
+        {
+          "id": "9c3cd5a6-e560-4d7d-a895-6ee64bcf8579",
+          "type": "paragraph",
+          "content": "I created a product-specific design-system base that extended the general component library with dashboard-specific patterns such as data-visualization components, status badges, KPI cards, and responsive table behaviors."
+        },
+        {
+          "id": "8ce3a7ed-c0b1-4097-a426-2e119dc4ccf1",
+          "type": "heading",
+          "title": "Framing the product vision"
+        },
+        {
+          "id": "488d5504-6ba7-4e52-ae90-f70b466649ff",
+          "type": "paragraph",
+          "content": "Research and workshops helped the team move from isolated feature thinking toward a coherent platform direction. I contributed to defining three core product values: availability, reliability, and comfort of management."
+        },
+        {
+          "id": "c4612e70-882a-4da4-82e4-967e6c0f2c95",
+          "type": "visual",
+          "title": "Dashboard pattern set",
+          "description": "Show data cards, KPI layout, status badges, table configuration, and event monitoring patterns side by side.",
+          "assetUrl": "/assets/projects/fleetui-web-app-design/map-fleet.png",
+          "caption": "Fleet map view"
+        },
+        {
+          "id": "743d3aff-467b-4492-8b60-1586b541115d",
+          "type": "heading",
+          "title": "Outcome"
+        },
+        {
+          "id": "36823a72-76c7-4ade-9962-2fda9cd38cef",
+          "type": "paragraph",
+          "content": "The project helped transform a fragmented internal starting point into a more coherent B2B dashboard foundation."
+        },
+        {
+          "id": "b92264cb-e939-45d7-b4c3-0946f45fe5ae",
+          "type": "paragraph",
+          "content": "Key results:"
+        },
+        {
+          "id": "a3f58c3f-3817-47c2-aa14-581d1a3dbee1",
+          "type": "list",
+          "title": "Key points",
+          "style": "bullets",
+          "items": [
+            "improved usability around core fleet-management tasks through clearer navigation and data hierarchy",
+            "established a scalable dashboard pattern library that made future feature design more systematic",
+            "contributed to a stronger product vision through research, workshops, and competitive positioning",
+            "created a design-system layer that gave the product a more consistent and professional visual identity"
+          ]
+        },
+        {
+          "id": "71982ede-06fa-439f-b8d1-e3d78d6b3ed0",
+          "type": "quote",
+          "quote": "The strongest shift was structural. The product moved from disconnected tooling logic toward a more readable, task-oriented platform foundation that could support future growth.",
+          "attribution": "Imported note",
+          "role": "Callout 🚀"
+        },
+        {
+          "id": "5c8913af-04ad-44fe-9862-85386e5ed825",
+          "type": "toggle",
+          "title": "Research, audit, and workshop details",
+          "content": "RESEARCH, AUDIT, AND WORKSHOP DETAILS\n\nThe project included stakeholder interviews, market research, heuristic evaluation, competitive analysis, and user interviews.\n\nThese inputs helped reveal both the business opportunity and the structural UX problems of the existing tools, including fragmented workflows, weak navigation, and underused data potential.\n\nARCHIVED PROCESS VISUALS\n\nThe original heuristic audit, benchmark boards, and interview artifacts are preserved in the archived case study here:\n\nFleetUI archive with original process visuals"
+        },
+        {
+          "id": "b97c0201-a6a1-4fc2-bfff-b4b6f44e6868",
+          "type": "toggle",
+          "title": "Design system, templates, and delivery details",
+          "content": "DESIGN SYSTEM, TEMPLATES, AND DELIVERY DETAILS\n\nAlongside the product work, I contributed to a dedicated design-system layer for the dashboard product.\n\nThis included reusable components, layout logic, templates, and collaboration practices with developers so the product could evolve on a more stable UI foundation.\n\nARCHIVED PROCESS VISUALS\n\nThe original framing artifacts, wireframes, and handoff batches are preserved in the archived case study here:\n\nFleetUI archive with original process visuals"
+        },
+        {
+          "id": "fleetui-web-app-design-learned-heading",
+          "type": "heading",
+          "title": "What I learned"
+        },
+        {
+          "id": "fleetui-web-app-design-learned-p0",
+          "type": "paragraph",
+          "content": "This project reinforced how much B2B dashboard design depends on task clarity, not only information density. When users manage operations at scale, navigation and structure matter as much as visual polish."
+        },
+        {
+          "id": "fleetui-web-app-design-learned-p1",
+          "type": "paragraph",
+          "content": "It also taught me how valuable reusable patterns become when a product is still defining its long-term platform shape. Looking back, I would push for real user testing earlier to validate navigation assumptions, and involve developers sooner in the pattern library definition to prevent implementation gaps."
+        }
+      ]
+    }
+  },
+  {
+    "id": "5cb46795-5f27-4982-8715-013ffa7362dc",
+    "slug": "citadel-team-mobile-web-app",
+    "name": "Citadel Team - Mobile & Web App",
+    "company": "Thales Ercom",
+    "year": "2021",
+    "headline": "Redesigned the videoconferencing experience across mobile and web, making call actions intuitive and layouts scalable from 1-to-1 to group calls.",
+    "roleSummary": "Solo product designer responsible for the full videoconferencing redesign, from audit through delivery, while chat was the established default surface.",
+    "summary": "Redesigned Citadel Team's video conferencing experience across mobile and web, rethinking the action hierarchy and layout system to scale cleanly as participant counts changed.",
+    "challenge": "The original video conferencing experience was difficult to scale as participant counts changed, while key UI actions and icons were not always intuitive across mobile and web.",
+    "tags": [
+      {
+        "name": "Facilitation",
+        "color": "pink"
+      },
+      {
+        "name": "UX Design",
+        "color": "purple"
+      },
+      {
+        "name": "UI Design",
+        "color": "green"
+      },
+      {
+        "name": "Workshops",
+        "color": "default"
+      },
+      {
+        "name": "Test",
+        "color": "orange"
+      },
+      {
+        "name": "B2B",
+        "color": "brown"
+      },
+      {
+        "name": "Discovery",
+        "color": "red"
+      },
+      {
+        "name": "Application",
+        "color": "red"
+      },
+      {
+        "name": "SAAS",
+        "color": "purple"
+      }
+    ],
+    "cover": "/notion-images/cover-5cb46795-5f27-4982-8715-013ffa7362dc.png",
+    "blocks": {
+      "kind": "cosmic-blocks",
+      "version": 1,
+      "blocks": [
+        {
+          "id": "1a96e255-a8b7-42e2-8f91-7bd7b432c680",
+          "type": "heading",
+          "title": "Overview"
+        },
+        {
+          "id": "5886b94b-f7e8-447f-a060-8cf19658f124",
+          "type": "paragraph",
+          "content": "Redesigning Citadel Team's video conferencing experience across mobile and web, solving action clarity and layout scalability problems that made the feature harder to use as participant counts increased."
+        },
+        {
+          "id": "b79dd07e-7742-4fb0-9436-ff4b3d530e0b",
+          "type": "paragraph",
+          "content": "Role"
+        },
+        {
+          "id": "d118da87-4b7e-4032-bf52-e531a7a60a74",
+          "type": "paragraph",
+          "content": "Product Designer (solo on conferencing scope)"
+        },
+        {
+          "id": "624e6eb8-214c-41c9-9288-972b453d3b61",
+          "type": "paragraph",
+          "content": "Responsibilities"
+        },
+        {
+          "id": "68354e1d-538d-4a58-a1e3-b3e7a726b112",
+          "type": "paragraph",
+          "content": "UX/UI design, interface affordance audit, icon clarity improvement, layout scalability, guerrilla testing, benchmark"
+        },
+        {
+          "id": "7d36d95d-285b-4e4a-a5c4-495cd7181eb4",
+          "type": "paragraph",
+          "content": "Collaborators"
+        },
+        {
+          "id": "444cf404-471b-4f92-879d-9e25e3e7328a",
+          "type": "paragraph",
+          "content": "Product Owner, CTO, Developers"
+        },
+        {
+          "id": "06b7e02f-9ddc-4958-bc84-b8b210359283",
+          "type": "paragraph",
+          "content": "Environment"
+        },
+        {
+          "id": "7d294f2e-1abb-42f9-9131-743649a8d2ab",
+          "type": "paragraph",
+          "content": "Startup environment backed by Thales funds. Small, lean team with effectively solo design ownership on the conferencing scope."
+        },
+        {
+          "id": "6816812e-246d-402c-9860-f1afb739d7b4",
+          "type": "paragraph",
+          "content": "Tools"
+        },
+        {
+          "id": "4d325840-3e56-45e7-96c8-400b68a6e87f",
+          "type": "paragraph",
+          "content": "Citadel Team, Figma, Zeplin, Jira"
+        },
+        {
+          "id": "cc17a697-03c3-40a2-8ebb-8074344a1b4a",
+          "type": "paragraph",
+          "content": "Timeline"
+        },
+        {
+          "id": "f7e5be93-098c-48b7-9982-caca0277717d",
+          "type": "paragraph",
+          "content": "2021"
+        },
+        {
+          "id": "eb60cd4b-52a9-476f-9cb7-36f5dc71da94",
+          "type": "heading",
+          "title": "Goals"
+        },
+        {
+          "id": "55866ea1-3a95-41c7-bd67-d168e3ebc8f2",
+          "type": "list",
+          "title": "Key points",
+          "style": "bullets",
+          "items": [
+            "Make core conferencing actions (mute, camera, share) immediately understandable without interpretation",
+            "Create a layout system that stays readable as participant counts scale from 2 to 10+",
+            "Improve the overall credibility of the conferencing feature as a real-time collaboration tool"
+          ]
+        },
+        {
+          "id": "7ba01d50-10ed-46aa-ab74-129d799d49b2",
+          "type": "visual",
+          "title": "Visual proof",
+          "description": "Placeholder image — Add the scalable layout system showing how the conference grid adapts from 2 participants to 4, 6, and 10+ across desktop and mobile.",
+          "assetUrl": "/assets/projects/citadel-team-mobile-web-app/audit.png",
+          "caption": "Internal UX audit — issues identified"
+        },
+        {
+          "id": "83f0736c-3665-487b-bd82-70f52d9ed9f0",
+          "type": "heading",
+          "title": "What was risky"
+        },
+        {
+          "id": "d5f4ed6d-ea5f-450f-8ec0-a60e24c1646c",
+          "type": "paragraph",
+          "content": "The conferencing feature sat at the intersection of two critical UX problems."
+        },
+        {
+          "id": "3c7e7437-1b90-43ec-9114-1a086297f1c1",
+          "type": "list",
+          "title": "Key points",
+          "style": "bullets",
+          "items": [
+            "Action clarity risk: conference controls had to feel immediate and self-explanatory. In a real-time context, users cannot afford to pause and interpret an icon. The original interface had contrast and hierarchy issues, insufficient feedback on interactive elements, and weak differentiation between primary and secondary actions.",
+            "Layout scalability risk: the interface worked for small calls but degraded as participant counts increased. The layout logic did not adapt well across screen sizes and call configurations, creating visual clutter and reducing readability.",
+            "Product credibility risk: video conferencing was the standout new feature differentiating Citadel from pure messaging competitors. If the experience felt clunky, it undermined the product's positioning as a serious collaboration platform for security-conscious organizations.",
+            "Feasibility risk: lean team context with solo design ownership meant every decision had to count, with limited room for extensive exploration."
+          ]
+        },
+        {
+          "id": "5748e859-1902-499d-9269-add24b62354c",
+          "type": "heading",
+          "title": "What I worked on"
+        },
+        {
+          "id": "f3b58519-cefb-4c34-a791-b43bda0a5456",
+          "type": "paragraph",
+          "content": "I was the sole designer on the conferencing scope, with the chat product already established as the core surface."
+        },
+        {
+          "id": "8a7cfe00-10c7-467e-88d9-56215e6985a0",
+          "type": "paragraph",
+          "content": "My contribution included:"
+        },
+        {
+          "id": "a9a32cb1-7cb6-4cd9-9974-8279c2704080",
+          "type": "list",
+          "title": "Key points",
+          "style": "bullets",
+          "items": [
+            "auditing the existing conference experience to map contrast issues, hierarchy problems, and interaction weaknesses",
+            "benchmarking conferencing tools (Zoom, Teams, Google Meet) to identify best practices for action visibility, icon clarity, and participant layouts",
+            "running ideation work with stakeholders to explore more flexible interface structures",
+            "redesigning core conference controls for clearer affordance and faster recognition",
+            "creating a scalable layout system that adapted to different participant-count scenarios",
+            "conducting guerrilla testing on specific usability questions: mute recognition on desktop, icon clarity on mobile, layout readability with increasing participants",
+            "iterating based on test findings to confirm direction and reduce ambiguity"
+          ]
+        },
+        {
+          "id": "b5a5b2b9-255e-4b35-815f-462cd32e9c81",
+          "type": "visual",
+          "title": "Visual proof",
+          "description": "Placeholder image — Add a zoom on the improved conference controls: mute/unmute, camera, share screen, showing the icon redesign and visual feedback states.",
+          "assetUrl": "/assets/projects/citadel-team-mobile-web-app/workshop.png",
+          "caption": "Ideation workshop (6-to-1 method)"
+        },
+        {
+          "id": "bd113332-93c0-42f8-9036-394161a8651e",
+          "type": "heading",
+          "title": "What I learned from the current product"
+        },
+        {
+          "id": "c78bf000-687c-4835-ba7d-925538c4f059",
+          "type": "paragraph",
+          "content": "The audit and benchmark revealed specific weaknesses in the original interface:"
+        },
+        {
+          "id": "167eda79-4de2-45c0-b67e-9025162b305a",
+          "type": "list",
+          "title": "Key points",
+          "style": "bullets",
+          "items": [
+            "contrast between active and inactive control states was insufficient for quick scanning",
+            "icon metaphors for some actions required interpretation rather than being immediately obvious",
+            "the hierarchy between primary actions (mute, camera) and secondary actions (settings, participants list) was too flat",
+            "the layout became visually cluttered beyond 4 participants, with no clear system to manage grid transitions",
+            "feedback on state changes (e.g., microphone muted) was not prominent enough for real-time awareness"
+          ]
+        },
+        {
+          "id": "f09ed4c9-af4d-43b7-a1dc-e3499491e13e",
+          "type": "paragraph",
+          "content": "These were not cosmetic issues. In a conferencing context, every fraction of a second spent interpreting controls is a UX failure."
+        },
+        {
+          "id": "adf16ae5-31b3-4df1-851b-ad52821c486c",
+          "type": "heading",
+          "title": "What I changed"
+        },
+        {
+          "id": "e23f27d9-d266-4163-a755-6c3e81bcd108",
+          "type": "heading",
+          "title": "Clearer action hierarchy with stronger affordance"
+        },
+        {
+          "id": "2c7246e6-373f-47fe-b842-143b9be9bf0b",
+          "type": "paragraph",
+          "content": "I reworked the placement, sizing, and visual weight of core conference actions. Primary controls (mute, camera, end call) received more visual prominence. Secondary controls (settings, participant list) were visually separated to reduce cognitive load during active calls."
+        },
+        {
+          "id": "8d33759a-d31a-4ec3-954d-23409ed1be75",
+          "type": "heading",
+          "title": "Redesigned icon system with explicit feedback states"
+        },
+        {
+          "id": "310ecea4-0ead-499e-ab90-0d456801c708",
+          "type": "paragraph",
+          "content": "I treated icon clarity as a core usability issue, not a cosmetic detail. Each control got explicit visual states: active, inactive, hover, and disabled. The mute icon specifically received attention after guerrilla testing confirmed users needed faster recognition on desktop."
+        },
+        {
+          "id": "8c567ebb-5bd3-4549-97a2-e5480e17516e",
+          "type": "heading",
+          "title": "A scalable grid layout system"
+        },
+        {
+          "id": "cc0c1995-0627-4756-a972-122e7c0e9499",
+          "type": "paragraph",
+          "content": "I restructured the participant grid to handle transitions between different call sizes. The system defined clear layout rules for 1:1 calls, small groups (3-4), medium groups (5-8), and larger calls (9+). Each configuration had specific rules for tile sizing, speaker highlighting, and overflow behavior."
+        },
+        {
+          "id": "9fb115ef-857a-4801-80da-925f449eb1c9",
+          "type": "heading",
+          "title": "Mobile-specific adaptations"
+        },
+        {
+          "id": "0314d99f-76f7-4e3f-a543-be10fdd3f8d4",
+          "type": "paragraph",
+          "content": "Mobile conferencing required different affordance rules than desktop. I adapted the control bar layout, icon sizes, and gesture interactions to work within mobile constraints while maintaining the same clarity principles."
+        },
+        {
+          "id": "af9748eb-3585-4354-bbcf-54f839da8ca2",
+          "type": "visual",
+          "title": "Visual proof",
+          "description": "Placeholder image — Add the guerrilla test findings: mute recognition results on desktop, icon clarity scores on mobile, layout readability feedback.",
+          "assetUrl": "/assets/projects/citadel-team-mobile-web-app/mobile-ui.png",
+          "caption": "Redesigned mobile video conference UI"
+        },
+        {
+          "id": "934ac3bc-33e5-427c-b31c-3f56bfa21720",
+          "type": "heading",
+          "title": "Outcome"
+        },
+        {
+          "id": "216bb372-ab5e-4db4-9e5e-c35fe4297bf3",
+          "type": "paragraph",
+          "content": "The redesign gave the conference feature a stronger and more scalable UX foundation across mobile and web."
+        },
+        {
+          "id": "ae37545b-c0e0-4c71-a7e1-062addad2213",
+          "type": "paragraph",
+          "content": "Key results:"
+        },
+        {
+          "id": "849225da-5b42-4fca-bfc8-ca2cb5c7e45a",
+          "type": "list",
+          "title": "Key points",
+          "style": "bullets",
+          "items": [
+            "improved clarity of core actions through better icon affordance and visual hierarchy",
+            "created a layout system resilient to participant-count variation, from 1:1 to 10+ users",
+            "validated key interaction choices through targeted guerrilla testing",
+            "the feature set was shipped and continued to evolve after my time on the product, confirming the redesign worked as a durable base rather than a one-off visual refresh"
+          ]
+        },
+        {
+          "id": "38a0eb23-ade9-4f20-ac1d-3ad3416d141f",
+          "type": "quote",
+          "quote": "The conferencing feature evolved from a functional add-on into a more credible real-time collaboration experience that could support the product's positioning against established competitors.",
+          "attribution": "Imported note",
+          "role": "Callout 🚀"
+        },
+        {
+          "id": "88a665bd-7949-4ff5-bf87-52756f445d0b",
+          "type": "toggle",
+          "title": "Research and exploration details",
+          "content": "RESEARCH AND EXPLORATION\n\nI started by auditing the existing experience and benchmarking how other conferencing tools handled action visibility, icon clarity, and participant layouts.\n\nThis phase helped identify recurring weaknesses: contrast issues, insufficient feedback, weak action differentiation, and layouts that degraded under complexity.\n\nI also ran ideation work with stakeholders to explore more flexible interface structures.\n\nARCHIVED PROCESS VISUALS\n\nThe original audit, benchmark, and ideation boards are preserved in the archived case study here:\n\nCitadel conference archive with original process visuals"
+        },
+        {
+          "id": "79837503-23e8-4f15-8927-dad01d4338be",
+          "type": "toggle",
+          "title": "Testing and iteration details",
+          "content": "TESTING AND ITERATION\n\nWe ran guerrilla tests on specific usability questions instead of trying to validate everything at once.\n\nThe most useful checks focused on:\n\n- whether users understood the mute action quickly on desktop\n\n- whether the chosen icons felt clear enough on mobile\n\n- whether the new layout logic made participant display easier to parse\n\nThis helped confirm the direction and reduce ambiguity around the most sensitive interaction choices.\n\nARCHIVED PROCESS VISUALS\n\nThe original mindmap and guerrilla-test artifacts are preserved in the archived case study here:\n\nCitadel conference archive with original process visuals"
+        },
+        {
+          "id": "citadel-team-mobile-web-app-learned-heading",
+          "type": "heading",
+          "title": "What I learned"
+        },
+        {
+          "id": "citadel-team-mobile-web-app-learned-p0",
+          "type": "paragraph",
+          "content": "This project taught me how much conferencing UX depends on interaction clarity under pressure. In real-time collaboration, action hierarchy and affordance matter as much as visual quality."
+        },
+        {
+          "id": "citadel-team-mobile-web-app-learned-p1",
+          "type": "paragraph",
+          "content": "It also reinforced the importance of designing interface structures that can scale with product complexity instead of solving only the current state. In hindsight, I would invest more in systematic layout testing across participant-count scenarios, and advocate for a product-wide icon audit rather than scoping it only to conferencing."
+        }
+      ]
+    }
+  },
+  {
+    "id": "2dfe23e4-73ba-425c-97eb-04f59dbd7ae6",
+    "slug": "citadel-team-design-system-implementation",
+    "name": "Citadel Team - Design System implementation",
+    "company": "Thales Ercom",
+    "year": "2022",
+    "headline": "Built Thales Ercom's first design system to create a shared language between design and development.",
+    "roleSummary": "Solo owner of the system: foundations, component library, documentation, governance, and collaboration rituals with engineering.",
+    "summary": "Built Thales Ercom's first design system as a solo designer, establishing a shared vocabulary and component architecture that bridged design and development in a low-maturity, partly remote environment.",
+    "challenge": "No shared design language or source of truth existed, creating inconsistencies, repeated QA, and friction between design and development when building components in a low-maturity, partly remote environment.",
+    "tags": [
+      {
+        "name": "Facilitation",
+        "color": "pink"
+      },
+      {
+        "name": "UX Design",
+        "color": "purple"
+      },
+      {
+        "name": "UI Design",
+        "color": "green"
+      },
+      {
+        "name": "Workshops",
+        "color": "default"
+      },
+      {
+        "name": "Test",
+        "color": "orange"
+      },
+      {
+        "name": "Branding",
+        "color": "gray"
+      },
+      {
+        "name": "Discovery",
+        "color": "red"
+      },
+      {
+        "name": "Design Ops",
+        "color": "gray"
+      },
+      {
+        "name": "Design System",
+        "color": "brown"
+      }
+    ],
+    "cover": "/notion-images/cover-2dfe23e4-73ba-425c-97eb-04f59dbd7ae6.png",
+    "blocks": {
+      "kind": "cosmic-blocks",
+      "version": 1,
+      "blocks": [
+        {
+          "id": "52b735a2-d53b-4af2-93db-b27fa58eea97",
+          "type": "heading",
+          "title": "Overview"
+        },
+        {
+          "id": "fbb3049a-13b5-436f-9e74-4dc330f88d7b",
+          "type": "paragraph",
+          "content": "Building Thales Ercom's first design system as a solo designer, creating a shared language between design and development to reduce inconsistency, repeated QA, and collaboration friction in a low-maturity, partly remote environment."
+        },
+        {
+          "id": "dc85c2fb-4d2a-4b88-ac0b-603a8c5567af",
+          "type": "paragraph",
+          "content": "Role"
+        },
+        {
+          "id": "d1a23c3e-8fda-4b05-8c62-4ad6c172e33e",
+          "type": "paragraph",
+          "content": "Product Designer (solo design-system owner)"
+        },
+        {
+          "id": "85232784-bc10-4ddd-90b5-279e02819493",
+          "type": "paragraph",
+          "content": "Responsibilities"
+        },
+        {
+          "id": "3505d0f4-52f6-47e3-b36a-ad2f5e90a1e1",
+          "type": "paragraph",
+          "content": "Foundations definition, Figma component library, ZeroHeight documentation, reusable templates, component tracking, developer collaboration rituals"
+        },
+        {
+          "id": "f954424f-646b-40a6-82ad-e43f50edc58f",
+          "type": "paragraph",
+          "content": "Collaborators"
+        },
+        {
+          "id": "3cca24b0-7b52-4ce3-8e6e-51470e3716fd",
+          "type": "paragraph",
+          "content": "Product Manager, UI Designer, Developers"
+        },
+        {
+          "id": "d863b3d2-0b0d-4abf-a0ae-79c7caad2b2c",
+          "type": "paragraph",
+          "content": "Environment"
+        },
+        {
+          "id": "c1eb8cd3-2a0a-4c49-9b1d-05d8fc035989",
+          "type": "paragraph",
+          "content": "Design studio context at Thales Ercom. Partly remote, low design-system maturity at the start."
+        },
+        {
+          "id": "ce5ea52f-de9c-4785-a599-784a59181416",
+          "type": "paragraph",
+          "content": "Tools"
+        },
+        {
+          "id": "9a12bacb-65ed-4fe9-bab5-868865b75107",
+          "type": "paragraph",
+          "content": "Figma, ZeroHeight, Zeplin, Sketch (legacy), Citadel Team, Jira"
+        },
+        {
+          "id": "3c6b582b-2e47-451d-8492-7411f9006c7d",
+          "type": "paragraph",
+          "content": "Timeline"
+        },
+        {
+          "id": "46500879-9953-41de-a6a8-a1781613a1ec",
+          "type": "paragraph",
+          "content": "2021 — 2022"
+        },
+        {
+          "id": "fa92071e-69fc-40a6-9860-6fa96bf22912",
+          "type": "heading",
+          "title": "Goals"
+        },
+        {
+          "id": "1ea41a22-88e0-48a1-85bd-e712e08c5640",
+          "type": "list",
+          "title": "Key points",
+          "style": "bullets",
+          "items": [
+            "Create a single source of truth for design foundations and components",
+            "Establish a shared vocabulary between design and development",
+            "Reduce repeated QA loops caused by inconsistent component interpretation",
+            "Raise the team's design-system maturity from near-zero to a sustainable foundation"
+          ]
+        },
+        {
+          "id": "47eeec4c-8c06-4f79-bed7-1e999eca96af",
+          "type": "visual",
+          "title": "Visual proof",
+          "description": "Placeholder image — Add a before/after comparison: inconsistent component implementations across screens vs. standardized components from the design system.",
+          "assetUrl": "/assets/projects/citadel-team-design-system-implementation/ds-audit.png",
+          "caption": "DS audit and weekly definition sessions"
+        },
+        {
+          "id": "986554f9-7982-4a15-b791-09a69850941c",
+          "type": "heading",
+          "title": "What was risky"
+        },
+        {
+          "id": "5ede177a-c6be-4f08-8b17-0e07d34b445e",
+          "type": "paragraph",
+          "content": "The challenge was not purely visual. It was organizational."
+        },
+        {
+          "id": "38e8a040-b087-4e44-9b5e-f1c6c216a74c",
+          "type": "list",
+          "title": "Key points",
+          "style": "bullets",
+          "items": [
+            "Alignment risk: no shared source of truth meant design and development interpreted components differently. The same button could look and behave differently across screens, with no way to determine which version was correct.",
+            "Adoption risk: introducing a design system in a low-maturity environment meant the team had to learn new practices while continuing to ship product. If the system was too complex or not integrated into daily workflows, it would be ignored.",
+            "Documentation risk: a Figma library alone was not enough. Without clear usage rules, contribution guidelines, and behavior documentation, the system would become another set of files that slowly diverged from implementation.",
+            "Sustainability risk: as the sole designer building the system, I had to create something that could survive beyond my involvement. The system needed to be simple enough for others to maintain and extend."
+          ]
+        },
+        {
+          "id": "7761fdef-5c26-4252-82d2-c45b2e615e99",
+          "type": "heading",
+          "title": "What I worked on"
+        },
+        {
+          "id": "41b39606-41b0-4575-b626-879f37f3fbc4",
+          "type": "paragraph",
+          "content": "I owned the initiative end-to-end on the design side."
+        },
+        {
+          "id": "c096e10b-5805-442d-9f41-cfbf79642951",
+          "type": "paragraph",
+          "content": "My contribution included:"
+        },
+        {
+          "id": "8c1270a0-7fd3-40dd-abf2-b47b185cfb3d",
+          "type": "list",
+          "title": "Key points",
+          "style": "bullets",
+          "items": [
+            "defining the foundation layer: color tokens, typography scale, spacing system, elevation rules",
+            "building a complete Figma component library with variants, states, and interaction rules",
+            "documenting every foundation and component in ZeroHeight with usage guidelines and implementation notes",
+            "creating reusable page templates so teams could start from coherent structures",
+            "setting up component tracking to monitor progress and alignment between design and implementation",
+            "establishing recurring follow-up rituals with Product and Tech to keep the system evolving",
+            "collaborating directly with developers on component creation logic and handoff clarity"
+          ]
+        },
+        {
+          "id": "53570ed2-7e5a-462f-a583-5119bc709fc8",
+          "type": "visual",
+          "title": "Visual proof",
+          "description": "Placeholder image — Add a ZeroHeight documentation sample showing a component page: visual specs, usage rules, states, and implementation notes.",
+          "assetUrl": "/assets/projects/citadel-team-design-system-implementation/ds-tracking.png",
+          "caption": "Component tracking sheet"
+        },
+        {
+          "id": "7541b2d3-2b52-4f0b-a54e-59445f769d2c",
+          "type": "heading",
+          "title": "What I learned from the existing state"
+        },
+        {
+          "id": "a9bc6a06-aa1e-4936-a430-fd85e73348bf",
+          "type": "paragraph",
+          "content": "The audit of the existing product revealed systematic inconsistency:"
+        },
+        {
+          "id": "e5ca81fc-2521-48e9-aaea-154e2fd3ed8e",
+          "type": "list",
+          "title": "Key points",
+          "style": "bullets",
+          "items": [
+            "the same input component existed in 4 different visual variations across screens",
+            "button hierarchy was inconsistent: primary and secondary styles were used interchangeably",
+            "spacing was arbitrary, with no shared grid or spacing scale",
+            "color usage was based on individual judgment rather than shared tokens",
+            "developers had no reliable reference to check component behavior, leading to repeated QA cycles where design and development debated what was correct"
+          ]
+        },
+        {
+          "id": "8b49b6a3-0b25-4445-8e38-0241b70a5b45",
+          "type": "paragraph",
+          "content": "The cost was not just visual inconsistency. It was time: every component handoff required explanation, every QA review required re-verification, and every new screen required re-discussion of decisions that should have been settled."
+        },
+        {
+          "id": "14bc9897-e795-44d9-b5e9-902bd2fb1d09",
+          "type": "heading",
+          "title": "What I changed"
+        },
+        {
+          "id": "562f464d-b2f6-4672-9ded-2cd756e2552a",
+          "type": "heading",
+          "title": "A foundation layer that removed guesswork"
+        },
+        {
+          "id": "d9885eb3-571d-44b7-9f6b-b6bbdab43eaf",
+          "type": "paragraph",
+          "content": "I defined color tokens, typography scale, spacing system, and elevation rules. These were not abstract design decisions. They were constraints that eliminated daily micro-decisions: which gray to use, how much spacing between elements, what shadow depth to apply."
+        },
+        {
+          "id": "d070a2c8-7bb6-40bb-98ce-4d103287cfbc",
+          "type": "heading",
+          "title": "A component library with clear variants and states"
+        },
+        {
+          "id": "bc2b2bed-aa5d-443d-be45-74c5465aa128",
+          "type": "paragraph",
+          "content": "Each component in the Figma library included all its variants (size, type, state), with explicit naming conventions that matched the vocabulary developers used. This reduced the translation gap between design files and implementation."
+        },
+        {
+          "id": "eb0488a5-bf31-4a3b-89c9-90e730625341",
+          "type": "heading",
+          "title": "ZeroHeight documentation as a collaboration tool"
+        },
+        {
+          "id": "a90fe5da-6cf1-4f92-9669-68a317a4797b",
+          "type": "paragraph",
+          "content": "I documented every component not just with visual specs, but with usage guidelines: when to use this component vs. alternatives, what behaviors are expected, what accessibility considerations apply. The documentation served as a shared contract between design and development."
+        },
+        {
+          "id": "f52498d5-3e24-4e2f-91d3-3d3dbefca4f7",
+          "type": "heading",
+          "title": "Reusable page templates"
+        },
+        {
+          "id": "64bcc9af-3272-4534-9c01-69b35aba3044",
+          "type": "paragraph",
+          "content": "I created templates for recurring page types so the team could start from coherent structures. This prevented the drift that happens when every new page is built from scratch with individual interpretation of the system."
+        },
+        {
+          "id": "c77b2b58-427c-4ac5-9091-fa242597524d",
+          "type": "heading",
+          "title": "Component tracking and follow-up rituals"
+        },
+        {
+          "id": "34710c80-9b31-48ad-a991-79111102f655",
+          "type": "paragraph",
+          "content": "I established a tracking system to monitor which components were designed, documented, and implemented. Regular follow-up sessions with Product and Tech turned the system from a one-way handoff into a collaborative process."
+        },
+        {
+          "id": "a79e39d1-22b1-42d3-a91d-25a577c92807",
+          "type": "visual",
+          "title": "Visual proof",
+          "description": "Placeholder image — Add the component tracking board showing progress across designed, documented, and implemented statuses.",
+          "assetUrl": "/assets/projects/citadel-team-design-system-implementation/zeroheight.png",
+          "caption": "ZeroHeight documentation"
+        },
+        {
+          "id": "bb5c35cf-c993-4dae-b99b-158fca66bae0",
+          "type": "heading",
+          "title": "Outcome"
+        },
+        {
+          "id": "150ea8f2-2236-4d2a-8b97-72d000d0a220",
+          "type": "paragraph",
+          "content": "The project gave the team its first real design-system foundation and measurably improved collaboration."
+        },
+        {
+          "id": "588df99a-1885-431b-9839-e4b2455b6065",
+          "type": "paragraph",
+          "content": "Key results:"
+        },
+        {
+          "id": "e0c3fb2a-f8e4-49a0-a832-c426702b968a",
+          "type": "list",
+          "title": "Key points",
+          "style": "bullets",
+          "items": [
+            "raised design and development maturity from near-zero to a structured shared practice",
+            "reduced repeated QA loops by giving developers a reliable source of truth",
+            "improved handoff clarity through documented component behavior and shared vocabulary",
+            "created a foundation that continued evolving after this first version, confirming it was sustainable",
+            "recommended adoption of Storybook to bridge the remaining gap between design documentation and live implementation"
+          ]
+        },
+        {
+          "id": "eb7e2377-001c-4460-b6ad-fd80c2384717",
+          "type": "quote",
+          "quote": "The most important result was not a component library. It was a more shared language between design and development that reduced friction and made product work more predictable.",
+          "attribution": "Imported note",
+          "role": "Callout 🚀"
+        },
+        {
+          "id": "357886b8-3f1e-4951-af68-5c9cec03a8b2",
+          "type": "toggle",
+          "title": "Process, tracking, and documentation details",
+          "content": "PROCESS AND DOCUMENTATION DETAILS\n\nTo make the system sustainable, I set up recurring follow-up rituals and tracking documents.\n\nThis included:\n\n- component tracking to monitor progress and alignment\n\n- reusable templates to standardize recurring work\n\n- ZeroHeight documentation to centralize usage rules and component understanding\n\n- regular discussions with Product and Tech to refine the system over time\n\nThese process elements mattered because the team was still building its design-system culture while the system itself was being created.\n\nARCHIVED PROCESS VISUALS\n\nThe original organization workshops, component tracking, and documentation captures are preserved in the archived case study here:\n\nCitadel design-system archive with original process visuals"
+        },
+        {
+          "id": "062e1f48-ec22-4d05-91f6-66d3ba09a1c2",
+          "type": "toggle",
+          "title": "Constraints and team context",
+          "content": "CONSTRAINTS AND TEAM CONTEXT\n\nThe project had to move forward in a context with limited prior design-system maturity.\n\nMain constraints included:\n\n- low shared knowledge of design-system methods\n\n- inconsistent alignment patterns between design and development\n\n- a partly remote context that made informal synchronization less reliable\n\n- the need to create structure while products were still evolving\n\n- migration from Sketch to Figma happening in parallel"
+        },
+        {
+          "id": "citadel-team-design-system-implementation-learned-heading",
+          "type": "heading",
+          "title": "What I learned"
+        },
+        {
+          "id": "citadel-team-design-system-implementation-learned-p0",
+          "type": "paragraph",
+          "content": "This project taught me that a design system is only partly a UI problem. It is also an alignment problem, a documentation problem, and a collaboration problem."
+        },
+        {
+          "id": "citadel-team-design-system-implementation-learned-p1",
+          "type": "paragraph",
+          "content": "Building the first version of a system in a low-maturity environment forced me to think not only about components, but about adoption, language, and team habits. If I did it again, I would push for Storybook integration from the start and establish clearer contribution rules earlier to avoid the system depending on a single person."
+        }
+      ]
+    }
+  },
+  {
+    "id": "31742e09-8249-80b6-8269-f000eba2677c",
+    "slug": "home-charging-quotation-tool",
+    "name": "Home Charging Quotation Tool",
+    "company": "Renault Digital / Mobilize Power Solutions",
+    "year": "2025",
+    "headline": "Reduced uncertainty around home charging installation by turning a confusing EV buying step into a clear conversion path.",
+    "roleSummary": "Principal UI designer responsible for the step-by-step journey design, interaction clarity, and cross-team alignment between product, business, and development.",
+    "summary": "Designed the end-to-end home charging quotation experience for Renault and Dacia, reducing pricing uncertainty through a step-by-step journey embedded directly in the EV purchase ecosystem.",
+    "challenge": "EV buyers faced pricing uncertainty around home charging installation, while Renault and Dacia websites did not make the offer easy enough to find or understand. Mobilize Power Solutions needed a more visible, more comprehensible, and more actionable experience.",
+    "tags": [
+      {
+        "name": "UX Design",
+        "color": "purple"
+      },
+      {
+        "name": "Ux strategy",
+        "color": "yellow"
+      },
+      {
+        "name": "Discovery",
+        "color": "red"
+      },
+      {
+        "name": "UI Design",
+        "color": "green"
+      },
+      {
+        "name": "B2C",
+        "color": "blue"
+      }
+    ],
+    "cover": null,
+    "blocks": {
+      "kind": "cosmic-blocks",
+      "version": 1,
+      "blocks": [
+        {
+          "id": "d0062c88-4407-44ea-a95f-cc43811473c8",
+          "type": "paragraph",
+          "content": "Installing a home charging station is one of the biggest unknowns in the EV buying journey. On Renault and Dacia websites, users only saw a generic default price, with no way to understand how their own home setup could affect the final cost."
+        },
+        {
+          "id": "3f5a5902-6cd3-477f-a257-7a468df0c85a",
+          "type": "paragraph",
+          "content": "At the same time, competitors were already integrating estimation tools into their purchase journeys. Mobilize Power Solutions needed a quotation experience that could reduce uncertainty, support lead generation, and make the charging offer more visible inside the Renault ecosystem."
+        },
+        {
+          "id": "0bdc498c-4884-46a8-a699-14f5855cab46",
+          "type": "quote",
+          "quote": "I designed the home charging quotation experience to solve two linked problems: making the offer easier to find, and making the tool easier to understand.",
+          "attribution": "Imported note",
+          "role": "Callout 🎯"
+        },
+        {
+          "id": "89ef0af1-8161-41d3-a4fd-777b8de28128",
+          "type": "visual",
+          "assetUrl": "",
+          "caption": "Home Charging Quotation Tool — embedded across Renault and Dacia configurators"
+        },
+        {
+          "id": "104d04bd-1f83-49fe-b891-0ecc229a7159",
+          "type": "heading",
+          "title": "What was risky"
+        },
+        {
+          "id": "61247c14-b22c-4edb-8857-b2acb58ed16c",
+          "type": "paragraph",
+          "content": "This project had two UX challenges in sequence."
+        },
+        {
+          "id": "8f8c31ad-ba47-44b7-a79a-f56e370b55ce",
+          "type": "list",
+          "title": "Key points",
+          "style": "bullets",
+          "items": [
+            "Discoverability: before users could use a quotation tool, they first had to find the charging offer in the existing content architecture.",
+            "Comprehension: once inside the flow, technical concepts and pricing logic made the experience harder to understand than it should have been."
+          ]
+        },
+        {
+          "id": "c9ea4260-14b1-4a1d-bfc8-c5f53332a847",
+          "type": "paragraph",
+          "content": "An initial study made the discoverability issue clear: only 3 out of 18 participants found the relevant MPS page on renault.fr unaided."
+        },
+        {
+          "id": "16140536-256d-4208-b8e9-e31b1305fa61",
+          "type": "paragraph",
+          "content": "Later prototype testing revealed the second issue: users were blocked by technical concepts such as monophasé, triphasé, and bidirectional charging, while the price logic felt too opaque."
+        },
+        {
+          "id": "544edfc4-3c80-4a73-bfbd-0dcc5c88f538",
+          "type": "visual",
+          "assetUrl": "",
+          "caption": "Existing experience — home charging buried, no estimation, no guidance"
+        },
+        {
+          "id": "977f437d-ad99-4728-bfdd-f43d48934b5b",
+          "type": "heading",
+          "title": "My role"
+        },
+        {
+          "id": "590b8781-c57a-41bd-86f6-19ca29e2a3d9",
+          "type": "paragraph",
+          "content": "My main contribution was not to invent the whole product from scratch, but to make it clearer, more contemporary, more usable, and more deliverable."
+        },
+        {
+          "id": "2b58df15-aa7d-4d6e-81be-c5c6cfb3fc31",
+          "type": "paragraph",
+          "content": "I worked especially on:"
+        },
+        {
+          "id": "6cbbd849-2bd3-4377-80de-f4e9ed14bac7",
+          "type": "list",
+          "title": "Key points",
+          "style": "bullets",
+          "items": [
+            "refining and modernizing the UI",
+            "improving affordance and overall market fit of the experience",
+            "simplifying a potentially complex selection journey as much as possible",
+            "preparing a more elaborate handoff",
+            "collaborating with developers and stakeholders to resolve technical constraints",
+            "helping surface the right legal information in the right places",
+            "supporting a partner-routing logic so users could be redirected toward the most relevant next step"
+          ]
+        },
+        {
+          "id": "4f6e5ab7-a109-473c-a999-c4ef58a6ae40",
+          "type": "heading",
+          "title": "Product risks I helped reduce"
+        },
+        {
+          "id": "b4a31dcb-f520-4ccf-b2a7-ed99aa321bcd",
+          "type": "list",
+          "title": "Key points",
+          "style": "bullets",
+          "items": [
+            "Value risk: helped validate whether users would engage with a home charging estimation offer inside the EV journey, and which entry points created real intent",
+            "Usability risk: simplified technical concepts, clarified price logic, and made the journey easier to follow step by step",
+            "Viability risk: aligned the experience with lead-generation goals and with Mobilize Power Solutions' visibility inside Renault's ecosystem",
+            "Feasibility risk: shaped a progressive flow that could be delivered responsively and later extended to additional cases such as co-ownership"
+          ]
+        },
+        {
+          "id": "8abe5582-934a-452e-944d-c28e05cdace5",
+          "type": "heading",
+          "title": "What I changed"
+        },
+        {
+          "id": "8af3ef04-da29-4a6a-be06-683c6b256eaa",
+          "type": "heading",
+          "title": "A two-step product approach"
+        },
+        {
+          "id": "c59d00e5-cfe2-4c01-aab3-8271131df72a",
+          "type": "paragraph",
+          "content": "Instead of treating the project as a single UI problem, I framed it as two consecutive challenges: first make the offer findable, then make the quotation flow understandable."
+        },
+        {
+          "id": "a4c8faaf-8397-49f2-a94f-8bf08520fe26",
+          "type": "visual",
+          "assetUrl": "",
+          "caption": "Two-step flow — technical eligibility check before product selection"
+        },
+        {
+          "id": "83343885-8f54-4bfe-851d-fc9341f37e9e",
+          "type": "heading",
+          "title": "Better technical guidance"
+        },
+        {
+          "id": "47274e11-52e8-472e-bc1d-a82ec3fd04f0",
+          "type": "paragraph",
+          "content": "A major part of the redesign focused on reducing confusion around charging concepts. I introduced more contextual help and clearer educational moments so users could keep moving without needing expert knowledge."
+        },
+        {
+          "id": "80844bdb-f0b7-423f-a037-a0c101ecfff4",
+          "type": "heading",
+          "title": "Simpler product selection"
+        },
+        {
+          "id": "640a271c-cbcd-42b7-98a1-ae14c4098eb8",
+          "type": "paragraph",
+          "content": "The selection journey was simplified as much as possible so users could answer potentially complex questions without feeling like they were filling out a technical form. The ambition was closer to a guided purchase flow than to a heavy questionnaire."
+        },
+        {
+          "id": "41e81db2-3e20-4455-ad8b-17d3c4a77713",
+          "type": "beforeAfter",
+          "title": "Product selection: before and after",
+          "intro": "The original selection flow asked users to understand technical specs before choosing a product. The redesign reversed that logic — context first, product second.",
+          "beforeLabel": "Before",
+          "beforeUrl": "",
+          "beforeBody": "Original product selection UI — spec-first, no guidance",
+          "afterLabel": "After",
+          "afterUrl": "",
+          "afterBody": "Redesigned selection flow — guided, context-aware",
+          "note": ""
+        },
+        {
+          "id": "58288a38-e6c6-476b-b7f5-153816158d51",
+          "type": "heading",
+          "title": "Clearer price logic"
+        },
+        {
+          "id": "ad0e0fb0-be89-470a-b2cb-7cbea5d3a7b4",
+          "type": "paragraph",
+          "content": "I reworked how pricing reacted to configuration choices so users could better understand why the estimate changed and what was influencing the result."
+        },
+        {
+          "id": "e2052ea9-1c9b-4835-ac78-462e9cb7bdfa",
+          "type": "heading",
+          "title": "More relevant next steps"
+        },
+        {
+          "id": "2e224b31-5b8d-4323-b385-6c3f45d3e94f",
+          "type": "paragraph",
+          "content": "Part of the value of the tool also came from how it could redirect users toward the right partners and continuation paths, instead of leaving them with a price and no useful follow-up."
+        },
+        {
+          "id": "2f0cd9e3-3145-4a7e-90e6-7e0912e3c441",
+          "type": "heading",
+          "title": "Responsive and delivery-ready design"
+        },
+        {
+          "id": "f2a83e54-a86b-4256-a618-f9e33b70af03",
+          "type": "paragraph",
+          "content": "The experience was designed for both desktop and mobile, with mobile receiving special attention because of the traffic context and the need to reduce cognitive load on smaller screens. I also worked on a more robust handoff and closer collaboration with development and stakeholders to make the flow implementable under real technical and legal constraints."
+        },
+        {
+          "id": "b27ba1e4-c882-43a3-b682-073e6001ec8b",
+          "type": "visual",
+          "assetUrl": "",
+          "caption": "Responsive design — desktop and mobile layouts delivered to dev"
+        },
+        {
+          "id": "56b609b7-b9fe-4273-9966-4a0f124c6fa7",
+          "type": "heading",
+          "title": "Outcome"
+        },
+        {
+          "id": "hc-outcome-summary",
+          "type": "paragraph",
+          "content": "End-to-end quotation tool shipped and embedded across Renault and Dacia EV purchase journeys."
+        },
+        {
+          "id": "hc-metrics-001",
+          "type": "metrics",
+          "eyebrow": "Impact",
+          "title": "First 6 weeks after launch",
+          "intro": "The tool launched in September 2025 and quickly validated the strategy behind the experience.",
+          "items": [
+            {
+              "value": "1,504",
+              "label": "Users started the tool"
+            },
+            {
+              "value": "82",
+              "label": "Qualified leads generated"
+            },
+            {
+              "value": "89%",
+              "label": "Users completed steps 1 to 4"
+            },
+            {
+              "value": "90%",
+              "label": "Traffic from the 3 targeted entry points"
+            }
+          ]
+        },
+        {
+          "id": "f2d37563-f236-4448-b229-9b5d8dad7527",
+          "type": "paragraph",
+          "content": "These results matter because they validate more than just conversion. They show that embedding the quotation experience directly at the point of intent was the right move."
+        },
+        {
+          "id": "a25d7f1f-901d-4133-8c6a-bc654e9d8543",
+          "type": "visual",
+          "assetUrl": "",
+          "caption": "Delivered tool — live on Renault and Dacia configurator pages"
+        },
+        {
+          "id": "432d9de7-962f-4f19-9ac3-594cc0f0b0b1",
+          "type": "quote",
+          "quote": "The tool worked both as a lead engine and as a price-discovery experience. Even when users did not convert, the product still solved a major anxiety point in the EV journey.",
+          "attribution": "Imported note",
+          "role": "Callout ⛳"
+        },
+        {
+          "id": "4b7b1b60-6044-4cf3-a7bd-67e30fdfd17c",
+          "type": "quote",
+          "quote": "The strongest signal was not only the number of leads generated, but the confirmation that users were entering the tool from the exact pages where charging intent was highest.",
+          "attribution": "Imported note",
+          "role": "Callout 🚀"
+        },
+        {
+          "id": "a778ed23-2439-4bcf-9cf9-2cd40e75f7be",
+          "type": "toggle",
+          "title": "Research and testing details",
+          "content": "RESEARCH AND TESTING DETAILS\n\nThe project included an initial qualitative study with 18 participants focused on discoverability, followed by a second test cycle with 14 participants on the quotation prototype.\n\nThe most important insights were:\n\n- users struggled to find the charging offer in the existing site structure\n\n- monophasé / triphasé created the biggest comprehension barrier\n\n- product comparison needed a clearer format\n\n- pricing feedback was too detached from configuration choices\n\nThese findings directly shaped the redesign priorities."
+        },
+        {
+          "id": "f7cebb5d-2277-430b-ae83-e1024f8003fd",
+          "type": "toggle",
+          "title": "Iteration and delivery details",
+          "content": "ITERATION AND DELIVERY DETAILS\n\nThe work went through several rounds of design exploration before reaching the integrated quotation flow.\n\nI also prepared handoff specifications, responsive designs, and design QA follow-up for the outsourced development partner. The later phases extended the work to co-ownership flows, edge cases, and additional implementation details."
+        },
+        {
+          "id": "home-charging-quotation-tool-learned-heading",
+          "type": "heading",
+          "title": "What I learned"
+        },
+        {
+          "id": "home-charging-quotation-tool-learned-p0",
+          "type": "paragraph",
+          "content": "This project reinforced how closely discoverability and usability can be linked. Sometimes the right design answer is not to optimize one flow, but to solve the system around it first."
+        },
+        {
+          "id": "home-charging-quotation-tool-learned-p1",
+          "type": "paragraph",
+          "content": "It also showed how important it is to reduce technical anxiety in high-intent journeys: users do not need every concept simplified, but they do need enough clarity to keep moving with confidence."
+        }
+      ]
+    }
+  },
+  {
+    "id": "32542e09-8249-816d-8008-cfe44efbf9bb",
+    "slug": "financing-simulator-reshape-2026",
+    "name": "Financing Simulator — Reshape 2026",
+    "company": "Mobilize Financial Services / Renault Digital",
+    "year": "2026",
+    "headline": "Redesigning Renault and Dacia's financing simulator to improve comprehension, conversion, and modularity across markets.",
+    "roleSummary": "Principal design owner: discovery, redesign, testing, accessibility, prototype creation, and stakeholder alignment across business, legal, and engineering.",
+    "summary": "Redesigning Renault and Dacia's financing simulator to make financing easier to understand and act on, while navigating accessibility requirements, legal constraints, and multi-country complexity.",
+    "challenge": "The financing simulator was useful once reached, but too hard to find, too rigid in its parameter model, and too weak at helping users move from simulation to action across a multi-country context.",
+    "tags": [
+      {
+        "name": "UX Design",
+        "color": "purple"
+      },
+      {
+        "name": "Ux strategy",
+        "color": "yellow"
+      },
+      {
+        "name": "Discovery",
+        "color": "red"
+      },
+      {
+        "name": "UI Design",
+        "color": "green"
+      },
+      {
+        "name": "B2C",
+        "color": "blue"
+      },
+      {
+        "name": "UX Research",
+        "color": "brown"
+      }
+    ],
+    "cover": null,
+    "blocks": {
+      "kind": "cosmic-blocks",
+      "version": 1,
+      "blocks": [
+        {
+          "id": "94cd179a-41d4-4a17-9d11-9d8651a766ea",
+          "type": "heading",
+          "title": "Overview"
+        },
+        {
+          "id": "e6b94a0c-afed-4d5b-bb3d-e7d29aa606f4",
+          "type": "paragraph",
+          "content": "Redesigning Renault and Dacia's financing simulator meant making financing easier to understand, easier to act on, and easier to trust while balancing accessibility, legal constraints, multi-country complexity, and modular product ambitions."
+        },
+        {
+          "id": "cd7977f2-3e46-40dd-bb8f-d417d11e464c",
+          "type": "visual",
+          "title": "Hero visual",
+          "description": "Show the redesigned financing simulator on desktop with sticky price tracking and clearer action hierarchy.",
+          "assetUrl": "",
+          "caption": "Visual placeholder"
+        },
+        {
+          "id": "c0535476-dd2f-4d94-af49-85f66cfa65a4",
+          "type": "quote",
+          "quote": "Status: In validation | This case study documents an ongoing redesign. It focuses on product friction, design rationale, and the version currently being tested. Final outcome metrics will be added after rollout.",
+          "attribution": "Imported note",
+          "role": "Callout ⏳"
+        },
+        {
+          "id": "0c5a5c9a-9f54-4c32-b192-04c74dd410e2",
+          "type": "facts",
+          "title": "Project frame",
+          "items": [
+            {
+              "label": "Scope",
+              "value": "Lead Product Designer\n\nResponsibilities\n\nDiscovery, UX and UI design, prototyping, testing, accessibility audit, multibrand system contribution, stakeholder alignment"
+            },
+            {
+              "label": "Team and setup",
+              "value": "Product, Data, Engineering, Legal, Country teams, Renault site owners\n\nTimeline\n\n2025 to 2026"
+            }
+          ]
+        },
+        {
+          "id": "37a1048c-7fd1-4200-b4e1-2b8aff7af266",
+          "type": "heading",
+          "title": "Goals"
+        },
+        {
+          "id": "6608138a-9a0c-4ec3-aaef-6be2d50dc0f1",
+          "type": "list",
+          "title": "Key points",
+          "style": "bullets",
+          "items": [
+            "Make financing easier to understand",
+            "Reduce friction in key interactions",
+            "Improve conversion potential and next-step clarity",
+            "Raise accessibility standards on the product"
+          ]
+        },
+        {
+          "id": "c1dd4dd3-3eae-4d6e-9ceb-646c4c650c53",
+          "type": "beforeAfter",
+          "title": "Current simulator vs target direction",
+          "intro": "Compare the current rigid calculator with the redesigned, clearer, more modular financing experience. Add 2 images later with captions Before and After.",
+          "beforeLabel": "Before",
+          "beforeBody": "Legacy before visual or initial state",
+          "afterLabel": "After",
+          "afterBody": "Legacy after visual or target state",
+          "note": ""
+        },
+        {
+          "id": "dc2a777b-2934-4bad-a73f-9b238d78f441",
+          "type": "quote",
+          "quote": "Product angle | The redesign aims to move the simulator from an isolated calculator to a clearer, more actionable, more accessible financing product embedded in the broader vehicle journey.",
+          "attribution": "Imported note",
+          "role": "Callout 🎯"
+        },
+        {
+          "id": "71244b72-4226-4c9c-b499-ebb5368013a9",
+          "type": "heading",
+          "title": "What was risky"
+        },
+        {
+          "id": "0c17f7b4-e360-442b-b125-dee405294af4",
+          "type": "paragraph",
+          "content": "The simulator had four overlapping product risks."
+        },
+        {
+          "id": "18154b97-5937-4771-a950-826df0bd1c64",
+          "type": "list",
+          "title": "Key points",
+          "style": "bullets",
+          "items": [
+            "Value risk: the tool gave users a monthly price, but not enough reassurance, clarity, or next steps to make the simulation truly useful.",
+            "Usability risk: several parts of the experience created friction, from parameter wording to service comprehension, offer readability, and action visibility.",
+            "Viability risk: the simulator was expected to contribute to conversion, but the experience did not yet fully support lead generation or modular reuse across the journey.",
+            "Feasibility risk: the redesign had to work across countries, legal constraints, brand-system silos, and multiple stakeholders with different priorities."
+          ]
+        },
+        {
+          "id": "c9b358fa-7cbc-47b5-8b9d-d7c67edede2a",
+          "type": "heading",
+          "title": "What I worked on"
+        },
+        {
+          "id": "944a57cd-6ce1-4842-a7e5-ed4d2ec0b9cd",
+          "type": "paragraph",
+          "content": "I was the principal owner of the design work on this project."
+        },
+        {
+          "id": "6a7b7b4f-1666-46fe-8fd9-d64c81c09c13",
+          "type": "paragraph",
+          "content": "My contribution included:"
+        },
+        {
+          "id": "d559d855-690d-4821-bfa3-fc12e2b3e141",
+          "type": "list",
+          "title": "Key points",
+          "style": "bullets",
+          "items": [
+            "running a discovery user test on the current simulator to identify the main user pain points",
+            "auditing our existing financing simulators across the ecosystem",
+            "benchmarking competitors",
+            "creating the strategic recommendation direction with input from data and validation from design leadership",
+            "designing improved versions of the simulator in desktop and mobile",
+            "creating responsive, multi-version interactive prototypes",
+            "defining and running a new validation test in A/B comparison between two layouts",
+            "improving accessibility on the design side and formulating implementation recommendations",
+            "collaborating with legal, countries, financial-services stakeholders, and the Renault site-owner team on placement and product evolution"
+          ]
+        },
+        {
+          "id": "d03582e7-2265-4c7a-a0ae-463fb58956cf",
+          "type": "visual",
+          "title": "Current experience audit",
+          "description": "Show the current simulator annotated with the key pain points: discoverability, parameter clarity, price evolution, and CTA hierarchy.",
+          "assetUrl": "",
+          "caption": "Visual placeholder"
+        },
+        {
+          "id": "a82d2e13-816d-4a27-a420-3f7fb52b666f",
+          "type": "heading",
+          "title": "What I learned from the current product"
+        },
+        {
+          "id": "b3c0a7ce-792e-4a93-85ec-21913c7d93e0",
+          "type": "paragraph",
+          "content": "The first discovery test made one thing clear: the problem was not that users did not see the value of financing, but that the current simulator was not helping them enough."
+        },
+        {
+          "id": "4bf6cb18-56a1-4562-b6e5-bd4929703ef2",
+          "type": "paragraph",
+          "content": "The main issues were:"
+        },
+        {
+          "id": "c32f8fc7-78bc-4e00-8d3e-4f09d79a5e98",
+          "type": "list",
+          "title": "Key points",
+          "style": "bullets",
+          "items": [
+            "discoverability was too weak on the current pages",
+            "some parameters and services were harder to understand than they should have been",
+            "action buttons were not prominent enough",
+            "users needed an easier way to follow price evolution while exploring options",
+            "the simulator did too little to turn a completed simulation into a useful next step"
+          ]
+        },
+        {
+          "id": "c476551e-ac56-43a4-9ae9-9b5fc93a1ca0",
+          "type": "paragraph",
+          "content": "The redesign started from product friction, not from a visual refresh."
+        },
+        {
+          "id": "c77c8a65-3ee4-4734-b363-c505ad3ca9a9",
+          "type": "visual",
+          "title": "Workstream overview",
+          "description": "Show the 3 workstreams together: accessibility, MVP and target vision, and user testing.",
+          "assetUrl": "",
+          "caption": "Visual placeholder"
+        },
+        {
+          "id": "d9487cdb-ccd2-4a69-aa04-ca92697a8f01",
+          "type": "heading",
+          "title": "What I changed"
+        },
+        {
+          "id": "338bd678-de5e-4ee8-86ba-f442b9636486",
+          "type": "heading",
+          "title": "More compact and clearer components"
+        },
+        {
+          "id": "ccc89d43-d241-4c77-930c-18de814426eb",
+          "type": "paragraph",
+          "content": "I redesigned the simulator using more compact components to reduce friction and make the experience feel lighter and more readable."
+        },
+        {
+          "id": "0750e6e4-36be-4cc5-b7db-48cf9c718eb0",
+          "type": "heading",
+          "title": "Better visibility of price evolution"
+        },
+        {
+          "id": "8b1dee1e-3914-400d-8b66-26c0d3f16936",
+          "type": "paragraph",
+          "content": "I introduced sticky elements so price evolution remained visible while users modified financing options. This improved continuity and reduced the feeling of losing context while exploring scenarios."
+        },
+        {
+          "id": "80c8aa32-ff9f-4690-8238-78308a5f77be",
+          "type": "heading",
+          "title": "Clearer additional services"
+        },
+        {
+          "id": "825e5aba-7e6f-4791-8547-104073eb2342",
+          "type": "paragraph",
+          "content": "I improved the presentation and readability of optional services so users could better understand what they were selecting and what was included."
+        },
+        {
+          "id": "18f750c9-57f4-4cd9-8bf5-635e18734639",
+          "type": "heading",
+          "title": "Stronger action hierarchy"
+        },
+        {
+          "id": "1dfbb32a-000f-45a5-9ec3-73d2d9fd0b58",
+          "type": "paragraph",
+          "content": "I gave more visibility to key action buttons and tested wording variations to better support conversion."
+        },
+        {
+          "id": "94d0d2d3-8136-4d02-ae36-7df4d5c1e81a",
+          "type": "heading",
+          "title": "A more modular product direction"
+        },
+        {
+          "id": "690596bc-c181-47fc-9eda-ccd9ee2b2fec",
+          "type": "paragraph",
+          "content": "A major evolution in the project was pushing the simulator toward a more modular role. This included ideas such as dedicated discovery paths, simulation receipt, stronger lead-generation logic, tighter integration at the end of configuration, and future dealer-locator integration to reduce friction in the pre-approval journey."
+        },
+        {
+          "id": "571e3232-a4b4-4465-974e-68fc5c50415c",
+          "type": "heading",
+          "title": "MVP, target, and multi-version testing"
+        },
+        {
+          "id": "1d313a5a-625b-44c3-a170-332e2e016cf5",
+          "type": "paragraph",
+          "content": "I structured the work into different ambition levels and built a responsive multi-version prototype close to reality to support testing and decision-making."
+        },
+        {
+          "id": "d22a4a2c-911a-4c32-8b7b-0b6c869c1e18",
+          "type": "visual",
+          "title": "Tested layouts",
+          "description": "Show the 2 tested directions side by side with the hypotheses behind each one.",
+          "assetUrl": "",
+          "caption": "Visual placeholder"
+        },
+        {
+          "id": "6558d4ea-8901-49b2-9178-aa52286088c6",
+          "type": "heading",
+          "title": "AI and prototyping workflow"
+        },
+        {
+          "id": "720c0cb6-3226-48ad-8306-fed6826243d3",
+          "type": "paragraph",
+          "content": "I used AI pragmatically to improve speed and fidelity where it made sense."
+        },
+        {
+          "id": "eed24376-a7d0-46a2-9478-c377abf4ca7f",
+          "type": "paragraph",
+          "content": "This included:"
+        },
+        {
+          "id": "c205e5fe-f87f-4bbb-9fb1-4e3c10d88120",
+          "type": "list",
+          "title": "Key points",
+          "style": "bullets",
+          "items": [
+            "an AI agent I created to help generate the test protocol and test grid from our hypotheses",
+            "AI support for synthesizing findings after tests",
+            "prototype production supported by tools such as Figma Make and Claude Code to create a realistic, responsive, multi-version prototype"
+          ]
+        },
+        {
+          "id": "434a209b-2894-472c-b590-bcd124eeb82d",
+          "type": "paragraph",
+          "content": "The goal was not to replace product thinking, but to move faster on execution-heavy tasks while preserving rigor in decision-making."
+        },
+        {
+          "id": "e8bddfcd-c0aa-47b7-83f3-aaf8b4112729",
+          "type": "heading",
+          "title": "Accessibility and system work"
+        },
+        {
+          "id": "c5794a6d-6433-4628-bcbd-5db056bc4b8f",
+          "type": "paragraph",
+          "content": "Accessibility was not treated as a side task."
+        },
+        {
+          "id": "a58d583b-b827-4dad-88b0-b91db68bed3d",
+          "type": "paragraph",
+          "content": "Alongside the redesign, I worked on accessibility using a dedicated internal agent and created an audit restitution template to make collaboration with developers clearer and more actionable. I addressed accessibility issues on the design side and formulated recommendations for the implementation side, keeping WCAG constraints in mind throughout the work."
+        },
+        {
+          "id": "03803766-0033-48a9-a00c-f37f03a80e52",
+          "type": "paragraph",
+          "content": "I also worked on multibrand design-system elements dedicated to this product, using the constructor site tokens despite structural silos between the Renault site-owner team and the financial-services team."
+        },
+        {
+          "id": "c0d2fc1e-3485-4970-90a8-50a1f7a086c0",
+          "type": "visual",
+          "title": "Accessibility audit extract",
+          "description": "Show one real audit slice with issue, severity, recommendation, and implementation note.",
+          "assetUrl": "",
+          "caption": "Visual placeholder"
+        },
+        {
+          "id": "f313a1bb-e60b-4f81-b4d6-c23fb3e75418",
+          "type": "heading",
+          "title": "Outcome so far"
+        },
+        {
+          "id": "81a26c24-bcf3-4d30-bbb4-a22f3468f3c7",
+          "type": "paragraph",
+          "content": "The new version is currently being validated through user testing, including an A/B test between two different layouts."
+        },
+        {
+          "id": "6675004d-39de-477f-9eee-08d2c4f10cb1",
+          "type": "paragraph",
+          "content": "This validation phase is more complex because new stakeholders brought additional project history and constraints, which required revisiting parts of the prototype. That added complexity, but it also grounded the direction more strongly."
+        },
+        {
+          "id": "a735ca13-1a89-4f76-a613-1f3a7c96dbe0",
+          "type": "paragraph",
+          "content": "At the same time, I am working with the Renault site-owner team to improve access to the simulator through better CTA visibility and placement. This part remains politically sensitive and is still in progress."
+        },
+        {
+          "id": "c8fb979c-8311-4025-9da2-7ab568191f97",
+          "type": "quote",
+          "quote": "The redesign is not shipped yet, but the work has already reframed the simulator as a more modular, more accessible, and more conversion-oriented product rather than a standalone financing widget.",
+          "attribution": "Imported note",
+          "role": "Callout 🚀"
+        },
+        {
+          "id": "571d97eb-71cc-4d58-9ebf-0dab4ce9dba3",
+          "type": "heading",
+          "title": "What this project is really about"
+        },
+        {
+          "id": "8d5aa2d3-3a6f-448d-b974-498173e9de12",
+          "type": "paragraph",
+          "content": "This project is not only about making a calculator easier to use."
+        },
+        {
+          "id": "b4964a21-5d33-4fa9-9ba5-e11042c6024f",
+          "type": "paragraph",
+          "content": "It is about making financing easier to understand, easier to act on, and easier to trust while navigating legal review, country constraints, site ownership, accessibility, and product politics."
+        },
+        {
+          "id": "52dcc89d-f3a9-4df9-bd4a-448939952884",
+          "type": "toggle",
+          "title": "Research and testing details",
+          "content": "RESEARCH, BENCHMARK, AND TESTING DETAILS\n\nI ran a discovery user test on the current simulator, then a second user test on the redesigned version using an A/B setup across two layout directions.\n\nI also completed a benchmark of competing financing tools and an audit of our current simulator landscape to identify recurring issues, opportunities, and constraints.\n\nUserTesting was used for the research phase, and the findings helped define hypotheses, protocol, and design priorities."
+        },
+        {
+          "id": "11dbf5a3-56b2-4e94-a4a4-5f95635f5139",
+          "type": "toggle",
+          "title": "Multi-country, legal, and stakeholder complexity",
+          "content": "MULTI-COUNTRY, LEGAL, AND STAKEHOLDER COMPLEXITY\n\nA large part of the complexity came from constraints outside the interface itself.\n\nThe product had to work across countries, absorb legal requirements, and evolve through diplomatic alignment with multiple markets and internal teams. User testing became a useful lever to defend proposals and move conversations forward with countries, legal teams, and leadership."
+        },
+        {
+          "id": "financing-simulator-reshape-2026-learned-heading",
+          "type": "heading",
+          "title": "What I learned"
+        },
+        {
+          "id": "financing-simulator-reshape-2026-learned-p0",
+          "type": "paragraph",
+          "content": "This project reinforced how often the real work of product design happens at the intersection of usability, conversion, system constraints, and organizational politics."
+        },
+        {
+          "id": "financing-simulator-reshape-2026-learned-p1",
+          "type": "paragraph",
+          "content": "It also showed how much leverage can come from combining research, prototyping, accessibility thinking, and AI-assisted execution when the product stakes are high and the stakeholder landscape is fragmented."
+        }
+      ]
+    }
+  }
+]

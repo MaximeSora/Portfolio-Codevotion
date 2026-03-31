@@ -154,9 +154,9 @@
 
 .contact__sub {
   font-size: var(--fontSizeBodyM);
-  color: rgb(var(--rgbText) / 0.5);
+  color: rgb(var(--rgbText) / 0.6);
   line-height: 1.5;
-  max-width: 380px;
+  max-width: min(380px, 100%);
   margin: 0;
 }
 
@@ -212,7 +212,7 @@
 .contact__card-label {
   font-size: var(--fontSizeBodyXS);
   font-weight: var(--fontWeightMedium);
-  color: rgb(var(--rgbText) / 0.35);
+  color: rgb(var(--rgbText) / 0.6);
   text-transform: uppercase;
   letter-spacing: 0.12em;
 }
@@ -233,7 +233,16 @@
 }
 
 @media (--mediaMobile) {
+  .contact {
+    padding-top: var(--space3XL);
+    padding-bottom: var(--space3XL);
+  }
+
   .contact__cards {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .contact__card {
+    padding: var(--spaceL);
   }
 }

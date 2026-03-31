@@ -191,7 +191,7 @@
 
 .project-modal__year {
   font-size: var(--fontSizeBodyXS);
-  color: rgb(var(--rgbText) / 0.5);
+  color: rgb(var(--rgbText) / 0.6);
 }
 
 .project-modal__title {
@@ -221,7 +221,7 @@
 
 .project-modal__label {
   font-size: var(--fontSizeBodyXS);
-  color: rgb(var(--rgbText) / 0.5);
+  color: rgb(var(--rgbText) / 0.6);
   font-weight: var(--fontWeightMedium);
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -257,7 +257,7 @@
   border: 1px solid rgb(var(--rgbText) / 0.1);
   border-radius: 999px;
   font-size: var(--fontSizeBodyXS);
-  color: rgb(var(--rgbText) / 0.5);
+  color: rgb(var(--rgbText) / 0.6);
   background: rgb(var(--rgbText) / 0.03);
 }
 
@@ -287,7 +287,7 @@
   gap: var(--spaceS);
   background: none;
   border: none;
-  color: rgb(var(--rgbText) / 0.5);
+  color: rgb(var(--rgbText) / 0.6);
   cursor: pointer;
   font-size: var(--fontSizeBodyXS);
   font-weight: var(--fontWeightMedium);
@@ -322,7 +322,7 @@
 
 .project-modal__nav-count {
   font-size: var(--fontSizeBodyXS);
-  color: rgb(var(--rgbText) / 0.3);
+  color: rgb(var(--rgbText) / 0.6);
   white-space: nowrap;
   flex-shrink: 0;
   font-variant-numeric: tabular-nums;

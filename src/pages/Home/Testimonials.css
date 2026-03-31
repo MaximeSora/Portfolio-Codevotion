@@ -79,7 +79,7 @@
 
   & em {
     font-style: italic;
-    color: rgb(var(--rgbText) / 0.45);
+    color: rgb(var(--rgbText) / 0.6);
     font-weight: var(--fontWeightRegular);
   }
 }
@@ -194,7 +194,7 @@
 
 .testimonials__author-role {
   font-size: var(--fontSizeBodyXS);
-  color: rgb(var(--rgbText) / 0.45);
+  color: rgb(var(--rgbText) / 0.6);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

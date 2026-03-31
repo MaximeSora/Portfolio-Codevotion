@@ -145,8 +145,8 @@ function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...rest }) 
               )}
             >
               <span className="intro__available-dot" aria-hidden />
-              <span className="intro__available-full">Open to Senior Product Design roles</span>
-              <span className="intro__available-short">Open to work</span>
+              <span className="intro__available-full">Available for work</span>
+              <span className="intro__available-short">Available</span>
             </div>
             <div className="intro__bottom">
               {windowSize.width > media.tablet && (

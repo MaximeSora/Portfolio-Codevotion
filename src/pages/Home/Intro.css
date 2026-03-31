@@ -197,7 +197,7 @@
 .intro__title-plus {
   font-size: 0.46em;
   font-family: serif;
-  color: rgb(var(--rgbText) / 0.3);
+  color: rgb(var(--rgbText) / 0.6);
   margin-right: 0.2em;
   line-height: 1;
   font-weight: 800;
@@ -363,7 +363,7 @@
 .intro__description {
   margin: var(--spaceL) 0 0;
   font-size: var(--fontSizeBodyM);
-  color: rgb(var(--rgbText) / 0.5);
+  color: rgb(var(--rgbText) / 0.6);
   max-width: 480px;
   line-height: 1.6;
   opacity: 0;

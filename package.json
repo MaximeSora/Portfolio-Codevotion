@@ -38,6 +38,9 @@
   "scripts": {
     "start": "vite",
     "fetch-notion": "node scripts/fetch-notion.js",
+    "download-images": "node scripts/download-project-images.js",
+    "download-images:dry": "node scripts/download-project-images.js --dry-run",
+    "download-images:apply": "node scripts/download-project-images.js --apply",
     "build": "node scripts/fetch-notion.js && vite build",
     "build:clean": "node scripts/clean-build.mjs && npm run build",
     "build:vite": "vite build",

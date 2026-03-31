@@ -61,12 +61,17 @@
   width: auto !important;
   object-fit: contain;
   opacity: 0.45;
-  transition: opacity var(--durationM) ease;
+  transition: opacity var(--durationM) ease, filter var(--durationM) ease;
   filter: brightness(0) invert(1);
+}
 
-  .marquee__item:hover & {
-    opacity: 0.75;
-  }
+.light .marquee__logo {
+  filter: brightness(0);
+  opacity: 0.55;
+}
+
+.marquee__item:hover .marquee__logo {
+  opacity: 0.75;
 }
 
 .marquee__sep {

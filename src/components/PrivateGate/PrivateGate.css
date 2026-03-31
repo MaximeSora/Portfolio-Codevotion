@@ -55,7 +55,7 @@
 
 .private-gate__role {
   font-size: var(--fontSizeBodyS);
-  color: rgb(var(--rgbText) / 0.4);
+  color: rgb(var(--rgbText) / 0.6);
   font-weight: var(--fontWeightMedium);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -80,7 +80,7 @@
 
 .private-gate__desc {
   font-size: var(--fontSizeBodyS);
-  color: rgb(var(--rgbText) / 0.4);
+  color: rgb(var(--rgbText) / 0.6);
   margin: 0;
   text-align: center;
 }

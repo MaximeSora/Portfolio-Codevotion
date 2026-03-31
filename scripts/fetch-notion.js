@@ -128,6 +128,9 @@ async function main() {
     const company = page.properties.Company?.rich_text?.[0]?.plain_text ?? '';
     const year = page.properties.Year?.rich_text?.[0]?.plain_text ?? '';
     const extractText = prop => (prop?.rich_text ?? []).map(t => t.plain_text).join('');
+    const headline = extractText(page.properties.Headline);
+    const roleSummary = extractText(page.properties['Role Summary']);
+    const outcomeHighlight = extractText(page.properties['Outcome Highlight']);
     const summary = extractText(page.properties.Summary);
     const challenge = extractText(page.properties.Challenge);
     const impact = extractText(page.properties.Impact);
@@ -146,7 +149,22 @@ async function main() {
     const blocks = await fetchBlocks(page.id);
     await processBlocks(blocks);
 
-    projects.push({ id: page.id, slug, name, company, year, summary, challenge, impact, tags, cover, blocks });
+    projects.push({
+      id: page.id,
+      slug,
+      name,
+      company,
+      year,
+      headline,
+      roleSummary,
+      outcomeHighlight,
+      summary,
+      challenge,
+      impact,
+      tags,
+      cover,
+      blocks,
+    });
   }
 
   mkdirSync(resolve(ROOT, 'src/data'), { recursive: true });

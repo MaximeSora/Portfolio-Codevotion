@@ -50,7 +50,6 @@ export const Button = forwardRef(
         ref={ref}
         {...rest}
       >
-        <span><span className="bg"></span><span className="base"></span>
         {!!icon && (
           <Icon
             className={classNames('button__icon', {
@@ -71,7 +70,6 @@ export const Button = forwardRef(
           />
         )}
         {loading && <Loader className="button__loader" size={32} text={loadingText} />}
-        </span>
       </Component>
     );
   }

@@ -13,7 +13,7 @@ const logos = [
   { src: thales, alt: 'Thales', width: 100 },
   { src: mfs, alt: 'Mobilize Financial Services', width: 130, height: 48 },
   { src: ercom, alt: 'Ercom', width: 100 },
-  { src: devoteam, alt: 'Devoteam', width: 220, height: 72 },
+  { src: devoteam, alt: 'Devoteam', height: 90 },
 ];
 
 const MarqueeTrack = () => (
@@ -25,7 +25,7 @@ const MarqueeTrack = () => (
           alt={logo.alt}
           className="marquee__logo"
           loading="lazy"
-          style={{ width: logo.width, ...(logo.height && { height: logo.height }) }}
+          style={{ ...(logo.width && { width: logo.width }), ...(logo.height && { height: logo.height }) }}
         />
       </span>
     ))}

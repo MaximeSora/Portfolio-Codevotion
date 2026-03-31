@@ -1,6 +1,7 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import Image from 'components/Image';
 import { useInViewport } from 'hooks';
+import placeholderSrc from 'assets/placeholder.svg';
 import './NotionRenderer.css';
 
 // Convertit un href Notion en ancre in-page si c'est un lien interne.
@@ -27,13 +28,13 @@ function resolveHref(href) {
 }
 
 // Wrapper qui déclenche l'animation d'entrée quand le bloc est visible
-function InViewBlock({ children, delay = 0 }) {
+function InViewBlock({ children, delay = 0, className = '' }) {
   const ref = useRef();
   const inView = useInViewport(ref, true, { rootMargin: '0px 0px -6% 0px' });
   return (
     <div
       ref={ref}
-      className={`notion-block${inView ? ' notion-block--entered' : ''}`}
+      className={`notion-block ${className}${inView ? ' notion-block--entered' : ''}`.trim()}
       style={{ '--block-delay': `${delay}ms` }}
     >
       {children}
@@ -79,10 +80,241 @@ function richTextToPlain(items = []) {
   return items.map(item => item?.plain_text ?? '').join('').trim();
 }
 
+function splitCalloutSegments(text = '') {
+  return text
+    .split('|')
+    .map(part => part.trim())
+    .filter(Boolean);
+}
+
+function getCalloutIconEmoji(block) {
+  return block?.callout?.icon?.emoji ?? '';
+}
+
+function getCalloutText(block) {
+  return richTextToPlain(block?.callout?.rich_text);
+}
+
+function stripPlaceholderPrefix(text = '') {
+  return text
+    .replace(/^(placeholder image|visual placeholder|placeholder video|video placeholder)\s*[:\-–—]?\s*/i, '')
+    .trim();
+}
+
+function getImageData(block) {
+  if (!block || block.type !== 'image') return null;
+  const src = block.image?.external?.url ?? block.image?.file?.url;
+  const caption = richTextToPlain(block.image?.caption);
+  if (!src) return null;
+  return { src, caption, alt: caption || '' };
+}
+
+function isMediaPlaceholderCallout(block) {
+  if (!block || block.type !== 'callout') return false;
+  const icon = getCalloutIconEmoji(block);
+  const text = getCalloutText(block).toLowerCase();
+  return (
+    icon === '🖼️'
+    || icon === '🎞️'
+    || text.startsWith('placeholder image')
+    || text.startsWith('visual placeholder')
+    || text.startsWith('placeholder video')
+    || text.startsWith('video placeholder')
+  );
+}
+
+function getMediaPlaceholderData(block) {
+  if (!isMediaPlaceholderCallout(block)) return null;
+
+  const icon = getCalloutIconEmoji(block);
+  const text = getCalloutText(block);
+  const segments = splitCalloutSegments(text);
+  const prefix = segments[0] || (icon === '🎞️' ? 'Visual placeholder' : 'Placeholder image');
+  const titleCandidate = segments[1] || '';
+  const descriptionCandidate = segments[2] || '';
+  const notes = segments.slice(3);
+  const fallbackDescription = stripPlaceholderPrefix(text);
+
+  return {
+    icon,
+    eyebrow: prefix,
+    title: titleCandidate || (icon === '🎞️' ? 'Add the final video' : 'Add the final image'),
+    description: descriptionCandidate || fallbackDescription || 'Use this block as a visual marker until the final asset is ready.',
+    notes,
+    kind: icon === '🎞️' ? 'video' : 'image',
+  };
+}
+
+function isComparisonCallout(block) {
+  if (!block || block.type !== 'callout') return false;
+  const icon = getCalloutIconEmoji(block);
+  const text = getCalloutText(block).toLowerCase();
+  return (
+    icon === '↔️'
+    || text.startsWith('before/after')
+    || text.startsWith('avant/apres')
+    || text.startsWith('avant/après')
+  );
+}
+
+function getComparisonData(block) {
+  if (!isComparisonCallout(block)) return null;
+
+  const text = getCalloutText(block);
+  const images = (block.children ?? [])
+    .map(getImageData)
+    .filter(Boolean);
+
+  const segments = splitCalloutSegments(text);
+
+  return {
+    title: segments[1] || 'Before / After',
+    description: segments[2] || '',
+    notes: segments.slice(3),
+    before: images[0] ?? null,
+    after: images[1] ?? null,
+    imageCount: images.length,
+  };
+}
+
 function isWhatIWorkedOnHeading(block) {
   if (!block || !['heading_1', 'heading_2', 'heading_3'].includes(block.type)) return false;
   const text = richTextToPlain(block[block.type]?.rich_text).toLowerCase();
   return text.includes('what i worked on') || text.includes('what i worked');
+}
+
+function isLearnedToggle(block) {
+  if (!block || block.type !== 'toggle') return false;
+  const text = richTextToPlain(block.toggle?.rich_text).toLowerCase();
+  return text.includes('what i learned') || text.includes('what i would do differently') || text.includes('lessons') || text.includes('takeaways') || text.includes('reflections');
+}
+
+function getBlockWidthClass(group, previous) {
+  if (!group) return 'notion-block--content';
+  if (group.type === 'bulleted_list' && isWhatIWorkedOnHeading(previous)) return 'notion-block--wide';
+  if (group.type === 'bulleted_list' || group.type === 'numbered_list') return 'notion-block--content';
+  if (group.type === 'toggle' && isLearnedToggle(group)) return 'notion-block--wide';
+  if (group.type === 'quote') return 'notion-block--wide';
+  if (group.type === 'callout') return 'notion-block--wide';
+  if (group.type === 'column_list') return 'notion-block--full';
+  if (group.type === 'table') return 'notion-block--full';
+  if (group.type === 'image' || group.type === 'video' || group.type === 'embed') return 'notion-block--full';
+  if (group.type === 'divider') return 'notion-block--wide';
+  return 'notion-block--content';
+}
+
+function MediaPlaceholderBlock({ title, description }) {
+  return (
+    <figure className="notion-placeholder">
+      <img className="notion-placeholder__img" src={placeholderSrc} alt={title || 'Placeholder'} loading="lazy" />
+      {(title || description) && (
+        <figcaption className="notion-placeholder__caption">
+          {title && <span className="notion-placeholder__caption-title">{title}</span>}
+          {description && <span className="notion-placeholder__caption-desc">{description}</span>}
+        </figcaption>
+      )}
+    </figure>
+  );
+}
+
+function ComparisonPlaceholderBlock({ title, description, notes, imageCount }) {
+  return (
+    <figure className="notion-comparison notion-comparison--placeholder">
+      <div className="notion-comparison__header">
+        <div className="notion-comparison__eyebrow">Before / After</div>
+        <figcaption className="notion-comparison__title">{title}</figcaption>
+        <p className="notion-comparison__description">
+          {description || 'Add two images with captions Before and After to activate the comparison slider.'}
+        </p>
+      </div>
+
+      <div className="notion-comparison__placeholder-frame">
+        <div className="notion-comparison__ghost notion-comparison__ghost--before">
+          <span className="notion-comparison__ghost-label">Before</span>
+          <span className="notion-comparison__ghost-text">Add image</span>
+        </div>
+        <div className="notion-comparison__ghost notion-comparison__ghost--after">
+          <span className="notion-comparison__ghost-label">After</span>
+          <span className="notion-comparison__ghost-text">Add image</span>
+        </div>
+        <div className="notion-comparison__divider" aria-hidden>
+          <div className="notion-comparison__handle">
+            <span />
+            <span />
+          </div>
+        </div>
+      </div>
+
+      <div className="notion-comparison__placeholder-footer">
+        <span className="notion-comparison__status">{`${imageCount}/2 images connected`}</span>
+        <span className="notion-comparison__hint">Use two images and set captions to Before / After.</span>
+      </div>
+
+      {notes.length > 0 && (
+        <div className="notion-comparison__notes" aria-label="Comparison notes">
+          {notes.map(note => (
+            <span key={note} className="notion-comparison__note">
+              {note}
+            </span>
+          ))}
+        </div>
+      )}
+    </figure>
+  );
+}
+
+function ComparisonBlock({ title, description, before, after, imageCount }) {
+  const [position, setPosition] = useState(50);
+
+  return (
+    <figure className="notion-comparison">
+      <div className="notion-comparison__header">
+        <div className="notion-comparison__eyebrow">Before / After</div>
+        <figcaption className="notion-comparison__title">{title}</figcaption>
+        {description && <p className="notion-comparison__description">{description}</p>}
+      </div>
+
+      <div className="notion-comparison__viewport" style={{ '--comparison-position': `${position}%` }}>
+        <img className="notion-comparison__image notion-comparison__image--after" src={after.src} alt={after.alt} loading="lazy" />
+        <div className="notion-comparison__clip" style={{ width: `${position}%` }}>
+          <img className="notion-comparison__image notion-comparison__image--before" src={before.src} alt={before.alt} loading="lazy" />
+        </div>
+
+        <span className="notion-comparison__badge notion-comparison__badge--before">{before.caption || 'Before'}</span>
+        <span className="notion-comparison__badge notion-comparison__badge--after">{after.caption || 'After'}</span>
+
+        <div className="notion-comparison__divider" aria-hidden>
+          <div className="notion-comparison__handle">
+            <span />
+            <span />
+          </div>
+        </div>
+
+        <input
+          className="notion-comparison__range"
+          type="range"
+          min="0"
+          max="100"
+          value={position}
+          onChange={event => setPosition(Number(event.target.value))}
+          aria-label={`Compare ${before.caption || 'Before'} and ${after.caption || 'After'}`}
+        />
+      </div>
+      <div className="notion-comparison__placeholder-footer">
+        <span className="notion-comparison__status">2/2 images connected</span>
+        <span className="notion-comparison__hint">
+          Captions become the labels. Use Before and After for the strongest contrast.
+        </span>
+      </div>
+      {imageCount > 2 && (
+        <div className="notion-comparison__notes" aria-label="Extra comparison images">
+          <span className="notion-comparison__note">
+            {`${imageCount - 2} extra image${imageCount - 2 > 1 ? 's' : ''} ignored`}
+          </span>
+        </div>
+      )}
+    </figure>
+  );
 }
 
 // Single block renderer
@@ -153,6 +385,18 @@ function Block({ block }) {
       );
 
     case 'callout': {
+      const mediaPlaceholderData = getMediaPlaceholderData(block);
+      if (mediaPlaceholderData) {
+        return <MediaPlaceholderBlock {...mediaPlaceholderData} />;
+      }
+
+      const comparisonData = getComparisonData(block);
+      if (comparisonData) {
+        return comparisonData.imageCount >= 2
+          ? <ComparisonBlock {...comparisonData} />
+          : <ComparisonPlaceholderBlock {...comparisonData} />;
+      }
+
       const calloutColor = data?.color || '';
       const calloutClass = calloutColor ? `notion-callout notion-callout--${calloutColor}` : 'notion-callout';
       return (
@@ -231,7 +475,7 @@ function Block({ block }) {
     case 'divider':
       return <hr className="notion-divider" />;
 
-    case 'toggle':
+    case 'toggle': {
       return (
         <details className="notion-toggle">
           <summary className="notion-toggle__summary">
@@ -244,6 +488,7 @@ function Block({ block }) {
           )}
         </details>
       );
+    }
 
     case 'column_list':
       return (
@@ -303,7 +548,15 @@ function Block({ block }) {
   }
 }
 
+// Check if a block is a text-type block (heading, paragraph, or text-heavy callout)
+function isTextBlock(block) {
+  if (!block) return false;
+  return ['heading_2', 'heading_3', 'paragraph'].includes(block.type)
+    || (block.type === 'callout' && !isMediaPlaceholderCallout(block) && !isComparisonCallout(block));
+}
+
 // Groups consecutive list items into proper <ul>/<ol> wrappers
+// Also pairs text blocks followed by placeholder images into side-by-side layouts
 function groupBlocks(blocks) {
   const groups = [];
   let i = 0;
@@ -317,6 +570,39 @@ function groupBlocks(blocks) {
       const items = [];
       while (i < blocks.length && blocks[i].type === 'numbered_list_item') items.push(blocks[i++]);
       groups.push({ type: 'numbered_list', items, key: items[0].id });
+    } else if (
+      block.type === 'callout'
+      && !isMediaPlaceholderCallout(block)
+      && !isComparisonCallout(block)
+      && i + 1 < blocks.length
+      && blocks[i + 1].type === 'callout'
+      && !isMediaPlaceholderCallout(blocks[i + 1])
+      && !isComparisonCallout(blocks[i + 1])
+    ) {
+      // Group 2+ consecutive info callouts into a card grid
+      const items = [];
+      while (
+        i < blocks.length
+        && blocks[i].type === 'callout'
+        && !isMediaPlaceholderCallout(blocks[i])
+        && !isComparisonCallout(blocks[i])
+      ) {
+        items.push(blocks[i++]);
+      }
+      groups.push({ type: 'callout_grid', items, key: items[0].id });
+    } else if (
+      isTextBlock(block)
+      && i + 1 < blocks.length
+      && isMediaPlaceholderCallout(blocks[i + 1])
+    ) {
+      // Pair text + placeholder into side-by-side layout
+      groups.push({
+        type: 'side_by_side',
+        textBlock: block,
+        imageBlock: blocks[i + 1],
+        key: block.id ?? `sbs-${i}`,
+      });
+      i += 2;
     } else {
       groups.push(block);
       i++;
@@ -333,6 +619,7 @@ export default function NotionRenderer({ blocks = [], animate = true }) {
       {grouped.map((group, i) => {
         const delay = Math.min(i * 40, 200); // stagger plafonné à 200ms
         const previous = i > 0 ? grouped[i - 1] : null;
+        const blockWidthClass = getBlockWidthClass(group, previous);
         const isWorkedOnSection = group.type === 'bulleted_list' && isWhatIWorkedOnHeading(previous);
 
         if (isWorkedOnSection) {
@@ -356,8 +643,62 @@ export default function NotionRenderer({ blocks = [], animate = true }) {
             </div>
           );
           return animate
-            ? <InViewBlock key={group.key} delay={delay}>{el}</InViewBlock>
-            : el;
+            ? <InViewBlock key={group.key} delay={delay} className={blockWidthClass}>{el}</InViewBlock>
+            : <div className={`notion-block notion-block--entered ${blockWidthClass}`}>{el}</div>;
+        }
+
+        if (group.type === 'side_by_side') {
+          const placeholderData = getMediaPlaceholderData(group.imageBlock);
+          const el = (
+            <div key={group.key} className="notion-side-by-side">
+              <div className="notion-side-by-side__text">
+                <Block block={group.textBlock} />
+              </div>
+              <div className="notion-side-by-side__image">
+                <MediaPlaceholderBlock
+                  title={placeholderData?.title}
+                  description={placeholderData?.description}
+                />
+              </div>
+            </div>
+          );
+          return animate
+            ? <InViewBlock key={group.key} delay={delay} className="notion-block--full">{el}</InViewBlock>
+            : <div className={`notion-block notion-block--entered notion-block--full`}>{el}</div>;
+        }
+
+        if (group.type === 'callout_grid') {
+          const el = (
+            <div key={group.key} className="notion-callout-grid">
+              {group.items.map(callout => {
+                const text = richTextToPlain(callout.callout?.rich_text ?? []);
+                const icon = callout.callout?.icon?.emoji;
+                // Detect if first word is a stat (number + optional symbol like % x ×)
+                const statMatch = text.match(/^(\d[\d\s,.]*[%x×]?)/i);
+                const statValue = statMatch?.[1]?.trim();
+                const statDesc = statValue ? text.slice(statValue.length).replace(/^[\s–—-]+/, '') : text;
+                return (
+                  <div key={callout.id} className="notion-callout-grid__item">
+                    {statValue
+                      ? <>
+                          <span className="notion-callout-grid__stat">{statValue}</span>
+                          <p className="notion-callout-grid__desc">{statDesc}</p>
+                        </>
+                      : <>
+                          {icon && <span className="notion-callout-grid__icon">{icon}</span>}
+                          <p className="notion-callout-grid__desc">
+                            <RichText items={callout.callout?.rich_text} />
+                          </p>
+                        </>
+                    }
+                  </div>
+                );
+              })}
+            </div>
+          );
+          return animate
+            ? <InViewBlock key={group.key} delay={delay} className="notion-block--full">{el}</InViewBlock>
+            : <div className="notion-block notion-block--entered notion-block--full">{el}</div>;
         }
 
         if (group.type === 'bulleted_list') {
@@ -367,8 +708,8 @@ export default function NotionRenderer({ blocks = [], animate = true }) {
             </ul>
           );
           return animate
-            ? <InViewBlock key={group.key} delay={delay}>{el}</InViewBlock>
-            : el;
+            ? <InViewBlock key={group.key} delay={delay} className={blockWidthClass}>{el}</InViewBlock>
+            : <div className={`notion-block notion-block--entered ${blockWidthClass}`}>{el}</div>;
         }
         if (group.type === 'numbered_list') {
           const el = (
@@ -377,14 +718,14 @@ export default function NotionRenderer({ blocks = [], animate = true }) {
             </ol>
           );
           return animate
-            ? <InViewBlock key={group.key} delay={delay}>{el}</InViewBlock>
-            : el;
+            ? <InViewBlock key={group.key} delay={delay} className={blockWidthClass}>{el}</InViewBlock>
+            : <div className={`notion-block notion-block--entered ${blockWidthClass}`}>{el}</div>;
         }
 
         const el = <Block key={group.id ?? i} block={group} />;
         return animate
-          ? <InViewBlock key={group.id ?? i} delay={delay}>{el}</InViewBlock>
-          : el;
+          ? <InViewBlock key={group.id ?? i} delay={delay} className={blockWidthClass}>{el}</InViewBlock>
+          : <div className={`notion-block notion-block--entered ${blockWidthClass}`}>{el}</div>;
       })}
     </div>
   );
