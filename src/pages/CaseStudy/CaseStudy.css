@@ -292,7 +292,7 @@
 
 /* Body */
 .case-study__body-section .project__section-inner {
-  --section-padding: var(--space2XL);
+  --section-padding: var(--spaceXL);
 }
 
 /* Fixed bottom blur */

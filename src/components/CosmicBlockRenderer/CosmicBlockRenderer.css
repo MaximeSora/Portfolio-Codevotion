@@ -9,14 +9,23 @@
   line-height: 1.75;
 }
 
+/* Single source of truth for vertical rhythm */
 .cosmic-block {
-  margin-bottom: var(--spaceL);
+  margin-bottom: var(--spaceXL);
+}
+
+/* Headings get extra top space to visually separate sections */
+.cosmic-block--heading {
+  margin-top: var(--space2XL);
+}
+
+/* First block never gets extra top space */
+.cosmic-block:first-child {
+  margin-top: 0;
 }
 
 /* ─── Heading ────────────────────────────────────── */
 .cosmic-heading {
-  margin-top: var(--space3XL);
-  margin-bottom: var(--spaceXL);
   padding-bottom: var(--spaceM);
   border-bottom: 1px solid rgb(var(--rgbText) / 0.06);
 }
@@ -42,16 +51,12 @@
 
 /* ─── Paragraph ──────────────────────────────────── */
 .cosmic-paragraph {
-  margin: 0 0 var(--spaceL);
+  margin: 0;
   color: rgb(var(--rgbText) / 0.82);
   line-height: 1.75;
 }
 
 /* ─── Facts ──────────────────────────────────────── */
-.cosmic-facts {
-  margin: var(--spaceXL) 0;
-}
-
 .cosmic-facts__title {
   margin: 0 0 var(--spaceM);
   font-size: var(--fontSizeBodyS);
@@ -94,10 +99,6 @@
 }
 
 /* ─── Metrics ────────────────────────────────────── */
-.cosmic-metrics {
-  margin: var(--space2XL) 0;
-}
-
 .cosmic-metrics__header {
   margin-bottom: var(--spaceXL);
 }
@@ -164,7 +165,6 @@
 
 /* ─── Quote ──────────────────────────────────────── */
 .cosmic-quote {
-  margin: var(--spaceXL) 0;
   padding: var(--spaceXL) var(--space2XL);
   border-left: 3px solid rgb(var(--rgbPrimary));
   background: rgb(var(--rgbPrimary) / 0.04);
@@ -200,10 +200,6 @@
 }
 
 /* ─── Visual ─────────────────────────────────────── */
-.cosmic-visual {
-  margin: var(--spaceXL) 0;
-}
-
 .cosmic-visual__img {
   width: 100%;
   display: block;
@@ -231,10 +227,6 @@
 }
 
 /* ─── List ───────────────────────────────────────── */
-.cosmic-list {
-  margin: var(--spaceL) 0;
-}
-
 .cosmic-list__title {
   margin: 0 0 var(--spaceM);
   font-size: var(--fontSizeBodyM);
@@ -274,7 +266,6 @@
 
 /* ─── Toggle ─────────────────────────────────────── */
 .cosmic-toggle {
-  margin: var(--spaceL) 0;
   border: 1px solid rgb(var(--rgbText) / 0.16);
   border-radius: 12px;
   overflow: hidden;
@@ -333,7 +324,6 @@
 
 /* ─── Before / After ─────────────────────────────── */
 .cosmic-before-after {
-  margin: var(--spaceXL) 0;
   padding: var(--spaceXL);
   border: 1px solid rgb(var(--rgbText) / 0.08);
   border-radius: 14px;
@@ -405,6 +395,14 @@
 
 /* ─── Responsive ─────────────────────────────────── */
 @media (--mediaMobile) {
+  .cosmic-block {
+    margin-bottom: var(--spaceL);
+  }
+
+  .cosmic-block--heading {
+    margin-top: var(--spaceXL);
+  }
+
   .cosmic-facts__grid {
     grid-template-columns: 1fr;
   }

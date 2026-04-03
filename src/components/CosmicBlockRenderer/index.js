@@ -180,11 +180,12 @@ export default function CosmicBlockRenderer({ document, animate = false }) {
     <div className="cosmic-renderer">
       {document.blocks.map((block, i) => {
         const delay = Math.min(i * 40, 200);
+        const blockClass = `cosmic-block${block.type === 'heading' ? ' cosmic-block--heading' : ''}`;
         const el = <CosmicBlock key={block.id ?? i} block={block} />;
         return animate ? (
-          <InViewBlock key={block.id ?? i} delay={delay}>{el}</InViewBlock>
+          <InViewBlock key={block.id ?? i} delay={delay} className={block.type === 'heading' ? 'cosmic-block--heading' : ''}>{el}</InViewBlock>
         ) : (
-          <div key={block.id ?? i} className="cosmic-block">{el}</div>
+          <div key={block.id ?? i} className={blockClass}>{el}</div>
         );
       })}
     </div>
