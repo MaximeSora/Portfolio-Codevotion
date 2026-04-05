@@ -1,5 +1,6 @@
-import { lazy, Suspense, useEffect, createContext, useReducer, Fragment } from 'react';
+import { lazy, Suspense, useEffect, createContext, useReducer, Fragment, useRef } from 'react';
 import { Analytics } from '@vercel/analytics/react';
+import posthog from 'posthog-js';
 import { BrowserRouter, Switch, Route, useLocation } from 'react-router-dom';
 import { Transition, TransitionGroup } from 'react-transition-group';
 import classNames from 'classnames';
@@ -16,14 +17,26 @@ import { reflow } from 'utils/transition';
 import prerender from 'utils/prerender';
 import './reset.css';
 import './index.css';
-// import ReactGA from 'react-ga';
-// import { hotjar } from 'react-hotjar';
 
-// hotjar.initialize(2578079, 6);
-// hotjar.identify('USER_ID', { userProperty: 'value' });
+// ── PostHog Analytics ──
+// Replace with your PostHog API key after signup at https://app.posthog.com/signup
+const POSTHOG_KEY = import.meta.env.VITE_POSTHOG_KEY;
+const POSTHOG_HOST = import.meta.env.VITE_POSTHOG_HOST || 'https://eu.i.posthog.com';
 
-// const TRACKING_ID = "UA-52091685-1"; // YOUR_OWN_TRACKING_ID
-// ReactGA.initialize(TRACKING_ID);
+if (!prerender && POSTHOG_KEY) {
+  posthog.init(POSTHOG_KEY, {
+    api_host: POSTHOG_HOST,
+    person_profiles: 'identified_only',
+    capture_pageview: false,   // handled manually for SPA
+    capture_pageleave: true,   // powers time-on-page + scroll depth
+    autocapture: true,         // clicks, inputs, form submits
+    scroll_depth: true,        // scroll depth tracking
+    heatmaps: true,            // click + scroll heatmaps
+    session_recording: {
+      maskAllInputs: true,     // mask form inputs for privacy
+    },
+  });
+}
 
 const Home = lazy(() => import('pages/Home'));
 const Contact = lazy(() => import('pages/Contact'));
@@ -74,6 +87,15 @@ const App = () => {
 const AppRoutes = () => {
   const location = useLocation();
   const { pathname } = location;
+  const prevPathname = useRef(pathname);
+
+  // Track SPA pageviews with PostHog
+  useEffect(() => {
+    if (POSTHOG_KEY && prevPathname.current !== pathname) {
+      posthog.capture('$pageview', { $current_url: window.location.href });
+      prevPathname.current = pathname;
+    }
+  }, [pathname]);
 
   return (
     <Fragment>

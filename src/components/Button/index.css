@@ -15,7 +15,7 @@
   align-items: center;
   gap: var(--spaceXS);
   position: relative;
-  border-radius: 6px;
+  border-radius: 8px;
   background: rgb(var(--rgbPrimary));
   border: 1px solid rgb(var(--rgbPrimary));
   color: rgb(var(--rgbBackground));
@@ -35,7 +35,7 @@
 
   &:hover {
     background: rgb(var(--rgbPrimary) / 0.88);
-    box-shadow: 0 0 0 1px rgb(var(--rgbPrimary) / 0.4), 0 8px 24px rgb(var(--rgbPrimary) / 0.28);
+    box-shadow: 0 0 20px rgb(var(--rgbPrimary) / 0.35), 0 8px 24px rgb(var(--rgbPrimary) / 0.2);
   }
 
   &:active {
@@ -73,7 +73,7 @@
   &:hover {
     background: rgb(var(--rgbPrimary) / 0.08);
     border-color: rgb(var(--rgbPrimary));
-    box-shadow: none;
+    box-shadow: 0 0 14px rgb(var(--rgbPrimary) / 0.2);
   }
 }
 

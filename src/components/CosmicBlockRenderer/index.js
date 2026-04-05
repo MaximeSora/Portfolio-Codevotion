@@ -148,6 +148,31 @@ function BeforeAfterBlock({ title, intro, beforeLabel, beforeBody, afterLabel, a
   );
 }
 
+function SplitBlock({ text, eyebrow, title, assetUrl, caption, reverse }) {
+  const src = assetUrl || placeholderSrc;
+  return (
+    <div className={`cosmic-split${reverse ? ' cosmic-split--reverse' : ''}`}>
+      <div className="cosmic-split__text">
+        {eyebrow && <span className="cosmic-split__eyebrow">{eyebrow}</span>}
+        {title && <h4 className="cosmic-split__title">{title}</h4>}
+        {text && <p className="cosmic-split__body">{text}</p>}
+      </div>
+      <div className="cosmic-split__media">
+        <img className="cosmic-split__img" src={src} alt={caption || title || ''} loading="lazy" />
+        {caption && <span className="cosmic-split__caption">{caption}</span>}
+      </div>
+    </div>
+  );
+}
+
+function getBlockWidthClass(type) {
+  if (type === 'visual' || type === 'facts' || type === 'metrics' || type === 'beforeAfter' || type === 'split' || type === 'heading') {
+    return 'cosmic-block--wide';
+  }
+
+  return 'cosmic-block--content';
+}
+
 function CosmicBlock({ block }) {
   switch (block.type) {
     case 'heading':
@@ -168,6 +193,8 @@ function CosmicBlock({ block }) {
       return <ToggleBlock title={block.title} content={block.content} />;
     case 'beforeAfter':
       return <BeforeAfterBlock {...block} />;
+    case 'split':
+      return <SplitBlock text={block.text} eyebrow={block.eyebrow} title={block.title} assetUrl={block.assetUrl} caption={block.caption} reverse={block.reverse} />;
     default:
       return null;
   }
@@ -180,10 +207,17 @@ export default function CosmicBlockRenderer({ document, animate = false }) {
     <div className="cosmic-renderer">
       {document.blocks.map((block, i) => {
         const delay = Math.min(i * 40, 200);
-        const blockClass = `cosmic-block${block.type === 'heading' ? ' cosmic-block--heading' : ''}`;
+        const widthClass = getBlockWidthClass(block.type);
+        const blockClass = `cosmic-block ${widthClass}${block.type === 'heading' ? ' cosmic-block--heading' : ''}`.trim();
         const el = <CosmicBlock key={block.id ?? i} block={block} />;
         return animate ? (
-          <InViewBlock key={block.id ?? i} delay={delay} className={block.type === 'heading' ? 'cosmic-block--heading' : ''}>{el}</InViewBlock>
+          <InViewBlock
+            key={block.id ?? i}
+            delay={delay}
+            className={`${widthClass}${block.type === 'heading' ? ' cosmic-block--heading' : ''}`}
+          >
+            {el}
+          </InViewBlock>
         ) : (
           <div key={block.id ?? i} className={blockClass}>{el}</div>
         );

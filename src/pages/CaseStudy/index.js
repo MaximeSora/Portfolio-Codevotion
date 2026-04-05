@@ -1,5 +1,5 @@
 import { Fragment, useRef, useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import classNames from 'classnames';
 import ContactV2 from 'pages/Home/ContactV2';
@@ -8,7 +8,6 @@ import {
   ProjectSection,
   ProjectSectionContent,
 } from 'components/ProjectLayout';
-import { Button } from 'components/Button';
 import NotionRenderer from 'components/NotionRenderer';
 import CosmicBlockRenderer from 'components/CosmicBlockRenderer';
 import { useScrollRestore, useInViewport } from 'hooks';
@@ -78,10 +77,9 @@ const CaseStudy = () => {
 
   // Overview facts table (Nicole Roberts style)
   const overviewFacts = [
-    roleLabel && { label: 'Role', value: roleLabel },
+    roleLabel && { label: 'Role and team', value: roleLabel },
     company && { label: 'Company', value: company },
-    year && { label: 'Timeline', value: year },
-    tags.length > 0 && { label: 'Scope', value: tags.slice(0, 4).map(t => t.name).join(', ') },
+    year && { label: 'Year', value: year },
   ].filter(Boolean);
 
   // Overview text: use summary or first paragraph
@@ -202,28 +200,8 @@ const CaseStudy = () => {
                 'case-study__header--entered': headerInView,
               })}
             >
-              {tags.length > 0 && (
-                <ul className="case-study__tags" aria-label="Tags">
-                  {tags.map(tag => (
-                    <li key={tag.name} className="case-study__tag">
-                      {tag.name}
-                    </li>
-                  ))}
-                </ul>
-              )}
-
               <div className="case-study__header-body">
                 <h1 className="case-study__title">{name}</h1>
-                <div className="case-study__header-aside">
-                  <p className="case-study__lede">{description}</p>
-                  {(company || year) && (
-                    <div className="case-study__meta">
-                      {company && <span className="case-study__meta-company">{company}</span>}
-                      {company && year && <span className="case-study__meta-sep" aria-hidden>·</span>}
-                      {year && <span className="case-study__meta-year">{year}</span>}
-                    </div>
-                  )}
-                </div>
               </div>
             </div>
           </ProjectSectionContent>
@@ -233,28 +211,24 @@ const CaseStudy = () => {
           <ProjectSection className="case-study__overview-section">
             <ProjectSectionContent width="l">
               <div className="case-study__overview">
-                {(overviewText || goalItems.length > 0) && (
-                  <div className="case-study__overview-text">
-                    <h2 className="case-study__overview-heading">Overview</h2>
-                    {overviewText && <p className="case-study__overview-body">{overviewText}</p>}
-                    {goalItems.length > 0 && (
-                      <div className="case-study__goals">
-                        <h3 className="case-study__goals-heading">Goals</h3>
-                        <ol className="case-study__goals-list">
-                          {goalItems.map((goal, gi) => (
-                            <li key={gi} className="case-study__goals-item">{goal}</li>
-                          ))}
-                        </ol>
-                      </div>
-                    )}
-                  </div>
-                )}
+                <div className="case-study__overview-text">
+                  {overviewText && <p className="case-study__overview-body">{overviewText}</p>}
+                  {tags.length > 0 && (
+                    <ul className="case-study__overview-tags" aria-label="Disciplines">
+                      {tags.map(tag => (
+                        <li key={tag.name} className="case-study__overview-tag">
+                          {tag.name}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
                 {overviewFacts.length > 0 && (
-                  <div className="case-study__overview-facts">
+                  <div className="case-study__overview-card">
                     {overviewFacts.map(fact => (
-                      <div key={fact.label} className="case-study__overview-fact">
-                        <span className="case-study__overview-fact-label">{fact.label}</span>
-                        <span className="case-study__overview-fact-value">{fact.value}</span>
+                      <div key={fact.label} className="case-study__overview-card-item">
+                        <span className="case-study__overview-card-label">{fact.label}</span>
+                        <span className="case-study__overview-card-value">{fact.value}</span>
                       </div>
                     ))}
                   </div>
@@ -296,7 +270,7 @@ const CaseStudy = () => {
 
         <ProjectSection className="case-study__next-section">
           <ProjectSectionContent width="l">
-            <div className="case-study__next-card">
+            <Link className="case-study__next-card" to={`/projects/${nextProject.slug}`}>
               <div className="case-study__next-body">
                 <div className="case-study__next-copy">
                   <p className="case-study__next-kicker">Next project</p>
@@ -313,16 +287,9 @@ const CaseStudy = () => {
                       ))}
                     </div>
                   )}
-                  <div className="case-study__next-actions">
-                    <Button
-                      className="case-study__next-button"
-                      iconHoverShift
-                      iconEnd="arrowRight"
-                      href={`/projects/${nextProject.slug}`}
-                    >
-                      View case study
-                    </Button>
-                  </div>
+                  <span className="case-study__next-link">
+                    View case study <span className="case-study__next-link-arrow" aria-hidden>&rarr;</span>
+                  </span>
                 </div>
                 {nextProject.cover && (
                   <div className="case-study__next-cover">
@@ -335,7 +302,7 @@ const CaseStudy = () => {
                   </div>
                 )}
               </div>
-            </div>
+            </Link>
           </ProjectSectionContent>
         </ProjectSection>
 

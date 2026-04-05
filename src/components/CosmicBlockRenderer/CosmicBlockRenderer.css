@@ -2,16 +2,32 @@
 
 .cosmic-renderer {
   width: 100%;
-  max-width: 68ch;
-  margin: 0 auto;
+  max-width: none;
+  margin: 0;
   color: rgb(var(--rgbText));
   font-size: var(--fontSizeBodyL);
   line-height: 1.75;
+  display: grid;
+  gap: clamp(var(--spaceXL), 4vw, var(--space3XL));
 }
 
 /* Single source of truth for vertical rhythm */
 .cosmic-block {
-  margin-bottom: var(--spaceXL);
+  width: 100%;
+  margin: 0 auto;
+}
+
+.cosmic-block--content {
+  max-width: var(--case-study-block-content, 68ch);
+}
+
+.cosmic-block--wide {
+  max-width: var(--case-study-block-wide, 84ch);
+}
+
+.cosmic-block--feature,
+.cosmic-block--full {
+  max-width: var(--case-study-block-wide, 84ch);
 }
 
 /* Headings get extra top space to visually separate sections */
@@ -393,10 +409,74 @@
   font-style: italic;
 }
 
+/* ─── Split (text + image) ───────────────────────── */
+.cosmic-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(var(--spaceXL), 4vw, var(--space3XL));
+  align-items: center;
+}
+
+.cosmic-split--reverse {
+  direction: rtl;
+}
+
+.cosmic-split--reverse > * {
+  direction: ltr;
+}
+
+.cosmic-split__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spaceM);
+}
+
+.cosmic-split__eyebrow {
+  font-size: var(--fontSizeBodyXS);
+  font-weight: var(--fontWeightMedium);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgb(var(--rgbPrimary));
+}
+
+.cosmic-split__title {
+  margin: 0;
+  font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+  font-weight: var(--fontWeightBold);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: rgb(var(--rgbText));
+}
+
+.cosmic-split__body {
+  margin: 0;
+  font-size: var(--fontSizeBodyM);
+  line-height: 1.7;
+  color: rgb(var(--rgbText) / 0.78);
+}
+
+.cosmic-split__media {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spaceS);
+}
+
+.cosmic-split__img {
+  width: 100%;
+  display: block;
+  border-radius: 14px;
+}
+
+.cosmic-split__caption {
+  font-size: var(--fontSizeBodyXS);
+  color: rgb(var(--rgbText) / 0.5);
+  padding: 0 var(--spaceS);
+}
+
 /* ─── Responsive ─────────────────────────────────── */
 @media (--mediaMobile) {
-  .cosmic-block {
-    margin-bottom: var(--spaceL);
+  .cosmic-renderer {
+    gap: var(--spaceL);
   }
 
   .cosmic-block--heading {
@@ -413,5 +493,19 @@
 
   .cosmic-before-after__columns {
     grid-template-columns: 1fr;
+  }
+
+  .cosmic-block--wide,
+  .cosmic-block--feature,
+  .cosmic-block--full {
+    max-width: none;
+  }
+
+  .cosmic-split {
+    grid-template-columns: 1fr;
+  }
+
+  .cosmic-split--reverse {
+    direction: ltr;
   }
 }

@@ -168,8 +168,8 @@ export const tokenStyles = `
   ${createMediaTokenProperties()}
 
   .dark {
-    --rgbBackground: 17 17 17;
-    --rgbBackgroundLight: 26 26 26;
+    --rgbBackground: 12 19 21;
+    --rgbBackgroundLight: 20 32 34;
     --rgbPrimary: 13 197 177;
     --rgbAccent: 13 197 177;
     --rgbText: 255 255 255;
@@ -180,8 +180,8 @@ export const tokenStyles = `
   }
 
   .light {
-    --rgbBackground: 242 242 242;
-    --rgbBackgroundLight: 255 255 255;
+    --rgbBackground: 237 244 243;
+    --rgbBackgroundLight: 248 253 252;
     --rgbPrimary: 13 122 109;
     --rgbAccent: 13 122 109;
     --rgbText: 0 0 0;
