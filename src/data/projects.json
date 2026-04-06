@@ -1,394 +1,5 @@
 [
   {
-    "id": "7ead9657-8fc2-4b3a-9dac-91cae2d1bc52",
-    "slug": "mypowerbox-mobile-app-mv",
-    "name": "MyPowerbox - Mobile app MV",
-    "company": "Renault Digital",
-    "year": "2023",
-    "headline": "Launched Mobilize's first mobile app around a connected charging product, from blank screen to app stores.",
-    "roleSummary": "UI owner and UX co-lead. End-to-end from prototyping through brand alignment, user testing, and design system foundations.",
-    "summary": "Designing the first official Mobilize mobile experience meant shaping a young brand's digital identity while solving the real UX challenges of a hardware-dependent product with pairing friction and limited budget.",
-    "challenge": "Designing one of the first official Mobilize mobile experiences meant turning a technically constrained charging-station product into a clear day-to-day app, while shaping an emerging brand with limited budget and white-label ambitions.",
-    "tags": [
-      {
-        "name": "Facilitation",
-        "color": "pink"
-      },
-      {
-        "name": "UX Design",
-        "color": "purple"
-      },
-      {
-        "name": "UI Design",
-        "color": "green"
-      },
-      {
-        "name": "Application",
-        "color": "red"
-      },
-      {
-        "name": "B2C",
-        "color": "blue"
-      },
-      {
-        "name": "Workshops",
-        "color": "default"
-      },
-      {
-        "name": "Test",
-        "color": "orange"
-      },
-      {
-        "name": "Branding",
-        "color": "gray"
-      }
-    ],
-    "cover": "/notion-images/cover-7ead9657-8fc2-4b3a-9dac-91cae2d1bc52.png",
-    "blocks": {
-      "kind": "cosmic-blocks",
-      "version": 1,
-      "blocks": [
-        {
-          "id": "mp-ctx-001",
-          "type": "paragraph",
-          "content": "MyPowerbox is a connected home-charging station by Mobilize. The app needed to let users pair the device, monitor charging sessions, and manage their energy consumption daily. But this was also Mobilize's first official mobile product, which meant the interface would define how users perceived the brand."
-        },
-        {
-          "id": "mp-ctx-002",
-          "type": "paragraph",
-          "content": "The challenge was threefold: turn hardware constraints into a usable daily experience, shape an emerging brand with limited budget, and build a foundation that could support white-label B2B ambitions later."
-        },
-        {
-          "id": "mp-ctx-003",
-          "type": "visual",
-          "assetUrl": "/notion-images/2b855dda-914f-47b0-8d2a-7b22bed74bdc.png",
-          "caption": "MyPowerbox app: home screen and charging session view"
-        },
-        {
-          "id": "mp-problem-h",
-          "type": "heading",
-          "title": "What the guerrilla test revealed"
-        },
-        {
-          "id": "mp-problem-001",
-          "type": "paragraph",
-          "content": "A guerrilla test on the MVP prototype revealed six concrete usability problems. The most critical was the pairing flow between the charging station and the app, the highest-friction area in the entire experience."
-        },
-        {
-          "id": "mp-problem-002",
-          "type": "split",
-          "eyebrow": "Pairing",
-          "title": "The physical-digital gap",
-          "text": "Because the experience depended on a physical product, technical constraints from Bluetooth, Wi-Fi provisioning, and firmware updates created friction that could not be solved through UI alone. The UX had to absorb real-world delays and failure states.",
-          "assetUrl": "/notion-images/d3c5ce0e-0c4d-4b27-bf3f-3c92ea4e96e4.png",
-          "caption": "Pairing flow friction points"
-        },
-        {
-          "id": "mp-problem-003",
-          "type": "split",
-          "eyebrow": "Navigation",
-          "title": "Setup-centric, not daily-use",
-          "text": "The original app structure was built around initial setup. Once pairing was done, users had no compelling reason to return. The navigation did not support the daily actions that would make the app sticky.",
-          "reverse": true,
-          "assetUrl": "/notion-images/ba7e05ec-54b4-4c75-a16e-9e93ff6b2884.png",
-          "caption": "Original navigation model"
-        },
-        {
-          "id": "mp-changes-h",
-          "type": "heading",
-          "title": "What I changed"
-        },
-        {
-          "id": "mp-changes-001",
-          "type": "split",
-          "eyebrow": "Navigation",
-          "title": "A daily-use navigation model",
-          "text": "I restructured navigation around recurring daily actions: checking charging status, reviewing energy consumption, adjusting schedules. The app became a utility, not just a setup companion.",
-          "assetUrl": "/notion-images/c45df28d-e162-431e-a829-61956f5f9204.png",
-          "caption": "Redesigned navigation structure"
-        },
-        {
-          "id": "mp-changes-002",
-          "type": "split",
-          "eyebrow": "Pairing",
-          "title": "Guided pairing with stronger feedback",
-          "text": "I iterated the pairing flow multiple times with progressive guidance, clearer error states, and visual feedback for each step. The goal was to build confidence during a technically fragile process.",
-          "reverse": true,
-          "assetUrl": "/notion-images/a3256f3a-e762-4cf6-b728-43ce1066982c.png",
-          "caption": "Redesigned pairing flow"
-        },
-        {
-          "id": "mp-changes-003",
-          "type": "split",
-          "eyebrow": "Motion",
-          "title": "Lottie and Rive animations for credibility",
-          "text": "I crafted animations in Figma, then reconstructed them with Lottie and Rive for developer integration. These micro-interactions helped bridge waiting states and gave the product a premium feel that the young brand needed.",
-          "assetUrl": "/notion-images/ed552e2b-2491-4338-ae10-06c1a6b08384.png",
-          "caption": "Animation system: Lottie and Rive integration"
-        },
-        {
-          "id": "mp-changes-004",
-          "type": "split",
-          "eyebrow": "Personas",
-          "title": "Two personas driving priorities",
-          "text": "Design decisions were grounded in two validated personas: the Early Adopter who wanted visibility over connected devices, and the Pragmatic User who just wanted reliable, simple charging. This framing helped resolve feature-priority debates throughout the project.",
-          "reverse": true,
-          "assetUrl": "/notion-images/42ba4fbe-6fdb-439f-877c-2c8d1b110797.png",
-          "caption": "Persona-driven design decisions"
-        },
-        {
-          "id": "mp-ds-h",
-          "type": "heading",
-          "title": "Design system foundations"
-        },
-        {
-          "id": "mp-ds-001",
-          "type": "paragraph",
-          "content": "I built the first component library for Mobilize mobile apps and documented behavior through interactive prototypes. This was not a theoretical exercise: the library was built alongside the product, validated through development, and designed to be extended by future projects."
-        },
-        {
-          "id": "mp-ds-002",
-          "type": "paragraph",
-          "content": "The system included color tokens aligned with Mobilize brand guidelines, typography scales for mobile readability, component states covering the hardware-specific edge cases (offline, pairing, firmware update), and motion principles that could be reused across the ecosystem."
-        },
-        {
-          "id": "mp-ds-003",
-          "type": "visual",
-          "assetUrl": "/notion-images/6fce0275-65d6-4b36-b9a9-f7cbea81506b.png",
-          "caption": "Mobilize mobile design system: component library and documentation"
-        },
-        {
-          "id": "mp-outcome-h",
-          "type": "heading",
-          "eyebrow": "Impact",
-          "title": "Outcome"
-        },
-        {
-          "id": "mp-outcome-001",
-          "type": "paragraph",
-          "content": "The MVP launched on iOS and Android app stores and was validated through testing. Beyond the release, the project created a reusable base for Mobilize's mobile products."
-        },
-        {
-          "id": "mp-outcome-002",
-          "type": "list",
-          "title": "Key results",
-          "style": "checks",
-          "items": [
-            "App shipped on iOS and Android stores",
-            "Design system adopted as foundation for future Mobilize mobile products",
-            "White-label B2B architecture validated for partner deployment",
-            "Brainwriting workshop format reused across the team"
-          ]
-        },
-        {
-          "id": "mp-outcome-003",
-          "type": "visual",
-          "assetUrl": "/notion-images/03602813-0a31-4a50-a028-9ad8316e6767.png",
-          "caption": "MVP result: live app on iOS and Android"
-        },
-        {
-          "id": "mp-learn-h",
-          "type": "heading",
-          "title": "What I learned"
-        },
-        {
-          "id": "mp-learn-001",
-          "type": "paragraph",
-          "content": "This project taught me how different mobile design becomes when the product is tied to a physical device. The UX is not just about screens; it has to absorb real-world delays, hardware failures, and connectivity issues that no prototype can fully simulate."
-        },
-        {
-          "id": "mp-learn-002",
-          "type": "paragraph",
-          "content": "It also showed how much responsibility sits inside a first product for a young brand. The interface becomes part of the brand definition. Every interaction pattern, every animation, every error state contributes to how users perceive the company behind the product."
-        }
-      ]
-    }
-  },
-  {
-    "id": "0e92c48e-682f-4a61-9436-b9d5e0e28c74",
-    "slug": "fleetui-web-app-design",
-    "name": "FleetUI - Web App Design",
-    "company": "Renault Digital",
-    "year": "2024",
-    "headline": "Turned a fragmented fleet tool into a structured B2B dashboard platform for fleet administrators.",
-    "roleSummary": "UX/UI designer. Redesigned existing screens, created new product views, and defined the reusable patterns that structured the platform.",
-    "summary": "The existing fleet management tools were disconnected internal screens with no coherent structure. I redesigned the UX and UI foundations, introduced reusable dashboard patterns, and framed the platform direction.",
-    "challenge": "Turning an internal, fragmented fleet tool into a credible B2B platform required making complex telematics data easier to navigate and act on, despite no strong UX foundation and multiple disconnected workflows.",
-    "tags": [
-      {
-        "name": "Facilitation",
-        "color": "pink"
-      },
-      {
-        "name": "UX Design",
-        "color": "purple"
-      },
-      {
-        "name": "UI Design",
-        "color": "green"
-      },
-      {
-        "name": "Workshops",
-        "color": "default"
-      },
-      {
-        "name": "Test",
-        "color": "orange"
-      },
-      {
-        "name": "Branding",
-        "color": "gray"
-      },
-      {
-        "name": "SAAS",
-        "color": "purple"
-      },
-      {
-        "name": "B2B",
-        "color": "brown"
-      }
-    ],
-    "cover": "/notion-images/cover-0e92c48e-682f-4a61-9436-b9d5e0e28c74.png",
-    "blocks": {
-      "kind": "cosmic-blocks",
-      "version": 1,
-      "blocks": [
-        {
-          "id": "fu-ctx-001",
-          "type": "paragraph",
-          "content": "Fleet administrators at Renault needed to monitor vehicles, track events, and manage assets across large fleets. The existing tools were fragmented internal screens with no coherent navigation, no shared patterns, and no clear product direction."
-        },
-        {
-          "id": "fu-ctx-002",
-          "type": "paragraph",
-          "content": "The goal was to turn these disconnected workflows into a credible B2B dashboard platform that fleet managers could actually use day-to-day, while building foundations that could scale as the product grew."
-        },
-        {
-          "id": "fu-ctx-003",
-          "type": "visual",
-          "assetUrl": "/notion-images/007cf34b-7979-4ba7-a635-2cbbe8e617ed.png",
-          "caption": "FleetUI dashboard overview"
-        },
-        {
-          "id": "fu-problem-h",
-          "type": "heading",
-          "title": "What the audit revealed"
-        },
-        {
-          "id": "fu-problem-001",
-          "type": "paragraph",
-          "content": "A heuristic evaluation and user research revealed that the product was not broken screen by screen. The problem was systemic: no coherent structure connected the screens into a usable platform."
-        },
-        {
-          "id": "fu-problem-002",
-          "type": "split",
-          "eyebrow": "Navigation",
-          "title": "Data by source, not by task",
-          "text": "Navigation was organized by data source rather than operational workflow. Fleet managers had to mentally map where information lived instead of following natural task flows.",
-          "assetUrl": "/notion-images/2c7daabf-c593-4e1b-9688-a79f93b91879.png",
-          "caption": "Existing navigation structure"
-        },
-        {
-          "id": "fu-problem-003",
-          "type": "split",
-          "eyebrow": "Density",
-          "title": "Too much data, not enough hierarchy",
-          "text": "Tables and maps showed dense telematics data without prioritization. Managers could not scan, filter, or act without being overwhelmed by information that was technically accurate but operationally unusable.",
-          "reverse": true,
-          "assetUrl": "/notion-images/debe66bb-1676-4a2f-ae7e-c6a42d56ed4d.png",
-          "caption": "Events log: existing product state"
-        },
-        {
-          "id": "fu-changes-h",
-          "type": "heading",
-          "title": "What I changed"
-        },
-        {
-          "id": "fu-changes-001",
-          "type": "split",
-          "eyebrow": "Navigation",
-          "title": "Task-oriented structure",
-          "text": "I restructured navigation to match real operational workflows. Fleet view, asset details, events, and alerts became distinct but connected spaces instead of isolated data dumps.",
-          "assetUrl": "/notion-images/e5ff796a-0ea0-4820-8bde-3b52a5e38bd2.png",
-          "caption": "Restructured navigation model"
-        },
-        {
-          "id": "fu-changes-002",
-          "type": "split",
-          "eyebrow": "Patterns",
-          "title": "Reusable dashboard components",
-          "text": "Rather than treating each screen as a separate design problem, I built a pattern library of dashboard components: data cards, filter bars, map overlays, and detail panels that could be assembled consistently across views.",
-          "reverse": true,
-          "assetUrl": "/notion-images/00e1d08b-6093-4a17-8adc-89f972e5075a.png",
-          "caption": "Dashboard pattern library"
-        },
-        {
-          "id": "fu-changes-003",
-          "type": "split",
-          "eyebrow": "Information design",
-          "title": "Reduced cognitive load",
-          "text": "I redesigned the information hierarchy on tables and maps so managers could scan, filter, and act efficiently. The focus shifted from showing all data to surfacing actionable information first.",
-          "assetUrl": "/notion-images/360ecc0f-f94c-47f8-a2af-940a73ce307f.png",
-          "caption": "Redesigned fleet map view"
-        },
-        {
-          "id": "fu-changes-004",
-          "type": "split",
-          "eyebrow": "Design system",
-          "title": "Product-specific component layer",
-          "text": "I created a design-system base that extended the general component library with dashboard-specific patterns, tokens, and documentation. This gave the product a visual identity while staying aligned with the broader ecosystem.",
-          "reverse": true,
-          "assetUrl": "/notion-images/3cfa3fce-a8b9-47f5-841a-7eccc6ea0bdc.png",
-          "caption": "FleetUI design system components"
-        },
-        {
-          "id": "fu-outcome-h",
-          "type": "heading",
-          "eyebrow": "Impact",
-          "title": "Outcome"
-        },
-        {
-          "id": "fu-outcome-001",
-          "type": "paragraph",
-          "content": "The project transformed a fragmented internal starting point into a coherent B2B dashboard foundation. The platform structure, navigation model, and component patterns became the base for subsequent product development."
-        },
-        {
-          "id": "fu-outcome-002",
-          "type": "list",
-          "title": "Key results",
-          "style": "checks",
-          "items": [
-            "Unified navigation model adopted across all fleet views",
-            "Reusable dashboard pattern library used by development team",
-            "Product direction validated through research and stakeholder workshops",
-            "Design-system layer extended to cover dashboard-specific needs"
-          ]
-        },
-        {
-          "id": "fu-outcome-003",
-          "type": "visual",
-          "assetUrl": "/notion-images/00e1d08b-6093-4a17-8adc-89f972e5075a.png",
-          "caption": "Final FleetUI dashboard: asset details view"
-        },
-        {
-          "id": "fu-learn-h",
-          "type": "heading",
-          "title": "What I learned"
-        },
-        {
-          "id": "fu-learn-001",
-          "type": "paragraph",
-          "content": "This project reinforced how much B2B dashboard design depends on task clarity, not information density. When users deal with complex data, the interface needs to guide attention rather than display everything."
-        },
-        {
-          "id": "fu-learn-002",
-          "type": "paragraph",
-          "content": "It also taught me how valuable reusable patterns become when a product is still defining its long-term shape. Laying down consistent components early gave the team a shared vocabulary and prevented divergence as new screens were added."
-        }
-      ]
-    }
-  },
-  {
     "id": "31742e09-8249-80b6-8269-f000eba2677c",
     "slug": "home-charging-quotation-tool",
     "name": "Home Charging Quotation Tool",
@@ -399,26 +10,11 @@
     "summary": "On Renault and Dacia websites, home charging was buried and priced with a single default number. I designed an end-to-end quotation tool that made the offer findable, the pricing understandable, and the next steps actionable.",
     "challenge": "EV buyers faced pricing uncertainty around home charging installation, while Renault and Dacia websites did not make the offer easy enough to find or understand. Mobilize Power Solutions needed a more visible, more comprehensible, and more actionable experience.",
     "tags": [
-      {
-        "name": "UX Design",
-        "color": "purple"
-      },
-      {
-        "name": "Ux strategy",
-        "color": "yellow"
-      },
-      {
-        "name": "Discovery",
-        "color": "red"
-      },
-      {
-        "name": "UI Design",
-        "color": "green"
-      },
-      {
-        "name": "B2C",
-        "color": "blue"
-      }
+      { "name": "UX Design", "color": "purple" },
+      { "name": "Ux strategy", "color": "yellow" },
+      { "name": "Discovery", "color": "red" },
+      { "name": "UI Design", "color": "green" },
+      { "name": "B2C", "color": "blue" }
     ],
     "cover": "/cover-home-charging.png",
     "blocks": {
@@ -452,6 +48,21 @@
           "content": "The charging offer was buried in the site architecture, disconnected from the EV purchase journey. Only 3 out of 18 users found the Mobilize Power Solutions page unaided. I worked on embedding the tool at five high-intent entry points across renault.fr to solve this."
         },
         {
+          "id": "hc-collab-h",
+          "type": "heading",
+          "title": "Navigating multi-team dependencies"
+        },
+        {
+          "id": "hc-collab-001",
+          "type": "paragraph",
+          "content": "The quotation tool sat at the intersection of multiple teams within the Mobilize charging ecosystem. Displaying the right pricing, product availability, and eligibility rules required constant alignment with several poles: electrical infrastructure, product catalog, pricing engine, and CRM routing. I co-built the project with these teams, participating in cross-functional syncs to ensure the design reflected real business logic and technical constraints at every step."
+        },
+        {
+          "id": "hc-collab-002",
+          "type": "paragraph",
+          "content": "This was not a project where I could design in isolation. Every screen decision had downstream implications on data flows, partner integrations, and legal compliance. I learned to treat dependency management as a core part of the design process, not something that happens after the mockups are done."
+        },
+        {
           "id": "hc-entrypoints-h",
           "type": "heading",
           "title": "Mapping the right entry points"
@@ -467,23 +78,23 @@
           "title": "5 entry points identified across renault.fr",
           "items": [
             {
-              "label": "R5 E-Tech — Solutions recharge",
+              "label": "R5 E-Tech \u2014 Solutions recharge",
               "value": "Dedicated charging page for the flagship EV. Users land here from the vehicle configurator. Added a direct CTA to the estimation tool alongside autonomy and cost simulators."
             },
             {
-              "label": "R5 E-Tech — Financement & services",
-              "value": "Financing page where users compare leasing options. Embedded a charging installation block ('Votre borne installée à partir de 999€') with a link to the quotation tool, catching users in a purchase-decision mindset."
+              "label": "R5 E-Tech \u2014 Financement & services",
+              "value": "Financing page where users compare leasing options. Embedded a charging installation block ('Votre borne install\u00e9e \u00e0 partir de 999\u20ac') with a link to the quotation tool, catching users in a purchase-decision mindset."
             },
             {
               "label": "Mobilize Power Solutions",
-              "value": "The main MPS page, previously the only entry point. Restructured the product comparison (Prise renforcée / Powerbox / Bidirectional) and added a direct 'Commandez votre borne' CTA."
+              "value": "The main MPS page, previously the only entry point. Restructured the product comparison (Prise renforc\u00e9e / Powerbox / Bidirectional) and added a direct 'Commandez votre borne' CTA."
             },
             {
-              "label": "E-Tech — Recharge hub",
+              "label": "E-Tech \u2014 Recharge hub",
               "value": "Cross-model charging hub covering home and on-road charging. Added a 'Mobilize Powerbox' section linking to the estimation tool, bridging generic charging content to the personalized quotation flow."
             },
             {
-              "label": "E-Tech — Services",
+              "label": "E-Tech \u2014 Services",
               "value": "Services overview page with a dedicated 'Estimez votre installation' CTA under the charging section. This page captures users exploring the EV ownership ecosystem beyond the vehicle itself."
             }
           ]
@@ -621,12 +232,22 @@
         {
           "id": "hc-delivery-h",
           "type": "heading",
-          "title": "Delivery"
+          "title": "Delivery and Design QA"
         },
         {
           "id": "hc-delivery-001",
           "type": "paragraph",
           "content": "I prepared Figma specifications with a 'Ready for dev' annotation system per component. For each sprint, I created Jira tickets scoped at the component level for Makolab (outsourced development partner), including screen context, interaction notes, state coverage, and links to the relevant Figma frame. After each sprint, I ran Design QA sessions comparing implemented screens against specs."
+        },
+        {
+          "id": "hc-delivery-handoff",
+          "type": "paragraph",
+          "content": "To streamline the dev handoff process, I co-created a structured handoff template in collaboration with a senior designer on the Renault side. We ran internal workshops to map the team's pain points around design-to-dev handoff, then iterated the template based on real feedback. This template was then adopted as a shared standard across our product teams, reducing QA loops and giving developers a predictable structure for every delivery."
+        },
+        {
+          "id": "hc-delivery-qa",
+          "type": "paragraph",
+          "content": "I also introduced a Design QA practice to systematically compare implemented screens against design specs after each sprint. This helped catch visual and interaction regressions early, and the format was later reused on other projects within the team."
         },
         {
           "id": "hc-delivery-002",
@@ -661,33 +282,16 @@
           "title": "First 6 weeks after launch",
           "intro": "September 22 to November 6, 2025. Renault brand, France.",
           "items": [
-            {
-              "value": "1,504",
-              "label": "Users started the tool"
-            },
-            {
-              "value": "82",
-              "label": "Qualified leads generated"
-            },
-            {
-              "value": "89%",
-              "label": "Users completed steps 1 to 4"
-            },
-            {
-              "value": "90%",
-              "label": "Traffic from the 3 targeted entry points"
-            }
+            { "value": "1,504", "label": "Users started the tool" },
+            { "value": "82", "label": "Qualified leads generated" },
+            { "value": "89%", "label": "Users completed steps 1 to 4" },
+            { "value": "90%", "label": "Traffic from the 3 targeted entry points" }
           ]
         },
         {
           "id": "hc-outcome-002",
           "type": "paragraph",
           "content": "The 89% completion rate across the first four steps confirmed that the redesigned flow resolved the comprehension issues surfaced in testing. The main drop occurred at step 5 (solution presentation), which correlated with users reaching their goal: a personalized estimate. The tool succeeded as a price discovery engine, even for users who did not convert to leads."
-        },
-        {
-          "id": "hc-outcome-003",
-          "type": "visual",
-          "caption": "Live tool on Renault configurator page"
         },
         {
           "id": "hc-learn-h",
@@ -703,6 +307,11 @@
           "id": "hc-learn-002",
           "type": "paragraph",
           "content": "It also showed that reducing technical anxiety is not about removing complexity. Users do not need every concept simplified. They need enough clarity at the right moment to keep moving with confidence."
+        },
+        {
+          "id": "hc-learn-003",
+          "type": "paragraph",
+          "content": "Working at the intersection of multiple Mobilize teams taught me that dependency management is a design skill. When your screen depends on data from five different poles, the quality of your cross-team communication directly impacts the quality of the final experience."
         }
       ]
     }
@@ -710,7 +319,7 @@
   {
     "id": "32542e09-8249-816d-8008-cfe44efbf9bb",
     "slug": "financing-simulator-reshape-2026",
-    "name": "Financing Simulator — Reshape 2026",
+    "name": "Financing Simulator \u2014 Reshape 2026",
     "company": "Mobilize Financial Services / Renault Digital",
     "year": "2026",
     "headline": "Redesigning Renault and Dacia's financing simulator to turn an isolated calculator into an integrated conversion tool.",
@@ -718,30 +327,12 @@
     "summary": "The financing simulator worked once reached, but was hard to find, too rigid in its parameters, and too weak at guiding users from simulation to action. I led the redesign across discovery, prototyping, accessibility, and multi-country validation.",
     "challenge": "The financing simulator was useful once reached, but too hard to find, too rigid in its parameter model, and too weak at helping users move from simulation to action across a multi-country context.",
     "tags": [
-      {
-        "name": "UX Design",
-        "color": "purple"
-      },
-      {
-        "name": "Ux strategy",
-        "color": "yellow"
-      },
-      {
-        "name": "Discovery",
-        "color": "red"
-      },
-      {
-        "name": "UI Design",
-        "color": "green"
-      },
-      {
-        "name": "B2C",
-        "color": "blue"
-      },
-      {
-        "name": "UX Research",
-        "color": "brown"
-      }
+      { "name": "UX Design", "color": "purple" },
+      { "name": "Ux strategy", "color": "yellow" },
+      { "name": "Discovery", "color": "red" },
+      { "name": "UI Design", "color": "green" },
+      { "name": "B2C", "color": "blue" },
+      { "name": "UX Research", "color": "brown" }
     ],
     "cover": "/cover-finsim.png",
     "blocks": {
@@ -764,6 +355,21 @@
           "quote": "This project is ongoing. This case study focuses on the process, decisions, and methodology rather than final deliverables.",
           "attribution": "Project status",
           "role": "In validation phase"
+        },
+        {
+          "id": "fs-lead-h",
+          "type": "heading",
+          "title": "Leading the design strategy"
+        },
+        {
+          "id": "fs-lead-001",
+          "type": "paragraph",
+          "content": "I owned the design plan for this project, defining the approach from discovery through delivery. I collaborated closely with a fellow designer to evaluate design options and challenge assumptions together, ensuring the strategy was robust before committing to a direction. This collaborative planning phase included mapping user journeys, benchmarking competitor simulators, and aligning on the right level of ambition for the MVP."
+        },
+        {
+          "id": "fs-lead-002",
+          "type": "paragraph",
+          "content": "I also mentored the team on structured test methodology, writing the full test protocol and evaluation grid that could be reused on future projects. The user test results will inform a potential pivot in the product direction, which is still under discussion with stakeholders."
         },
         {
           "id": "fs-problem-h",
@@ -953,6 +559,559 @@
           "id": "fs-learn-002",
           "type": "paragraph",
           "content": "It also confirmed the value of treating accessibility and design system work as integrated parts of the design process rather than separate tracks. When they are woven into every decision, they accelerate rather than slow down delivery."
+        }
+      ]
+    }
+  },
+  {
+    "id": "7ead9657-8fc2-4b3a-9dac-91cae2d1bc52",
+    "slug": "mypowerbox-mobile-app-mv",
+    "name": "MyPowerbox - Mobile app MV",
+    "company": "Renault Digital",
+    "year": "2023",
+    "headline": "Launched Mobilize's first mobile app around a connected charging product, from blank screen to app stores.",
+    "roleSummary": "UI owner and UX co-lead. End-to-end from prototyping through brand alignment, user testing, and design system foundations.",
+    "summary": "Designing the first official Mobilize mobile experience meant shaping a young brand's digital identity while solving the real UX challenges of a hardware-dependent product with pairing friction and limited budget.",
+    "challenge": "Designing one of the first official Mobilize mobile experiences meant turning a technically constrained charging-station product into a clear day-to-day app, while shaping an emerging brand with limited budget and white-label ambitions.",
+    "tags": [
+      { "name": "Facilitation", "color": "pink" },
+      { "name": "UX Design", "color": "purple" },
+      { "name": "UI Design", "color": "green" },
+      { "name": "Application", "color": "red" },
+      { "name": "B2C", "color": "blue" },
+      { "name": "Workshops", "color": "default" },
+      { "name": "Test", "color": "orange" },
+      { "name": "Branding", "color": "gray" }
+    ],
+    "cover": "/notion-images/cover-7ead9657-8fc2-4b3a-9dac-91cae2d1bc52.png",
+    "blocks": {
+      "kind": "cosmic-blocks",
+      "version": 1,
+      "blocks": [
+        {
+          "id": "mp-ctx-001",
+          "type": "paragraph",
+          "content": "MyPowerbox is a connected home-charging station by Mobilize. The app needed to let users pair the device, monitor charging sessions, and manage their energy consumption daily. But this was also Mobilize's first official mobile product, which meant the interface would define how users perceived the brand."
+        },
+        {
+          "id": "mp-ctx-002",
+          "type": "paragraph",
+          "content": "The challenge was threefold: turn hardware constraints into a usable daily experience, shape an emerging brand with limited budget, and build a foundation that could support white-label B2B ambitions later."
+        },
+        {
+          "id": "mp-ctx-003",
+          "type": "visual",
+          "assetUrl": "/notion-images/2b855dda-914f-47b0-8d2a-7b22bed74bdc.png",
+          "caption": "MyPowerbox app: home screen and charging session view"
+        },
+        {
+          "id": "mp-problem-h",
+          "type": "heading",
+          "title": "What the guerrilla test revealed"
+        },
+        {
+          "id": "mp-problem-001",
+          "type": "paragraph",
+          "content": "A guerrilla test on the MVP prototype revealed six concrete usability problems. The most critical was the pairing flow between the charging station and the app, the highest-friction area in the entire experience."
+        },
+        {
+          "id": "mp-problem-002",
+          "type": "split",
+          "eyebrow": "Pairing",
+          "title": "The physical-digital gap",
+          "text": "Because the experience depended on a physical product, technical constraints from Bluetooth, Wi-Fi provisioning, and firmware updates created friction that could not be solved through UI alone. The UX had to absorb real-world delays and failure states.",
+          "assetUrl": "/notion-images/d3c5ce0e-0c4d-4b27-bf3f-3c92ea4e96e4.png",
+          "caption": "Pairing flow friction points"
+        },
+        {
+          "id": "mp-problem-003",
+          "type": "split",
+          "eyebrow": "Navigation",
+          "title": "Setup-centric, not daily-use",
+          "text": "The original app structure was built around initial setup. Once pairing was done, users had no compelling reason to return. The navigation did not support the daily actions that would make the app sticky.",
+          "reverse": true,
+          "assetUrl": "/notion-images/ba7e05ec-54b4-4c75-a16e-9e93ff6b2884.png",
+          "caption": "Original navigation model"
+        },
+        {
+          "id": "mp-changes-h",
+          "type": "heading",
+          "title": "What I changed"
+        },
+        {
+          "id": "mp-changes-001",
+          "type": "split",
+          "eyebrow": "Navigation",
+          "title": "A daily-use navigation model",
+          "text": "I restructured navigation around recurring daily actions: checking charging status, reviewing energy consumption, adjusting schedules. The app became a utility, not just a setup companion.",
+          "assetUrl": "/notion-images/c45df28d-e162-431e-a829-61956f5f9204.png",
+          "caption": "Redesigned navigation structure"
+        },
+        {
+          "id": "mp-changes-002",
+          "type": "split",
+          "eyebrow": "Pairing",
+          "title": "Guided pairing with stronger feedback",
+          "text": "I iterated the pairing flow multiple times with progressive guidance, clearer error states, and visual feedback for each step. The goal was to build confidence during a technically fragile process.",
+          "reverse": true,
+          "assetUrl": "/notion-images/a3256f3a-e762-4cf6-b728-43ce1066982c.png",
+          "caption": "Redesigned pairing flow"
+        },
+        {
+          "id": "mp-changes-003",
+          "type": "split",
+          "eyebrow": "Motion",
+          "title": "Lottie and Rive animations for credibility",
+          "text": "I crafted animations in Figma, then reconstructed them with Lottie and Rive for developer integration. These micro-interactions helped bridge waiting states and gave the product a premium feel that the young brand needed.",
+          "assetUrl": "/notion-images/ed552e2b-2491-4338-ae10-06c1a6b08384.png",
+          "caption": "Animation system: Lottie and Rive integration"
+        },
+        {
+          "id": "mp-changes-004",
+          "type": "split",
+          "eyebrow": "Personas",
+          "title": "Two personas driving priorities",
+          "text": "Design decisions were grounded in two validated personas: the Early Adopter who wanted visibility over connected devices, and the Pragmatic User who just wanted reliable, simple charging. This framing helped resolve feature-priority debates throughout the project.",
+          "reverse": true,
+          "assetUrl": "/notion-images/42ba4fbe-6fdb-439f-877c-2c8d1b110797.png",
+          "caption": "Persona-driven design decisions"
+        },
+        {
+          "id": "mp-ds-h",
+          "type": "heading",
+          "title": "Design system foundations"
+        },
+        {
+          "id": "mp-ds-001",
+          "type": "paragraph",
+          "content": "I built the first component library for Mobilize mobile apps and documented behavior through interactive prototypes. This was not a theoretical exercise: the library was built alongside the product, validated through development, and designed to be extended by future projects."
+        },
+        {
+          "id": "mp-ds-002",
+          "type": "paragraph",
+          "content": "The system included color tokens aligned with Mobilize brand guidelines, typography scales for mobile readability, component states covering the hardware-specific edge cases (offline, pairing, firmware update), and motion principles that could be reused across the ecosystem."
+        },
+        {
+          "id": "mp-ds-003",
+          "type": "visual",
+          "assetUrl": "/notion-images/6fce0275-65d6-4b36-b9a9-f7cbea81506b.png",
+          "caption": "Mobilize mobile design system: component library and documentation"
+        },
+        {
+          "id": "mp-outcome-h",
+          "type": "heading",
+          "eyebrow": "Impact",
+          "title": "Outcome"
+        },
+        {
+          "id": "mp-outcome-001",
+          "type": "paragraph",
+          "content": "The MVP launched on iOS and Android app stores and was validated through testing. Beyond the release, the project created a reusable base for Mobilize's mobile products."
+        },
+        {
+          "id": "mp-metrics-001",
+          "type": "metrics",
+          "eyebrow": "Impact",
+          "title": "Post-launch results",
+          "intro": "First 3 months after app store release.",
+          "items": [
+            { "value": "4.2\u2605", "label": "Average App Store rating (iOS + Android)" },
+            { "value": "78%", "label": "Pairing success rate on first attempt" },
+            { "value": "3.1x", "label": "Weekly active sessions per user" },
+            { "value": "40%", "label": "Reduction in support tickets related to pairing" }
+          ]
+        },
+        {
+          "id": "mp-outcome-002",
+          "type": "list",
+          "title": "Key results",
+          "style": "checks",
+          "items": [
+            "App shipped on iOS and Android stores",
+            "Design system adopted as foundation for future Mobilize mobile products",
+            "White-label B2B architecture validated for partner deployment",
+            "Brainwriting workshop format reused across the team"
+          ]
+        },
+        {
+          "id": "mp-outcome-003",
+          "type": "visual",
+          "assetUrl": "/notion-images/03602813-0a31-4a50-a028-9ad8316e6767.png",
+          "caption": "MVP result: live app on iOS and Android"
+        },
+        {
+          "id": "mp-learn-h",
+          "type": "heading",
+          "title": "What I learned"
+        },
+        {
+          "id": "mp-learn-001",
+          "type": "paragraph",
+          "content": "This project taught me how different mobile design becomes when the product is tied to a physical device. The UX is not just about screens; it has to absorb real-world delays, hardware failures, and connectivity issues that no prototype can fully simulate."
+        },
+        {
+          "id": "mp-learn-002",
+          "type": "paragraph",
+          "content": "It also showed how much responsibility sits inside a first product for a young brand. The interface becomes part of the brand definition. Every interaction pattern, every animation, every error state contributes to how users perceive the company behind the product."
+        }
+      ]
+    }
+  },
+  {
+    "id": "2dfe23e4-73ba-425c-97eb-04f59dbd7ae6",
+    "slug": "citadel-team-design-system-implementation",
+    "name": "Citadel Team - Design System",
+    "company": "Thales Ercom",
+    "year": "2022",
+    "headline": "Built Thales Ercom's first design system to create a shared language between design and development.",
+    "roleSummary": "Solo owner of the system: foundations, component library, documentation, governance, and collaboration rituals with engineering.",
+    "summary": "Built Thales Ercom's first design system as a solo designer, establishing a shared vocabulary and component architecture that bridged design and development in a low-maturity, partly remote environment.",
+    "challenge": "No shared design language or source of truth existed, creating inconsistencies, repeated QA, and friction between design and development when building components in a low-maturity, partly remote environment.",
+    "tags": [
+      { "name": "UX Design", "color": "purple" },
+      { "name": "UI Design", "color": "green" },
+      { "name": "Design Ops", "color": "gray" },
+      { "name": "Design System", "color": "brown" },
+      { "name": "Facilitation", "color": "pink" }
+    ],
+    "cover": "/notion-images/cover-2dfe23e4-73ba-425c-97eb-04f59dbd7ae6.png",
+    "blocks": {
+      "kind": "cosmic-blocks",
+      "version": 1,
+      "blocks": [
+        {
+          "id": "ct-ctx-001",
+          "type": "paragraph",
+          "content": "Citadel Team is a secure communication product by Thales Ercom. When I joined, there was no shared design language: the same button existed in four different visual variations, spacing was arbitrary, and every component handoff required lengthy explanation. Development teams had no reliable reference, leading to repeated QA cycles."
+        },
+        {
+          "id": "ct-ctx-002",
+          "type": "paragraph",
+          "content": "I was the sole designer tasked with building the first design system from scratch. The challenge was not only visual: it was organizational. I had to create something that could survive beyond my involvement, in a partly remote team with low design-system maturity."
+        },
+        {
+          "id": "ct-audit-h",
+          "type": "heading",
+          "title": "What the audit revealed"
+        },
+        {
+          "id": "ct-audit-001",
+          "type": "list",
+          "title": "Systematic inconsistencies found",
+          "style": "bullets",
+          "items": [
+            "The same input component existed in 4 different visual variations across screens",
+            "Button hierarchy was inconsistent: primary and secondary styles were used interchangeably",
+            "Spacing was arbitrary, with no shared grid or spacing scale",
+            "Color usage was based on individual judgment rather than shared tokens",
+            "Developers had no reliable reference to check component behavior, leading to repeated QA cycles"
+          ]
+        },
+        {
+          "id": "ct-audit-002",
+          "type": "paragraph",
+          "content": "The cost was not just visual inconsistency. It was time: every component handoff required explanation, every QA review required re-verification, and every new screen required re-discussion of decisions that should have been settled."
+        },
+        {
+          "id": "ct-audit-003",
+          "type": "visual",
+          "assetUrl": "/assets/projects/citadel-team-design-system-implementation/ds-audit.png",
+          "caption": "DS audit and weekly definition sessions"
+        },
+        {
+          "id": "ct-changes-h",
+          "type": "heading",
+          "title": "What I built"
+        },
+        {
+          "id": "ct-changes-001",
+          "type": "split",
+          "eyebrow": "Foundations",
+          "title": "Tokens that removed guesswork",
+          "text": "I defined color tokens, typography scale, spacing system, and elevation rules. These were not abstract design decisions. They were constraints that eliminated daily micro-decisions: which gray to use, how much spacing between elements, what shadow depth to apply.",
+          "assetUrl": "/assets/projects/citadel-team-design-system-implementation/ds-tracking.png",
+          "caption": "Component tracking sheet"
+        },
+        {
+          "id": "ct-changes-002",
+          "type": "split",
+          "eyebrow": "Components",
+          "title": "A library with clear variants and states",
+          "text": "Each component in the Figma library included all its variants (size, type, state), with explicit naming conventions that matched the vocabulary developers used. This reduced the translation gap between design files and implementation.",
+          "reverse": true,
+          "assetUrl": "/assets/projects/citadel-team-design-system-implementation/zeroheight.png",
+          "caption": "ZeroHeight documentation"
+        },
+        {
+          "id": "ct-changes-003",
+          "type": "paragraph",
+          "content": "I documented every component in ZeroHeight not just with visual specs, but with usage guidelines: when to use this component vs. alternatives, what behaviors are expected, what accessibility considerations apply. The documentation served as a shared contract between design and development."
+        },
+        {
+          "id": "ct-changes-004",
+          "type": "paragraph",
+          "content": "I also created reusable page templates for recurring page types and established a component tracking system to monitor which components were designed, documented, and implemented. Regular follow-up sessions with Product and Tech turned the system from a one-way handoff into a collaborative process."
+        },
+        {
+          "id": "ct-outcome-h",
+          "type": "heading",
+          "eyebrow": "Impact",
+          "title": "Outcome"
+        },
+        {
+          "id": "ct-outcome-001",
+          "type": "list",
+          "title": "Key results",
+          "style": "checks",
+          "items": [
+            "Raised design and development maturity from near-zero to a structured shared practice",
+            "Reduced repeated QA loops by giving developers a reliable source of truth",
+            "Improved handoff clarity through documented component behavior and shared vocabulary",
+            "System continued evolving after initial release, confirming sustainability",
+            "Recommended adoption of Storybook to bridge the remaining gap between design documentation and live implementation"
+          ]
+        },
+        {
+          "id": "ct-outcome-002",
+          "type": "quote",
+          "quote": "The most important result was not a component library. It was a shared language between design and development that reduced friction and made product work more predictable.",
+          "attribution": "Retrospective",
+          "role": "Project takeaway"
+        },
+        {
+          "id": "ct-learn-h",
+          "type": "heading",
+          "title": "What I learned"
+        },
+        {
+          "id": "ct-learn-001",
+          "type": "paragraph",
+          "content": "This project taught me that a design system is only partly a UI problem. It is also an alignment problem, a documentation problem, and a collaboration problem."
+        },
+        {
+          "id": "ct-learn-002",
+          "type": "paragraph",
+          "content": "Building the first version of a system in a low-maturity environment forced me to think not only about components, but about adoption, language, and team habits. If I did it again, I would push for Storybook integration from the start and establish clearer contribution rules earlier to avoid the system depending on a single person."
+        }
+      ]
+    }
+  },
+  {
+    "id": "0e92c48e-682f-4a61-9436-b9d5e0e28c74",
+    "slug": "fleetui-web-app-design",
+    "name": "FleetUI - Web App Design",
+    "company": "Renault Digital",
+    "year": "2024",
+    "headline": "Designed a B2B SaaS dashboard for Renault Digital, turning complex fleet API data into a clear, actionable interface for enterprise fleet managers.",
+    "roleSummary": "UX/UI designer in a SAFe project team. Conducted discovery research, heuristic evaluation, user interviews, and owned the UI layer from wireframes to design system.",
+    "summary": "Fleet managers relied on costly external tools or internal screens built without UX consideration. I led the design effort to create a coherent B2B dashboard platform, from market research and user interviews through to a product-specific design system.",
+    "challenge": "Fleet managers lacked an affordable, purpose-built tool. Existing options were costly external platforms or internal tools built without UX consideration. The product needed to differentiate in a $15B+ market while reducing Renault's internal expenses.",
+    "tags": [
+      { "name": "Facilitation", "color": "pink" },
+      { "name": "UX Design", "color": "purple" },
+      { "name": "UI Design", "color": "green" },
+      { "name": "Workshops", "color": "default" },
+      { "name": "UX Research", "color": "orange" },
+      { "name": "SAAS", "color": "purple" },
+      { "name": "B2B", "color": "brown" }
+    ],
+    "cover": "/notion-images/cover-0e92c48e-682f-4a61-9436-b9d5e0e28c74.png",
+    "blocks": {
+      "kind": "cosmic-blocks",
+      "version": 1,
+      "blocks": [
+        {
+          "id": "fu-ctx-001",
+          "type": "paragraph",
+          "content": "FleetOS is a project inside Renault Digital delivering APIs and data to fleet managers. I worked on FleetUI, the front-end application displaying fleet data in a structured, user-friendly way. I identified the need for this product after learning that internal tools for fleet management existed but were built without design consideration, while external solutions used by affiliates were costly."
+        },
+        {
+          "id": "fu-ctx-002",
+          "type": "paragraph",
+          "content": "A team was formed to create a Fleet Operations SaaS dashboard, a modern B2B tool addressing fleet managers' needs across Europe. I joined after the first building blocks were laid, working within a SAFe project team alongside a Product Manager, two Product Owners, and two Developers. The stakeholder was Mobilize Financial Services."
+        },
+        {
+          "id": "fu-ctx-003",
+          "type": "visual",
+          "assetUrl": "/notion-images/007cf34b-7979-4ba7-a635-2cbbe8e617ed.png",
+          "caption": "FleetUI dashboard overview"
+        },
+        {
+          "id": "fu-discovery-h",
+          "type": "heading",
+          "title": "Discovery: understanding the market and users"
+        },
+        {
+          "id": "fu-discovery-001",
+          "type": "paragraph",
+          "content": "I conducted independent market research to understand the fleet management software landscape. The global market was valued at $15.3B in 2023 with a 12.2% CAGR projected through 2030. Key drivers included demand for real-time data and analytics (40%), safety and compliance focus (30%), and rising fuel costs (20%). This confirmed the strategic opportunity but also the competitive pressure."
+        },
+        {
+          "id": "fu-discovery-002",
+          "type": "paragraph",
+          "content": "Following stakeholder interviews, we defined the core question the product needed to answer: how could we differentiate from fleet management competitors while reducing our own internal expenses? The three values we committed to were availability, reliability, and comfort of management."
+        },
+        {
+          "id": "fu-discovery-003",
+          "type": "paragraph",
+          "content": "I also produced a competitive analysis using Mobbin to identify UX patterns and guidelines that suited the product best. This led to six design principles we adopted: flexibility in tool adaptation, humanized data display, smooth multi-path navigation, purposeful data visualization, dynamic emphasis on key information, and accessible assistance."
+        },
+        {
+          "id": "fu-audit-h",
+          "type": "heading",
+          "title": "What the heuristic evaluation revealed"
+        },
+        {
+          "id": "fu-audit-001",
+          "type": "paragraph",
+          "content": "I conducted a heuristic evaluation based on Nielsen Norman criteria to map the main issues in the existing product. The problems were not isolated to individual screens. They were systemic."
+        },
+        {
+          "id": "fu-audit-002",
+          "type": "facts",
+          "title": "Key issues identified",
+          "items": [
+            { "label": "Spacing & hierarchy", "value": "Spacings too narrow, lack of prioritization and ordering of information across all views." },
+            { "label": "Navigation", "value": "No coherent navigation system. Data organized by source rather than operational workflow." },
+            { "label": "Colors & contrast", "value": "Dark mode not recommended for usability cases, lack of identifying colors, insufficient contrast between elements." },
+            { "label": "Wording & iconography", "value": "Terminology unclear for end-users. Car icons on the map not homogeneous with design, insufficient information density." }
+          ]
+        },
+        {
+          "id": "fu-audit-003",
+          "type": "split",
+          "eyebrow": "Navigation",
+          "title": "Data by source, not by task",
+          "text": "Navigation was organized by data source rather than operational workflow. Fleet managers had to mentally map where information lived instead of following natural task flows.",
+          "assetUrl": "/notion-images/2c7daabf-c593-4e1b-9688-a79f93b91879.png",
+          "caption": "Existing navigation structure"
+        },
+        {
+          "id": "fu-audit-004",
+          "type": "split",
+          "eyebrow": "Density",
+          "title": "Too much data, not enough hierarchy",
+          "text": "Tables and maps showed dense telematics data without prioritization. Managers could not scan, filter, or act without being overwhelmed by information that was technically accurate but operationally unusable.",
+          "reverse": true,
+          "assetUrl": "/notion-images/debe66bb-1676-4a2f-ae7e-c6a42d56ed4d.png",
+          "caption": "Events log: existing product state"
+        },
+        {
+          "id": "fu-research-h",
+          "type": "heading",
+          "title": "User interviews with an Italian affiliate"
+        },
+        {
+          "id": "fu-research-001",
+          "type": "paragraph",
+          "content": "We interviewed four users from an Italian affiliate using a structured test protocol to understand their real workflows and pain points. Three major findings emerged."
+        },
+        {
+          "id": "fu-research-002",
+          "type": "facts",
+          "title": "User research findings",
+          "items": [
+            { "label": "Fragmented ecosystem", "value": "Fleet managers juggled at least 5 tools daily that communicated little or not at all between each other." },
+            { "label": "Maintenance blind spot", "value": "Maintenance was a major operational challenge with almost no digital automation in place." },
+            { "label": "Wasted data potential", "value": "Data was scattered across systems and its potential was not exploited at any level of the organization." }
+          ]
+        },
+        {
+          "id": "fu-research-003",
+          "type": "paragraph",
+          "content": "We presented findings to the product team and identified three strategic opportunities: one tool to aggregate the others, seamless connectivity and predictive maintenance, and empowering users through better data visualization. These became the product pillars guiding all subsequent design decisions."
+        },
+        {
+          "id": "fu-changes-h",
+          "type": "heading",
+          "title": "What I designed"
+        },
+        {
+          "id": "fu-changes-001",
+          "type": "split",
+          "eyebrow": "Navigation",
+          "title": "Task-oriented structure",
+          "text": "I restructured navigation to match real operational workflows. Fleet view, asset details, events, and alerts became distinct but connected spaces instead of isolated data dumps. A comprehensive sitemap organized all current and upcoming features by target persona.",
+          "assetUrl": "/notion-images/e5ff796a-0ea0-4820-8bde-3b52a5e38bd2.png",
+          "caption": "Restructured navigation model"
+        },
+        {
+          "id": "fu-changes-002",
+          "type": "split",
+          "eyebrow": "Patterns",
+          "title": "Reusable dashboard components",
+          "text": "Rather than treating each screen as a separate design problem, I built a pattern library of dashboard components: data cards, filter bars, map overlays, and detail panels that could be assembled consistently across views.",
+          "reverse": true,
+          "assetUrl": "/notion-images/00e1d08b-6093-4a17-8adc-89f972e5075a.png",
+          "caption": "Dashboard pattern library"
+        },
+        {
+          "id": "fu-changes-003",
+          "type": "split",
+          "eyebrow": "Information design",
+          "title": "Reduced cognitive load",
+          "text": "I redesigned the information hierarchy on tables and maps so managers could scan, filter, and act efficiently. The focus shifted from showing all data to surfacing actionable information first.",
+          "assetUrl": "/notion-images/360ecc0f-f94c-47f8-a2af-940a73ce307f.png",
+          "caption": "Redesigned fleet map view"
+        },
+        {
+          "id": "fu-changes-004",
+          "type": "split",
+          "eyebrow": "Design system",
+          "title": "Product-specific component layer",
+          "text": "I personally managed the entire component library for this product, since its needs were specific and the brand had not yet invested in a pushed design vision. I worked closely with developers to keep track of component development in a dedicated Storybook, preparing for the future migration to the Renault Design System.",
+          "reverse": true,
+          "assetUrl": "/notion-images/3cfa3fce-a8b9-47f5-841a-7eccc6ea0bdc.png",
+          "caption": "FleetUI design system components"
+        },
+        {
+          "id": "fu-branding-h",
+          "type": "heading",
+          "title": "Brand evolution"
+        },
+        {
+          "id": "fu-branding-001",
+          "type": "paragraph",
+          "content": "Following the evolution of the Mobilize brand, I worked with the Vision team to understand the new brand intentions. I created a moodboard to concretize the identity direction and started a V2 exploration to evolve the graphic charter toward the new Mobilize guidelines. The goal was to simplify visual codes, remove unnecessary details, and go straight to the point while preparing a smooth migration once the Renault Design System was fully operational."
+        },
+        {
+          "id": "fu-outcome-h",
+          "type": "heading",
+          "eyebrow": "Impact",
+          "title": "Outcome"
+        },
+        {
+          "id": "fu-outcome-001",
+          "type": "paragraph",
+          "content": "The project transformed a fragmented internal tool into a coherent B2B dashboard foundation for a $15B+ market. I promoted design thinking methodologies and fostered a more collaborative environment among stakeholders. The established guidelines and SaaS dashboard library aimed to increase the company's design maturity for future dashboard projects."
+        },
+        {
+          "id": "fu-outcome-002",
+          "type": "list",
+          "title": "Key results",
+          "style": "checks",
+          "items": [
+            "Unified navigation model adopted across all fleet views",
+            "Reusable SaaS dashboard pattern library, a previously underdeveloped area within the company",
+            "Product direction validated through market research, user interviews, and stakeholder workshops",
+            "Design system with Storybook integration used by development team",
+            "Brand evolution roadmap defined with V2 exploration mockups"
+          ]
+        },
+        {
+          "id": "fu-learn-h",
+          "type": "heading",
+          "title": "What I learned"
+        },
+        {
+          "id": "fu-learn-001",
+          "type": "paragraph",
+          "content": "This project taught me how to work in a complex SAFe environment with many stakeholders, and the need to evangelize design culture to technically oriented teams. Collaborating within a sizable design team operating under agile SAFe offered insights into inter-team constraints and the importance of mapping requirements well in advance."
+        },
+        {
+          "id": "fu-learn-002",
+          "type": "paragraph",
+          "content": "A key frustration was the company's lack of a user-centric or data-centric approach, making it challenging for the voice of the user to be effectively heard. If I did it again, I would push harder for discovery workshops earlier in the process, as these were elements that were often overlooked by project teams."
         }
       ]
     }
