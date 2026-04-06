@@ -224,9 +224,9 @@
           "title": "Key screens iterated after user testing",
           "intro": "Each iteration was validated with stakeholders before entering development.",
           "beforeLabel": "Before test",
-          "beforeBody": "Small pop-in for monophase/triphase. Expanded cards with technical naming. Price banner detached from configuration zone. Process ended with a 5-step list and no follow-up.",
           "afterLabel": "After redesign",
-          "afterBody": "Enlarged pop-in with diagram and dual identification methods. Simplified comparison table with plain language. Price aligned with inputs, impact visible in real time. Email recap added with version A/B confirmation alternatives.",
+          "beforeImage": "/notion-images/hc-before-solution.png",
+          "afterImage": "/notion-images/hc-after-solution.png",
           "note": "These changes were presented as Version A / Version B proposals for stakeholder sign-off before entering development."
         },
         {

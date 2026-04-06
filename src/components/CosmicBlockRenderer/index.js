@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState, useCallback, useEffect } from 'react';
 import { useInViewport } from 'hooks';
 import placeholderSrc from 'assets/placeholder.svg';
 import './CosmicBlockRenderer.css';
@@ -145,21 +145,90 @@ function ToggleBlock({ title, content }) {
   );
 }
 
-function BeforeAfterBlock({ title, intro, beforeLabel, beforeBody, afterLabel, afterBody, note }) {
+function BeforeAfterBlock({ title, intro, beforeLabel, beforeBody, afterLabel, afterBody, beforeImage, afterImage, note }) {
+  const [position, setPosition] = useState(50);
+  const [sliderWidth, setSliderWidth] = useState(0);
+  const containerRef = useRef(null);
+  const dragging = useRef(false);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const ro = new ResizeObserver(([entry]) => setSliderWidth(entry.contentRect.width));
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
+  const updatePosition = useCallback((clientX) => {
+    const rect = containerRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
+    setPosition((x / rect.width) * 100);
+  }, []);
+
+  const onPointerDown = useCallback((e) => {
+    dragging.current = true;
+    e.currentTarget.setPointerCapture(e.pointerId);
+    updatePosition(e.clientX);
+  }, [updatePosition]);
+
+  const onPointerMove = useCallback((e) => {
+    if (!dragging.current) return;
+    updatePosition(e.clientX);
+  }, [updatePosition]);
+
+  const onPointerUp = useCallback(() => {
+    dragging.current = false;
+  }, []);
+
+  const hasImages = beforeImage && afterImage;
+
   return (
     <div className="cosmic-before-after">
       {title && <h4 className="cosmic-before-after__title">{title}</h4>}
       {intro && <p className="cosmic-before-after__intro">{intro}</p>}
-      <div className="cosmic-before-after__columns">
-        <div className="cosmic-before-after__col cosmic-before-after__col--before">
-          <span className="cosmic-before-after__label">{beforeLabel || 'Before'}</span>
-          <p className="cosmic-before-after__body">{beforeBody}</p>
+
+      {hasImages ? (
+        <div
+          ref={containerRef}
+          className="cosmic-before-after__slider"
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={onPointerUp}
+          role="slider"
+          aria-valuenow={Math.round(position)}
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-label="Before and after comparison"
+          tabIndex={0}
+        >
+          <img className="cosmic-before-after__img cosmic-before-after__img--after" src={afterImage} alt={afterLabel || 'After'} draggable={false} />
+          <div className="cosmic-before-after__clip" style={{ width: `${position}%` }}>
+            <img className="cosmic-before-after__img cosmic-before-after__img--before" src={beforeImage} alt={beforeLabel || 'Before'} draggable={false} style={sliderWidth ? { width: `${sliderWidth}px` } : undefined} />
+          </div>
+          <div className="cosmic-before-after__handle" style={{ left: `${position}%` }}>
+            <div className="cosmic-before-after__handle-line" />
+            <div className="cosmic-before-after__handle-grip">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M13 4l4 6-4 6M7 4L3 10l4 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </div>
+            <div className="cosmic-before-after__handle-line" />
+          </div>
+          <span className="cosmic-before-after__slider-label cosmic-before-after__slider-label--before">{beforeLabel || 'Before'}</span>
+          <span className="cosmic-before-after__slider-label cosmic-before-after__slider-label--after">{afterLabel || 'After'}</span>
         </div>
-        <div className="cosmic-before-after__col cosmic-before-after__col--after">
-          <span className="cosmic-before-after__label">{afterLabel || 'After'}</span>
-          <p className="cosmic-before-after__body">{afterBody}</p>
+      ) : (
+        <div className="cosmic-before-after__columns">
+          <div className="cosmic-before-after__col cosmic-before-after__col--before">
+            <span className="cosmic-before-after__label">{beforeLabel || 'Before'}</span>
+            <p className="cosmic-before-after__body">{beforeBody}</p>
+          </div>
+          <div className="cosmic-before-after__col cosmic-before-after__col--after">
+            <span className="cosmic-before-after__label">{afterLabel || 'After'}</span>
+            <p className="cosmic-before-after__body">{afterBody}</p>
+          </div>
         </div>
-      </div>
+      )}
+
       {note && <p className="cosmic-before-after__note">{note}</p>}
     </div>
   );
