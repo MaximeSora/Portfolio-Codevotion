@@ -479,26 +479,27 @@
 
 .cosmic-before-after__slider-label {
   position: absolute;
-  bottom: var(--spaceM);
-  padding: var(--spaceXS) var(--spaceM);
-  border-radius: 6px;
-  font-size: var(--fontSizeBodyXS);
-  font-weight: var(--fontWeightMedium);
-  letter-spacing: 0.02em;
+  bottom: 16px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   pointer-events: none;
-  z-index: 1;
+  z-index: 3;
+  line-height: 1.2;
 }
 
 .cosmic-before-after__slider-label--before {
-  left: var(--spaceM);
-  background: rgb(var(--rgbText) / 0.7);
+  left: 16px;
+  background: rgb(var(--rgbText) / 0.8);
   color: rgb(var(--rgbBackground));
 }
 
 .cosmic-before-after__slider-label--after {
-  right: var(--spaceM);
-  background: rgb(var(--rgbPrimary) / 0.85);
+  right: 16px;
+  background: rgb(var(--rgbPrimary) / 0.9);
   color: rgb(var(--rgbBackground));
 }
 

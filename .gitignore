@@ -5,9 +5,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Generated Notion data (fetched at build time)
-src/data/
-public/notion-images/
+# Generated Notion data (now committed directly)
+# src/data/
+# public/notion-images/
 
 # Runtime data
 pids
