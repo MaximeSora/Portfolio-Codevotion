@@ -19,8 +19,18 @@ const ProjectItem = ({ project, index, dimmed, onMouseEnter, onMouseLeave, onIte
       <div className="project-list__info">
         <div className="project-list__text">
           <span className="project-list__num">{String(index + 1).padStart(2, '0')}</span>
-          <span className="project-list__title">{project.title}</span>
+          <span className="project-list__title">
+            {project.title}
+            {project.wip && <span className="project-list__wip">WIP</span>}
+          </span>
           <span className="project-list__description">{project.description}</span>
+          {project.tags?.length > 0 && (
+            <ul className="project-list__tags">
+              {project.tags.map(tag => (
+                <li key={tag.name} className="project-list__tag">{tag.name}</li>
+              ))}
+            </ul>
+          )}
         </div>
         <span className="project-list__arrow" aria-hidden><Icon icon="arrowUpRight" /></span>
       </div>

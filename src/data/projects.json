@@ -320,6 +320,7 @@
     "id": "32542e09-8249-816d-8008-cfe44efbf9bb",
     "slug": "financing-simulator-reshape-2026",
     "name": "Financing Simulator \u2014 Reshape 2026",
+    "wip": true,
     "company": "Mobilize Financial Services / Renault Digital",
     "year": "2026",
     "headline": "Redesigning Renault and Dacia's financing simulator to turn an isolated calculator into an integrated conversion tool.",

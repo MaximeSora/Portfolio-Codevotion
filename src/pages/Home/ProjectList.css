@@ -216,6 +216,46 @@
   }
 }
 
+/* Tags pills */
+.project-list__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  padding: 0;
+  margin: var(--spaceS) 0 0;
+}
+
+.project-list__tag {
+  font-size: var(--fontSizeBodyXS);
+  font-weight: var(--fontWeightMedium);
+  color: rgb(var(--rgbText) / 0.6);
+  background: rgb(var(--rgbText) / 0.04);
+  border: 1px solid rgb(var(--rgbText) / 0.1);
+  padding: 3px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* WIP badge */
+.project-list__wip {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: var(--fontWeightBold);
+  color: rgb(var(--rgbBackground));
+  background: rgb(var(--rgbPrimary));
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-left: 12px;
+  vertical-align: middle;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
 .project-list__arrow {
   display: inline-flex;
   align-items: center;
@@ -251,16 +291,16 @@
 /* Right: thumbnail */
 .project-list__thumb {
   flex-shrink: 0;
-  width: 280px;
-  height: 175px;
+  width: 380px;
+  height: 220px;
   border-radius: 10px;
   overflow: hidden;
   background: rgb(var(--rgbText) / 0.05);
 
   @media (max-width: 1024px) {
     & {
-      width: 200px;
-      height: 125px;
+      width: 280px;
+      height: 165px;
     }
   }
 
@@ -292,7 +332,7 @@
 .project-list__thumb img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   transition: transform var(--durationL) var(--bezierFastoutSlowin), opacity 0.3s ease;
 }
 

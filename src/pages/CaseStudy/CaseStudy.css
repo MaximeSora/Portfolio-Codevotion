@@ -143,6 +143,37 @@
   text-wrap: balance;
 }
 
+/* WIP banner */
+.case-study__wip {
+  display: flex;
+  align-items: center;
+  gap: var(--spaceM);
+  margin-top: var(--spaceL);
+  padding: var(--spaceS) var(--spaceL);
+  background: rgb(var(--rgbPrimary) / 0.08);
+  border: 1px solid rgb(var(--rgbPrimary) / 0.2);
+  border-radius: 8px;
+}
+
+.case-study__wip-badge {
+  font-size: 11px;
+  font-weight: var(--fontWeightBold);
+  color: rgb(var(--rgbBackground));
+  background: rgb(var(--rgbPrimary));
+  padding: 2px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+.case-study__wip-text {
+  font-size: var(--fontSizeBodyS);
+  color: rgb(var(--rgbText) / 0.7);
+  line-height: 1.4;
+}
+
 .case-study__lede {
   margin: 0;
   font-family: 'Inter', sans-serif;

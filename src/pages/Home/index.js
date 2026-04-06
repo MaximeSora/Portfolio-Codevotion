@@ -22,7 +22,8 @@ import './index.css';
 const projects = notionProjects.map(p => ({
   ...p,
   title: p.name,
-  description: [p.company, p.tags.slice(0, 3).map(t => t.name).join(', ')].filter(Boolean).join(' · '),
+  description: p.company,
+  tags: p.tags.slice(0, 3),
   link: `/projects/${p.slug}`,
   image: p.cover,
 }));

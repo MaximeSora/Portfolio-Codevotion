@@ -47,6 +47,7 @@ const CaseStudy = () => {
     summary,
     challenge,
     impact,
+    wip,
   } = project;
   const isCosmicBlocks = rawBlocks?.kind === 'cosmic-blocks';
   const notionBlocks = isCosmicBlocks ? [] : (Array.isArray(rawBlocks) ? rawBlocks : []);
@@ -202,6 +203,12 @@ const CaseStudy = () => {
             >
               <div className="case-study__header-body">
                 <h1 className="case-study__title">{name}</h1>
+                {wip && (
+                  <div className="case-study__wip">
+                    <span className="case-study__wip-badge">WIP</span>
+                    <span className="case-study__wip-text">This case study is currently being worked on and may be updated.</span>
+                  </div>
+                )}
               </div>
             </div>
           </ProjectSectionContent>
