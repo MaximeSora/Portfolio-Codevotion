@@ -216,10 +216,15 @@
 }
 
 /* ─── Visual ─────────────────────────────────────── */
-.cosmic-visual__img {
+.cosmic-visual__img,
+.cosmic-visual__video {
   width: 100%;
   display: block;
   border-radius: 14px;
+}
+
+.cosmic-visual__video {
+  background: rgb(var(--rgbText) / 0.04);
 }
 
 .cosmic-visual__caption {
@@ -461,10 +466,15 @@
   gap: var(--spaceS);
 }
 
-.cosmic-split__img {
+.cosmic-split__img,
+.cosmic-split__video {
   width: 100%;
   display: block;
   border-radius: 14px;
+}
+
+.cosmic-split__video {
+  background: rgb(var(--rgbText) / 0.04);
 }
 
 .cosmic-split__caption {

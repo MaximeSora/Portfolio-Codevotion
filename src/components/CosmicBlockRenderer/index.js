@@ -83,11 +83,28 @@ function QuoteBlock({ quote, attribution, role }) {
   );
 }
 
+function isVideo(url) {
+  return url && /\.(mp4|webm)(\?|$)/i.test(url);
+}
+
 function VisualBlock({ title, description, assetUrl, caption }) {
   const src = assetUrl || placeholderSrc;
+  const video = isVideo(assetUrl);
   return (
     <figure className="cosmic-visual">
-      <img className="cosmic-visual__img" src={src} alt={title || caption || ''} loading="lazy" />
+      {video ? (
+        <video
+          className="cosmic-visual__video"
+          src={src}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+        />
+      ) : (
+        <img className="cosmic-visual__img" src={src} alt={title || caption || ''} loading="lazy" />
+      )}
       {(title || caption || description) && (
         <figcaption className="cosmic-visual__caption">
           {title && <span className="cosmic-visual__caption-title">{title}</span>}
@@ -150,6 +167,7 @@ function BeforeAfterBlock({ title, intro, beforeLabel, beforeBody, afterLabel, a
 
 function SplitBlock({ text, eyebrow, title, assetUrl, caption, reverse }) {
   const src = assetUrl || placeholderSrc;
+  const video = isVideo(assetUrl);
   return (
     <div className={`cosmic-split${reverse ? ' cosmic-split--reverse' : ''}`}>
       <div className="cosmic-split__text">
@@ -158,7 +176,19 @@ function SplitBlock({ text, eyebrow, title, assetUrl, caption, reverse }) {
         {text && <p className="cosmic-split__body">{text}</p>}
       </div>
       <div className="cosmic-split__media">
-        <img className="cosmic-split__img" src={src} alt={caption || title || ''} loading="lazy" />
+        {video ? (
+          <video
+            className="cosmic-split__video"
+            src={src}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+          />
+        ) : (
+          <img className="cosmic-split__img" src={src} alt={caption || title || ''} loading="lazy" />
+        )}
         {caption && <span className="cosmic-split__caption">{caption}</span>}
       </div>
     </div>

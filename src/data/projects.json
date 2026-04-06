@@ -420,7 +420,7 @@
         "color": "blue"
       }
     ],
-    "cover": null,
+    "cover": "/cover-home-charging.png",
     "blocks": {
       "kind": "cosmic-blocks",
       "version": 1,
@@ -428,24 +428,13 @@
         {
           "id": "hc-ctx-001",
           "type": "paragraph",
-          "content": "Installing a home charging station is one of the biggest unknowns in the EV buying journey. On Renault and Dacia websites, users only saw a single default price with no way to understand how their own setup would affect the final cost."
+          "content": "Installing a home charging station is one of the biggest unknowns in the EV buying journey. On Renault and Dacia websites, users only saw a single default price with no way to understand how their own setup would affect the final cost. Mobilize Power Solutions needed an estimation tool that could reduce uncertainty and generate qualified leads."
         },
         {
           "id": "hc-ctx-002",
-          "type": "paragraph",
-          "content": "Competitors were already integrating estimation tools into their purchase flows. Mobilize Power Solutions needed a quotation experience that could reduce uncertainty, support lead generation, and increase the visibility of the charging offer inside the Renault ecosystem."
-        },
-        {
-          "id": "hc-ctx-003",
-          "type": "quote",
-          "quote": "I designed the home charging quotation experience to solve two linked problems: making the offer easier to find, and making the tool easier to understand.",
-          "attribution": "Maxime Pocq",
-          "role": "Project framing"
-        },
-        {
-          "id": "hc-ctx-004",
           "type": "visual",
-          "caption": "Home Charging Quotation Tool, embedded across Renault and Dacia configurators"
+          "assetUrl": "/notion-images/hc-after-solution.png",
+          "caption": "Home Charging Quotation Tool: product selection with real-time pricing, embedded across Renault and Dacia configurators"
         },
         {
           "id": "hc-problem-h",
@@ -455,93 +444,204 @@
         {
           "id": "hc-problem-001",
           "type": "paragraph",
-          "content": "The project had two UX challenges that needed to be solved in order. Users first had to find the charging offer inside a dense content architecture. Then, once inside the flow, they had to navigate technical concepts and opaque pricing."
+          "content": "The project had two UX challenges that needed to be solved in order. A first qualitative study (18 participants, conducted by Affordance) revealed a discoverability problem: only 3 out of 18 users found the Mobilize Power Solutions page on renault.fr unaided. But solving visibility was not enough. Once users reached the tool, prototype testing surfaced a second layer of friction: technical complexity."
         },
         {
           "id": "hc-problem-002",
-          "type": "split",
-          "eyebrow": "Discovery",
-          "title": "The offer was invisible",
-          "text": "An initial qualitative study with 18 participants revealed the scale of the problem: only 3 found the relevant Mobilize Power Solutions page on renault.fr unaided. The charging offer was buried, disconnected from the purchase journey.",
-          "caption": "Existing experience: home charging buried, no estimation, no guidance"
+          "type": "paragraph",
+          "content": "The charging offer was buried in the site architecture, disconnected from the EV purchase journey. Only 3 out of 18 users found the Mobilize Power Solutions page unaided. I worked on embedding the tool at five high-intent entry points across renault.fr to solve this."
+        },
+        {
+          "id": "hc-entrypoints-h",
+          "type": "heading",
+          "title": "Mapping the right entry points"
+        },
+        {
+          "id": "hc-entrypoints-001",
+          "type": "paragraph",
+          "content": "To solve discoverability, I mapped the Renault website architecture to identify the pages where charging intent was highest. The goal was to embed the quotation tool exactly where users were already thinking about home charging, rather than forcing them to find a buried Mobilize page."
+        },
+        {
+          "id": "hc-entrypoints-002",
+          "type": "facts",
+          "title": "5 entry points identified across renault.fr",
+          "items": [
+            {
+              "label": "R5 E-Tech — Solutions recharge",
+              "value": "Dedicated charging page for the flagship EV. Users land here from the vehicle configurator. Added a direct CTA to the estimation tool alongside autonomy and cost simulators."
+            },
+            {
+              "label": "R5 E-Tech — Financement & services",
+              "value": "Financing page where users compare leasing options. Embedded a charging installation block ('Votre borne installée à partir de 999€') with a link to the quotation tool, catching users in a purchase-decision mindset."
+            },
+            {
+              "label": "Mobilize Power Solutions",
+              "value": "The main MPS page, previously the only entry point. Restructured the product comparison (Prise renforcée / Powerbox / Bidirectional) and added a direct 'Commandez votre borne' CTA."
+            },
+            {
+              "label": "E-Tech — Recharge hub",
+              "value": "Cross-model charging hub covering home and on-road charging. Added a 'Mobilize Powerbox' section linking to the estimation tool, bridging generic charging content to the personalized quotation flow."
+            },
+            {
+              "label": "E-Tech — Services",
+              "value": "Services overview page with a dedicated 'Estimez votre installation' CTA under the charging section. This page captures users exploring the EV ownership ecosystem beyond the vehicle itself."
+            }
+          ]
+        },
+        {
+          "id": "hc-entrypoints-003",
+          "type": "paragraph",
+          "content": "Post-launch analytics confirmed the strategy: 90% of tool traffic came from these targeted pages. The three highest-performing entry points (MPS page at 41%, E-Tech charging hub at 39%, and R5 product page at 10%) accounted for 95% of completed quotations."
         },
         {
           "id": "hc-problem-003",
           "type": "split",
-          "eyebrow": "Comprehension",
+          "eyebrow": "Layer 2",
           "title": "The flow was too technical",
-          "text": "Prototype testing with 14 participants confirmed the second issue. Users were blocked by concepts like monophase and triphase charging, and the price felt disconnected from the choices they were making.",
+          "text": "With discoverability solved, a guerilla test with 14 participants (April 2024) confirmed the second issue. Three specific pain points emerged around technical terminology, product comparison, and pricing transparency. This test became the foundation of the redesign I led.",
           "reverse": true,
-          "caption": "Key friction points identified during prototype testing"
+          "assetUrl": "/notion-images/hc-proto-2024.png",
+          "caption": "The V3 prototype tested in April 2024: all configuration steps visible on a single scrollable page"
         },
         {
-          "id": "hc-strat-h",
+          "id": "hc-test-h",
           "type": "heading",
-          "title": "Strategy: fix findability first, then usability"
+          "title": "What the test revealed"
         },
         {
-          "id": "hc-strat-001",
+          "id": "hc-test-001",
           "type": "paragraph",
-          "content": "Instead of treating the project as a single UI problem, I framed it as two consecutive challenges. First, make the offer findable by embedding it at the exact points where charging intent was highest. Then, make the quotation flow understandable by reducing technical complexity step by step."
+          "content": "The guerilla test (14 participants, 30-45 minute sessions, mix of in-person and remote) placed users in a realistic scenario: they had just bought a Megane E-Tech and needed to install a home charging station. Three critical friction points surfaced."
         },
         {
-          "id": "hc-strat-002",
-          "type": "visual",
-          "caption": "Two-step approach: solve discoverability before optimizing the flow"
+          "id": "hc-test-002",
+          "type": "facts",
+          "title": "Comprehension scores before redesign",
+          "items": [
+            {
+              "label": "Monophase vs. triphase",
+              "value": "Only 4 out of 14 users understood the concept before interacting with help. 8 were completely lost."
+            },
+            {
+              "label": "Product comparison",
+              "value": "Users consistently failed to understand V2G concepts. The comparison table was perceived as hard to scan."
+            },
+            {
+              "label": "Price banner",
+              "value": "7 out of 14 only partially understood how configuration choices affected the estimate. The price block felt detached from the inputs."
+            }
+          ]
         },
         {
-          "id": "hc-changes-h",
+          "id": "hc-test-003",
+          "type": "paragraph",
+          "content": "On the positive side, 100% of users successfully chose their vehicle, 12 out of 14 understood the housing type step, and the overall flow was perceived as faster and more intuitive than competitor tools. The structure worked. The content needed rethinking."
+        },
+        {
+          "id": "hc-redesign-h",
           "type": "heading",
-          "title": "What I changed"
+          "title": "Redesigning around the findings"
         },
         {
-          "id": "hc-changes-001",
-          "type": "split",
-          "eyebrow": "Technical guidance",
-          "title": "Reducing confusion around charging concepts",
-          "text": "I introduced contextual help and educational moments so users could progress without needing expert knowledge. The goal was not to simplify everything, but to give enough clarity to keep moving with confidence.",
-          "caption": "Contextual guidance replacing technical jargon"
+          "id": "hc-redesign-000",
+          "type": "paragraph",
+          "content": "Each finding led to a targeted design iteration. I ran a structured before/after cycle, presenting Version A and Version B proposals for stakeholder validation before final sign-off."
         },
         {
-          "id": "hc-changes-002",
+          "id": "hc-redesign-001",
           "type": "split",
-          "eyebrow": "Product selection",
-          "title": "From technical form to guided flow",
-          "text": "The selection journey was redesigned so users could answer complex questions without feeling like they were filling out a spec sheet. The approach was closer to a guided purchase than a questionnaire.",
+          "eyebrow": "Finding 1 & 3",
+          "title": "Redesigning the solution selection and pricing",
+          "text": "The original product selection showed a basic list with detached pricing. Users could not understand how their choices affected the estimate (7 out of 14 only partially understood), and tooltips explaining technical concepts were too small and hard to discover (only 4 out of 14 understood monophase vs. triphase before interaction). I redesigned the entire solution screen: product cards now show images, promotional pricing, and charging times at a glance. Tooltips were replaced with dedicated links opening detailed modals. The price banner was realigned directly with the configuration zone.",
+          "assetUrl": "/notion-images/hc-before-solution.png",
+          "caption": "Before: basic product list with detached pricing and small tooltips"
+        },
+        {
+          "id": "hc-redesign-002",
+          "type": "split",
+          "eyebrow": "Finding 2",
+          "title": "From technical jargon to scannable comparison",
+          "text": "Users could not parse V2G concepts or the term 'VH bidirectionnel du Groupe Renault'. The expanded card layout made comparison difficult. I redesigned the product presentation as a compact table with chevron selectors to switch between products, replacing the cluttered side-by-side layout with a focused, one-at-a-time comparison on mobile.",
           "reverse": true,
-          "caption": "Before and after: product selection redesign"
+          "assetUrl": "/notion-images/hc-mobile-table.mp4",
+          "caption": "Mobile product comparison: chevron selectors to navigate between charging solutions"
         },
         {
-          "id": "hc-changes-003",
+          "id": "hc-redesign-003",
           "type": "split",
-          "eyebrow": "Pricing logic",
-          "title": "Making the estimate react to choices",
-          "text": "I reworked how pricing responded to configuration so users could understand why the estimate changed and what was driving the result. This was essential for trust.",
-          "caption": "Dynamic pricing tied to user configuration"
+          "eyebrow": "Result",
+          "title": "After: clear products, visible pricing, accessible details",
+          "text": "The redesigned screen presents each charging solution with product images, crossed-out promotional pricing, and key specs (charging time, compatibility). Technical details previously hidden in tiny tooltips are now accessible through explicit links opening full modals. The price updates visibly as users configure their installation, closing the cause-effect gap that blocked half of test participants.",
+          "reverse": true,
+          "assetUrl": "/notion-images/hc-after-solution.png",
+          "caption": "After: product cards with images, promotional pricing, and modal-based technical details"
         },
         {
-          "id": "hc-changes-004",
+          "id": "hc-redesign-004",
           "type": "split",
-          "eyebrow": "Next steps",
+          "eyebrow": "Routing",
           "title": "From dead-end to actionable paths",
-          "text": "The tool also needed to redirect users toward the right partners and continuation options. I designed a routing logic that replaced the previous dead-end with clear next steps.",
+          "text": "The tool also needed to handle cases where users could not be served directly, such as co-ownership setups. I designed a routing logic that redirected users toward the right partner (Zeplug for co-ownership) with clear context, replacing the previous dead-end with a relevant continuation.",
           "reverse": true,
-          "caption": "Partner routing and follow-up paths"
+          "assetUrl": "/notion-images/hc-copro-routing.png",
+          "caption": "Co-ownership routing: contextual partner handoff with Zeplug instead of dead-end"
         },
         {
-          "id": "hc-responsive-h",
+          "id": "hc-stepper-h",
           "type": "heading",
-          "title": "Mobile-first delivery"
+          "title": "From scroll to stepper"
         },
         {
-          "id": "hc-responsive-001",
+          "id": "hc-stepper-001",
           "type": "paragraph",
-          "content": "Mobile received special attention because of the traffic context and the need to reduce cognitive load on smaller screens. I worked closely with the outsourced development team on handoff specifications, responsive designs, and QA follow-up."
+          "content": "The original flow displayed all configuration options on a single scrollable page: housing type, electrical setup, vehicle, installation distance, and product selection were all visible at once. Users faced the full complexity upfront, with no sense of progress and no focus. I converted this into a vertical stepper where each step reveals one question at a time, keeping the user concentrated on the current decision. Smooth transitions guide users from one stage to the next, and the contextual image on the left updates to reflect their current selection, reinforcing the sense of progression and keeping the experience grounded in their real situation."
         },
         {
-          "id": "hc-responsive-002",
+          "id": "hc-stepper-002",
           "type": "visual",
-          "caption": "Responsive design: desktop and mobile layouts delivered to development"
+          "assetUrl": "/notion-images/hc-desktop-proto.mp4",
+          "caption": "Desktop prototype: animated vertical stepper with contextual images updating at each step, leading to the lead form"
+        },
+        {
+          "id": "hc-iteration-h",
+          "type": "heading",
+          "title": "Before / After summary"
+        },
+        {
+          "id": "hc-iteration-001",
+          "type": "beforeAfter",
+          "title": "Key screens iterated after user testing",
+          "intro": "Each iteration was validated with stakeholders before entering development.",
+          "beforeLabel": "Before test",
+          "beforeBody": "Small pop-in for monophase/triphase. Expanded cards with technical naming. Price banner detached from configuration zone. Process ended with a 5-step list and no follow-up.",
+          "afterLabel": "After redesign",
+          "afterBody": "Enlarged pop-in with diagram and dual identification methods. Simplified comparison table with plain language. Price aligned with inputs, impact visible in real time. Email recap added with version A/B confirmation alternatives.",
+          "note": "These changes were presented as Version A / Version B proposals for stakeholder sign-off before entering development."
+        },
+        {
+          "id": "hc-delivery-h",
+          "type": "heading",
+          "title": "Delivery"
+        },
+        {
+          "id": "hc-delivery-001",
+          "type": "paragraph",
+          "content": "I prepared Figma specifications with a 'Ready for dev' annotation system per component. For each sprint, I created Jira tickets scoped at the component level for Makolab (outsourced development partner), including screen context, interaction notes, state coverage, and links to the relevant Figma frame. After each sprint, I ran Design QA sessions comparing implemented screens against specs."
+        },
+        {
+          "id": "hc-delivery-002",
+          "type": "visual",
+          "assetUrl": "/notion-images/hc-specs-breakpoints.png",
+          "caption": "Figma specification page: each screen documented across breakpoints (desktop 1440px, tablet, mobile 375px) with annotated states and interaction notes"
+        },
+        {
+          "id": "hc-delivery-003",
+          "type": "split",
+          "eyebrow": "Responsive",
+          "title": "Mobile-first approach",
+          "text": "Mobile received special attention: product comparison was redesigned as a scrollable card stack, the price banner was repositioned, and installation parameters were reformatted as one question per screen to reduce cognitive load. Desktop (1440px) served as the reference layout.",
+          "assetUrl": "/notion-images/hc-responsive.png",
+          "caption": "Desktop and mobile layouts: same flow, adapted to each context"
         },
         {
           "id": "hc-outcome-h",
@@ -552,14 +652,14 @@
         {
           "id": "hc-outcome-001",
           "type": "paragraph",
-          "content": "The tool shipped and was embedded across Renault and Dacia EV purchase journeys. The first 6 weeks validated both the product hypothesis and the entry-point strategy."
+          "content": "The tool launched in September 2025 and was embedded across Renault and Dacia EV purchase journeys. Post-launch analytics (Google Analytics + Contentsquare) validated both the product hypothesis and the entry-point strategy."
         },
         {
           "id": "hc-metrics-001",
           "type": "metrics",
           "eyebrow": "Impact",
           "title": "First 6 weeks after launch",
-          "intro": "The tool launched in September 2025. These numbers represent the initial performance period.",
+          "intro": "September 22 to November 6, 2025. Renault brand, France.",
           "items": [
             {
               "value": "1,504",
@@ -582,12 +682,12 @@
         {
           "id": "hc-outcome-002",
           "type": "paragraph",
-          "content": "The 90% traffic concentration from three entry points confirmed that embedding the tool at the point of intent was the right move. Even when users did not convert, the product still resolved a major anxiety point in the EV journey."
+          "content": "The 89% completion rate across the first four steps confirmed that the redesigned flow resolved the comprehension issues surfaced in testing. The main drop occurred at step 5 (solution presentation), which correlated with users reaching their goal: a personalized estimate. The tool succeeded as a price discovery engine, even for users who did not convert to leads."
         },
         {
           "id": "hc-outcome-003",
           "type": "visual",
-          "caption": "Live tool on Renault and Dacia configurator pages"
+          "caption": "Live tool on Renault configurator page"
         },
         {
           "id": "hc-learn-h",
@@ -597,12 +697,12 @@
         {
           "id": "hc-learn-001",
           "type": "paragraph",
-          "content": "This project reinforced how closely discoverability and usability are linked. Sometimes the right design answer is not to optimize one flow, but to solve the system around it first."
+          "content": "This project reinforced a simple principle: test early, then redesign around the findings, not around assumptions. The guerilla test was not a validation step. It was the starting point of the real design work."
         },
         {
           "id": "hc-learn-002",
           "type": "paragraph",
-          "content": "It also showed the importance of reducing technical anxiety in high-intent journeys. Users do not need every concept simplified, but they do need enough clarity to keep moving with confidence."
+          "content": "It also showed that reducing technical anxiety is not about removing complexity. Users do not need every concept simplified. They need enough clarity at the right moment to keep moving with confidence."
         }
       ]
     }
@@ -643,7 +743,7 @@
         "color": "brown"
       }
     ],
-    "cover": null,
+    "cover": "/cover-finsim.png",
     "blocks": {
       "kind": "cosmic-blocks",
       "version": 1,
