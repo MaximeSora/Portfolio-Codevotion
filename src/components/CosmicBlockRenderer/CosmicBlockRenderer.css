@@ -227,6 +227,24 @@
   background: rgb(var(--rgbText) / 0.04);
 }
 
+.cosmic-visual__embed {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgb(var(--rgbText) / 0.04);
+}
+
+.cosmic-visual__iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .cosmic-visual__caption {
   display: flex;
   flex-direction: column;

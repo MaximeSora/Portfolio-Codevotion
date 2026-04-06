@@ -667,6 +667,12 @@
           "caption": "Charging ready state with animated ring built in Lottie and Rive"
         },
         {
+          "id": "mp-changes-proto",
+          "type": "visual",
+          "assetUrl": "https://www.youtube.com/watch?v=0yQco-enx4s",
+          "caption": "Interactive prototype walkthrough of the MyPowerbox app"
+        },
+        {
           "id": "mp-changes-004",
           "type": "split",
           "eyebrow": "Personas",

@@ -87,12 +87,30 @@ function isVideo(url) {
   return url && /\.(mp4|webm)(\?|$)/i.test(url);
 }
 
+function getYouTubeId(url) {
+  if (!url) return null;
+  const match = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+  return match ? match[1] : null;
+}
+
 function VisualBlock({ title, description, assetUrl, caption }) {
   const src = assetUrl || placeholderSrc;
   const video = isVideo(assetUrl);
+  const youtubeId = getYouTubeId(assetUrl);
   return (
     <figure className="cosmic-visual">
-      {video ? (
+      {youtubeId ? (
+        <div className="cosmic-visual__embed">
+          <iframe
+            className="cosmic-visual__iframe"
+            src={`https://www.youtube.com/embed/${youtubeId}?rel=0`}
+            title={title || caption || 'Video'}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            loading="lazy"
+          />
+        </div>
+      ) : video ? (
         <video
           className="cosmic-visual__video"
           src={src}
