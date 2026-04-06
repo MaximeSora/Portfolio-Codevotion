@@ -664,7 +664,7 @@
           "title": "Lottie and Rive animations for credibility",
           "text": "I crafted animations in Figma, then reconstructed them with Lottie and Rive for developer integration. These micro-interactions helped bridge waiting states and gave the product a premium feel that the young brand needed.",
           "assetUrl": "/notion-images/ed552e2b-2491-4338-ae10-06c1a6b08384.png",
-          "caption": "Animation system: Lottie and Rive integration"
+          "caption": "Charging ready state with animated ring built in Lottie and Rive"
         },
         {
           "id": "mp-changes-004",
@@ -732,12 +732,6 @@
             "White-label B2B architecture validated for partner deployment",
             "Brainwriting workshop format reused across the team"
           ]
-        },
-        {
-          "id": "mp-outcome-003",
-          "type": "visual",
-          "assetUrl": "/notion-images/03602813-0a31-4a50-a028-9ad8316e6767.png",
-          "caption": "MVP result: live app on iOS and Android"
         },
         {
           "id": "mp-learn-h",
