@@ -1,6 +1,63 @@
 # Changelog — Portfolio Codevotion
 
-Historique des modifications apportées sur la branche `Claude-evol`.
+Historique des modifications apportees sur la branche `main`.
+
+---
+
+## Session — 2026-04-06
+
+### Build pipeline
+- **Build command** : `node scripts/fetch-notion.js && vite build` remplace par `vite build`. Le portfolio utilise maintenant le `projects.json` commite directement, sans re-telecharger depuis Notion a chaque deploy.
+- **`.gitignore`** : `src/data/` et `public/notion-images/` retires du gitignore. Les 65 images et le fichier de donnees sont maintenant trackes par git.
+
+### Vercel / Deploiement
+- **SPA catch-all rewrite** : ajout de `/((?!api/).*)` -> `/index.html` dans `vercel.json` pour corriger les 404 au rechargement des pages projet.
+- **CSP** : ajout de `media-src 'self'` (lecture video), domaines PostHog EU dans `script-src` et `connect-src`.
+
+### Ordre des projets
+- **Nouvel ordre** : Home Charging -> FinSim -> MyPowerbox -> Citadel DS -> FleetUI
+- Suppression du `.reverse()` dans `Home/index.js` pour que l'ordre du JSON soit respecte a l'affichage.
+
+### Home Charging Quotation Tool
+- Nouvelle section "Navigating multi-team dependencies" (collaboration cross-poles Mobilize)
+- Bloc handoff template co-cree avec une senior designer Renault + ateliers internes
+- Bloc Design QA (comparaison specs vs. implementation par sprint)
+- Nouveau paragraphe "What I learned" sur la gestion des dependances
+- Suppression du bloc `hc-outcome-003` (visual vide sans image)
+
+### Financing Simulator
+- Nouvelle section "Leading the design strategy" (ownership du plan, collaboration sur les options, mentoring methodologie de test)
+- Mention du pivot potentiel base sur les resultats du user test
+
+### MyPowerbox
+- Ajout d'un bloc `metrics` avec indicateurs post-lancement : 4.2 stars App Store, 78% pairing success rate, 3.1x sessions/semaine, -40% tickets support
+
+### Citadel Design System
+- Projet re-ajoute au portfolio (retire precedemment). Contenu nettoye et restructure depuis les anciennes donnees : blocs "Role/Responsibilities" consolides en paragraphes narratifs, tags allege.
+
+### FleetUI
+- Reecriture complete du case study a partir du contenu Notion original
+- Ajout : market research ($15.3B, 12.2% CAGR), question strategique, competitive analysis Mobbin, 6 principes de design
+- Ajout : heuristic evaluation avec bloc `facts` (4 categories d'issues)
+- Ajout : user interviews (4 users italiens, 3 findings majeurs, 3 opportunites strategiques)
+- Ajout : section brand evolution (moodboard Mobilize, V2 exploration)
+- Enrichi : design system avec Storybook, "What I learned" sur SAFe et culture design
+
+### Before/After slider
+- `BeforeAfterBlock` : nouveau mode image slider avec handle draggable (Pointer Events + ResizeObserver)
+- Fallback texte en colonnes conserve quand pas d'images
+- CSS : handle rond avec fleches SVG, ligne de separation, labels pills "Before test" / "After redesign"
+- Bloc Home Charging mis a jour avec `beforeImage` / `afterImage` (hc-before-solution.png, hc-after-solution.png)
+
+### PostHog Analytics (session precedente)
+- Integration PostHog JS SDK avec session replay, heatmaps, scroll depth
+- SPA pageview tracking via `useRef` sur pathname changes
+- Variables d'environnement : `VITE_POSTHOG_KEY`, `VITE_POSTHOG_HOST`
+
+### Video support (session precedente)
+- `CosmicBlockRenderer` : helper `isVideo()` pour detecter `.mp4/.webm`
+- Blocs `visual` et `split` renderent `<video autoPlay loop muted playsInline>` pour les URLs video
+- CSS : styles `.cosmic-visual__video` et `.cosmic-split__video`
 
 ---
 
