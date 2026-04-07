@@ -6,9 +6,9 @@
   width: var(--buttonSize);
   height: var(--buttonSize);
   bottom: var(--spaceOuter);
-  right: var(--spaceOuter);
+  left: var(--spaceOuter);
   margin-bottom: calc(var(--spaceM) * -1);
-  margin-right: calc(var(--spaceM) * -1);
+  margin-left: calc(var(--spaceM) * -1);
   transform: translate3d(0, 0, 0);
   /* cursor: none; */
 
