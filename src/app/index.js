@@ -8,6 +8,7 @@ import { Helmet } from 'react-helmet';
 import Navbar from 'components/Navbar';
 import ThemeProvider from 'components/ThemeProvider';
 import CustomCursor from 'components/CustomCursor';
+import ChatBot from 'components/ChatBot';
 import VisuallyHidden from 'components/VisuallyHidden';
 import { tokens } from 'components/ThemeProvider/theme';
 import { msToNum } from 'utils/style';
@@ -79,6 +80,7 @@ const App = () => {
         <BrowserRouter>
           <AppRoutes />
         </BrowserRouter>
+        <ChatBot />
       </ThemeProvider>
     </AppContext.Provider>
   );
