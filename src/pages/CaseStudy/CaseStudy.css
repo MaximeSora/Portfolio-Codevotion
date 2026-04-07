@@ -91,7 +91,7 @@
   max-width: var(--case-study-wide);
   margin: 0 auto;
   display: grid;
-  gap: clamp(var(--spaceM), 2vw, var(--spaceL));
+  gap: clamp(var(--spaceL), 3vw, var(--spaceXL));
 }
 
 /* Header entrance */
