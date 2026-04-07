@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import './ChatBot.css';
 
-const GREETING = "Bonjour ! Je suis l'assistant de Maxime. Posez-moi vos questions sur son parcours, ses projets ou ses competences.";
+const GREETING = "Hi! I'm Maxime's portfolio assistant. Ask me anything about his projects, skills, or experience.";
 const MAX_MESSAGES = 15;
 const MAX_INPUT = 500;
 
@@ -135,7 +135,7 @@ const ChatBot = () => {
 
           {limitReached ? (
             <div className="chatbot__limit">
-              Limite atteinte. Contactez Maxime a <a href="mailto:maxime.pocq@gmail.com">maxime.pocq@gmail.com</a>
+              Message limit reached. Contact Maxime at <a href="mailto:maxime.pocq@gmail.com">maxime.pocq@gmail.com</a>
             </div>
           ) : (
             <form className="chatbot__input-bar" onSubmit={e => { e.preventDefault(); sendMessage(); }}>
