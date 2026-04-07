@@ -13,7 +13,7 @@ export const navLinks = [
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/maxime-pocq/',
     newTab: true,
-    cta: 'outline',
+    external: true,
   },
   {
     label: 'Resume',

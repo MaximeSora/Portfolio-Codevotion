@@ -12,6 +12,7 @@ const ChatBot = () => {
   ]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
+  const [shimmer, setShimmer] = useState(false);
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
 
@@ -28,6 +29,18 @@ const ChatBot = () => {
       inputRef.current.focus();
     }
   }, [open]);
+
+  useEffect(() => {
+    const handler = () => setOpen(true);
+    window.addEventListener('open-chatbot', handler);
+    return () => window.removeEventListener('open-chatbot', handler);
+  }, []);
+
+  useEffect(() => {
+    if (open) return;
+    const timer = setTimeout(() => setShimmer(true), 2000);
+    return () => clearTimeout(timer);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const userMessageCount = messages.filter(m => m.role === 'user').length;
   const limitReached = userMessageCount >= MAX_MESSAGES;
@@ -84,8 +97,8 @@ const ChatBot = () => {
   return (
     <>
       <button
-        className={`chatbot__bubble ${open ? 'chatbot__bubble--open' : ''}`}
-        onClick={() => setOpen(v => !v)}
+        className={`chatbot__bubble ${open ? 'chatbot__bubble--open' : ''} ${shimmer ? 'chatbot__bubble--shimmer' : ''}`}
+        onClick={() => { setOpen(v => !v); setShimmer(false); }}
         aria-label={open ? 'Fermer le chat' : 'Ouvrir le chat'}
       >
         {open ? (

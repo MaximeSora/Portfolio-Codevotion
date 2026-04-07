@@ -68,23 +68,41 @@ function Navbar(props) {
       <NavToggle onClick={() => dispatch({ type: 'toggleMenu' })} menuOpen={menuOpen} />
       <nav className="navbar__nav">
         <div className="navbar__nav-list">
-          {navLinks.filter(l => !l.cta).map(({ label, pathname, hash }) => (
-            <NavLink
-              exact
-              className="navbar__nav-link"
-              activeClassName="navbar__nav-link--active"
-              isActive={match => isMatch({ match, hash })}
-              onClick={handleNavClick}
-              key={label}
-              to={{ pathname, hash, state: hashKey }}
-              onMouseUp={blurOnMouseUp}
-            >
-              {label}
-            </NavLink>
+          {navLinks.filter(l => !l.cta).map(({ label, pathname, hash, href, newTab, external }) => (
+            href ? (
+              <a
+                key={label}
+                className="navbar__nav-link"
+                href={href}
+                target={newTab ? '_blank' : undefined}
+                rel={newTab ? 'noopener noreferrer' : undefined}
+                onMouseUp={blurOnMouseUp}
+              >
+                {label}
+                {external && (
+                  <svg className="navbar__nav-link-external" width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden>
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                )}
+              </a>
+            ) : (
+              <NavLink
+                exact
+                className="navbar__nav-link"
+                activeClassName="navbar__nav-link--active"
+                isActive={match => isMatch({ match, hash })}
+                onClick={handleNavClick}
+                key={label}
+                to={{ pathname, hash, state: hashKey }}
+                onMouseUp={blurOnMouseUp}
+              >
+                {label}
+              </NavLink>
+            )
           ))}
         </div>
         <div className="navbar__cta-group">
-          {navLinks.filter(l => l.cta).map(({ label, href, newTab, cta }) => (
+          {navLinks.filter(l => l.cta).map(({ label, href, newTab, cta, external }) => (
             <a
               key={label}
               className={`navbar__nav-cta navbar__nav-cta--${cta}`}
@@ -94,7 +112,14 @@ function Navbar(props) {
               onMouseUp={blurOnMouseUp}
             >
               <span className="navbar__cta-bg" aria-hidden />
-              <span className="navbar__cta-text">{label}</span>
+              <span className="navbar__cta-text">
+                {label}
+                {external && (
+                  <svg className="navbar__cta-external" width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden>
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                )}
+              </span>
             </a>
           ))}
         </div>
@@ -108,20 +133,39 @@ function Navbar(props) {
       >
         {status => (
           <nav className={`navbar__mobile-nav navbar__mobile-nav--${status}`}>
-            {navLinks.filter(l => !l.cta).map(({ label, pathname, hash }) => (
-              <NavLink
-                className={`navbar__mobile-nav-link navbar__mobile-nav-link--${status}`}
-                activeClassName="navbar__mobile-nav-link--active"
-                key={label}
-                onClick={handleMobileNavClick}
-                to={{ pathname, hash, state: hashKey }}
-                onMouseUp={blurOnMouseUp}
-              >
-                {label}
-              </NavLink>
+            {navLinks.filter(l => !l.cta).map(({ label, pathname, hash, href, newTab, external }) => (
+              href ? (
+                <a
+                  key={label}
+                  className={`navbar__mobile-nav-link navbar__mobile-nav-link--${status}`}
+                  href={href}
+                  target={newTab ? '_blank' : undefined}
+                  rel={newTab ? 'noopener noreferrer' : undefined}
+                  onClick={handleMobileNavClick}
+                  onMouseUp={blurOnMouseUp}
+                >
+                  {label}
+                  {external && (
+                    <svg className="navbar__nav-link-external" width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden>
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  )}
+                </a>
+              ) : (
+                <NavLink
+                  className={`navbar__mobile-nav-link navbar__mobile-nav-link--${status}`}
+                  activeClassName="navbar__mobile-nav-link--active"
+                  key={label}
+                  onClick={handleMobileNavClick}
+                  to={{ pathname, hash, state: hashKey }}
+                  onMouseUp={blurOnMouseUp}
+                >
+                  {label}
+                </NavLink>
+              )
             ))}
             <div className="navbar__mobile-cta-group">
-              {navLinks.filter(l => l.cta).map(({ label, href, newTab, cta }) => (
+              {navLinks.filter(l => l.cta).map(({ label, href, newTab, cta, external }) => (
                 <a
                   key={label}
                   className={`navbar__mobile-nav-cta navbar__mobile-nav-cta--${cta} navbar__mobile-nav-link--${status}`}
@@ -132,7 +176,14 @@ function Navbar(props) {
                   onMouseUp={blurOnMouseUp}
                 >
                   <span className="navbar__cta-bg" aria-hidden />
-                  <span className="navbar__cta-text">{label}</span>
+                  <span className="navbar__cta-text">
+                    {label}
+                    {external && (
+                      <svg className="navbar__cta-external" width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden>
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    )}
+                  </span>
                 </a>
               ))}
             </div>

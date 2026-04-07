@@ -38,7 +38,7 @@
 .intro__name {
   text-transform: uppercase;
   font-size: calc((24 / 16) * 1rem);
-  letter-spacing: 0.3em;
+  letter-spacing: 0.18em;
   color: var(--colorTextBody);
   margin-bottom: var(--spaceL);
   margin-top: 0;
@@ -68,7 +68,7 @@
     & {
       font-size: calc((20 / 16) * 1rem);
       margin-bottom: var(--spaceM);
-      letter-spacing: 0.2em;
+      letter-spacing: 0.12em;
       white-space: nowrap;
       overflow: hidden;
     }
@@ -578,4 +578,52 @@
   50% {
     box-shadow: 0 0 0 6px rgb(var(--rgbPrimary) / 0);
   }
+}
+
+/* ─── Chat CTA ─────────────────────────────────── */
+.intro__chat-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: var(--spaceXL);
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: rgb(var(--rgbText) / 0.85);
+  font-size: var(--fontSizeBodyM);
+  font-weight: var(--fontWeightBold);
+  font-family: inherit;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.6s var(--bezierFastoutSlowin),
+              transform 0.6s var(--bezierFastoutSlowin);
+}
+
+body.light .intro__chat-cta {
+  background: rgba(0, 0, 0, 0.06) !important;
+}
+
+.intro__chat-cta--entered:hover {
+  transform: scale(1.06);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.intro__chat-cta--entered:active {
+  transform: scale(0.95);
+  transition-duration: 0.1s;
+}
+
+.intro__chat-cta--entering {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1s;
+}
+
+.intro__chat-cta--entered {
+  opacity: 1;
+  transform: translateY(0);
 }
