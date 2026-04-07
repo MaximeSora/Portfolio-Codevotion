@@ -7,7 +7,7 @@
   "rewrites": [
     { "source": "/index.html", "destination": "/" },
     { "source": "/functions/:endpoint", "destination": "/api/message" },
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
+    { "source": "/((?!api/).*)", "destination": "/" }
   ],
   "headers": [
     {

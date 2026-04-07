@@ -1,7 +1,7 @@
 import { lazy, Suspense, useEffect, createContext, useReducer, Fragment, useRef } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import posthog from 'posthog-js';
-import { BrowserRouter, Switch, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect, useLocation } from 'react-router-dom';
 import { Transition, TransitionGroup } from 'react-transition-group';
 import classNames from 'classnames';
 import { Helmet } from 'react-helmet';
@@ -119,11 +119,16 @@ const AppRoutes = () => {
                   <Switch location={location}>
                     <Route exact path="/" component={Home} />
                     <Route path="/contact" component={Contact} />
-                    <Route path="/projects/device-models" component={ProjectDM} />
-                    <Route path="/projects/devtech-tools" component={ProjectDTT} />
-                    <Route path="/projects/jo" component={ProjectJO} />
-                    <Route path="/projects/Solbase" component={ProjectSolbase} />
-                    <Route path="/projects/Pornhub" component={ProjectPornhub} />
+                    <Route exact path="/projects/device-models" component={ProjectDM} />
+                    <Route exact path="/projects/devtech-tools" component={ProjectDTT} />
+                    <Route exact path={["/projects/jo", "/projects/JO"]} component={ProjectJO} />
+                    <Route exact path={["/projects/solbase", "/projects/Solbase"]} component={ProjectSolbase} />
+                    <Route exact path={["/projects/pornhub", "/projects/Pornhub"]} component={ProjectPornhub} />
+                    <Redirect exact from="/projects/solbase/" to="/projects/solbase" />
+                    <Redirect exact from="/projects/Solbase/" to="/projects/solbase" />
+                    <Redirect exact from="/projects/pornhub/" to="/projects/pornhub" />
+                    <Redirect exact from="/projects/Pornhub/" to="/projects/pornhub" />
+                    <Redirect exact from="/projects/JO/" to="/projects/jo" />
                     <Route path="/projects/:slug" component={CaseStudy} />
                     <Route path="/uses" component={Uses} />
                     <Route path="/articles" component={Articles} />

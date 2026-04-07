@@ -362,7 +362,7 @@ const ProjectDM = () => {
                 secondary
                 iconHoverShift
                 icon="arrowRight"
-                href="/projects/JO"
+                href="/projects/jo"
               >
               </Button>
             </ProjectTextRow>

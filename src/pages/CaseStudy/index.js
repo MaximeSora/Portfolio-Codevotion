@@ -203,6 +203,7 @@ const CaseStudy = () => {
             >
               <div className="case-study__header-body">
                 <h1 className="case-study__title">{name}</h1>
+                {headline && <p className="case-study__lede">{headline}</p>}
                 {wip && (
                   <div className="case-study__wip">
                     <span className="case-study__wip-badge">WIP</span>

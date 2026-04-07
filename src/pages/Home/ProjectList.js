@@ -105,7 +105,7 @@ const ProjectList = ({ id, sectionRef, projects, onItemClick, footer }) => {
     <Section className="project-list" as="section" id={id} ref={sectionRef}>
       <span aria-hidden className="project-list__section-katakana">プロジェクト</span>
       <div ref={headerRef} className="project-list__header">
-        <div className="project-list__tag" aria-hidden>
+        <div className="project-list__eyebrow" aria-hidden>
           <Divider
             notchWidth="64px"
             notchHeight="8px"

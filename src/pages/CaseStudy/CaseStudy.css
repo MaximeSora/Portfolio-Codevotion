@@ -90,6 +90,8 @@
 .case-study__header-body {
   max-width: var(--case-study-wide);
   margin: 0 auto;
+  display: grid;
+  gap: clamp(var(--spaceM), 2vw, var(--spaceL));
 }
 
 /* Header entrance */
@@ -148,11 +150,12 @@
   display: flex;
   align-items: center;
   gap: var(--spaceM);
-  margin-top: var(--spaceL);
   padding: var(--spaceS) var(--spaceL);
   background: rgb(var(--rgbPrimary) / 0.08);
   border: 1px solid rgb(var(--rgbPrimary) / 0.2);
   border-radius: 8px;
+  width: fit-content;
+  max-width: min(100%, 52rem);
 }
 
 .case-study__wip-badge {
@@ -177,10 +180,10 @@
 .case-study__lede {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  font-size: clamp(1.05rem, 1.25vw, 1.22rem);
-  line-height: 1.72;
-  color: rgb(var(--rgbText) / 0.76);
-  max-width: 30ch;
+  font-size: clamp(1.12rem, 1.45vw, 1.38rem);
+  line-height: 1.62;
+  color: rgb(var(--rgbText) / 0.82);
+  max-width: 36ch;
   text-wrap: pretty;
 }
 
