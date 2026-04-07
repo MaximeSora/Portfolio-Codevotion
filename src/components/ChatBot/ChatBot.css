@@ -7,7 +7,7 @@
   height: 56px;
   border-radius: 50%;
   border: none;
-  background: rgb(var(--rgbText));
+  background: rgb(var(--rgbText)) !important;
   color: rgb(var(--rgbBackground));
   cursor: pointer;
   display: flex;
@@ -43,7 +43,7 @@
 
 .chatbot__bubble--open {
   transform: rotate(0deg);
-  background: rgb(var(--rgbText) / 0.08);
+  background: rgb(var(--rgbText) / 0.08) !important;
   color: rgb(var(--rgbText));
   box-shadow: none;
 }
