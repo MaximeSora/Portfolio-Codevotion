@@ -118,7 +118,7 @@ function VisualBlock({ title, description, assetUrl, caption }) {
           loop
           muted
           playsInline
-          preload="metadata"
+          preload="auto"
         />
       ) : (
         <img className="cosmic-visual__img" src={src} alt={title || caption || ''} loading="lazy" />
@@ -271,7 +271,7 @@ function SplitBlock({ text, eyebrow, title, assetUrl, caption, reverse }) {
             loop
             muted
             playsInline
-            preload="metadata"
+            preload="auto"
           />
         ) : (
           <img className="cosmic-split__img" src={src} alt={caption || title || ''} loading="lazy" />

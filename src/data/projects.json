@@ -188,16 +188,6 @@
           "caption": "After: product cards with images, promotional pricing, and modal-based technical details"
         },
         {
-          "id": "hc-redesign-004",
-          "type": "split",
-          "eyebrow": "Routing",
-          "title": "From dead-end to actionable paths",
-          "text": "The tool also needed to handle cases where users could not be served directly, such as co-ownership setups. I designed a routing logic that redirected users toward the right partner (Zeplug for co-ownership) with clear context, replacing the previous dead-end with a relevant continuation.",
-          "reverse": true,
-          "assetUrl": "/notion-images/hc-copro-routing.png",
-          "caption": "Co-ownership routing: contextual partner handoff with Zeplug instead of dead-end"
-        },
-        {
           "id": "hc-stepper-h",
           "type": "heading",
           "title": "From scroll to stepper"
@@ -212,6 +202,15 @@
           "type": "visual",
           "assetUrl": "/notion-images/hc-desktop-proto.mp4",
           "caption": "Desktop prototype: animated vertical stepper with contextual images updating at each step, leading to the lead form"
+        },
+        {
+          "id": "hc-redesign-004",
+          "type": "split",
+          "eyebrow": "Edge cases",
+          "title": "From dead-end to actionable paths",
+          "text": "The tool also needed to handle cases where users could not be served directly, such as co-ownership setups. I designed a routing logic that redirected users toward the right partner (Zeplug for co-ownership) with clear context, replacing the previous dead-end with a relevant continuation.",
+          "assetUrl": "/notion-images/hc-copro-routing.png",
+          "caption": "Co-ownership routing: contextual partner handoff with Zeplug instead of dead-end"
         },
         {
           "id": "hc-iteration-h",
@@ -626,13 +625,24 @@
         },
         {
           "id": "mp-problem-003",
-          "type": "split",
-          "eyebrow": "Navigation",
-          "title": "Setup-centric, not daily-use",
-          "text": "The original app structure was built around initial setup. Once pairing was done, users had no compelling reason to return. The navigation did not support the daily actions that would make the app sticky.",
-          "reverse": true,
-          "assetUrl": "/notion-images/ba7e05ec-54b4-4c75-a16e-9e93ff6b2884.png",
-          "caption": "Original navigation model"
+          "type": "paragraph",
+          "content": "The original app structure was built around initial setup. Once pairing was done, users had no compelling reason to return. The navigation did not support the daily actions that would make the app sticky: checking charging status, reviewing consumption, or adjusting schedules."
+        },
+        {
+          "id": "mp-flow-h",
+          "type": "heading",
+          "title": "Defining the app architecture"
+        },
+        {
+          "id": "mp-flow-001",
+          "type": "paragraph",
+          "content": "Before jumping into screens, I mapped the full user flow from onboarding to daily use. This whiteboard exercise helped align the team on which features were MVP-critical and how each module connected: from identification and device pairing (QR code or manual) through to the dashboard, statistics, scheduling, and profile settings. It became the shared reference throughout development."
+        },
+        {
+          "id": "mp-flow-002",
+          "type": "visual",
+          "assetUrl": "/notion-images/mp-app-flow.png",
+          "caption": "App sitemap: full user flow from onboarding to daily features, defined after feature prioritization"
         },
         {
           "id": "mp-changes-h",
@@ -641,12 +651,8 @@
         },
         {
           "id": "mp-changes-001",
-          "type": "split",
-          "eyebrow": "Navigation",
-          "title": "A daily-use navigation model",
-          "text": "I restructured navigation around recurring daily actions: checking charging status, reviewing energy consumption, adjusting schedules. The app became a utility, not just a setup companion.",
-          "assetUrl": "/notion-images/c45df28d-e162-431e-a829-61956f5f9204.png",
-          "caption": "Redesigned navigation structure"
+          "type": "paragraph",
+          "content": "Based on the flow defined during the architecture phase, I restructured the tab bar around five core modules: home dashboard, statistics, session history, device settings, and user profile. Each tab serves a distinct daily need, replacing the previous setup-centric layout with a structure designed for repeated use."
         },
         {
           "id": "mp-changes-002",
@@ -664,14 +670,43 @@
           "eyebrow": "Motion",
           "title": "Lottie and Rive animations for credibility",
           "text": "I crafted animations in Figma, then reconstructed them with Lottie and Rive for developer integration. These micro-interactions helped bridge waiting states and gave the product a premium feel that the young brand needed.",
-          "assetUrl": "/notion-images/ed552e2b-2491-4338-ae10-06c1a6b08384.png",
-          "caption": "Charging ready state with animated ring built in Lottie and Rive"
+          "assetUrl": "/notion-images/mp-lottie-home.mp4",
+          "caption": "Home screen Lottie animation: charging status ring with real-time feedback"
         },
         {
           "id": "mp-changes-proto",
           "type": "visual",
           "assetUrl": "https://www.youtube.com/watch?v=0yQco-enx4s",
           "caption": "Interactive prototype walkthrough of the MyPowerbox app"
+        },
+        {
+          "id": "mp-features-h",
+          "type": "heading",
+          "title": "Designing for daily use"
+        },
+        {
+          "id": "mp-features-001",
+          "type": "paragraph",
+          "content": "Beyond the core pairing and charging flow, user interviews revealed two features that would determine whether the app became a daily companion or was abandoned after setup: energy consumption tracking and smart charging management. I designed both from scratch, shaping them around real usage patterns identified during research."
+        },
+        {
+          "id": "mp-features-002",
+          "type": "split",
+          "eyebrow": "Consumption",
+          "title": "Energy statistics that drive awareness",
+          "text": "Users wanted to understand their charging habits and costs over time. I designed a statistics screen with weekly, monthly, and annual views, showing total energy consumed alongside a bar chart that highlights daily patterns. A session history list below gives users quick access to individual charges. The layout was optimized for at-a-glance readability on mobile.",
+          "assetUrl": "/notion-images/mp-stats.png",
+          "caption": "Monthly energy consumption view with session history"
+        },
+        {
+          "id": "mp-features-003",
+          "type": "split",
+          "eyebrow": "Smart charging",
+          "title": "Eco mode for off-peak savings",
+          "text": "The eco mode lets users schedule charging during off-peak hours automatically, reducing electricity costs without manual intervention. I designed a simple toggle for night charging with a charge reserve slider, ensuring the vehicle always reaches a minimum battery level regardless of schedule. The interface balances control and simplicity, keeping the cognitive load low for daily use.",
+          "reverse": true,
+          "assetUrl": "/notion-images/mp-eco-mode.png",
+          "caption": "Eco mode: scheduled night charging with minimum charge reserve"
         },
         {
           "id": "mp-changes-004",
@@ -682,6 +717,22 @@
           "reverse": true,
           "assetUrl": "/notion-images/42ba4fbe-6fdb-439f-877c-2c8d1b110797.png",
           "caption": "Persona-driven design decisions"
+        },
+        {
+          "id": "mp-handoff-h",
+          "type": "heading",
+          "title": "Hand-off and specifications"
+        },
+        {
+          "id": "mp-handoff-001",
+          "type": "paragraph",
+          "content": "I created complete user flows capturing every interdependency and edge case, then translated them into functional specifications tailored to complexity. For the pairing flow in particular, I synchronized closely with architects to align on technical constraints before finalizing screens, ensuring the design accounted for real firmware and connectivity limitations."
+        },
+        {
+          "id": "mp-handoff-002",
+          "type": "visual",
+          "assetUrl": "/notion-images/flow.-powerbox.png",
+          "caption": "Hand-off flow: pairing sequence with decision points, edge cases, and screen-level specifications"
         },
         {
           "id": "mp-ds-h",
