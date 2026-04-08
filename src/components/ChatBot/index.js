@@ -4,6 +4,12 @@ import './ChatBot.css';
 const GREETING = "Hi! I'm Maxime's portfolio assistant. Ask me anything about his projects, skills, or experience.";
 const MAX_MESSAGES = 15;
 const MAX_INPUT = 500;
+const SUGGESTIONS = [
+  'What projects has Maxime worked on?',
+  'Tell me about his design system experience',
+  'What tools and skills does he use?',
+  'Is Maxime available for work?',
+];
 
 const ChatBot = () => {
   const [open, setOpen] = useState(false);
@@ -45,8 +51,8 @@ const ChatBot = () => {
   const userMessageCount = messages.filter(m => m.role === 'user').length;
   const limitReached = userMessageCount >= MAX_MESSAGES;
 
-  const sendMessage = async () => {
-    const text = input.trim();
+  const sendMessage = async (overrideText) => {
+    const text = (overrideText || input).trim();
     if (!text || loading || limitReached) return;
 
     const userMsg = { role: 'user', content: text.slice(0, MAX_INPUT) };
@@ -86,6 +92,8 @@ const ChatBot = () => {
       setLoading(false);
     }
   };
+
+  const showSuggestions = userMessageCount === 0 && !loading;
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
@@ -145,6 +153,21 @@ const ChatBot = () => {
             )}
             <div ref={messagesEndRef} />
           </div>
+
+          {showSuggestions && (
+            <div className="chatbot__suggestions">
+              <span className="chatbot__suggestions-label">Suggested questions:</span>
+              {SUGGESTIONS.map((q) => (
+                <button
+                  key={q}
+                  className="chatbot__suggestion"
+                  onClick={() => sendMessage(q)}
+                >
+                  {q}
+                </button>
+              ))}
+            </div>
+          )}
 
           {limitReached ? (
             <div className="chatbot__limit">
