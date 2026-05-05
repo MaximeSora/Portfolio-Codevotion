@@ -26,7 +26,8 @@ const POSTHOG_HOST = import.meta.env.VITE_POSTHOG_HOST || 'https://eu.i.posthog.
 
 if (!prerender && POSTHOG_KEY) {
   posthog.init(POSTHOG_KEY, {
-    api_host: POSTHOG_HOST,
+    api_host: '/ingest',
+    ui_host: POSTHOG_HOST,
     person_profiles: 'identified_only',
     capture_pageview: false,   // handled manually for SPA
     capture_pageleave: true,   // powers time-on-page + scroll depth
