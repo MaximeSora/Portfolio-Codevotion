@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import posthog from 'posthog-js';
 import classNames from 'classnames';
 import Section from 'components/Section';
 import Divider from 'components/Divider';
@@ -49,14 +50,14 @@ const Contact = ({ id }) => {
             Got a product to shape, a Design System to scale, or a team to embed into? I bring senior craft, AI-powered processes, and a bias for real results.
           </p>
           <div className="contact__actions">
-            <Button iconHoverShift href="mailto:maxime.pocq@gmail.com" icon="send">
+            <Button iconHoverShift href="mailto:maxime.pocq@gmail.com" icon="send" onClick={() => posthog.capture('cta_email_clicked', { source: 'contact_section' })}>
               Send me an email
             </Button>
             <div className="contact__links">
-              <Link secondary className="contact__link" href="https://www.linkedin.com/in/maxime-pocq/">
+              <Link secondary className="contact__link" href="https://www.linkedin.com/in/maxime-pocq/" onClick={() => posthog.capture('cta_linkedin_clicked', { source: 'contact_section' })}>
                 LinkedIn
               </Link>
-              <Link secondary className="contact__link" href="/resume.pdf">
+              <Link secondary className="contact__link" href="/resume.pdf" onClick={() => posthog.capture('cta_resume_downloaded', { source: 'contact_section' })}>
                 See my Resume
               </Link>
             </div>

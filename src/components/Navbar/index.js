@@ -1,4 +1,5 @@
 import { useRef, useState, memo } from 'react';
+import posthog from 'posthog-js';
 import { NavLink, Link as RouterLink } from 'react-router-dom';
 import { Transition } from 'react-transition-group';
 import Monogram from 'components/Monogram';
@@ -48,6 +49,11 @@ function Navbar(props) {
     if (menuOpen) dispatch({ type: 'toggleMenu' });
   };
 
+  const trackNavLink = (label) => {
+    if (label === 'LinkedIn') posthog.capture('cta_linkedin_clicked', { source: 'navbar' });
+    else if (label === 'Resume') posthog.capture('cta_resume_downloaded', { source: 'navbar' });
+  };
+
   const isMatch = ({ match, hash = '' }) => {
     if (!match) return false;
     return `${match.url}${hash}` === `${location.pathname}${location.hash}`;
@@ -76,6 +82,7 @@ function Navbar(props) {
                 href={href}
                 target={newTab ? '_blank' : undefined}
                 rel={newTab ? 'noopener noreferrer' : undefined}
+                onClick={() => trackNavLink(label)}
                 onMouseUp={blurOnMouseUp}
               >
                 {label}
@@ -109,6 +116,7 @@ function Navbar(props) {
               href={href}
               target={newTab ? '_blank' : undefined}
               rel={newTab ? 'noopener noreferrer' : undefined}
+              onClick={() => trackNavLink(label)}
               onMouseUp={blurOnMouseUp}
             >
               <span className="navbar__cta-bg" aria-hidden />
@@ -141,7 +149,7 @@ function Navbar(props) {
                   href={href}
                   target={newTab ? '_blank' : undefined}
                   rel={newTab ? 'noopener noreferrer' : undefined}
-                  onClick={handleMobileNavClick}
+                  onClick={() => { handleMobileNavClick(); trackNavLink(label); }}
                   onMouseUp={blurOnMouseUp}
                 >
                   {label}
@@ -172,7 +180,7 @@ function Navbar(props) {
                   href={href}
                   target={newTab ? '_blank' : undefined}
                   rel={newTab ? 'noopener noreferrer' : undefined}
-                  onClick={handleMobileNavClick}
+                  onClick={() => { handleMobileNavClick(); trackNavLink(label); }}
                   onMouseUp={blurOnMouseUp}
                 >
                   <span className="navbar__cta-bg" aria-hidden />

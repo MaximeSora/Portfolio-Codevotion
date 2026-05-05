@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
+import posthog from 'posthog-js';
 import './ChatBot.css';
 
 const GREETING = "Hi! I'm Maxime's portfolio assistant. Ask me anything about his projects, skills, or experience.";
@@ -55,6 +56,12 @@ const ChatBot = () => {
     const text = (overrideText || input).trim();
     if (!text || loading || limitReached) return;
 
+    posthog.capture('chatbot_message_sent', {
+      question: text,
+      is_suggestion: Boolean(overrideText),
+      message_index: userMessageCount + 1,
+    });
+
     const userMsg = { role: 'user', content: text.slice(0, MAX_INPUT) };
     const newMessages = [...messages, userMsg];
     setMessages(newMessages);
@@ -84,6 +91,7 @@ const ChatBot = () => {
         }]);
       }
     } catch {
+      posthog.capture('chatbot_error', { type: 'network' });
       setMessages(prev => [...prev, {
         role: 'assistant',
         content: 'Connexion impossible. Contactez Maxime directement.',
@@ -106,7 +114,13 @@ const ChatBot = () => {
     <>
       <button
         className={`chatbot__bubble ${open ? 'chatbot__bubble--open' : ''} ${shimmer ? 'chatbot__bubble--shimmer' : ''}`}
-        onClick={() => { setOpen(v => !v); setShimmer(false); }}
+        onClick={() => {
+          setOpen(v => {
+            posthog.capture(v ? 'chatbot_closed' : 'chatbot_opened');
+            return !v;
+          });
+          setShimmer(false);
+        }}
         aria-label={open ? 'Fermer le chat' : 'Ouvrir le chat'}
       >
         {open ? (

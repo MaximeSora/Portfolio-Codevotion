@@ -91,7 +91,14 @@ const AppRoutes = () => {
   const { pathname } = location;
   const prevPathname = useRef(pathname);
 
-  // Track SPA pageviews with PostHog
+  // Track initial pageview on mount
+  useEffect(() => {
+    if (POSTHOG_KEY) {
+      posthog.capture('$pageview', { $current_url: window.location.href });
+    }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Track SPA pageviews on route change
   useEffect(() => {
     if (POSTHOG_KEY && prevPathname.current !== pathname) {
       posthog.capture('$pageview', { $current_url: window.location.href });
