@@ -115,10 +115,8 @@ const ChatBot = () => {
       <button
         className={`chatbot__bubble ${open ? 'chatbot__bubble--open' : ''} ${shimmer ? 'chatbot__bubble--shimmer' : ''}`}
         onClick={() => {
-          setOpen(v => {
-            posthog.capture(v ? 'chatbot_closed' : 'chatbot_opened');
-            return !v;
-          });
+          posthog.capture(open ? 'chatbot_closed' : 'chatbot_opened');
+          setOpen(v => !v);
           setShimmer(false);
         }}
         aria-label={open ? 'Fermer le chat' : 'Ouvrir le chat'}
