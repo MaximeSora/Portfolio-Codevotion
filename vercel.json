@@ -8,7 +8,6 @@
     { "source": "/index.html", "destination": "/" },
     { "source": "/functions/:endpoint", "destination": "/api/message" },
     { "source": "/api/chat", "destination": "/api/chat" },
-    { "source": "/ingest/:path*", "destination": "/api/posthog-proxy?proxyPath=:path*" },
     { "source": "/((?!api/).*)", "destination": "/" }
   ],
   "headers": [
