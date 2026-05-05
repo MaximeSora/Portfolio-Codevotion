@@ -5,6 +5,7 @@
     "silent": true
   },
   "rewrites": [
+    { "source": "/api/ingest/:path*", "destination": "/api/posthog-proxy?proxyPath=:path*" },
     { "source": "/index.html", "destination": "/" },
     { "source": "/functions/:endpoint", "destination": "/api/message" },
     { "source": "/api/chat", "destination": "/api/chat" },
