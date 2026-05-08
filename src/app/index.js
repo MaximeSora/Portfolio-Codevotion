@@ -22,12 +22,16 @@ import './index.css';
 // ── PostHog Analytics ──
 // Replace with your PostHog API key after signup at https://app.posthog.com/signup
 const POSTHOG_KEY = import.meta.env.VITE_POSTHOG_KEY;
-const POSTHOG_HOST = import.meta.env.VITE_POSTHOG_HOST || 'https://eu.i.posthog.com';
+const POSTHOG_DIRECT_HOST = import.meta.env.VITE_POSTHOG_HOST || 'https://eu.i.posthog.com';
+const POSTHOG_API_HOST = import.meta.env.DEV
+  ? POSTHOG_DIRECT_HOST
+  : (import.meta.env.VITE_POSTHOG_API_HOST || '/_relay');
+const POSTHOG_UI_HOST = import.meta.env.VITE_POSTHOG_UI_HOST || 'https://eu.posthog.com';
 
 if (!prerender && POSTHOG_KEY) {
   posthog.init(POSTHOG_KEY, {
-    api_host: '/api/ingest',
-    ui_host: POSTHOG_HOST,
+    api_host: POSTHOG_API_HOST,
+    ui_host: POSTHOG_UI_HOST,
     person_profiles: 'identified_only',
     capture_pageview: false,   // handled manually for SPA
     capture_pageleave: true,   // powers time-on-page + scroll depth

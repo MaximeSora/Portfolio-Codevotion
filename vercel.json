@@ -5,7 +5,9 @@
     "silent": true
   },
   "rewrites": [
-    { "source": "/api/ingest/:path*", "destination": "/api/posthog-proxy?proxyPath=:path*" },
+    { "source": "/_relay/static/:path(.*)", "destination": "https://eu-assets.i.posthog.com/static/:path" },
+    { "source": "/_relay/array/:path(.*)", "destination": "https://eu-assets.i.posthog.com/array/:path" },
+    { "source": "/_relay/:path(.*)", "destination": "https://eu.i.posthog.com/:path" },
     { "source": "/index.html", "destination": "/" },
     { "source": "/functions/:endpoint", "destination": "/api/message" },
     { "source": "/api/chat", "destination": "/api/chat" },
